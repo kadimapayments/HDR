@@ -45,12 +45,10 @@ const photos = [
     filter: "brightness(1.04) contrast(1.05) saturate(0.85)",
   },
   {
-    // Full-width feature photo — spans both columns
     src: "/images/showroom/showroom-loewen-wood.jpg",
     alt: "Loewen warm wood folding door system open to the showroom floor — interior view",
     caption: "Loewen Wood Folding Doors",
     filter: "brightness(1.02) contrast(1.04) saturate(0.88)",
-    wide: true,
   },
 ];
 
@@ -58,21 +56,13 @@ export function ShowroomGallery() {
   return (
     <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
       {photos.map((photo, i) => (
-        <AnimatedReveal
-          key={photo.src}
-          delay={i * 0.1}
-          className={"wide" in photo && photo.wide ? "md:col-span-2" : undefined}
-        >
-          <div
-            className={`group relative overflow-hidden bg-neutral-warm-200 ${"wide" in photo && photo.wide ? "aspect-[16/7]" : "aspect-[4/3]"}`}
-          >
+        <AnimatedReveal key={photo.src} delay={i * 0.1}>
+          <div className="group relative aspect-[4/3] overflow-hidden bg-neutral-warm-200">
             <Image
               src={photo.src}
               alt={photo.alt}
               fill
-              sizes={"wide" in photo && photo.wide
-                ? "(max-width: 768px) 100vw, 100vw"
-                : "(max-width: 768px) 100vw, 50vw"}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               style={{ filter: photo.filter }}
             />
