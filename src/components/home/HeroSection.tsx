@@ -29,26 +29,25 @@ export function HeroSection() {
             variants={staggerItem}
             className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-brand-terracotta"
           >
-            Los Angeles&apos;s Premier Architectural Window & Door Specialists
+            Los Angeles&apos;s Premier Window & Door Showroom
           </motion.p>
 
           <motion.h1
             variants={heroReveal}
             className="font-serif text-[length:var(--font-size-display-xl)] font-semibold leading-[var(--line-height-display-xl)] tracking-[var(--letter-spacing-display)] text-white"
           >
-            Architectural Windows
+            Setting the Standard
             <br />
-            & Doors for LA&apos;s
-            <br />
-            <span className="text-brand-terracotta underline">Finest Residences</span>
+            for{" "}
+            <span className="text-brand-terracotta">Luxury Living in LA</span>
           </motion.h1>
 
           <motion.p
             variants={staggerItem}
             className="mt-8 max-w-xl text-lg leading-relaxed text-neutral-warm-400"
           >
-            We help architects, builders, and homeowners navigate custom window
-            and door systems — from specification through installation.
+            From concept to completion, we help architects, builders, and
+            homeowners navigate every step of the window &amp; door process.
           </motion.p>
 
           <motion.div
