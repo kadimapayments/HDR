@@ -40,7 +40,7 @@ export function HeroSection() {
             <br />
             & Doors for LA&apos;s
             <br />
-            <span className="text-brand-terracotta">Finest Residences</span>
+            <span className="text-brand-terracotta underline">Finest Residences</span>
           </motion.h1>
 
           <motion.p
