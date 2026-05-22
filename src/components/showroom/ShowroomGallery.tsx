@@ -28,15 +28,15 @@ const photos = [
   },
   {
     src: "/images/showroom/showroom-doors.jpg",
-    alt: "Multi-panel folding door systems with steel and natural wood frames on display",
+    alt: "Multi-panel steel and wood folding door systems on display — blue frames with warm oak detailing",
     caption: "Folding & Sliding Systems",
-    filter: "brightness(0.96) contrast(1.05) saturate(0.87)",
+    filter: "brightness(0.98) contrast(1.04) saturate(0.87)",
   },
   {
     src: "/images/showroom/showroom-pivot.jpg",
-    alt: "Pivot entry door with NanaWall sliding glass wall systems",
+    alt: "Pivot entry door in warm wood with NanaWall sliding glass wall systems",
     caption: "Pivot Doors & NanaWall",
-    filter: "brightness(0.97) contrast(1.04) saturate(0.87)",
+    filter: "brightness(0.99) contrast(1.04) saturate(0.86)",
   },
   {
     src: "/images/showroom/showroom-loewen-steel.jpg",
