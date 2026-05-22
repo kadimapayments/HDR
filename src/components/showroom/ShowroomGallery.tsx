@@ -21,12 +21,6 @@ const photos = [
     filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
   },
   {
-    src: "/images/showroom/162A0884.jpg",
-    alt: "HDR Windows & Doors showroom — luxury window and door systems on display",
-    caption: "Window Systems",
-    filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
-  },
-  {
     src: "/images/showroom/162A2433.jpg",
     alt: "HDR showroom featuring premium architectural door and window specifications",
     caption: "Door & Window Details",
@@ -49,12 +43,6 @@ const photos = [
     alt: "HDR showroom interior showcasing high-performance window and door specifications",
     caption: "Showroom Interior",
     filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
-  },
-  {
-    src: "/images/showroom/162A2499.jpg",
-    alt: "HDR Windows & Doors — curated showroom featuring luxury architectural systems",
-    caption: "Luxury Systems",
-    filter: "brightness(1.02) contrast(1.04) saturate(0.86)",
   },
   {
     src: "/images/showroom/showroom-doors.jpg",
