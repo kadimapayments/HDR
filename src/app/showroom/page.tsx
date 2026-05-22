@@ -46,7 +46,7 @@ export default function ShowroomPage() {
       <PageHero
         title="Visit Our Showroom"
         subtitle="West Los Angeles"
-        description={`${COMPANY.address.street}, ${COMPANY.address.city}, ${COMPANY.address.state} ${COMPANY.address.zip} — open by appointment. There's no substitute for seeing, touching, and operating the systems that will define your home.`}
+        description="There's no substitute for seeing, touching, and operating the systems that will define your home."
       />
 
       {/* Gallery */}

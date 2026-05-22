@@ -39,7 +39,7 @@ export function HeroSection() {
             Setting the Standard
             <br />
             for{" "}
-            <span className="text-brand-terracotta">Luxury Living in LA</span>
+            <span className="text-brand-terracotta">Luxury Living</span>
           </motion.h1>
 
           <motion.p
