@@ -69,7 +69,7 @@ const partners = [
     name: "American Building Supply",
     slug: "abs",
     logo: "/images/interiors/abs-new.jpg" as string | null,
-    logoHeight: "h-10",
+    logoHeight: "h-14",
     category: "Interior Doors",
     tagline: "Premium Doors & Building Products",
     description:
@@ -85,7 +85,7 @@ const partners = [
     name: "Emtek",
     slug: "emtek",
     logo: "/images/interiors/emtek.jpg" as string | null,
-    logoHeight: "h-8",
+    logoHeight: "h-6",
     category: "Hardware",
     tagline: "Architectural Door Hardware",
     description:
