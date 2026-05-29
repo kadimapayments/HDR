@@ -27,7 +27,14 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/manufacturers",
 });
 
-const LARGE_LOGOS = new Set(["fleetwood", "andersen", "marvin", "loewen", "euroline", "plygem"]);
+const LOGO_HEIGHT: Record<string, string> = {
+  fleetwood: "h-14",
+  andersen: "h-14",
+  marvin: "h-14",
+  loewen: "h-14",
+  euroline: "h-14",
+  plygem: "h-20",
+};
 
 const manufacturers = [
   // Ultra-Premium
@@ -165,7 +172,7 @@ export default function ManufacturersPage() {
                 >
                   <div className="mb-6 flex h-14 items-center">
                     {logoMetaBySlug[m.slug] ? (
-                      <div className={LARGE_LOGOS.has(m.slug) ? "relative h-14 w-44" : "relative h-10 w-44"}>
+                      <div className={`relative w-44 ${LOGO_HEIGHT[m.slug] ?? "h-10"}`}>
                         <Image
                           src={logoMetaBySlug[m.slug]!.logo}
                           alt={`${m.name} logo`}
