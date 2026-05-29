@@ -93,7 +93,7 @@ const photos = [
     filter: "brightness(1.02) contrast(1.04) saturate(0.86)",
   },
   {
-    src: "/images/showroom/162A2553.jpg",
+    src: "/images/showroom/162A0756.jpg",
     alt: "HDR Windows showroom — material and finish library",
     caption: "Material Library",
     filter: "brightness(1.03) contrast(1.03) saturate(0.87)",
