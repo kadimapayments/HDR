@@ -39,6 +39,12 @@ const photos = [
     filter: "brightness(1.02) contrast(1.04) saturate(0.87)",
   },
   {
+    src: "/images/showroom/162A0730.jpg",
+    alt: "HDR showroom interior showcasing high-performance window and door specifications",
+    caption: "Showroom Interior",
+    filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
+  },
+  {
     src: "/images/showroom/showroom-doors.jpg",
     alt: "Multi-panel steel and wood folding door systems on display — blue frames with warm oak detailing",
     caption: "Folding & Sliding Systems",
@@ -97,12 +103,6 @@ const photos = [
     alt: "HDR Windows showroom — material and finish library",
     caption: "Material Library",
     filter: "brightness(1.03) contrast(1.03) saturate(0.87)",
-  },
-  {
-    src: "/images/showroom/IMG_3784.jpg",
-    alt: "HDR Windows showroom — premium architectural door and window displays",
-    caption: "Showroom Interior",
-    filter: "brightness(1.02) contrast(1.04) saturate(0.87)",
   },
 ];
 
