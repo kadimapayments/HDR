@@ -143,7 +143,7 @@ export default function ManufacturersPage() {
     <>
       <PageHero
         title="Our Manufacturers"
-        subtitle="Partners"
+        subtitle="From classic to contemporary"
         description="We carry the industry's most respected window and door manufacturers — each selected for their quality, performance, and architectural relevance."
       />
 
@@ -156,18 +156,16 @@ export default function ManufacturersPage() {
                   href={`/manufacturers/${m.slug}`}
                   className="group flex h-full flex-col border border-neutral-warm-200 bg-white p-8 transition-all duration-300 hover:border-brand-terracotta/30 hover:shadow-lg"
                 >
-                  <div className="mb-6 flex h-20 items-center">
+                  <div className="mb-6 flex h-14 items-center">
                     {logoMetaBySlug[m.slug] ? (
-                      <Image
-                        src={logoMetaBySlug[m.slug]!.logo}
-                        alt={`${m.name} logo`}
-                        width={Math.round(200 * logoMetaBySlug[m.slug]!.scale)}
-                        height={Math.round(64 * logoMetaBySlug[m.slug]!.scale)}
-                        className="w-auto object-contain"
-                        style={{
-                          maxHeight: `${Math.round(48 * logoMetaBySlug[m.slug]!.scale)}px`,
-                        }}
-                      />
+                      <div className="relative h-10 w-44">
+                        <Image
+                          src={logoMetaBySlug[m.slug]!.logo}
+                          alt={`${m.name} logo`}
+                          fill
+                          className="object-contain object-left"
+                        />
+                      </div>
                     ) : (
                       <span className="font-serif text-xl font-semibold uppercase tracking-wide text-neutral-warm-700">
                         {m.name}
