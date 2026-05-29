@@ -4,7 +4,6 @@ import { WhoWeServe } from "@/components/home/WhoWeServe";
 import { FeaturedSystems } from "@/components/home/FeaturedSystems";
 import { ShowroomPreview } from "@/components/home/ShowroomPreview";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
-import { ResourcesPreview } from "@/components/home/ResourcesPreview";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <FeaturedSystems />
       <ShowroomPreview />
       <FeaturedProjects />
-      <ResourcesPreview />
       <FinalCTA />
     </>
   );
