@@ -138,12 +138,12 @@ export function Header() {
             </Link>
             <div className="hidden lg:block">
               <Button
-                href="/contact"
+                href="/submit-plans"
                 variant="primary"
                 size="sm"
                 className="whitespace-nowrap"
               >
-                Book Consultation
+                Submit Plans
               </Button>
             </div>
 
