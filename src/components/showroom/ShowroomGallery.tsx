@@ -9,10 +9,10 @@ import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
  */
 const photos = [
   {
-    src: "/images/showroom/showroom-andersen.jpg",
-    alt: "Andersen Windows & Doors full-scale display — casement windows, arched entry and AW Architectural Collection",
-    caption: "Andersen Windows & Doors",
-    filter: "brightness(1.02) contrast(1.04) saturate(0.87)",
+    src: "/images/showroom/162A2571.jpg",
+    alt: "HDR Windows & Doors showroom — premium glazing and door system displays",
+    caption: "Glazing Systems",
+    filter: "brightness(1.03) contrast(1.03) saturate(0.87)",
   },
   {
     src: "/images/showroom/162A0765.jpg",
@@ -33,10 +33,10 @@ const photos = [
     filter: "brightness(1.02) contrast(1.04) saturate(0.86)",
   },
   {
-    src: "/images/showroom/162A2571.jpg",
-    alt: "HDR Windows & Doors showroom — premium glazing and door system displays",
-    caption: "Glazing Systems",
-    filter: "brightness(1.03) contrast(1.03) saturate(0.87)",
+    src: "/images/showroom/showroom-andersen.jpg",
+    alt: "Andersen Windows & Doors full-scale display — casement windows, arched entry and AW Architectural Collection",
+    caption: "Andersen Windows & Doors",
+    filter: "brightness(1.02) contrast(1.04) saturate(0.87)",
   },
   {
     src: "/images/showroom/162A0730.jpg",
