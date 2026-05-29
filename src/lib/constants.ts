@@ -46,10 +46,10 @@ export const MARQUEE_BRANDS = [
   { name: "Andersen", slug: "andersen", logo: "/images/manufacturers/andersen.png", scale: 1 },
   { name: "Marvin", slug: "marvin", logo: "/images/manufacturers/marvin.jpg", scale: 1 },
   { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg", scale: 1.3 },
-  { name: "NanaWall", slug: "nanawall", logo: "/images/manufacturers/nanawall.webp", scale: 0.62 },
+  { name: "NanaWall", slug: "nanawall", logo: "/images/manufacturers/nanawall.webp", scale: 0.55 },
   { name: "Euroline", slug: "euroline", logo: "/images/manufacturers/euroline.png", scale: 1.3 },
-  { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp", scale: 0.85 },
-  { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png", scale: 0.62 },
+  { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp", scale: 0.75 },
+  { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png", scale: 0.55 },
 ] as const;
 
 export const FIRE_REBUILD_PROGRAMS = [
