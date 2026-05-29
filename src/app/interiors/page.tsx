@@ -99,32 +99,19 @@ const partners = [
   },
 ];
 
-// Interior Doors gallery — add up to 4 images
-// Place files at: public/images/interiors/doors-1.jpg through doors-4.jpg
-const doorImages: { src: string; alt: string }[] = [
-  // { src: "/images/interiors/doors-1.jpg", alt: "Interior door example 1" },
-  // { src: "/images/interiors/doors-2.jpg", alt: "Interior door example 2" },
-  // { src: "/images/interiors/doors-3.jpg", alt: "Interior door example 3" },
-  // { src: "/images/interiors/doors-4.jpg", alt: "Interior door example 4" },
-];
-
 // Hardware gallery
 const hardwareImages: { src: string; alt: string }[] = [
   { src: "/images/interiors/162A0779.jpg", alt: "Architectural door hardware detail" },
-  { src: "/images/interiors/162A0780.jpg", alt: "Architectural door hardware detail" },
   { src: "/images/interiors/162A0795.jpg", alt: "Architectural door hardware detail" },
-  { src: "/images/interiors/162A0797.jpg", alt: "Architectural door hardware detail" },
   { src: "/images/interiors/162A0805.jpg", alt: "Architectural door hardware detail" },
-  { src: "/images/interiors/162A0788.jpg", alt: "Architectural door hardware detail" },
-  { src: "/images/interiors/162A0804.jpg", alt: "Architectural door hardware detail" },
-  { src: "/images/interiors/162A0784.jpg", alt: "Architectural door hardware detail" },
   { src: "/images/interiors/162A0827.jpg", alt: "Architectural door hardware detail" },
-  { src: "/images/interiors/162A0828.jpg", alt: "Architectural door hardware detail" },
   { src: "/images/interiors/162A0980.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0784.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0788.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0797.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0804.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0828.jpg", alt: "Architectural door hardware detail" },
 ];
-
-const DOOR_PLACEHOLDER_COUNT = 4;
-const HARDWARE_PLACEHOLDER_COUNT = 11;
 
 export default function InteriorsPage() {
   return (
@@ -188,72 +175,29 @@ export default function InteriorsPage() {
         </Container>
       </Section>
 
-      {/* Photo Galleries */}
+      {/* Hardware Gallery */}
       <Section className="bg-neutral-warm-100">
         <Container>
-          {/* Interior Doors Gallery */}
           <AnimatedReveal className="mb-10">
             <p className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-brand-terracotta">
               Gallery
             </p>
-            <Heading level="h2">Interior Doors</Heading>
-          </AnimatedReveal>
-
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {Array.from({ length: DOOR_PLACEHOLDER_COUNT }).map((_, i) => {
-              const img = doorImages[i];
-              return (
-                <AnimatedReveal key={i} delay={i * 0.05}>
-                  <div className="relative aspect-[3/4] overflow-hidden bg-neutral-warm-200">
-                    {img ? (
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        className="object-cover transition-transform duration-500 hover:scale-105"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                          Coming Soon
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </AnimatedReveal>
-              );
-            })}
-          </div>
-
-          {/* Hardware Gallery */}
-          <AnimatedReveal className="mb-10 mt-16">
             <Heading level="h2">Hardware</Heading>
           </AnimatedReveal>
 
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {Array.from({ length: HARDWARE_PLACEHOLDER_COUNT }).map((_, i) => {
-              const img = hardwareImages[i];
-              return (
-                <AnimatedReveal key={i} delay={i * 0.05}>
-                  <div className="relative aspect-[3/4] overflow-hidden bg-neutral-warm-200">
-                    {img ? (
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        className="object-cover transition-transform duration-500 hover:scale-105"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                          Coming Soon
-                        </span>
-                      </div>
-                    )}
-                  </div>
-                </AnimatedReveal>
-              );
-            })}
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
+            {hardwareImages.map((img, i) => (
+              <AnimatedReveal key={img.src} delay={i * 0.05}>
+                <div className="relative aspect-[3/4] overflow-hidden bg-neutral-warm-200">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+              </AnimatedReveal>
+            ))}
           </div>
 
           <AnimatedReveal className="mt-12 text-center">
