@@ -108,16 +108,23 @@ const doorImages: { src: string; alt: string }[] = [
   // { src: "/images/interiors/doors-4.jpg", alt: "Interior door example 4" },
 ];
 
-// Hardware gallery — add up to 4 images
-// Place files at: public/images/interiors/hardware-1.jpg through hardware-4.jpg
+// Hardware gallery
 const hardwareImages: { src: string; alt: string }[] = [
-  // { src: "/images/interiors/hardware-1.jpg", alt: "Hardware example 1" },
-  // { src: "/images/interiors/hardware-2.jpg", alt: "Hardware example 2" },
-  // { src: "/images/interiors/hardware-3.jpg", alt: "Hardware example 3" },
-  // { src: "/images/interiors/hardware-4.jpg", alt: "Hardware example 4" },
+  { src: "/images/interiors/162A0779.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0780.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0795.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0797.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0805.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0788.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0804.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0784.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0827.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0828.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0980.jpg", alt: "Architectural door hardware detail" },
 ];
 
-const PLACEHOLDER_COUNT = 4;
+const DOOR_PLACEHOLDER_COUNT = 4;
+const HARDWARE_PLACEHOLDER_COUNT = 11;
 
 export default function InteriorsPage() {
   return (
@@ -193,7 +200,7 @@ export default function InteriorsPage() {
           </AnimatedReveal>
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {Array.from({ length: PLACEHOLDER_COUNT }).map((_, i) => {
+            {Array.from({ length: DOOR_PLACEHOLDER_COUNT }).map((_, i) => {
               const img = doorImages[i];
               return (
                 <AnimatedReveal key={i} delay={i * 0.05}>
@@ -224,7 +231,7 @@ export default function InteriorsPage() {
           </AnimatedReveal>
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-            {Array.from({ length: PLACEHOLDER_COUNT }).map((_, i) => {
+            {Array.from({ length: HARDWARE_PLACEHOLDER_COUNT }).map((_, i) => {
               const img = hardwareImages[i];
               return (
                 <AnimatedReveal key={i} delay={i * 0.05}>
