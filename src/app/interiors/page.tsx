@@ -5,11 +5,9 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Heading } from "@/components/ui/Heading";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 import { FinalCTA } from "@/components/home/FinalCTA";
-import { INTERIOR_PARTNERS } from "@/lib/constants";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Interiors — Doors & Hardware",
@@ -18,20 +16,30 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/interiors",
 });
 
-const interiorCategories = [
+const partners = [
   {
-    title: "Interior Doors",
-    body: "Flush, MDF, glass, and stile-and-rail interior doors specified to match the architectural intent of the residence — paint-grade and stain-grade, with custom panel layouts, sticking profiles, and glass options.",
+    name: "TruStile Doors",
+    slug: "trustile",
+    logo: "/images/interiors/trustile.webp",
+    category: "Interior Doors",
+    tagline: "Architectural Interior Doors",
+    description:
+      "TruStile builds the most refined interior doors in the industry — flush, MDF, glass, and stile-and-rail with custom architectural details. A Marvin company, TruStile is the natural complement to Marvin window and door specifications.",
     points: [
-      "TruStile architectural interior doors",
+      "Flush, MDF, glass, and stile-and-rail configurations",
       "Custom sizes, panel layouts, and sticking profiles",
       "Pre-hung and slab options",
-      "Coordinated finish to match exterior systems",
+      "Paint-grade and stain-grade finishes coordinated to exterior systems",
     ],
   },
   {
-    title: "Door Hardware",
-    body: "Emtek provides one of the deepest hardware libraries in the industry — passage, privacy, dummy, multi-point, and electronic locks — across modern, transitional, and traditional design vocabularies.",
+    name: "Emtek",
+    slug: "emtek",
+    logo: "/images/interiors/emtek.jpg",
+    category: "Hardware",
+    tagline: "Architectural Door Hardware",
+    description:
+      "Emtek manufactures the most comprehensive line of architectural door hardware in North America — knobs, levers, pulls, multi-points, and electronic locks across a wide range of finishes and design vocabularies.",
     points: [
       "Knobs, levers, and pulls in dozens of finishes",
       "Multi-point hardware for tall and oversized doors",
@@ -40,6 +48,26 @@ const interiorCategories = [
     ],
   },
 ];
+
+// Interior Doors gallery — add up to 4 images
+// Place files at: public/images/interiors/doors-1.jpg through doors-4.jpg
+const doorImages: { src: string; alt: string }[] = [
+  // { src: "/images/interiors/doors-1.jpg", alt: "Interior door example 1" },
+  // { src: "/images/interiors/doors-2.jpg", alt: "Interior door example 2" },
+  // { src: "/images/interiors/doors-3.jpg", alt: "Interior door example 3" },
+  // { src: "/images/interiors/doors-4.jpg", alt: "Interior door example 4" },
+];
+
+// Hardware gallery — add up to 4 images
+// Place files at: public/images/interiors/hardware-1.jpg through hardware-4.jpg
+const hardwareImages: { src: string; alt: string }[] = [
+  // { src: "/images/interiors/hardware-1.jpg", alt: "Hardware example 1" },
+  // { src: "/images/interiors/hardware-2.jpg", alt: "Hardware example 2" },
+  // { src: "/images/interiors/hardware-3.jpg", alt: "Hardware example 3" },
+  // { src: "/images/interiors/hardware-4.jpg", alt: "Hardware example 4" },
+];
+
+const PLACEHOLDER_COUNT = 4;
 
 export default function InteriorsPage() {
   return (
@@ -50,19 +78,36 @@ export default function InteriorsPage() {
         description="A complete residential package extends past the exterior envelope. We specify and supply architectural interior doors from TruStile and the full Emtek hardware library — coordinated to the same standard as our window and door work."
       />
 
-      {/* Categories */}
+      {/* Partners */}
       <Section>
         <Container>
-          <div className="grid gap-12 md:grid-cols-2">
-            {interiorCategories.map((cat, i) => (
-              <AnimatedReveal key={cat.title} delay={i * 0.1}>
-                <div>
-                  <Heading level="h3">{cat.title}</Heading>
-                  <p className="mt-4 text-sm leading-relaxed text-neutral-warm-600">
-                    {cat.body}
+          <div className="grid gap-8 md:grid-cols-2">
+            {partners.map((p, i) => (
+              <AnimatedReveal key={p.slug} delay={i * 0.1}>
+                <div className="flex h-full flex-col border border-neutral-warm-200 bg-white p-8">
+                  <div className="mb-6 flex h-16 items-center">
+                    <Image
+                      src={p.logo}
+                      alt={`${p.name} logo`}
+                      width={220}
+                      height={64}
+                      className="max-h-12 w-auto object-contain"
+                    />
+                  </div>
+                  <p className="text-xs font-medium uppercase tracking-[0.15em] text-brand-terracotta">
+                    {p.category}
+                  </p>
+                  <h3 className="mt-2 font-serif text-2xl font-semibold text-neutral-warm-900">
+                    {p.name}
+                  </h3>
+                  <p className="mt-1 text-xs font-medium text-brand-brown">
+                    {p.tagline}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-neutral-warm-500">
+                    {p.description}
                   </p>
                   <ul className="mt-6 space-y-2">
-                    {cat.points.map((point) => (
+                    {p.points.map((point) => (
                       <li
                         key={point}
                         className="flex items-start gap-3 text-sm text-neutral-warm-600"
@@ -79,42 +124,72 @@ export default function InteriorsPage() {
         </Container>
       </Section>
 
-      {/* Partners */}
+      {/* Photo Galleries */}
       <Section className="bg-neutral-warm-100">
         <Container>
-          <AnimatedReveal className="mb-12 text-center">
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-brand-terracotta">
-              Partners
+          {/* Interior Doors Gallery */}
+          <AnimatedReveal className="mb-10">
+            <p className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-brand-terracotta">
+              Gallery
             </p>
-            <Heading level="h2">Specified Interior Brands</Heading>
+            <Heading level="h2">Interior Doors</Heading>
           </AnimatedReveal>
 
-          <div className="grid gap-8 md:grid-cols-2">
-            {INTERIOR_PARTNERS.map((p, i) => (
-              <AnimatedReveal key={p.slug} delay={i * 0.1}>
-                <div className="flex h-full flex-col border border-neutral-warm-200 bg-white p-8">
-                  <div className="mb-6 flex h-16 items-center">
-                    <Image
-                      src={p.logo}
-                      alt={`${p.name} logo`}
-                      width={220}
-                      height={64}
-                      className="max-h-12 w-auto object-contain"
-                    />
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {Array.from({ length: PLACEHOLDER_COUNT }).map((_, i) => {
+              const img = doorImages[i];
+              return (
+                <AnimatedReveal key={i} delay={i * 0.05}>
+                  <div className="relative aspect-[3/4] overflow-hidden bg-neutral-warm-200">
+                    {img ? (
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        className="object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
+                          Coming Soon
+                        </span>
+                      </div>
+                    )}
                   </div>
-                  <Badge variant="terracotta">{p.category}</Badge>
-                  <h3 className="mt-4 font-serif text-2xl font-semibold text-neutral-warm-900">
-                    {p.name}
-                  </h3>
-                  <p className="mt-1 text-xs font-medium text-brand-brown">
-                    {p.tagline}
-                  </p>
-                  <p className="mt-4 flex-1 text-sm leading-relaxed text-neutral-warm-500">
-                    {p.description}
-                  </p>
-                </div>
-              </AnimatedReveal>
-            ))}
+                </AnimatedReveal>
+              );
+            })}
+          </div>
+
+          {/* Hardware Gallery */}
+          <AnimatedReveal className="mb-10 mt-16">
+            <Heading level="h2">Hardware</Heading>
+          </AnimatedReveal>
+
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            {Array.from({ length: PLACEHOLDER_COUNT }).map((_, i) => {
+              const img = hardwareImages[i];
+              return (
+                <AnimatedReveal key={i} delay={i * 0.05}>
+                  <div className="relative aspect-[3/4] overflow-hidden bg-neutral-warm-200">
+                    {img ? (
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        className="object-cover transition-transform duration-500 hover:scale-105"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
+                          Coming Soon
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                </AnimatedReveal>
+              );
+            })}
           </div>
 
           <AnimatedReveal className="mt-12 text-center">
