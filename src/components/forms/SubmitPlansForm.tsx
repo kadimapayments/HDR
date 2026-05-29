@@ -31,7 +31,7 @@ export function SubmitPlansForm() {
       <div className="border border-accent-sage/30 bg-accent-sage/5 p-8 text-center">
         <h3 className="font-serif text-2xl text-neutral-warm-900">Plans received.</h3>
         <p className="mt-3 text-sm text-neutral-warm-600">
-          Thanks — our team will review your plans and get back to you within one business day.
+          Thanks — our team will review your plans and get back to you as soon as possible.
         </p>
       </div>
     );

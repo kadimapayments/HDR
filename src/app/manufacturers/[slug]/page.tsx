@@ -224,38 +224,6 @@ const data: Record<
       "Schedules that cannot accommodate ultra-premium lead times",
     ],
   },
-  western: {
-    name: "Western Window Systems",
-    tagline: "Performance-Driven Aluminum",
-    tier: "Value-Premium",
-    leadTime: "8–12 weeks",
-    materials: ["Thermally Broken Aluminum"],
-    overview:
-      "Western Window Systems builds high-performance aluminum windows and multi-slide doors with a focus on contemporary aesthetics at attainable price points. Manufactured in Phoenix, Arizona, Western has become a favorite for production-luxury builders and architects who need clean modern sightlines without ultra-premium pricing or lead times.",
-    pros: [
-      "Strong value in the aluminum multi-slide category",
-      "Reliable lead times — domestic manufacturing",
-      "Clean contemporary sightlines",
-      "Solid performance and Title 24 options",
-      "Good builder support and supply consistency",
-    ],
-    cons: [
-      "Maximum panel sizes smaller than Fleetwood",
-      "Hardware and finish library narrower than ultra-premium",
-      "Less custom flexibility on profile geometry",
-    ],
-    systems: [
-      { name: "Contemporary Aluminum", slug: "contemporary-aluminum" },
-      { name: "Multi-Slide Doors", slug: "multi-slide-doors" },
-      { name: "Sliding Doors", slug: "sliding-doors" },
-    ],
-    bestFor: [
-      "Contemporary builder-spec residences",
-      "Volume residential developments",
-      "Projects valuing schedule certainty",
-      "Modern designs at value-premium pricing",
-    ],
-  },
   "all-weather": {
     name: "All Weather Architectural Aluminum",
     tagline: "Reliable Vinyl & Aluminum Solutions",
@@ -565,13 +533,6 @@ export default async function ManufacturerPage({ params }: Props) {
                       Pricing Tier
                     </h4>
                     <Badge variant="terracotta">{m.tier}</Badge>
-                  </div>
-
-                  <div>
-                    <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
-                      Typical Lead Time
-                    </h4>
-                    <p className="text-neutral-warm-700">{m.leadTime}</p>
                   </div>
 
                   <div>

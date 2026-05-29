@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { heroReveal, staggerContainer, staggerItem } from "@/lib/animations";
@@ -7,18 +8,18 @@ import { heroReveal, staggerContainer, staggerItem } from "@/lib/animations";
 export function HeroSection() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-neutral-warm-950">
-      {/* Background Image Placeholder */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(135deg, #1A1816 0%, #2D2A26 40%, #4A4640 100%)",
-        }}
+      {/* Background Image */}
+      <Image
+        src="/images/home/hero.jpg"
+        alt="Luxury windows and doors by HDR Windows"
+        fill
+        priority
+        className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-neutral-warm-950/90 via-neutral-warm-950/40 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-neutral-warm-950/95 via-neutral-warm-950/65 to-neutral-warm-950/50" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-8 xl:px-12">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 pt-28 md:pt-0 md:px-8 xl:px-12">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -29,26 +30,25 @@ export function HeroSection() {
             variants={staggerItem}
             className="mb-6 text-xs font-medium uppercase tracking-[0.3em] text-brand-terracotta"
           >
-            Los Angeles&apos;s Premier Architectural Window & Door Specialists
+            Los Angeles&apos;s Premier Window & Door Showroom
           </motion.p>
 
           <motion.h1
             variants={heroReveal}
             className="font-serif text-[length:var(--font-size-display-xl)] font-semibold leading-[var(--line-height-display-xl)] tracking-[var(--letter-spacing-display)] text-white"
           >
-            Architectural Windows
+            Setting the Standard
             <br />
-            & Doors for LA&apos;s
-            <br />
-            <span className="text-brand-terracotta underline">Finest Residences</span>
+            for{" "}
+            <span className="text-brand-terracotta">Luxury Living</span>
           </motion.h1>
 
           <motion.p
             variants={staggerItem}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-neutral-warm-400"
+            className="mt-8 max-w-xl text-sm leading-relaxed text-neutral-warm-400 md:text-lg"
           >
-            We help architects, builders, and homeowners navigate custom window
-            and door systems — from specification through installation.
+            From concept to completion, we help architects, builders, and
+            homeowners navigate every step of the window &amp; door process.
           </motion.p>
 
           <motion.div

@@ -62,9 +62,10 @@ export default function FireRebuildPage() {
   return (
     <>
       <PageHero
-        title="Palisades & Eaton Fire Rebuild"
-        subtitle="Dedicated Program"
-        description="To the families and communities rebuilding from the Palisades and Eaton fires — we're here to help. HDR has coordinated discounted manufacturer pricing and a dedicated specification track for rebuild projects."
+        title="Helping You Rebuild"
+        subtitle="Palisades & Eaton Fires"
+        backgroundImage="/images/fire-rebuild/hero.jpg"
+        description="To the families and communities rebuilding from the Palisades and Eaton fires, we're here to help. HDR has coordinated discounted manufacturer pricing and a dedicated specification track for rebuild projects."
       />
 
       {/* Statement of support */}
@@ -218,7 +219,7 @@ export default function FireRebuildPage() {
             <p className="mt-6 text-base leading-relaxed text-neutral-warm-600">
               Whether you&apos;re mid-design with an architect or just
               starting to think about specifications, reach out. We&apos;ll
-              respond same business day.
+              respond as soon as possible.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Button href="/submit-plans" variant="primary" size="lg">

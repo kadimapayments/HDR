@@ -163,9 +163,12 @@ export default function ForArchitectsPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-10">
-                <Button href="/contact" variant="primary" size="lg">
-                  Schedule a Specification Consultation
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Button href="/submit-plans" variant="primary" size="lg">
+                  Submit Plans
+                </Button>
+                <Button href="/contact" variant="outline" size="lg">
+                  Schedule a Consultation
                 </Button>
               </div>
             </AnimatedReveal>

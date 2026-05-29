@@ -93,9 +93,12 @@ export default function ForBuildersPage() {
             ))}
           </div>
 
-          <AnimatedReveal className="mt-16 text-center">
-            <Button href="/contact" variant="primary" size="lg">
-              Get a Project Quote
+          <AnimatedReveal className="mt-16 flex flex-wrap justify-center gap-4">
+            <Button href="/submit-plans" variant="primary" size="lg">
+              Submit Plans
+            </Button>
+            <Button href="/contact" variant="outline" size="lg">
+              Get in Touch
             </Button>
           </AnimatedReveal>
         </Container>

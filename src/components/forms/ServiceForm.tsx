@@ -32,7 +32,7 @@ export function ServiceForm() {
       <div className="border border-accent-sage/30 bg-accent-sage/5 p-8 text-center">
         <h3 className="font-serif text-2xl text-neutral-warm-900">Ticket received.</h3>
         <p className="mt-3 text-sm text-neutral-warm-600">
-          Our service team has been notified. We&apos;ll reach out within one business day to schedule next steps.
+          Our service team has been notified. We&apos;ll reach out as soon as possible to schedule next steps.
         </p>
       </div>
     );
