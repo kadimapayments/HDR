@@ -28,17 +28,17 @@ export const COMPANY = {
 } as const;
 
 export const MANUFACTURERS = [
-  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.jpg" },
   { name: "Andersen", slug: "andersen", logo: "/images/manufacturers/andersen.png" },
-  { name: "Marvin", slug: "marvin", logo: "/images/manufacturers/marvin.jpg" },
-  { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg" },
-  { name: "NanaWall", slug: "nanawall", logo: "/images/manufacturers/nanawall.webp" },
   { name: "Euroline", slug: "euroline", logo: "/images/manufacturers/euroline.png", logoScale: 1.4, logoDarkBg: true },
+  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.jpg" },
   { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp" },
+  { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg" },
+  { name: "Marvin", slug: "marvin", logo: "/images/manufacturers/marvin.jpg" },
+  { name: "NanaWall", slug: "nanawall", logo: "/images/manufacturers/nanawall.webp" },
+  { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png" },
   { name: "All Weather", slug: "all-weather", logo: "/images/manufacturers/all-weather.svg" },
   { name: "IWC", slug: "iwc", logo: "/images/manufacturers/iwc.jpeg" },
   { name: "Plygem", slug: "plygem", logo: "/images/manufacturers/plygem.jpg" },
-  { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png" },
 ] as const;
 
 export const MARQUEE_BRANDS = [
