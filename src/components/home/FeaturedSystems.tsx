@@ -59,8 +59,8 @@ export function FeaturedSystems() {
             Architectural Window & Door Systems
           </Heading>
           <p className="mx-auto mt-4 max-w-2xl text-neutral-warm-500">
-            We specify and install the right system for your project — not just
-            the right brand. Every architecture demands a different approach.
+            We help select the right system for your project — not just the
+            right brand. Every build demands a different approach.
           </p>
         </AnimatedReveal>
 
