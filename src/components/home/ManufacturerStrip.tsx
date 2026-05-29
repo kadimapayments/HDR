@@ -6,7 +6,8 @@ import { useRef, useEffect } from "react";
 import { MARQUEE_BRANDS } from "@/lib/constants";
 import { Container } from "@/components/ui/Container";
 
-const BASE_HEIGHT = 48;
+const LOGO_W = 180;
+const LOGO_H = 48;
 const BASE_SPEED = 0.5; // px per frame — slow auto-scroll
 const MAX_SPEED = 18;   // px per frame — max scroll speed
 
@@ -70,27 +71,22 @@ export function ManufacturerStrip() {
           className="flex items-center gap-20 px-8 will-change-transform"
           style={{ width: "max-content" }}
         >
-          {doubled.map((m, i) => {
-            const h = Math.round(BASE_HEIGHT * (m.scale ?? 1));
-            return (
-              <Link
-                key={`${m.slug}-${i}`}
-                href={`/manufacturers/${m.slug}`}
-                aria-label={`${m.name} — view manufacturer details`}
-                className="flex shrink-0 items-center justify-center grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
-                style={{ height: `${Math.round(BASE_HEIGHT * 1.15)}px` }}
-              >
-                <Image
-                  src={m.logo}
-                  alt={m.name}
-                  width={Math.round(220 * (m.scale ?? 1))}
-                  height={h}
-                  className="w-auto object-contain"
-                  style={{ height: `${h}px` }}
-                />
-              </Link>
-            );
-          })}
+          {doubled.map((m, i) => (
+            <Link
+              key={`${m.slug}-${i}`}
+              href={`/manufacturers/${m.slug}`}
+              aria-label={`${m.name} — view manufacturer details`}
+              className="relative shrink-0 grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+              style={{ width: `${LOGO_W}px`, height: `${LOGO_H}px` }}
+            >
+              <Image
+                src={m.logo}
+                alt={m.name}
+                fill
+                className="object-contain"
+              />
+            </Link>
+          ))}
         </div>
       </div>
     </section>
