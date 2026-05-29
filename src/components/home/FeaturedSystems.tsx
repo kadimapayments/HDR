@@ -26,6 +26,7 @@ const systems = [
   {
     name: "Steel Windows & Doors",
     slug: "steel-windows",
+    image: "/images/systems/steel-windows.jpg",
     description:
       "Slender sightlines and industrial elegance for contemporary and transitional designs.",
   },
