@@ -34,6 +34,7 @@ const LOGO_HEIGHT: Record<string, string> = {
   loewen: "h-14",
   euroline: "h-14",
   plygem: "h-20",
+  nanawall: "h-8",
 };
 
 const manufacturers = [
