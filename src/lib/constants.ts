@@ -42,14 +42,14 @@ export const MANUFACTURERS = [
 ] as const;
 
 export const MARQUEE_BRANDS = [
-  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.jpg", scale: 1 },
+  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.jpg", scale: 1.4 },
   { name: "Andersen", slug: "andersen", logo: "/images/manufacturers/andersen.png", scale: 1 },
   { name: "Marvin", slug: "marvin", logo: "/images/manufacturers/marvin.jpg", scale: 1 },
-  { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg", scale: 1 },
-  { name: "NanaWall", slug: "nanawall", logo: "/images/manufacturers/nanawall.webp", scale: 1 },
-  { name: "Euroline", slug: "euroline", logo: "/images/manufacturers/euroline.png", scale: 1.4 },
+  { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg", scale: 1.3 },
+  { name: "NanaWall", slug: "nanawall", logo: "/images/manufacturers/nanawall.webp", scale: 0.75 },
+  { name: "Euroline", slug: "euroline", logo: "/images/manufacturers/euroline.png", scale: 1.6 },
   { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp", scale: 1 },
-  { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png", scale: 1 },
+  { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png", scale: 0.75 },
 ] as const;
 
 export const FIRE_REBUILD_PROGRAMS = [
