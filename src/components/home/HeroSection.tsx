@@ -19,7 +19,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-neutral-warm-950/95 via-neutral-warm-950/65 to-neutral-warm-950/50" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-8 xl:px-12">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 pt-28 md:pt-0 md:px-8 xl:px-12">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
