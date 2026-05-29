@@ -104,8 +104,8 @@ export const SYSTEMS = [
     slug: "oversized-openings",
     category: "Specialty",
   },
-  { name: "Bifold Doors", slug: "bifold-doors", category: "Doors" },
-  { name: "Sliding Doors", slug: "sliding-doors", category: "Doors" },
+  { name: "Folding Doors", slug: "bifold-doors", category: "Doors" },
+  { name: "Hinge Doors", slug: "sliding-doors", category: "Doors" },
 ] as const;
 
 export const NEIGHBORHOODS = [

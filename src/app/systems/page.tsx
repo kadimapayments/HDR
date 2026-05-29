@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { generatePageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -14,6 +15,16 @@ export const metadata: Metadata = generatePageMetadata({
     "Explore architectural window and door systems: multi-slide doors, pivot doors, steel windows, aluminum systems, and more.",
   path: "/systems",
 });
+
+const systemImages: Record<string, string> = {
+  "multi-slide-doors": "/images/systems/multi-slide-doors.jpg",
+  "pivot-doors": "/images/systems/pivot-doors.jpg",
+  "steel-windows": "/images/systems/steel-windows.jpg",
+  "contemporary-aluminum": "/images/systems/contemporary-aluminum.jpg",
+  "energy-efficient": "/images/systems/energy-efficient.jpg",
+  "oversized-openings": "/images/systems/oversized-openings.jpg",
+  "sliding-doors": "/images/systems/hinge-doors.jpg",
+};
 
 const systemDetails: Record<string, { description: string }> = {
   "multi-slide-doors": {
@@ -69,11 +80,20 @@ export default function SystemsPage() {
                   className="group flex h-full flex-col overflow-hidden bg-white transition-shadow duration-300 hover:shadow-lg"
                 >
                   <div className="relative aspect-[16/9] bg-neutral-warm-200">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                        {system.name}
-                      </span>
-                    </div>
+                    {systemImages[system.slug] ? (
+                      <Image
+                        src={systemImages[system.slug]}
+                        alt={system.name}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
+                          {system.name}
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col p-8">
                     <span className="mb-2 text-xs font-medium uppercase tracking-wider text-brand-terracotta">
