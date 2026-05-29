@@ -6,6 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Heading } from "@/components/ui/Heading";
 import { staggerContainer, staggerItem } from "@/lib/animations";
+import Image from "next/image";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 
 const systems = [
@@ -18,6 +19,7 @@ const systems = [
   {
     name: "Pivot Doors",
     slug: "pivot-doors",
+    image: "/images/systems/pivot-doors.jpg",
     description:
       "Oversized architectural entries that make a dramatic statement at any scale.",
   },
@@ -78,11 +80,20 @@ export function FeaturedSystems() {
                 className="group block h-full overflow-hidden bg-white transition-all duration-300 hover:shadow-lg"
               >
                 <div className="relative aspect-[16/10] bg-neutral-warm-200">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                      {system.name}
-                    </span>
-                  </div>
+                  {"image" in system && system.image ? (
+                    <Image
+                      src={system.image}
+                      alt={system.name}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
+                        {system.name}
+                      </span>
+                    </div>
+                  )}
                 </div>
                 <div className="p-6">
                   <h3 className="mb-2 font-serif text-lg font-semibold text-neutral-warm-900 transition-colors group-hover:text-brand-terracotta">
