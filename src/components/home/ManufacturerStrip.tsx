@@ -17,6 +17,7 @@ export function ManufacturerStrip() {
   const posRef = useRef(0);
   const velRef = useRef(BASE_SPEED);
   const rafRef = useRef<number>(0);
+  const touchXRef = useRef(0);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -48,12 +49,27 @@ export function ManufacturerStrip() {
       velRef.current = Math.max(velRef.current, BASE_SPEED);
     };
 
+    const handleTouchStart = (e: TouchEvent) => {
+      touchXRef.current = e.touches[0].clientX;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      const delta = touchXRef.current - e.touches[0].clientX;
+      touchXRef.current = e.touches[0].clientX;
+      velRef.current = Math.min(velRef.current + delta * 0.3, MAX_SPEED);
+      velRef.current = Math.max(velRef.current, BASE_SPEED);
+    };
+
     const container = track.parentElement!;
     container.addEventListener("wheel", handleWheel, { passive: false });
+    container.addEventListener("touchstart", handleTouchStart, { passive: true });
+    container.addEventListener("touchmove", handleTouchMove, { passive: true });
 
     return () => {
       cancelAnimationFrame(rafRef.current);
       container.removeEventListener("wheel", handleWheel);
+      container.removeEventListener("touchstart", handleTouchStart);
+      container.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 
@@ -68,7 +84,7 @@ export function ManufacturerStrip() {
       <div className="relative overflow-hidden">
         <div
           ref={trackRef}
-          className="flex items-center gap-20 px-8 will-change-transform"
+          className="flex items-center gap-10 px-8 will-change-transform"
           style={{ width: "max-content" }}
         >
           {doubled.map((m, i) => (

@@ -45,7 +45,7 @@ export function HeroSection() {
 
           <motion.p
             variants={staggerItem}
-            className="mt-8 max-w-xl text-lg leading-relaxed text-neutral-warm-400"
+            className="mt-8 max-w-xl text-sm leading-relaxed text-neutral-warm-400 md:text-lg"
           >
             From concept to completion, we help architects, builders, and
             homeowners navigate every step of the window &amp; door process.
