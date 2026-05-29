@@ -84,7 +84,7 @@ export function ManufacturerStrip() {
       <div className="relative overflow-hidden">
         <div
           ref={trackRef}
-          className="flex items-center gap-10 px-8 will-change-transform"
+          className="flex items-center gap-6 px-8 will-change-transform"
           style={{ width: "max-content" }}
         >
           {doubled.map((m, i) => (
