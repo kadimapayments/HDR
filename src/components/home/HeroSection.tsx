@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { heroReveal, staggerContainer, staggerItem } from "@/lib/animations";
@@ -7,13 +8,13 @@ import { heroReveal, staggerContainer, staggerItem } from "@/lib/animations";
 export function HeroSection() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-neutral-warm-950">
-      {/* Background Image Placeholder */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(135deg, #1A1816 0%, #2D2A26 40%, #4A4640 100%)",
-        }}
+      {/* Background Image */}
+      <Image
+        src="/images/home/hero.jpg"
+        alt="Luxury windows and doors by HDR Windows"
+        fill
+        priority
+        className="object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-neutral-warm-950/90 via-neutral-warm-950/40 to-transparent" />
 
