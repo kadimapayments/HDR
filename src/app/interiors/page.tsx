@@ -35,7 +35,7 @@ const partners = [
   {
     name: "Metrie El & El Wood Products",
     slug: "metrie",
-    logo: null,
+    logo: "/images/interiors/metrie.jpg" as string | null,
     category: "Interior Doors",
     tagline: "Architectural Wood Doors & Millwork",
     description:
@@ -65,7 +65,7 @@ const partners = [
   {
     name: "American Building Supply",
     slug: "abs",
-    logo: null,
+    logo: "/images/interiors/abs.jpg" as string | null,
     category: "Interior Doors",
     tagline: "Premium Doors & Building Products",
     description:
