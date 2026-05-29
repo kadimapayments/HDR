@@ -149,11 +149,13 @@ export const NAV_ITEMS = [
   { label: "Interiors", href: "/interiors" },
   { label: "Showroom", href: "/showroom" },
   {
-    label: "Trade",
+    label: "Who We Serve",
     href: "/for-architects",
     children: [
       { label: "For Architects", href: "/for-architects" },
       { label: "For Builders", href: "/for-builders" },
+      { label: "For Developers", href: "/for-developers" },
+      { label: "For Homeowners", href: "/for-homeowners" },
       { label: "Submit Plans", href: "/submit-plans" },
     ],
   },
