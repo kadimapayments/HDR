@@ -62,8 +62,8 @@ export default function FireRebuildPage() {
   return (
     <>
       <PageHero
-        title="Palisades & Eaton Fire Rebuild"
-        subtitle="Dedicated Program"
+        title="Helping You Rebuild"
+        subtitle="Palisades & Eaton Fires"
         description="To the families and communities rebuilding from the Palisades and Eaton fires — we're here to help. HDR has coordinated discounted manufacturer pricing and a dedicated specification track for rebuild projects."
       />
 

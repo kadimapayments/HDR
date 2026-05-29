@@ -49,7 +49,7 @@ export function FireRebuildBanner() {
           </svg>
           <span>
             <strong className="font-semibold">Fire Rebuild Program:</strong>{" "}
-            Support for homes impacted by the Palisades and Eaton Canyon fires.{" "}
+            Support for homes impacted by the Palisades and Eaton fires.{" "}
             <span className="font-medium underline underline-offset-4">
               Learn more.
             </span>
