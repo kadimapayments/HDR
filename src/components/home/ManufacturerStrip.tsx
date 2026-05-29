@@ -84,7 +84,7 @@ export function ManufacturerStrip() {
       <div className="relative overflow-hidden">
         <div
           ref={trackRef}
-          className="flex items-center gap-6 px-8 will-change-transform"
+          className="flex items-center gap-10 px-8 will-change-transform"
           style={{ width: "max-content" }}
         >
           {doubled.map((m, i) => (
@@ -92,13 +92,14 @@ export function ManufacturerStrip() {
               key={`${m.slug}-${i}`}
               href={`/manufacturers/${m.slug}`}
               aria-label={`${m.name} — view manufacturer details`}
-              className="relative shrink-0 grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
-              style={{ width: `${Math.round(LOGO_W * m.scale)}px`, height: `${Math.round(LOGO_H * m.scale)}px` }}
+              className="shrink-0 grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
             >
               <Image
                 src={m.logo}
                 alt={m.name}
-                fill
+                width={Math.round(LOGO_W * m.scale)}
+                height={Math.round(LOGO_H * m.scale)}
+                style={{ width: "auto", height: `${Math.round(LOGO_H * m.scale)}px` }}
                 className="object-contain"
               />
             </Link>
