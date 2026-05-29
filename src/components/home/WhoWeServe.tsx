@@ -45,7 +45,7 @@ const audiences = [
   {
     title: "Homeowners",
     description:
-      "A fresh start deserves thoughtful design. Making your vision a reality with expert guidance on widow and door recommendations for your home.",
+      "A fresh start deserves thoughtful design. Making your vision a reality with expert guidance on window and door recommendations for your home.",
     href: "/portfolio",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
