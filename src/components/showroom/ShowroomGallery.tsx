@@ -69,6 +69,12 @@ const photos = [
     filter: "brightness(1.02) contrast(1.04) saturate(0.88)",
   },
   {
+    src: "/images/showroom/162A0773.jpg",
+    alt: "HDR Windows showroom — architectural window and door systems on display",
+    caption: "Showroom Display",
+    filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
+  },
+  {
     src: "/images/showroom/162A0856.jpg",
     alt: "HDR Windows showroom — architectural window and door systems on display",
     caption: "Showroom Display",
