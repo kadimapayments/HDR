@@ -28,7 +28,7 @@ export const metadata: Metadata = generatePageMetadata({
 });
 
 const LOGO_HEIGHT: Record<string, string> = {
-  fleetwood: "h-14",
+  fleetwood: "h-20",
   andersen: "h-14",
   marvin: "h-14",
   loewen: "h-14",

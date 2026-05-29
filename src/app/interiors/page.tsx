@@ -21,6 +21,7 @@ const partners = [
     name: "TruStile Doors",
     slug: "trustile",
     logo: "/images/interiors/trustile.webp" as string | null,
+    logoHeight: "h-10",
     category: "Interior Doors",
     tagline: "Architectural Interior Doors",
     description:
@@ -36,6 +37,7 @@ const partners = [
     name: "Metrie El & El Wood Products",
     slug: "metrie",
     logo: "/images/interiors/metrie.svg" as string | null,
+    logoHeight: "h-10",
     category: "Interior Doors",
     tagline: "Architectural Wood Doors & Millwork",
     description:
@@ -51,6 +53,7 @@ const partners = [
     name: "AAW Inc Quality Wood Doors",
     slug: "aaw",
     logo: "/images/interiors/aaw.png" as string | null,
+    logoHeight: "h-10",
     category: "Interior Doors",
     tagline: "Quality Wood Doors",
     description:
@@ -66,6 +69,7 @@ const partners = [
     name: "American Building Supply",
     slug: "abs",
     logo: "/images/interiors/abs-new.jpg" as string | null,
+    logoHeight: "h-10",
     category: "Interior Doors",
     tagline: "Premium Doors & Building Products",
     description:
@@ -81,6 +85,7 @@ const partners = [
     name: "Emtek",
     slug: "emtek",
     logo: "/images/interiors/emtek.jpg" as string | null,
+    logoHeight: "h-8",
     category: "Hardware",
     tagline: "Architectural Door Hardware",
     description:
@@ -130,15 +135,16 @@ export default function InteriorsPage() {
             {partners.map((p, i) => (
               <AnimatedReveal key={p.slug} delay={i * 0.1}>
                 <div className="flex h-full flex-col border border-neutral-warm-200 bg-white p-8">
-                  <div className="mb-6 flex h-16 items-center">
+                  <div className="mb-6 flex h-14 items-center">
                     {p.logo ? (
-                      <Image
-                        src={p.logo}
-                        alt={`${p.name} logo`}
-                        width={220}
-                        height={64}
-                        className="max-h-12 w-auto object-contain"
-                      />
+                      <div className={`relative w-44 ${p.logoHeight}`}>
+                        <Image
+                          src={p.logo}
+                          alt={`${p.name} logo`}
+                          fill
+                          className="object-contain object-left"
+                        />
+                      </div>
                     ) : (
                       <span className="font-serif text-lg font-semibold text-neutral-warm-700">
                         {p.name}
