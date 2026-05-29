@@ -568,13 +568,6 @@ export default async function ManufacturerPage({ params }: Props) {
                   </div>
 
                   <div>
-                    <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
-                      Typical Lead Time
-                    </h4>
-                    <p className="text-neutral-warm-700">{m.leadTime}</p>
-                  </div>
-
-                  <div>
                     <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
                       Frame Materials
                     </h4>
