@@ -73,14 +73,14 @@ export default function SystemsPage() {
 
       <Section>
         <Container>
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {SYSTEMS.map((system, i) => (
               <AnimatedReveal key={system.slug} delay={i * 0.05}>
                 <Link
                   href={`/systems/${system.slug}`}
                   className="group flex h-full flex-col overflow-hidden bg-white transition-shadow duration-300 hover:shadow-lg"
                 >
-                  <div className="relative aspect-[16/9] bg-neutral-warm-200">
+                  <div className="relative aspect-[16/10] bg-neutral-warm-200">
                     {systemImages[system.slug] ? (
                       <Image
                         src={systemImages[system.slug]}

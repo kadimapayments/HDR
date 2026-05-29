@@ -43,9 +43,9 @@ export function ManufacturerStrip() {
     rafRef.current = requestAnimationFrame(tick);
 
     const handleWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaX) <= Math.abs(e.deltaY)) return;
       e.preventDefault();
-      const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-      velRef.current = Math.min(velRef.current + delta * 0.06, MAX_SPEED);
+      velRef.current = Math.min(velRef.current + e.deltaX * 0.06, MAX_SPEED);
       velRef.current = Math.max(velRef.current, BASE_SPEED);
     };
 
