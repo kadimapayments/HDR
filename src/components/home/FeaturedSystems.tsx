@@ -13,6 +13,7 @@ const systems = [
   {
     name: "Multi-Slide Doors",
     slug: "multi-slide-doors",
+    image: "/images/systems/multi-slide-doors.jpg",
     description:
       "Expansive glass panels that stack or pocket away, creating seamless indoor-outdoor living spaces.",
   },
@@ -33,18 +34,21 @@ const systems = [
   {
     name: "Contemporary Aluminum",
     slug: "contemporary-aluminum",
+    image: "/images/systems/contemporary-aluminum.jpg",
     description:
       "High-performance thermally broken aluminum systems for modern architecture.",
   },
   {
     name: "Energy Efficient Systems",
     slug: "energy-efficient",
+    image: "/images/systems/energy-efficient.jpg",
     description:
       "Title 24 compliant glazing solutions that exceed California energy requirements.",
   },
   {
     name: "Oversized Openings",
     slug: "oversized-openings",
+    image: "/images/systems/oversized-openings.jpg",
     description:
       "Engineered solutions for floor-to-ceiling and wall-to-wall glass installations.",
   },
