@@ -27,7 +27,10 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/manufacturers",
 });
 
+const LARGE_LOGOS = new Set(["fleetwood", "andersen", "marvin", "loewen", "euroline", "plygem"]);
+
 const manufacturers = [
+  // Ultra-Premium
   {
     name: "Fleetwood",
     slug: "fleetwood",
@@ -36,24 +39,6 @@ const manufacturers = [
     materials: ["Aluminum"],
     description:
       "Industry-leading multi-slide and bi-fold door systems. Fleetwood is the go-to for architects designing expansive openings with minimal sightlines.",
-  },
-  {
-    name: "Andersen",
-    slug: "andersen",
-    tagline: "Trusted Performance, Refined Design",
-    tier: "Premium",
-    materials: ["Wood", "Composite", "Aluminum-Clad"],
-    description:
-      "America's most recognized window brand with the E-Series and A-Series offering exceptional versatility for luxury residential projects.",
-  },
-  {
-    name: "Marvin",
-    slug: "marvin",
-    tagline: "Modern Elegance in Wood & Aluminum",
-    tier: "Premium",
-    materials: ["Wood", "Aluminum-Clad"],
-    description:
-      "The Modern line delivers clean contemporary aesthetics with the warmth of natural wood interiors and durable aluminum exteriors.",
   },
   {
     name: "Loewen",
@@ -73,6 +58,7 @@ const manufacturers = [
     description:
       "The pioneer of the modern folding glass wall. NanaWall systems open entire walls with engineered precision — folding, sliding, frameless, and single-track configurations for every architectural intent.",
   },
+  // Luxury
   {
     name: "Euroline",
     slug: "euroline",
@@ -81,6 +67,34 @@ const manufacturers = [
     materials: ["Steel"],
     description:
       "Thermally broken steel window and door systems with authentic profiles. The definitive choice for steel-framed architecture.",
+  },
+  // Premium
+  {
+    name: "Andersen",
+    slug: "andersen",
+    tagline: "Trusted Performance, Refined Design",
+    tier: "Premium",
+    materials: ["Wood", "Composite", "Aluminum-Clad"],
+    description:
+      "America's most recognized window brand with the E-Series and A-Series offering exceptional versatility for luxury residential projects.",
+  },
+  {
+    name: "Marvin",
+    slug: "marvin",
+    tagline: "Modern Elegance in Wood & Aluminum",
+    tier: "Premium",
+    materials: ["Wood", "Aluminum-Clad"],
+    description:
+      "The Modern line delivers clean contemporary aesthetics with the warmth of natural wood interiors and durable aluminum exteriors.",
+  },
+  {
+    name: "Windsor",
+    slug: "windsor",
+    tagline: "Quiet Craftsmanship in Wood & Clad",
+    tier: "Premium",
+    materials: ["Wood", "Aluminum-Clad Wood", "Vinyl", "Fiberglass"],
+    description:
+      "Family-owned Iowa manufacturer with a strong design point of view. The Pinnacle line delivers premium aluminum-clad wood with refined sightlines, while Legend, Next Dimension, and Pioneer cover wood, fiberglass, and vinyl across price points.",
   },
   {
     name: "LaCantina",
@@ -92,15 +106,6 @@ const manufacturers = [
       "Folding, sliding, and stacking door systems that transform walls into openings. Excellent value in the multi-panel category.",
   },
   {
-    name: "Western Window Systems",
-    slug: "western",
-    tagline: "Performance-Driven Aluminum",
-    tier: "Value-Premium",
-    materials: ["Aluminum"],
-    description:
-      "High-performance aluminum windows and multi-slide doors offering exceptional value without sacrificing modern aesthetics.",
-  },
-  {
     name: "All Weather",
     slug: "all-weather",
     tagline: "Reliable Vinyl & Aluminum Solutions",
@@ -109,6 +114,17 @@ const manufacturers = [
     description:
       "Dependable window and door systems with strong energy performance. A trusted choice for projects balancing budget and quality.",
   },
+  // Value-Premium
+  {
+    name: "Western Window Systems",
+    slug: "western",
+    tagline: "Performance-Driven Aluminum",
+    tier: "Value-Premium",
+    materials: ["Aluminum"],
+    description:
+      "High-performance aluminum windows and multi-slide doors offering exceptional value without sacrificing modern aesthetics.",
+  },
+  // Value
   {
     name: "IWC",
     slug: "iwc",
@@ -126,15 +142,6 @@ const manufacturers = [
     materials: ["Vinyl"],
     description:
       "Plygem manufactures dependable vinyl windows and doors with strong energy performance and broad availability. The right specification for ADUs, value-tier rooms, and projects where supply consistency and code compliance lead the brief.",
-  },
-  {
-    name: "Windsor",
-    slug: "windsor",
-    tagline: "Quiet Craftsmanship in Wood & Clad",
-    tier: "Premium",
-    materials: ["Wood", "Aluminum-Clad Wood", "Vinyl", "Fiberglass"],
-    description:
-      "Family-owned Iowa manufacturer with a strong design point of view. The Pinnacle line delivers premium aluminum-clad wood with refined sightlines, while Legend, Next Dimension, and Pioneer cover wood, fiberglass, and vinyl across price points.",
   },
 ];
 
@@ -158,7 +165,7 @@ export default function ManufacturersPage() {
                 >
                   <div className="mb-6 flex h-14 items-center">
                     {logoMetaBySlug[m.slug] ? (
-                      <div className="relative h-10 w-44">
+                      <div className={LARGE_LOGOS.has(m.slug) ? "relative h-14 w-44" : "relative h-10 w-44"}>
                         <Image
                           src={logoMetaBySlug[m.slug]!.logo}
                           alt={`${m.name} logo`}
