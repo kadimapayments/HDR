@@ -48,7 +48,7 @@ export const MARQUEE_BRANDS = [
   { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg", scale: 1.3 },
   { name: "NanaWall", slug: "nanawall", logo: "/images/manufacturers/nanawall.webp", scale: 0.55 },
   { name: "Euroline", slug: "euroline", logo: "/images/manufacturers/euroline.png", scale: 1.3 },
-  { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp", scale: 0.75 },
+  { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp", scale: 0.7 },
   { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png", scale: 0.55 },
 ] as const;
 
