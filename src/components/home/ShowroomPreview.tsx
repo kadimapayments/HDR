@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Heading } from "@/components/ui/Heading";
 import { Button } from "@/components/ui/Button";
+import Image from "next/image";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 
 export function ShowroomPreview() {
@@ -13,12 +14,13 @@ export function ShowroomPreview() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Image */}
           <AnimatedReveal>
-            <div className="relative aspect-[4/3] bg-neutral-warm-200">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                  Showroom Photography
-                </span>
-              </div>
+            <div className="relative aspect-[4/3] overflow-hidden">
+              <Image
+                src="/images/showroom/showroom-preview.jpg"
+                alt="HDR Windows showroom in Los Angeles"
+                fill
+                className="object-cover"
+              />
             </div>
           </AnimatedReveal>
 
