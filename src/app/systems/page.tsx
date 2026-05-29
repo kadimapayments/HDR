@@ -63,7 +63,7 @@ const systemDetails: Record<string, { description: string }> = {
   },
   "automated-systems": {
     description:
-      "Connected home integration for windows and doors. Featuring Marvin's Connected Home platform and Windsor's Pinnacle automated gliding door systems — motorized operation, smart home compatibility, and effortless control.",
+      "Smart home integration for windows and doors with motorized operation, home automation compatibility, and effortless control.",
   },
 };
 

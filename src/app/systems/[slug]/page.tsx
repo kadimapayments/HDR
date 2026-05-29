@@ -203,6 +203,33 @@ const systemData: Record<
       { name: "LaCantina", slug: "lacantina" },
     ],
   },
+  "automated-systems": {
+    name: "Automated Systems",
+    category: "Smart Home",
+    description:
+      "Motorized windows and doors bring a new level of control to luxury residential design. Featuring Marvin's Connected Home platform and Windsor's Pinnacle automated gliding door systems, these products integrate seamlessly with your smart home ecosystem — opening, closing, and responding to schedules, sensors, and voice commands without touching a handle.",
+    features: [
+      "Motorized operation via app, remote, or voice",
+      "Marvin Connected Home platform integration",
+      "Windsor Pinnacle automated gliding door systems",
+      "Compatible with Apple Home, Google Home, and Amazon Alexa",
+      "Lutron, Control4, Crestron, and Savant integration",
+      "Programmable schedules and scene-based automations",
+      "Sensor-driven operation — wind, rain, and occupancy",
+      "Quiet, precision motors engineered for daily use",
+    ],
+    bestFor: [
+      "Full smart home and connected home projects",
+      "High-tech luxury residences",
+      "Projects with Lutron or Control4 systems",
+      "Indoor-outdoor living with automated control",
+      "Homeowners prioritizing convenience and accessibility",
+    ],
+    manufacturers: [
+      { name: "Marvin", slug: "marvin" },
+      { name: "Windsor", slug: "windsor" },
+    ],
+  },
   "sliding-doors": {
     name: "Sliding Doors",
     category: "Doors",
