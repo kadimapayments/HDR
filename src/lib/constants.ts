@@ -106,6 +106,7 @@ export const SYSTEMS = [
   },
   { name: "Folding Doors", slug: "bifold-doors", category: "Doors" },
   { name: "Hinge Doors", slug: "sliding-doors", category: "Doors" },
+  { name: "Automated Systems", slug: "automated-systems", category: "Smart Home" },
 ] as const;
 
 export const NEIGHBORHOODS = [

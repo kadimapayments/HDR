@@ -23,6 +23,7 @@ const systemImages: Record<string, string> = {
   "contemporary-aluminum": "/images/systems/contemporary-aluminum.jpg",
   "energy-efficient": "/images/systems/energy-efficient.jpg",
   "oversized-openings": "/images/systems/oversized-openings.jpg",
+  "automated-systems": "/images/systems/automated-systems.jpg",
   "bifold-doors": "/images/systems/folding-doors.jpg",
   "sliding-doors": "/images/systems/hinge-doors.jpg",
 };
@@ -59,6 +60,10 @@ const systemDetails: Record<string, { description: string }> = {
   "sliding-doors": {
     description:
       "Traditional and contemporary sliding door systems in various configurations for residential applications.",
+  },
+  "automated-systems": {
+    description:
+      "Connected home integration for windows and doors. Featuring Marvin's Connected Home platform and Windsor's Pinnacle automated gliding door systems — motorized operation, smart home compatibility, and effortless control.",
   },
 };
 
