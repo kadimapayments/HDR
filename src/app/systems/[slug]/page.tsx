@@ -44,7 +44,6 @@ const systemData: Record<
     ],
     manufacturers: [
       { name: "Fleetwood", slug: "fleetwood" },
-      { name: "Western Window Systems", slug: "western" },
       { name: "LaCantina", slug: "lacantina" },
       { name: "Andersen", slug: "andersen" },
     ],
@@ -119,7 +118,6 @@ const systemData: Record<
     manufacturers: [
       { name: "Fleetwood", slug: "fleetwood" },
       { name: "Marvin", slug: "marvin" },
-      { name: "Western Window Systems", slug: "western" },
       { name: "Andersen", slug: "andersen" },
       { name: "All Weather", slug: "all-weather" },
     ],
@@ -254,7 +252,6 @@ const systemData: Record<
       { name: "Fleetwood", slug: "fleetwood" },
       { name: "Marvin", slug: "marvin" },
       { name: "Andersen", slug: "andersen" },
-      { name: "Western Window Systems", slug: "western" },
       { name: "LaCantina", slug: "lacantina" },
     ],
   },

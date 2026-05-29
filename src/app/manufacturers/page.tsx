@@ -123,15 +123,6 @@ const manufacturers = [
       "Dependable window and door systems with strong energy performance. A trusted choice for projects balancing budget and quality.",
   },
   // Value-Premium
-  {
-    name: "Western Window Systems",
-    slug: "western",
-    tagline: "Performance-Driven Aluminum",
-    tier: "Value-Premium",
-    materials: ["Aluminum"],
-    description:
-      "High-performance aluminum windows and multi-slide doors offering exceptional value without sacrificing modern aesthetics.",
-  },
   // Value
   {
     name: "IWC",

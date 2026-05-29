@@ -20,7 +20,7 @@ const partners = [
   {
     name: "TruStile Doors",
     slug: "trustile",
-    logo: "/images/interiors/trustile.webp",
+    logo: "/images/interiors/trustile.webp" as string | null,
     category: "Interior Doors",
     tagline: "Architectural Interior Doors",
     description:
@@ -33,9 +33,54 @@ const partners = [
     ],
   },
   {
+    name: "Metrie El & El Wood Products",
+    slug: "metrie",
+    logo: null,
+    category: "Interior Doors",
+    tagline: "Architectural Wood Doors & Millwork",
+    description:
+      "Metrie El & El produces premium architectural wood interior doors and millwork with an emphasis on quality craftsmanship and design flexibility. A trusted specification for projects requiring custom profiles, species, and coordinated moulding programs.",
+    points: [
+      "Architectural wood interior doors in a range of panel configurations",
+      "Custom species, finishes, and sizing",
+      "Coordinated moulding and casing profiles",
+      "Paint-grade and stain-grade options",
+    ],
+  },
+  {
+    name: "AAW Inc Quality Wood Doors",
+    slug: "aaw",
+    logo: null,
+    category: "Interior Doors",
+    tagline: "Quality Wood Doors",
+    description:
+      "AAW Inc manufactures quality wood interior doors built for residential applications that demand reliable craftsmanship and consistent supply. A practical specification for projects requiring well-made wood doors across a range of styles.",
+    points: [
+      "Solid and engineered wood construction",
+      "Custom sizing and panel layouts available",
+      "Pre-hung and slab configurations",
+      "Competitive lead times for production schedules",
+    ],
+  },
+  {
+    name: "American Building Supply",
+    slug: "abs",
+    logo: null,
+    category: "Interior Doors",
+    tagline: "Premium Doors & Building Products",
+    description:
+      "American Building Supply offers a comprehensive catalog of premium interior doors and building products, covering a wide range of styles, materials, and custom configurations for residential and commercial applications.",
+    points: [
+      "Broad door catalog across styles and materials",
+      "Custom sizing and configuration options",
+      "Residential and commercial applications",
+      "Reliable regional supply and distribution",
+    ],
+  },
+  {
     name: "Emtek",
     slug: "emtek",
-    logo: "/images/interiors/emtek.jpg",
+    logo: "/images/interiors/emtek.jpg" as string | null,
     category: "Hardware",
     tagline: "Architectural Door Hardware",
     description:
@@ -81,18 +126,24 @@ export default function InteriorsPage() {
       {/* Partners */}
       <Section>
         <Container>
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {partners.map((p, i) => (
               <AnimatedReveal key={p.slug} delay={i * 0.1}>
                 <div className="flex h-full flex-col border border-neutral-warm-200 bg-white p-8">
                   <div className="mb-6 flex h-16 items-center">
-                    <Image
-                      src={p.logo}
-                      alt={`${p.name} logo`}
-                      width={220}
-                      height={64}
-                      className="max-h-12 w-auto object-contain"
-                    />
+                    {p.logo ? (
+                      <Image
+                        src={p.logo}
+                        alt={`${p.name} logo`}
+                        width={220}
+                        height={64}
+                        className="max-h-12 w-auto object-contain"
+                      />
+                    ) : (
+                      <span className="font-serif text-lg font-semibold text-neutral-warm-700">
+                        {p.name}
+                      </span>
+                    )}
                   </div>
                   <p className="text-xs font-medium uppercase tracking-[0.15em] text-brand-terracotta">
                     {p.category}

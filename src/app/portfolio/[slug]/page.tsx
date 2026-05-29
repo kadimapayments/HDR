@@ -25,7 +25,7 @@ const projects: Record<
     title: "Las Pulgas Residence",
     neighborhood: "Pacific Palisades",
     type: "New Construction",
-    manufacturers: ["Fleetwood", "Western Windows"],
+    manufacturers: ["Fleetwood"],
     systems: ["Multi-Slide Doors", "Fixed Glass", "Casement Windows"],
     scope: "42 windows, 6 multi-slide door systems, 2 pivot entries",
     description:

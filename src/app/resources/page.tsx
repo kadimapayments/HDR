@@ -25,14 +25,6 @@ const articles = [
     date: "2026-04-15",
   },
   {
-    title: "Fleetwood vs Western Windows: Specification Comparison",
-    slug: "fleetwood-vs-western-windows",
-    category: "Comparison",
-    excerpt:
-      "A side-by-side analysis of two leading aluminum manufacturers for LA luxury residential projects.",
-    date: "2026-04-01",
-  },
-  {
     title: "Title 24 Window Requirements for California Luxury Homes",
     slug: "title-24-window-requirements",
     category: "Energy & Code",

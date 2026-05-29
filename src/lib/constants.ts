@@ -35,7 +35,6 @@ export const MANUFACTURERS = [
   { name: "NanaWall", slug: "nanawall", logo: "/images/manufacturers/nanawall.webp" },
   { name: "Euroline", slug: "euroline", logo: "/images/manufacturers/euroline.png", logoScale: 1.4, logoDarkBg: true },
   { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp" },
-  { name: "Western Window Systems", slug: "western", logo: "/images/manufacturers/western.webp" },
   { name: "All Weather", slug: "all-weather", logo: "/images/manufacturers/all-weather.svg" },
   { name: "IWC", slug: "iwc", logo: "/images/manufacturers/iwc.jpeg" },
   { name: "Plygem", slug: "plygem", logo: "/images/manufacturers/plygem.jpg" },
