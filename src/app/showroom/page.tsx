@@ -47,6 +47,7 @@ export default function ShowroomPage() {
         title="Visit Our Showroom"
         subtitle="West Los Angeles"
         description="There's no substitute for seeing, touching, and operating the systems that will define your home."
+        backgroundImage="/images/showroom/hero.jpg"
       />
 
       {/* Gallery */}
