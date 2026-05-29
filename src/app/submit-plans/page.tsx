@@ -8,7 +8,7 @@ import { SubmitPlansForm } from "@/components/forms/SubmitPlansForm";
 export const metadata: Metadata = generatePageMetadata({
   title: "Submit Plans for Quote",
   description:
-    "Send HDR Windows your architectural plans, lead sheet, or window schedule for a detailed specification and quote. We respond within one business day.",
+    "Send HDR Windows your architectural plans, lead sheet, or window schedule for a detailed specification and quote. We respond as soon as possible.",
   path: "/submit-plans",
 });
 
@@ -18,7 +18,7 @@ export default function SubmitPlansPage() {
       <PageHero
         title="Submit Plans for Quote"
         subtitle="For Architects, Builders & Developers"
-        description="Send us your plans, window schedule, or lead sheet. We'll review the scope and respond with manufacturer recommendations and a detailed quote within one business day."
+        description="Send us your plans, window schedule, or lead sheet. We'll review the scope and respond with manufacturer recommendations and a detailed quote as soon as possible."
       />
 
       <Section>
@@ -47,7 +47,7 @@ export default function SubmitPlansPage() {
                   Response Time
                 </h3>
                 <p className="text-sm text-neutral-warm-600">
-                  Confirmation within 2 hours during business hours. Full review and preliminary specification within one business day.
+                  We'll confirm receipt and follow up with a full review and preliminary specification as soon as possible.
                 </p>
               </div>
 

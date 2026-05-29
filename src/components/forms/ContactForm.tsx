@@ -13,8 +13,7 @@ export function ContactForm() {
           Thank You
         </h3>
         <p className="mt-2 text-neutral-warm-600">
-          We&apos;ve received your message and will be in touch within one
-          business day.
+          We&apos;ve received your message and will be in touch as soon as possible.
         </p>
       </div>
     );

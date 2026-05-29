@@ -219,7 +219,7 @@ export default function FireRebuildPage() {
             <p className="mt-6 text-base leading-relaxed text-neutral-warm-600">
               Whether you&apos;re mid-design with an architect or just
               starting to think about specifications, reach out. We&apos;ll
-              respond same business day.
+              respond as soon as possible.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Button href="/submit-plans" variant="primary" size="lg">
