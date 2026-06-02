@@ -38,7 +38,26 @@ const LOGO_HEIGHT: Record<string, string> = {
 };
 
 const manufacturers = [
+  // Alphabetical, All Weather / IWC / Plygem at bottom
   // Ultra-Premium
+  {
+    name: "Andersen",
+    slug: "andersen",
+    tagline: "Trusted Performance, Refined Design",
+    tier: "Premium",
+    materials: ["Wood", "Composite", "Aluminum-Clad"],
+    description:
+      "America's most recognized window brand with the E-Series and A-Series offering exceptional versatility for luxury residential projects.",
+  },
+  {
+    name: "Euroline",
+    slug: "euroline",
+    tagline: "Authentic Steel, Modern Performance",
+    tier: "Ultra-Premium",
+    materials: ["Steel"],
+    description:
+      "Thermally broken steel window and door systems with authentic profiles. The definitive choice for steel-framed architecture.",
+  },
   {
     name: "Fleetwood",
     slug: "fleetwood",
@@ -47,6 +66,15 @@ const manufacturers = [
     materials: ["Aluminum"],
     description:
       "Industry-leading multi-slide and bi-fold door systems. Fleetwood is the go-to for architects designing expansive openings with minimal sightlines.",
+  },
+  {
+    name: "LaCantina",
+    slug: "lacantina",
+    tagline: "Opening Walls for Living",
+    tier: "Value-Premium",
+    materials: ["Aluminum", "Wood"],
+    description:
+      "Folding, sliding, and stacking door systems that transform walls into openings. Excellent value in the multi-panel category.",
   },
   {
     name: "Loewen",
@@ -58,35 +86,6 @@ const manufacturers = [
       "Canadian-crafted windows and doors with exceptional wood quality and hardware. Ideal for projects demanding uncompromising craftsmanship.",
   },
   {
-    name: "NanaWall",
-    slug: "nanawall",
-    tagline: "The Original Opening Glass Wall",
-    tier: "Ultra-Premium",
-    materials: ["Aluminum", "Wood", "Aluminum-Clad", "Composite"],
-    description:
-      "The pioneer of the modern folding glass wall. NanaWall systems open entire walls with engineered precision — folding, sliding, frameless, and single-track configurations for every architectural intent.",
-  },
-  // Luxury
-  {
-    name: "Euroline",
-    slug: "euroline",
-    tagline: "Authentic Steel, Modern Performance",
-    tier: "Luxury",
-    materials: ["Steel"],
-    description:
-      "Thermally broken steel window and door systems with authentic profiles. The definitive choice for steel-framed architecture.",
-  },
-  // Premium
-  {
-    name: "Andersen",
-    slug: "andersen",
-    tagline: "Trusted Performance, Refined Design",
-    tier: "Premium",
-    materials: ["Wood", "Composite", "Aluminum-Clad"],
-    description:
-      "America's most recognized window brand with the E-Series and A-Series offering exceptional versatility for luxury residential projects.",
-  },
-  {
     name: "Marvin",
     slug: "marvin",
     tagline: "Modern Elegance in Wood & Aluminum",
@@ -94,6 +93,15 @@ const manufacturers = [
     materials: ["Wood", "Aluminum-Clad"],
     description:
       "The Modern line delivers clean contemporary aesthetics with the warmth of natural wood interiors and durable aluminum exteriors.",
+  },
+  {
+    name: "NanaWall",
+    slug: "nanawall",
+    tagline: "The Original Opening Glass Wall",
+    tier: "Value-Premium",
+    materials: ["Aluminum", "Wood", "Aluminum-Clad", "Composite"],
+    description:
+      "The pioneer of the modern folding glass wall. NanaWall systems open entire walls with engineered precision — folding, sliding, frameless, and single-track configurations for every architectural intent.",
   },
   {
     name: "Windsor",
@@ -104,26 +112,16 @@ const manufacturers = [
     description:
       "Family-owned Iowa manufacturer with a strong design point of view. The Pinnacle line delivers premium aluminum-clad wood with refined sightlines, while Legend, Next Dimension, and Pioneer cover wood, fiberglass, and vinyl across price points.",
   },
-  {
-    name: "LaCantina",
-    slug: "lacantina",
-    tagline: "Opening Walls for Living",
-    tier: "Premium",
-    materials: ["Aluminum", "Wood"],
-    description:
-      "Folding, sliding, and stacking door systems that transform walls into openings. Excellent value in the multi-panel category.",
-  },
+  // Value
   {
     name: "All Weather",
     slug: "all-weather",
     tagline: "Reliable Vinyl & Aluminum Solutions",
-    tier: "Premium",
+    tier: "Value",
     materials: ["Vinyl", "Aluminum"],
     description:
       "Dependable window and door systems with strong energy performance. A trusted choice for projects balancing budget and quality.",
   },
-  // Value-Premium
-  // Value
   {
     name: "IWC",
     slug: "iwc",
