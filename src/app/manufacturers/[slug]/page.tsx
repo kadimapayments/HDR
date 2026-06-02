@@ -68,18 +68,20 @@ const data: Record<
     leadTime: "8–12 weeks",
     materials: ["Wood", "Fibrex Composite", "Aluminum-Clad Wood"],
     overview:
-      "Andersen is America's most recognized window manufacturer, with a 120-year track record. For architectural residential work, the E-Series (formerly Eagle) is fully custom aluminum-clad wood — virtually any size, shape, color, or hardware finish — while the A-Series delivers high-performance exteriors with traditional wood interiors. Andersen offers reliable nationwide service, strong warranties, and short lead times relative to ultra-premium peers.",
+      "Andersen is America's most recognized window manufacturer, with a 120-year track record and a product line that spans every tier of residential work. For architectural projects, the E-Series (fully custom aluminum-clad wood) and A-Series (high-performance exteriors with wood interiors) are the right specifications — offering virtually any size, shape, color, or hardware finish with reliable lead times and strong warranty support. The 100 Series (Fibrex composite) is a separate, entry-level product best suited to replacement windows, ADUs, rental properties, and budget-driven scopes where low maintenance and cost efficiency lead the brief rather than design.",
     pros: [
       "E-Series is fully custom — sizes, shapes, colors, finishes",
       "Reliable lead times and nationwide service network",
       "Excellent warranty and post-installation support",
       "Strong energy-performance options (Title 24 compliant)",
       "Wide hardware and grille selection",
+      "100 Series offers durable, low-maintenance option for value-tier scopes",
     ],
     cons: [
       "Sightlines are heavier than aluminum-only competitors",
       "Less engineered for oversized operable panels than Fleetwood",
       "Premium custom options can approach ultra-premium pricing",
+      "100 Series not appropriate for architectural or luxury residential work",
     ],
     systems: [
       { name: "Contemporary Aluminum", slug: "contemporary-aluminum" },
@@ -87,10 +89,11 @@ const data: Record<
       { name: "Sliding Doors", slug: "sliding-doors" },
     ],
     bestFor: [
-      "Traditional and transitional architecture",
-      "Projects requiring custom shapes and sizes",
-      "Residences where lead time matters",
+      "Traditional and transitional architecture (E-Series / A-Series)",
+      "Projects requiring custom shapes, sizes, and finishes",
+      "Residences where lead time and service network matter",
       "Title 24 compliance with classic aesthetics",
+      "ADUs, rentals, and replacement scopes (100 Series)",
     ],
   },
   marvin: {
