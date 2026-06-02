@@ -189,13 +189,13 @@ const data: Record<
     tagline: "Modern Elegance in Wood & Aluminum",
     tier: "Premium",
     leadTime: "10–14 weeks",
-    materials: ["Wood", "Aluminum-Clad Wood", "Fiberglass"],
+    materials: ["Wood", "Aluminum-Clad Wood", "Fiberglass", "Composite"],
     overview:
-      "Marvin is a fourth-generation, family-owned manufacturer based in Minnesota with a strong design point of view. The Modern line delivers clean contemporary sightlines with the warmth of natural wood interiors. The Signature line offers the broadest customization for traditional and transitional homes. Marvin balances design ambition, performance, and supply reliability better than nearly anyone in their tier.",
+      "Marvin is a fourth-generation, family-owned manufacturer based in Minnesota with a product line spanning from entry-level fiberglass to fully custom architectural wood. Their Modern collection is the benchmark for contemporary wood-and-aluminum design; the Ultimate collection sets the standard for bespoke residential specification.",
     pros: [
       "Modern line delivers narrow sightlines with wood interiors",
       "Excellent fit and finish, well-engineered hardware",
-      "Multiple product lines covering modern through traditional",
+      "Multiple product lines covering every tier and style",
       "Strong dealer support and design resources",
       "Reliable lead times and inventory",
     ],
@@ -214,6 +214,83 @@ const data: Record<
       "Residences valuing wood interior with clean exteriors",
       "Projects spanning multiple architectural styles",
       "Builders needing reliable supply",
+    ],
+    productLines: [
+      {
+        name: "Essential",
+        material: "Fiberglass Composite",
+        priceTier: "Value",
+        priceIndicator: "$",
+        overview:
+          "Marvin's entry-level collection built from fiberglass composite — durable, low-maintenance, and energy efficient. It won't rot, warp, or require repainting, which makes it a practical choice for replacement windows and budget-constrained scopes. Design flexibility and customization options are limited compared to the upper collections.",
+        bestFor: [
+          "Replacement windows in existing homes",
+          "ADUs and accessory structures",
+          "Rental properties and investment units",
+          "Secondary spaces where budget leads the brief",
+        ],
+        notFor: "Architectural or luxury residential where design flexibility and material quality are expected.",
+      },
+      {
+        name: "Elevate",
+        material: "Fiberglass Exterior / Pine Interior",
+        priceTier: "Value–Premium",
+        priceIndicator: "$$",
+        overview:
+          "The Elevate collection introduces a real pine wood interior paired with a durable fiberglass exterior — a meaningful step up in warmth and aesthetics over the Essential. It's well-suited to production residential and mid-range new construction where a wood interior look is desired without moving into full architectural pricing.",
+        bestFor: [
+          "Mid-range new construction and production builders",
+          "Homeowners wanting a wood interior on a managed budget",
+          "Traditional and craftsman-style homes",
+          "Secondary rooms in mixed-tier specifications",
+        ],
+        notFor: "Contemporary architecture or projects requiring slim sightlines and high customization.",
+      },
+      {
+        name: "Vivid",
+        material: "Fiberglass / Composite",
+        priceTier: "Premium",
+        priceIndicator: "$$$",
+        overview:
+          "The Vivid collection offers a design-forward step up from the Elevate, with broader color and finish options and improved aesthetics for projects where appearance matters more than basic performance. It bridges the gap between production-grade and fully architectural Marvin products.",
+        bestFor: [
+          "Design-conscious production residential",
+          "Projects wanting more finish variety than Elevate offers",
+          "Transitional homes with a stronger design brief",
+          "Builder-spec luxury where full Modern pricing isn't warranted",
+        ],
+        notFor: "Projects requiring the slim sightlines or full material quality of the Modern or Ultimate collections.",
+      },
+      {
+        name: "Modern",
+        material: "Aluminum-Clad Exterior / Wood Interior",
+        priceTier: "Premium–Luxury",
+        priceIndicator: "$$$$",
+        overview:
+          "The Modern collection is Marvin's architectural statement — slim aluminum-clad sightlines on the exterior, warm wood interiors on the inside. It's designed specifically for contemporary and transitional homes where clean lines and natural materials coexist. The Modern line is the most frequently specified Marvin product on architect-led luxury residential projects in Southern California.",
+        bestFor: [
+          "Contemporary and modern architecture",
+          "Architect-led luxury residential specifications",
+          "Projects pairing slim exterior sightlines with warm wood interiors",
+          "High-end new construction where design drives the brief",
+        ],
+        notFor: "Traditional architecture or projects where panel sizes need to exceed Marvin's maximum configurations.",
+      },
+      {
+        name: "Ultimate",
+        material: "Wood or Aluminum-Clad Wood (Fully Custom)",
+        priceTier: "Ultra-Premium",
+        priceIndicator: "$$$$$",
+        overview:
+          "The Ultimate collection is Marvin's most customizable product — essentially a bespoke window and door system built to the exact specification of the project. Any size, configuration, species, finish, and hardware combination is available. It's the right choice when a project demands complete design control and material authenticity without compromise.",
+        bestFor: [
+          "Fully custom architectural residential specifications",
+          "Projects requiring unusual sizes, shapes, or configurations",
+          "Luxury estates where every detail is designed",
+          "Specifications that demand the highest Marvin fit and finish",
+        ],
+        notFor: "Budget-sensitive projects or builds where standard sizing and configurations work fine.",
+      },
     ],
   },
   nanawall: {
