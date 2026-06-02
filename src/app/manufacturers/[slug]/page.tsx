@@ -11,6 +11,16 @@ import { Button } from "@/components/ui/Button";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
+type ProductLine = {
+  name: string;
+  material: string;
+  priceTier: string;
+  priceIndicator: string;
+  overview: string;
+  bestFor: string[];
+  notFor?: string;
+};
+
 const data: Record<
   string,
   {
@@ -24,6 +34,7 @@ const data: Record<
     cons: string[];
     systems: { name: string; slug: string }[];
     bestFor: string[];
+    productLines?: ProductLine[];
   }
 > = {
   fleetwood: {
@@ -94,6 +105,83 @@ const data: Record<
       "Residences where lead time and service network matter",
       "Title 24 compliance with classic aesthetics",
       "ADUs, rentals, and replacement scopes (100 Series)",
+    ],
+    productLines: [
+      {
+        name: "100 Series",
+        material: "Fibrex® Composite",
+        priceTier: "Value",
+        priceIndicator: "$",
+        overview:
+          "Andersen's entry-level line built from Fibrex — a proprietary blend of reclaimed wood fiber and thermoplastic polymer. It won't rot, warp, or require painting, which makes it genuinely low-maintenance. The tradeoff is that it lacks the design flexibility, sightline quality, and hardware options expected on architectural work.",
+        bestFor: [
+          "Replacement windows in existing homes",
+          "ADUs and accessory structures",
+          "Rental properties and investment units",
+          "Secondary spaces where budget leads the brief",
+        ],
+        notFor: "Primary spaces in luxury residential or architect-led specifications.",
+      },
+      {
+        name: "200 Series",
+        material: "Pine Interior / Aluminum Exterior",
+        priceTier: "Value–Premium",
+        priceIndicator: "$$",
+        overview:
+          "A step up from the 100 Series, the 200 Series introduces a real wood pine interior with an aluminum-clad exterior. It bridges the gap between entry-level and the more specified 400 Series — offering better aesthetics and a wider product selection without moving into full architectural territory.",
+        bestFor: [
+          "Mid-tier residential construction",
+          "Projects that want a wood interior look on a controlled budget",
+          "Builder-grade new construction",
+          "Secondary rooms in mixed-tier specifications",
+        ],
+        notFor: "High-end architectural work where E-Series or A-Series is expected.",
+      },
+      {
+        name: "400 Series",
+        material: "Pine Interior / Aluminum-Clad Exterior",
+        priceTier: "Premium",
+        priceIndicator: "$$$",
+        overview:
+          "The 400 Series is Andersen's best-selling and most versatile line — a pine wood interior with a durable aluminum-clad exterior. It offers a broad range of styles, sizes, and configurations, with good energy performance and solid hardware. A reliable specification for traditional and transitional homes where design matters but the budget doesn't support full E-Series customization.",
+        bestFor: [
+          "Traditional, craftsman, and transitional architecture",
+          "Homeowner-driven projects with a mid-to-upper budget",
+          "Reliable performance across a wide style range",
+          "Projects wanting wood interiors without full custom pricing",
+        ],
+        notFor: "Contemporary architecture requiring slim sightlines or very large panels.",
+      },
+      {
+        name: "A-Series",
+        material: "Wood Interior / Aluminum-Clad Exterior",
+        priceTier: "Premium–Luxury",
+        priceIndicator: "$$$$",
+        overview:
+          "The A-Series is Andersen's architectural product — higher performance, more design flexibility, and better hardware than the 400 Series. It supports a wider range of custom sizes, configurations, and finishes, with improved structural performance for larger openings. A strong specification for luxury residential projects that don't require the full custom capability of the E-Series.",
+        bestFor: [
+          "Luxury residential with traditional or transitional design",
+          "Architects needing broader sizing and configuration options",
+          "Projects requiring better structural performance than 400 Series",
+          "High-end new construction on a defined budget",
+        ],
+        notFor: "Projects demanding fully custom profiles or the most minimal sightlines.",
+      },
+      {
+        name: "E-Series",
+        material: "Wood Interior / Aluminum-Clad Exterior (Fully Custom)",
+        priceTier: "Ultra-Premium",
+        priceIndicator: "$$$$$",
+        overview:
+          "The E-Series (formerly Eagle) is Andersen's most customizable product line — essentially a bespoke window and door system built to specification. Any size, shape, configuration, color, hardware finish, and glass package is available. It's the right choice when a project demands true architectural flexibility: radius windows, complex shapes, very large fixed lites, and complete design coordination with the rest of the building.",
+        bestFor: [
+          "Architect-led custom residential specifications",
+          "Complex shapes, arches, and non-standard configurations",
+          "Projects requiring full coordination of size, finish, and hardware",
+          "Luxury estates where every detail is designed",
+        ],
+        notFor: "Budget-sensitive projects or builds where standard sizing works fine.",
+      },
     ],
   },
   marvin: {
@@ -494,6 +582,97 @@ export default async function ManufacturerPage({ params }: Props) {
                   ))}
                 </ul>
               </AnimatedReveal>
+
+              {/* Product Lines */}
+              {m.productLines && (
+                <>
+                  <AnimatedReveal>
+                    <Heading level="h3">Product Lines</Heading>
+                    <p className="mt-2 text-sm text-neutral-warm-500">
+                      Not all series are equal — understanding which line fits your project is the first step to a correct specification.
+                    </p>
+                    <div className="mt-6 space-y-4">
+                      {m.productLines.map((line) => (
+                        <div key={line.name} className="border border-neutral-warm-200 bg-white p-6">
+                          <div className="flex flex-wrap items-start justify-between gap-3">
+                            <div>
+                              <h4 className="font-serif text-lg font-semibold text-neutral-warm-900">
+                                {line.name}
+                              </h4>
+                              <p className="mt-0.5 text-xs text-neutral-warm-500">{line.material}</p>
+                            </div>
+                            <div className="flex items-center gap-3">
+                              <span className="text-sm font-medium text-brand-terracotta tracking-wide">
+                                {line.priceIndicator}
+                              </span>
+                              <Badge variant="outline">{line.priceTier}</Badge>
+                            </div>
+                          </div>
+                          <p className="mt-3 text-sm leading-relaxed text-neutral-warm-600">
+                            {line.overview}
+                          </p>
+                          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+                            <div>
+                              <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-accent-sage">
+                                Best For
+                              </p>
+                              <ul className="space-y-1">
+                                {line.bestFor.map((item) => (
+                                  <li key={item} className="flex items-start gap-2 text-xs text-neutral-warm-600">
+                                    <div className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent-sage" />
+                                    {item}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            {line.notFor && (
+                              <div>
+                                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-neutral-warm-400">
+                                  Not Recommended For
+                                </p>
+                                <p className="text-xs text-neutral-warm-500">{line.notFor}</p>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </AnimatedReveal>
+
+                  {/* Comparison Chart */}
+                  <AnimatedReveal>
+                    <Heading level="h3">At-a-Glance Comparison</Heading>
+                    <div className="mt-6 overflow-x-auto">
+                      <table className="w-full min-w-[560px] border-collapse text-sm">
+                        <thead>
+                          <tr className="border-b border-neutral-warm-200">
+                            <th className="pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Series</th>
+                            <th className="pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Material</th>
+                            <th className="pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Price</th>
+                            <th className="pb-3 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Typical Use</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {m.productLines.map((line, i) => (
+                            <tr
+                              key={line.name}
+                              className={`border-b border-neutral-warm-100 ${i % 2 === 0 ? "bg-neutral-warm-50" : "bg-white"}`}
+                            >
+                              <td className="py-3 pr-4 font-medium text-neutral-warm-900">{line.name}</td>
+                              <td className="py-3 pr-4 text-neutral-warm-600">{line.material}</td>
+                              <td className="py-3 pr-4">
+                                <span className="font-medium text-brand-terracotta">{line.priceIndicator}</span>
+                                <span className="ml-2 text-xs text-neutral-warm-400">{line.priceTier}</span>
+                              </td>
+                              <td className="py-3 text-neutral-warm-600">{line.bestFor[0]}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </AnimatedReveal>
+                </>
+              )}
 
               {/* Available Systems */}
               <AnimatedReveal>
