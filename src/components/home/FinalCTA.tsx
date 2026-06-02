@@ -37,7 +37,9 @@ export function FinalCTA() {
               Schedule a Consultation
             </Button>
             <Button
-              href="/showroom"
+              href="https://www.google.com/maps/dir/?api=1&destination=1852+S+Sepulveda+Blvd,+Los+Angeles,+CA+90025"
+              target="_blank"
+              rel="noopener noreferrer"
               variant="outline"
               size="lg"
               className="border-neutral-warm-700 text-white hover:bg-white/5 hover:text-white"

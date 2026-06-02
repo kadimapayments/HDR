@@ -71,7 +71,7 @@ export function ShowroomPreview() {
             </ul>
 
             <div className="mt-10">
-              <Button href="/showroom" variant="primary" size="lg">
+              <Button href="/showroom/schedule" variant="primary" size="lg">
                 Schedule a Visit
               </Button>
             </div>

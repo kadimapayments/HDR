@@ -107,7 +107,13 @@ export default function ForHomeownersPage() {
                 </p>
               </div>
               <div className="mt-10">
-                <Button href="/showroom" variant="primary" size="lg">
+                <Button
+                  href="https://www.google.com/maps/dir/?api=1&destination=1852+S+Sepulveda+Blvd,+Los+Angeles,+CA+90025"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="primary"
+                  size="lg"
+                >
                   Visit Our Showroom
                 </Button>
               </div>

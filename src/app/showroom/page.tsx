@@ -85,7 +85,7 @@ export default function ShowroomPage() {
           </div>
 
           <AnimatedReveal className="mt-16 text-center">
-            <Button href="/contact" variant="primary" size="lg">
+            <Button href="/showroom/schedule" variant="primary" size="lg">
               Schedule a Showroom Visit
             </Button>
           </AnimatedReveal>
