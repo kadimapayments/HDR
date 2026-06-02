@@ -51,16 +51,16 @@ export function SubmitPlansForm() {
           <input required type="email" name="email" className={inputCls} />
         </div>
         <div>
-          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Phone</label>
-          <input name="phone" type="tel" className={inputCls} />
+          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Phone *</label>
+          <input required name="phone" type="tel" className={inputCls} />
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Company</label>
           <input name="company" className={inputCls} />
         </div>
         <div>
-          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Role</label>
-          <select name="role" className={inputCls} defaultValue="">
+          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Role *</label>
+          <select required name="role" className={inputCls} defaultValue="">
             <option value="" disabled>Select…</option>
             <option>Architect</option>
             <option>Builder / GC</option>
@@ -71,8 +71,8 @@ export function SubmitPlansForm() {
           </select>
         </div>
         <div>
-          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Project Address</label>
-          <input name="projectAddress" className={inputCls} />
+          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Project Address *</label>
+          <input required name="projectAddress" className={inputCls} />
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Timeline</label>

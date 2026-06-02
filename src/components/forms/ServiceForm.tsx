@@ -52,12 +52,12 @@ export function ServiceForm() {
           <input required type="email" name="email" className={inputCls} />
         </div>
         <div>
-          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Phone</label>
-          <input name="phone" type="tel" className={inputCls} />
+          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Phone *</label>
+          <input required name="phone" type="tel" className={inputCls} />
         </div>
         <div>
-          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Project Address</label>
-          <input name="projectAddress" className={inputCls} />
+          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Project Address *</label>
+          <input required name="projectAddress" className={inputCls} />
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Manufacturer *</label>

@@ -66,12 +66,13 @@ export function ContactForm() {
             htmlFor="phone"
             className="mb-2 block text-xs font-medium uppercase tracking-wider text-neutral-warm-500"
           >
-            Phone
+            Phone *
           </label>
           <input
             id="phone"
             name="phone"
             type="tel"
+            required
             className="w-full border border-neutral-warm-200 bg-white px-4 py-3 text-sm text-neutral-warm-900 transition-colors focus:border-brand-terracotta focus:outline-none"
           />
         </div>
@@ -80,11 +81,12 @@ export function ContactForm() {
             htmlFor="role"
             className="mb-2 block text-xs font-medium uppercase tracking-wider text-neutral-warm-500"
           >
-            I am a...
+            I am a... *
           </label>
           <select
             id="role"
             name="role"
+            required
             className="w-full border border-neutral-warm-200 bg-white px-4 py-3 text-sm text-neutral-warm-900 transition-colors focus:border-brand-terracotta focus:outline-none"
           >
             <option value="">Select one</option>
@@ -103,12 +105,13 @@ export function ContactForm() {
             htmlFor="neighborhood"
             className="mb-2 block text-xs font-medium uppercase tracking-wider text-neutral-warm-500"
           >
-            Project Neighborhood
+            Project Neighborhood *
           </label>
           <input
             id="neighborhood"
             name="neighborhood"
             type="text"
+            required
             placeholder="e.g. Pacific Palisades"
             className="w-full border border-neutral-warm-200 bg-white px-4 py-3 text-sm text-neutral-warm-900 transition-colors focus:border-brand-terracotta focus:outline-none"
           />
