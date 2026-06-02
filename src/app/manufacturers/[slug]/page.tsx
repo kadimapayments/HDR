@@ -79,7 +79,7 @@ const data: Record<
     leadTime: "8–12 weeks",
     materials: ["Wood", "Fibrex Composite", "Aluminum-Clad Wood"],
     overview:
-      "Andersen is America's most recognized window manufacturer, with a 120-year track record and a product line that spans every tier of residential work. For architectural projects, the E-Series (fully custom aluminum-clad wood) and A-Series (high-performance exteriors with wood interiors) are the right specifications — offering virtually any size, shape, color, or hardware finish with reliable lead times and strong warranty support. The 100 Series (Fibrex composite) is a separate, entry-level product best suited to replacement windows, ADUs, rental properties, and budget-driven scopes where low maintenance and cost efficiency lead the brief rather than design.",
+      "Andersen is America's most recognized window manufacturer — a 120-year-old company with a product line that spans every tier of residential construction. More range under one brand than any competitor in the market.",
     pros: [
       "E-Series is fully custom — sizes, shapes, colors, finishes",
       "Reliable lead times and nationwide service network",
@@ -505,87 +505,124 @@ export default async function ManufacturerPage({ params }: Props) {
         <Container>
           <div className="grid gap-16 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-16">
-              {/* Pros & Cons */}
-              <AnimatedReveal>
-                <div className="grid gap-8 md:grid-cols-2">
-                  <div>
-                    <Heading level="h3" serif={false}>
-                      Advantages
-                    </Heading>
-                    <ul className="mt-4 space-y-3">
-                      {m.pros.map((pro) => (
-                        <li
-                          key={pro}
-                          className="flex items-start gap-3 text-sm text-neutral-warm-600"
-                        >
-                          <svg
-                            className="mt-0.5 h-4 w-4 shrink-0 text-accent-sage"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
+              {/* Pros & Cons — hidden when product lines are present */}
+              {!m.productLines && (
+                <AnimatedReveal>
+                  <div className="grid gap-8 md:grid-cols-2">
+                    <div>
+                      <Heading level="h3" serif={false}>
+                        Advantages
+                      </Heading>
+                      <ul className="mt-4 space-y-3">
+                        {m.pros.map((pro) => (
+                          <li
+                            key={pro}
+                            className="flex items-start gap-3 text-sm text-neutral-warm-600"
                           >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          {pro}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <Heading level="h3" serif={false}>
-                      Considerations
-                    </Heading>
-                    <ul className="mt-4 space-y-3">
-                      {m.cons.map((con) => (
-                        <li
-                          key={con}
-                          className="flex items-start gap-3 text-sm text-neutral-warm-600"
-                        >
-                          <svg
-                            className="mt-0.5 h-4 w-4 shrink-0 text-neutral-warm-400"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
+                            <svg
+                              className="mt-0.5 h-4 w-4 shrink-0 text-accent-sage"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                            {pro}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <Heading level="h3" serif={false}>
+                        Considerations
+                      </Heading>
+                      <ul className="mt-4 space-y-3">
+                        {m.cons.map((con) => (
+                          <li
+                            key={con}
+                            className="flex items-start gap-3 text-sm text-neutral-warm-600"
                           >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M12 9v2m0 4h.01"
-                            />
-                          </svg>
-                          {con}
-                        </li>
-                      ))}
-                    </ul>
+                            <svg
+                              className="mt-0.5 h-4 w-4 shrink-0 text-neutral-warm-400"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M12 9v2m0 4h.01"
+                              />
+                            </svg>
+                            {con}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
-              </AnimatedReveal>
+                </AnimatedReveal>
+              )}
 
-              {/* Best For */}
-              <AnimatedReveal>
-                <Heading level="h3">Best For</Heading>
-                <ul className="mt-4 space-y-3">
-                  {m.bestFor.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-3 text-sm text-neutral-warm-600"
-                    >
-                      <div className="h-1.5 w-1.5 rounded-full bg-brand-terracotta" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </AnimatedReveal>
+              {/* Best For — hidden when product lines are present */}
+              {!m.productLines && (
+                <AnimatedReveal>
+                  <Heading level="h3">Best For</Heading>
+                  <ul className="mt-4 space-y-3">
+                    {m.bestFor.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-center gap-3 text-sm text-neutral-warm-600"
+                      >
+                        <div className="h-1.5 w-1.5 rounded-full bg-brand-terracotta" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </AnimatedReveal>
+              )}
 
               {/* Product Lines */}
               {m.productLines && (
                 <>
+                  {/* At-a-Glance — shown first */}
+                  <AnimatedReveal>
+                    <Heading level="h3">At-a-Glance Comparison</Heading>
+                    <div className="mt-6 overflow-x-auto">
+                      <table className="w-full min-w-[560px] border-collapse text-sm">
+                        <thead>
+                          <tr className="border-b border-neutral-warm-200">
+                            <th className="pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Series</th>
+                            <th className="pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Material</th>
+                            <th className="pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Price</th>
+                            <th className="pb-3 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Typical Use</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {m.productLines.map((line, i) => (
+                            <tr
+                              key={line.name}
+                              className={`border-b border-neutral-warm-100 ${i % 2 === 0 ? "bg-neutral-warm-50" : "bg-white"}`}
+                            >
+                              <td className="py-3 pr-4 font-medium text-neutral-warm-900">{line.name}</td>
+                              <td className="py-3 pr-4 text-neutral-warm-600">{line.material}</td>
+                              <td className="py-3 pr-4">
+                                <span className="font-medium text-brand-terracotta">{line.priceIndicator}</span>
+                                <span className="ml-2 text-xs text-neutral-warm-400">{line.priceTier}</span>
+                              </td>
+                              <td className="py-3 text-neutral-warm-600">{line.bestFor[0]}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </AnimatedReveal>
+
                   <AnimatedReveal>
                     <Heading level="h3">Product Lines</Heading>
                     <p className="mt-2 text-sm text-neutral-warm-500">
@@ -639,38 +676,6 @@ export default async function ManufacturerPage({ params }: Props) {
                     </div>
                   </AnimatedReveal>
 
-                  {/* Comparison Chart */}
-                  <AnimatedReveal>
-                    <Heading level="h3">At-a-Glance Comparison</Heading>
-                    <div className="mt-6 overflow-x-auto">
-                      <table className="w-full min-w-[560px] border-collapse text-sm">
-                        <thead>
-                          <tr className="border-b border-neutral-warm-200">
-                            <th className="pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Series</th>
-                            <th className="pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Material</th>
-                            <th className="pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Price</th>
-                            <th className="pb-3 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Typical Use</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {m.productLines.map((line, i) => (
-                            <tr
-                              key={line.name}
-                              className={`border-b border-neutral-warm-100 ${i % 2 === 0 ? "bg-neutral-warm-50" : "bg-white"}`}
-                            >
-                              <td className="py-3 pr-4 font-medium text-neutral-warm-900">{line.name}</td>
-                              <td className="py-3 pr-4 text-neutral-warm-600">{line.material}</td>
-                              <td className="py-3 pr-4">
-                                <span className="font-medium text-brand-terracotta">{line.priceIndicator}</span>
-                                <span className="ml-2 text-xs text-neutral-warm-400">{line.priceTier}</span>
-                              </td>
-                              <td className="py-3 text-neutral-warm-600">{line.bestFor[0]}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </AnimatedReveal>
                 </>
               )}
 
