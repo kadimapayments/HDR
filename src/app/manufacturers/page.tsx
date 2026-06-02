@@ -71,7 +71,7 @@ const manufacturers = [
     name: "LaCantina",
     slug: "lacantina",
     tagline: "Opening Walls for Living",
-    tier: "Value-Premium",
+    tier: "Premium",
     materials: ["Aluminum", "Wood"],
     description:
       "Folding, sliding, and stacking door systems that transform walls into openings. Excellent value in the multi-panel category.",
@@ -80,7 +80,7 @@ const manufacturers = [
     name: "Loewen",
     slug: "loewen",
     tagline: "Craftsmanship Without Compromise",
-    tier: "Ultra-Premium",
+    tier: "Premium",
     materials: ["Wood", "Aluminum-Clad"],
     description:
       "Canadian-crafted windows and doors with exceptional wood quality and hardware. Ideal for projects demanding uncompromising craftsmanship.",
@@ -98,7 +98,7 @@ const manufacturers = [
     name: "NanaWall",
     slug: "nanawall",
     tagline: "The Original Opening Glass Wall",
-    tier: "Value-Premium",
+    tier: "Premium",
     materials: ["Aluminum", "Wood", "Aluminum-Clad", "Composite"],
     description:
       "The pioneer of the modern folding glass wall. NanaWall systems open entire walls with engineered precision — folding, sliding, frameless, and single-track configurations for every architectural intent.",
