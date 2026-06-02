@@ -98,18 +98,6 @@ export default function ShowroomSchedulePage() {
                         </label>
                         <input required type="tel" name="phone" className={inputCls} />
                       </div>
-                      <div>
-                        <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">
-                          Number of Visitors
-                        </label>
-                        <select name="visitors" className={inputCls} defaultValue="">
-                          <option value="" disabled>Select…</option>
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4 or more</option>
-                        </select>
-                      </div>
                     </div>
                   </div>
 

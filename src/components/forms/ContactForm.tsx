@@ -99,43 +99,25 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        <div>
-          <label
-            htmlFor="neighborhood"
-            className="mb-2 block text-xs font-medium uppercase tracking-wider text-neutral-warm-500"
-          >
-            Project Neighborhood *
-          </label>
-          <input
-            id="neighborhood"
-            name="neighborhood"
-            type="text"
-            required
-            placeholder="e.g. Pacific Palisades"
-            className="w-full border border-neutral-warm-200 bg-white px-4 py-3 text-sm text-neutral-warm-900 transition-colors focus:border-brand-terracotta focus:outline-none"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="stage"
-            className="mb-2 block text-xs font-medium uppercase tracking-wider text-neutral-warm-500"
-          >
-            Project Stage
-          </label>
-          <select
-            id="stage"
-            name="stage"
-            className="w-full border border-neutral-warm-200 bg-white px-4 py-3 text-sm text-neutral-warm-900 transition-colors focus:border-brand-terracotta focus:outline-none"
-          >
-            <option value="">Select one</option>
-            <option value="planning">Planning / Early Design</option>
-            <option value="design">Design Development</option>
-            <option value="permitting">Permitting</option>
-            <option value="construction">Construction</option>
-            <option value="replacing">Replacing Existing Windows</option>
-          </select>
-        </div>
+      <div>
+        <label
+          htmlFor="stage"
+          className="mb-2 block text-xs font-medium uppercase tracking-wider text-neutral-warm-500"
+        >
+          Project Stage
+        </label>
+        <select
+          id="stage"
+          name="stage"
+          className="w-full border border-neutral-warm-200 bg-white px-4 py-3 text-sm text-neutral-warm-900 transition-colors focus:border-brand-terracotta focus:outline-none"
+        >
+          <option value="">Select one</option>
+          <option value="planning">Planning / Early Design</option>
+          <option value="design">Design Development</option>
+          <option value="permitting">Permitting</option>
+          <option value="construction">Construction</option>
+          <option value="replacing">Replacing Existing Windows</option>
+        </select>
       </div>
 
       <div>
