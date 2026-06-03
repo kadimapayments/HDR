@@ -9,10 +9,10 @@ import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
  */
 const photos = [
   {
-    src: "/images/showroom/162A2571.jpg",
-    alt: "HDR Windows & Doors showroom — premium glazing and door system displays",
-    caption: "Glazing Systems",
-    filter: "brightness(1.03) contrast(1.03) saturate(0.87)",
+    src: "/images/showroom/162A0773.jpg",
+    alt: "HDR Windows showroom — architectural window and door systems on display",
+    caption: "Showroom Display",
+    filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
   },
   {
     src: "/images/showroom/162A0765.jpg",
@@ -69,10 +69,10 @@ const photos = [
     filter: "brightness(1.02) contrast(1.04) saturate(0.88)",
   },
   {
-    src: "/images/showroom/162A0773.jpg",
-    alt: "HDR Windows showroom — architectural window and door systems on display",
-    caption: "Showroom Display",
-    filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
+    src: "/images/showroom/162A2571.jpg",
+    alt: "HDR Windows & Doors showroom — premium glazing and door system displays",
+    caption: "Glazing Systems",
+    filter: "brightness(1.03) contrast(1.03) saturate(0.87)",
   },
   {
     src: "/images/showroom/162A0856.jpg",
