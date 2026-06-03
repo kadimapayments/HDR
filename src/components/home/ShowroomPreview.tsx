@@ -19,7 +19,7 @@ export function ShowroomPreview() {
                 src="/images/showroom/showroom-preview.jpg"
                 alt="HDR Windows showroom in Los Angeles"
                 fill
-                className="object-cover scale-[1.08]"
+                className="object-cover object-left scale-[1.12]"
               />
             </div>
           </AnimatedReveal>
