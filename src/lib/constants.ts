@@ -138,15 +138,6 @@ export const NAV_ITEMS = [
       href: `/manufacturers/${m.slug}`,
     })),
   },
-  {
-    label: "Systems",
-    href: "/systems",
-    children: SYSTEMS.map((s) => ({
-      label: s.name,
-      href: `/systems/${s.slug}`,
-    })),
-  },
-  { label: "Interiors", href: "/interiors" },
   { label: "Showroom", href: "/showroom" },
   {
     label: "Who We Serve",
@@ -158,5 +149,14 @@ export const NAV_ITEMS = [
       { label: "Homeowners", href: "/for-homeowners" },
     ],
   },
+  {
+    label: "Systems",
+    href: "/systems",
+    children: SYSTEMS.map((s) => ({
+      label: s.name,
+      href: `/systems/${s.slug}`,
+    })),
+  },
+  { label: "Interiors", href: "/interiors" },
   { label: "Resources", href: "/resources" },
 ] as const;
