@@ -4,9 +4,31 @@ import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [error, setError] = useState("");
 
-  if (submitted) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("submitting");
+    setError("");
+    const data = new FormData(e.currentTarget);
+    try {
+      const token = await (window as any).grecaptcha.execute(
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+        { action: "contact" }
+      );
+      data.append("recaptchaToken", token);
+      const res = await fetch("/api/contact", { method: "POST", body: data });
+      const json = await res.json();
+      if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");
+      setStatus("success");
+    } catch (err) {
+      setStatus("error");
+      setError(err instanceof Error ? err.message : "Submission failed");
+    }
+  }
+
+  if (status === "success") {
     return (
       <div className="border border-accent-sage/30 bg-accent-sage/5 p-8 text-center">
         <h3 className="font-serif text-xl font-semibold text-neutral-warm-900">
@@ -20,13 +42,10 @@ export function ContactForm() {
   }
 
   return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        setSubmitted(true);
-      }}
-      className="space-y-6"
-    >
+    <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Honeypot */}
+      <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+
       <div className="grid gap-6 md:grid-cols-2">
         <div>
           <label
@@ -136,13 +155,12 @@ export function ContactForm() {
         />
       </div>
 
-      {/* Honeypot */}
-      <div className="hidden" aria-hidden="true">
-        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
-      </div>
+      {status === "error" && (
+        <p className="text-sm text-red-600">{error}</p>
+      )}
 
-      <Button type="submit" variant="primary" size="lg">
-        Send Message
+      <Button type="submit" variant="primary" size="lg" disabled={status === "submitting"}>
+        {status === "submitting" ? "Sending…" : "Send Message"}
       </Button>
     </form>
   );

@@ -15,6 +15,11 @@ export function SubmitPlansForm() {
     setError("");
     const data = new FormData(e.currentTarget);
     try {
+      const token = await (window as any).grecaptcha.execute(
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+        { action: "submit_plans" }
+      );
+      data.append("recaptchaToken", token);
       const res = await fetch("/api/submit-plans", { method: "POST", body: data });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");

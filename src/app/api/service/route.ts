@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { postToSlack, sendEmail } from "@/lib/notifications";
+import { verifyRecaptcha } from "@/lib/recaptcha";
 import { COMPANY } from "@/lib/constants";
 
 export const runtime = "nodejs";
@@ -22,6 +23,15 @@ export async function POST(req: Request) {
     const orderNumber = (form.get("orderNumber") as string) || "";
     const lineItem = (form.get("lineItem") as string) || "";
     const issue = (form.get("issue") as string) || "";
+    const recaptchaToken = (form.get("recaptchaToken") as string) || "";
+
+    const isHuman = await verifyRecaptcha(recaptchaToken);
+    if (!isHuman) {
+      return NextResponse.json(
+        { ok: false, error: "reCAPTCHA verification failed. Please try again." },
+        { status: 400 }
+      );
+    }
 
     if (!name || !email || !manufacturer || !issue) {
       return NextResponse.json(

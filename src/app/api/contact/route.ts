@@ -12,15 +12,7 @@ export async function POST(req: Request) {
     const honey = (form.get("website") as string) || "";
     if (honey) return NextResponse.json({ ok: true });
 
-    const name = (form.get("name") as string) || "";
-    const email = (form.get("email") as string) || "";
-    const phone = (form.get("phone") as string) || "";
-    const date = (form.get("date") as string) || "";
-    const time = (form.get("time") as string) || "";
-    const visitors = (form.get("visitors") as string) || "";
-    const notes = (form.get("notes") as string) || "";
     const recaptchaToken = (form.get("recaptchaToken") as string) || "";
-
     const isHuman = await verifyRecaptcha(recaptchaToken);
     if (!isHuman) {
       return NextResponse.json(
@@ -29,30 +21,28 @@ export async function POST(req: Request) {
       );
     }
 
-    if (!name || !email || !date || !time) {
+    const name = (form.get("name") as string) || "";
+    const email = (form.get("email") as string) || "";
+    const phone = (form.get("phone") as string) || "";
+    const role = (form.get("role") as string) || "";
+    const stage = (form.get("stage") as string) || "";
+    const message = (form.get("message") as string) || "";
+
+    if (!name || !email) {
       return NextResponse.json(
-        { ok: false, error: "Name, email, date, and time are required." },
-        { status: 400 },
+        { ok: false, error: "Name and email are required." },
+        { status: 400 }
       );
     }
 
-    // Format date for readability
-    const dateFormatted = new Date(date + "T12:00:00").toLocaleDateString("en-US", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-
     const summary = [
-      `*New Showroom Visit Request*`,
+      `*New Contact Form Submission*`,
       `*Name:* ${name}`,
       `*Email:* ${email}`,
       phone && `*Phone:* ${phone}`,
-      `*Requested Date:* ${dateFormatted}`,
-      `*Requested Time:* ${time}`,
-      visitors && `*Number of Visitors:* ${visitors}`,
-      notes && `*Notes:* ${notes}`,
+      role && `*Role:* ${role}`,
+      stage && `*Project Stage:* ${stage}`,
+      message && `\n*Message:*\n${message}`,
     ]
       .filter(Boolean)
       .join("\n");
@@ -61,7 +51,7 @@ export async function POST(req: Request) {
       postToSlack("SLACK_WEBHOOK_LEADS", { text: summary }),
       sendEmail({
         to: process.env.LEADS_EMAIL_TO ?? COMPANY.email,
-        subject: `Showroom Visit Request — ${name} — ${dateFormatted} at ${time}`,
+        subject: `New Contact Form — ${name}`,
         text: summary.replace(/\*/g, ""),
         attachments: [],
       }),
@@ -69,10 +59,10 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    console.error("[showroom-visit] error", err);
+    console.error("[contact] error", err);
     return NextResponse.json(
       { ok: false, error: "Submission failed. Please try again." },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }

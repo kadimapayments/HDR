@@ -34,6 +34,11 @@ export default function ShowroomSchedulePage() {
     setError("");
     try {
       const data = new FormData(e.currentTarget);
+      const token = await (window as any).grecaptcha.execute(
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
+        { action: "showroom_visit" }
+      );
+      data.append("recaptchaToken", token);
       const res = await fetch("/api/showroom-visit", { method: "POST", body: data });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");
