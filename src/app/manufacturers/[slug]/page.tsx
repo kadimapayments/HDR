@@ -42,7 +42,7 @@ const data: Record<
     tagline: "The Gold Standard in Aluminum",
     tier: "Ultra-Premium",
     leadTime: "12–16 weeks",
-    materials: ["Thermally Broken Aluminum"],
+    materials: ["Aluminum"],
     overview:
       "Fleetwood is widely regarded as the industry leader in high-performance aluminum window and door systems. Based in Southern California, they manufacture some of the largest operable glass panels available, making them the default choice for architects designing expansive indoor-outdoor living spaces. Their multi-slide systems are legendary for smooth operation, minimal sightlines, and engineering precision.",
     pros: [
@@ -125,7 +125,7 @@ const data: Record<
     tagline: "Trusted Performance, Refined Design",
     tier: "Premium",
     leadTime: "8–12 weeks",
-    materials: ["Wood", "Fibrex Composite", "Aluminum-Clad Wood"],
+    materials: ["Aluminum-Clad", "Composite", "Fiberglass"],
     overview:
       "Andersen is America's most recognized window manufacturer — a 120-year-old company with a product line that spans every tier of residential construction. More range under one brand than any competitor in the market.",
     pros: [
@@ -203,8 +203,8 @@ const data: Record<
       {
         name: "E-Series",
         material: "Wood Interior / Aluminum-Clad Exterior (Fully Custom)",
-        priceTier: "Ultra-Premium",
-        priceIndicator: "$$$$$",
+        priceTier: "Premium–Luxury",
+        priceIndicator: "$$$$",
         overview:
           "The E-Series (formerly Eagle) is Andersen's most customizable product line — essentially a bespoke window and door system built to specification. Any size, shape, configuration, color, hardware finish, and glass package is available. It's the right choice when a project demands true architectural flexibility: radius windows, complex shapes, very large fixed lites, and complete design coordination with the rest of the building.",
         bestFor: [
@@ -218,8 +218,8 @@ const data: Record<
       {
         name: "A-Series",
         material: "Wood Interior / Aluminum-Clad Exterior",
-        priceTier: "Premium–Luxury",
-        priceIndicator: "$$$$",
+        priceTier: "Ultra-Premium",
+        priceIndicator: "$$$$$",
         overview:
           "The A-Series is Andersen's architectural product — higher performance, more design flexibility, and better hardware than the 400 Series. It supports a wider range of custom sizes, configurations, and finishes, with improved structural performance for larger openings. A strong specification for luxury residential projects that don't require the full custom capability of the E-Series.",
         bestFor: [
@@ -237,7 +237,7 @@ const data: Record<
     tagline: "Modern Elegance in Wood & Aluminum",
     tier: "Premium",
     leadTime: "10–14 weeks",
-    materials: ["Wood", "Aluminum-Clad Wood", "Fiberglass", "Composite"],
+    materials: ["Aluminum-Clad", "Fiberglass", "Wood"],
     overview:
       "Marvin is a fourth-generation, family-owned manufacturer based in Minnesota with a product line spanning from entry-level fiberglass to fully custom architectural wood. Their Modern collection is the benchmark for contemporary wood-and-aluminum design; the Ultimate collection sets the standard for bespoke residential specification.",
     pros: [
@@ -346,7 +346,7 @@ const data: Record<
     tagline: "The Original Opening Glass Wall",
     tier: "Ultra-Premium",
     leadTime: "12–18 weeks",
-    materials: ["Aluminum", "Wood", "Aluminum-Clad Wood", "Composite"],
+    materials: ["Aluminum", "Aluminum-Clad", "Composite", "Wood"],
     overview:
       "NanaWall invented the modern folding glass wall in 1986 and has remained the category leader through more than three decades of engineering refinement. Headquartered in Corte Madera, California, NanaWall offers the broadest portfolio of opening glass walls in the industry — folding, single-track sliding, multi-slide, frameless, and pivoting systems — with options across aluminum, wood, and aluminum-clad wood. For projects where the opening is the architectural moment, NanaWall is the most-specified system in the U.S.",
     pros: [
@@ -381,7 +381,7 @@ const data: Record<
     tagline: "Authentic Steel, Modern Performance",
     tier: "Luxury",
     leadTime: "16–22 weeks",
-    materials: ["Thermally Broken Steel"],
+    materials: ["Steel"],
     overview:
       "Euroline brings authentic European steel windows and doors to the U.S. market with thermally broken profiles that deliver the slim sightlines of traditional steel without the thermal penalty. Their systems are the definitive choice for steel-framed contemporary architecture, classic industrial conversions, and high-end transitional homes that demand the unique character of true steel.",
     pros: [
@@ -413,7 +413,7 @@ const data: Record<
     tagline: "Opening Walls for Living",
     tier: "Premium",
     leadTime: "8–12 weeks",
-    materials: ["Aluminum", "Wood", "Aluminum-Clad Wood", "Vinyl"],
+    materials: ["Aluminum", "Wood"],
     overview:
       "LaCantina specializes exclusively in folding, sliding, and stacking door systems. Based in Oceanside, California, they have become a go-to specification for opening walls where budget matters but design integrity cannot be compromised. Their aluminum systems balance performance and price, while wood and aluminum-clad options serve projects where material warmth is required.",
     pros: [
@@ -475,7 +475,7 @@ const data: Record<
     tagline: "Quiet Craftsmanship in Wood & Clad",
     tier: "Premium",
     leadTime: "8–12 weeks",
-    materials: ["Wood", "Aluminum-Clad Wood", "Fiberglass", "Vinyl"],
+    materials: ["Aluminum-Clad Wood", "Fiberglass", "Vinyl"],
     overview:
       "Windsor is a family-owned Iowa manufacturer with a long track record in residential window and door systems. Their Pinnacle line is the architectural anchor — premium aluminum-clad wood with refined sightlines, deep custom options, and excellent fit and finish. Legend (wood), Next Dimension (fiberglass), and Pioneer (vinyl) extend the catalog across price points, making Windsor a useful mixed-tier specification partner for projects that need both architectural moments and sensible value-tier rooms in a single coordinated package.",
     pros: [
@@ -540,7 +540,7 @@ const data: Record<
     tagline: "Versatile Custom Solutions",
     tier: "Value",
     leadTime: "6–10 weeks",
-    materials: ["Vinyl", "Aluminum"],
+    materials: ["Aluminum", "Vinyl"],
     overview:
       "IWC is a California-based manufacturer with a long track record in residential window and door systems. Their flexibility and short lead times make them a useful option for accessory dwellings, value-tier rooms, and projects mixing premium specifications in primary spaces with capable workhorses in secondary ones.",
     pros: [
@@ -571,7 +571,7 @@ const data: Record<
     tagline: "Craftsmanship Without Compromise",
     tier: "Ultra-Premium",
     leadTime: "14–20 weeks",
-    materials: ["Douglas Fir", "Mahogany", "Aluminum-Clad"],
+    materials: ["Aluminum-Clad", "Wood"],
     overview:
       "Loewen is a Canadian manufacturer known for exceptional wood quality, sophisticated hardware, and meticulous craftsmanship. Their windows and doors are built from premium Douglas Fir and optional Mahogany, with aluminum-clad exteriors for durability. Loewen is the choice for projects where material authenticity and artisan-level quality are non-negotiable.",
     pros: [
@@ -758,7 +758,7 @@ export default async function ManufacturerPage({ params }: Props) {
                         <div key={line.name} className="border border-neutral-warm-200 bg-white p-6">
                           <div className="flex flex-wrap items-start justify-between gap-3">
                             <div>
-                              <h4 className="font-serif text-xl font-semibold tracking-tight text-neutral-warm-900">
+                              <h4 className="font-serif text-2xl font-semibold tracking-tight text-brand-terracotta">
                                 {line.name}
                               </h4>
                               <p className="mt-1 text-xs uppercase tracking-wider text-neutral-warm-400">{line.material}</p>
