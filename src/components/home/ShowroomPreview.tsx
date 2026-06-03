@@ -19,8 +19,8 @@ export function ShowroomPreview() {
                 src="/images/showroom/hero.jpg"
                 alt="HDR Windows showroom in Los Angeles"
                 fill
-                className="object-cover object-left scale-110"
-                style={{ filter: "brightness(1.08) contrast(1.08) saturate(1.05)" }}
+                className="object-cover scale-125"
+                style={{ objectPosition: "left 20%", filter: "brightness(1.14) contrast(1.10) saturate(1.15) sepia(0.08)" }}
               />
             </div>
           </AnimatedReveal>
