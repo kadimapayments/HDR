@@ -16,11 +16,10 @@ export function ShowroomPreview() {
           <AnimatedReveal>
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/images/showroom/hero.jpg"
+                src="/images/showroom/showroom-preview.jpg"
                 alt="HDR Windows showroom in Los Angeles"
                 fill
-                className="object-cover scale-[1.15]"
-                style={{ objectPosition: "left 20%", filter: "brightness(1.14) contrast(1.10) saturate(0.92) sepia(0.14)" }}
+                className="object-cover scale-[1.08]"
               />
             </div>
           </AnimatedReveal>
