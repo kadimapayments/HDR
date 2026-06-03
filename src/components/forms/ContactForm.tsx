@@ -13,11 +13,6 @@ export function ContactForm() {
     setError("");
     const data = new FormData(e.currentTarget);
     try {
-      const token = await (window as any).grecaptcha.execute(
-        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-        { action: "contact" }
-      );
-      data.append("recaptchaToken", token);
       const res = await fetch("/api/contact", { method: "POST", body: data });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");
@@ -154,6 +149,11 @@ export function ContactForm() {
           placeholder="Tell us about your project..."
         />
       </div>
+
+      <div
+        className="g-recaptcha"
+        data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+      />
 
       {status === "error" && (
         <p className="text-sm text-red-600">{error}</p>

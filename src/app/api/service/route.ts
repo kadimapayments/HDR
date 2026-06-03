@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     const orderNumber = (form.get("orderNumber") as string) || "";
     const lineItem = (form.get("lineItem") as string) || "";
     const issue = (form.get("issue") as string) || "";
-    const recaptchaToken = (form.get("recaptchaToken") as string) || "";
+    const recaptchaToken = (form.get("g-recaptcha-response") as string) || "";
 
     const isHuman = await verifyRecaptcha(recaptchaToken);
     if (!isHuman) {

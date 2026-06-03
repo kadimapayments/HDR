@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     const budget = (form.get("budget") as string) || "";
     const notes = (form.get("notes") as string) || "";
     const plansLink = (form.get("plansLink") as string) || "";
-    const recaptchaToken = (form.get("recaptchaToken") as string) || "";
+    const recaptchaToken = (form.get("g-recaptcha-response") as string) || "";
 
     const isHuman = await verifyRecaptcha(recaptchaToken);
     if (!isHuman) {

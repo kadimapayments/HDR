@@ -16,16 +16,12 @@ export function ServiceForm() {
     setError("");
     const data = new FormData(e.currentTarget);
     try {
-      const token = await (window as any).grecaptcha.execute(
-        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-        { action: "service_request" }
-      );
-      data.append("recaptchaToken", token);
       const res = await fetch("/api/service", { method: "POST", body: data });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");
       setStatus("success");
       e.currentTarget.reset();
+      (window as any).grecaptcha?.reset();
     } catch (err) {
       setStatus("error");
       setError(err instanceof Error ? err.message : "Submission failed");
@@ -118,6 +114,11 @@ export function ServiceForm() {
           Photos help us diagnose faster. Include the issue and the surrounding installation if possible.
         </p>
       </div>
+
+      <div
+        className="g-recaptcha"
+        data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+      />
 
       {status === "error" && (
         <p className="text-sm text-red-600">{error}</p>

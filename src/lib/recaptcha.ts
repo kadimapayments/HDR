@@ -1,6 +1,6 @@
 /**
- * Server-side reCAPTCHA v3 verification.
- * Returns true if the token is valid and the score is above the threshold.
+ * Server-side reCAPTCHA v2 verification.
+ * Returns true if the token is valid (checkbox was checked by a human).
  */
 export async function verifyRecaptcha(token: string): Promise<boolean> {
   const secret = process.env.RECAPTCHA_SECRET_KEY;
@@ -8,6 +8,7 @@ export async function verifyRecaptcha(token: string): Promise<boolean> {
     console.warn("[recaptcha] RECAPTCHA_SECRET_KEY not set — skipping verification");
     return true;
   }
+  if (!token) return false;
 
   try {
     const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
@@ -16,8 +17,7 @@ export async function verifyRecaptcha(token: string): Promise<boolean> {
       body: `secret=${secret}&response=${token}`,
     });
     const data = await res.json();
-    // Accept scores >= 0.5 (Google recommends 0.5 as a reasonable threshold)
-    return data.success === true && (data.score ?? 0) >= 0.5;
+    return data.success === true;
   } catch (err) {
     console.error("[recaptcha] verification error", err);
     return false;

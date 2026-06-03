@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     const honey = (form.get("website") as string) || "";
     if (honey) return NextResponse.json({ ok: true });
 
-    const recaptchaToken = (form.get("recaptchaToken") as string) || "";
+    const recaptchaToken = (form.get("g-recaptcha-response") as string) || "";
     const isHuman = await verifyRecaptcha(recaptchaToken);
     if (!isHuman) {
       return NextResponse.json(

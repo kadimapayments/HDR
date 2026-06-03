@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     const time = (form.get("time") as string) || "";
     const visitors = (form.get("visitors") as string) || "";
     const notes = (form.get("notes") as string) || "";
-    const recaptchaToken = (form.get("recaptchaToken") as string) || "";
+    const recaptchaToken = (form.get("g-recaptcha-response") as string) || "";
 
     const isHuman = await verifyRecaptcha(recaptchaToken);
     if (!isHuman) {
