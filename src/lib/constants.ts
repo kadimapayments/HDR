@@ -130,6 +130,7 @@ export const NEIGHBORHOODS = [
 
 export const NAV_ITEMS = [
   { label: "About", href: "/about" },
+  { label: "Showroom", href: "/showroom" },
   {
     label: "Manufacturers",
     href: "/manufacturers",
@@ -138,7 +139,6 @@ export const NAV_ITEMS = [
       href: `/manufacturers/${m.slug}`,
     })),
   },
-  { label: "Showroom", href: "/showroom" },
   {
     label: "Who We Serve",
     href: "/who-we-serve",
