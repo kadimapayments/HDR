@@ -45,7 +45,7 @@ const manufacturers = [
     slug: "andersen",
     tagline: "Trusted Performance, Refined Design",
     tier: "Premium",
-    materials: ["Wood", "Composite", "Aluminum-Clad"],
+    materials: ["Aluminum-Clad", "Composite", "Fiberglass"],
     description:
       "America's most recognized window brand with the E-Series and A-Series offering exceptional versatility for luxury residential projects.",
   },
@@ -81,7 +81,7 @@ const manufacturers = [
     slug: "loewen",
     tagline: "Craftsmanship Without Compromise",
     tier: "Premium",
-    materials: ["Wood", "Aluminum-Clad"],
+    materials: ["Aluminum-Clad", "Wood"],
     description:
       "Canadian-crafted windows and doors with exceptional wood quality and hardware. Ideal for projects demanding uncompromising craftsmanship.",
   },
@@ -90,7 +90,7 @@ const manufacturers = [
     slug: "marvin",
     tagline: "Modern Elegance in Wood & Aluminum",
     tier: "Premium",
-    materials: ["Wood", "Aluminum-Clad"],
+    materials: ["Aluminum-Clad", "Fiberglass", "Wood"],
     description:
       "The Modern line delivers clean contemporary aesthetics with the warmth of natural wood interiors and durable aluminum exteriors.",
   },
@@ -99,7 +99,7 @@ const manufacturers = [
     slug: "nanawall",
     tagline: "The Original Opening Glass Wall",
     tier: "Premium",
-    materials: ["Aluminum", "Wood", "Aluminum-Clad", "Composite"],
+    materials: ["Aluminum", "Aluminum-Clad", "Composite", "Wood"],
     description:
       "The pioneer of the modern folding glass wall. NanaWall systems open entire walls with engineered precision — folding, sliding, frameless, and single-track configurations for every architectural intent.",
   },
@@ -108,7 +108,7 @@ const manufacturers = [
     slug: "windsor",
     tagline: "Quiet Craftsmanship in Wood & Clad",
     tier: "Premium",
-    materials: ["Wood", "Aluminum-Clad Wood", "Vinyl", "Fiberglass"],
+    materials: ["Aluminum-Clad Wood", "Fiberglass", "Vinyl"],
     description:
       "Family-owned Iowa manufacturer with a strong design point of view. The Pinnacle line delivers premium aluminum-clad wood with refined sightlines, while Legend, Next Dimension, and Pioneer cover wood, fiberglass, and vinyl across price points.",
   },
@@ -118,7 +118,7 @@ const manufacturers = [
     slug: "all-weather",
     tagline: "Reliable Vinyl & Aluminum Solutions",
     tier: "Value",
-    materials: ["Vinyl", "Aluminum"],
+    materials: ["Aluminum", "Vinyl"],
     description:
       "Dependable window and door systems with strong energy performance. A trusted choice for projects balancing budget and quality.",
   },
@@ -127,7 +127,7 @@ const manufacturers = [
     slug: "iwc",
     tagline: "Versatile Custom Solutions",
     tier: "Value",
-    materials: ["Vinyl", "Aluminum"],
+    materials: ["Aluminum", "Vinyl"],
     description:
       "International Window Corporation delivers flexible configurations and reliable performance for diverse residential applications.",
   },

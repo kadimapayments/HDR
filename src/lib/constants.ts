@@ -106,6 +106,7 @@ export const SYSTEMS = [
   { name: "Folding Doors", slug: "bifold-doors", category: "Doors" },
   { name: "Hinge Doors", slug: "sliding-doors", category: "Doors" },
   { name: "Automated Systems", slug: "automated-systems", category: "Smart Home" },
+  { name: "Window Wall", slug: "window-wall", category: "Windows" },
 ] as const;
 
 export const NEIGHBORHOODS = [
@@ -140,7 +141,7 @@ export const NAV_ITEMS = [
   {
     label: "Systems",
     href: "/systems",
-    children: SYSTEMS.slice(0, 6).map((s) => ({
+    children: SYSTEMS.map((s) => ({
       label: s.name,
       href: `/systems/${s.slug}`,
     })),
@@ -149,7 +150,7 @@ export const NAV_ITEMS = [
   { label: "Showroom", href: "/showroom" },
   {
     label: "Who We Serve",
-    href: "/for-architects",
+    href: "/who-we-serve",
     children: [
       { label: "Architects", href: "/for-architects" },
       { label: "Builders", href: "/for-builders" },

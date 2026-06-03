@@ -112,6 +112,21 @@ export function SubmitPlansForm() {
       </div>
 
       <div>
+        <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">
+          Plans Link (for files over 25 MB)
+        </label>
+        <input
+          name="plansLink"
+          type="url"
+          className={inputCls}
+          placeholder="Dropbox, Google Drive, WeTransfer, or any shared link…"
+        />
+        <p className="mt-1.5 text-xs text-neutral-warm-400">
+          Use this if your files exceed 25 MB. Paste a shared link from Dropbox, Google Drive, WeTransfer, or similar.
+        </p>
+      </div>
+
+      <div>
         <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Notes</label>
         <textarea name="notes" rows={4} className={inputCls} placeholder="Scope, manufacturer preferences, key constraints…" />
       </div>

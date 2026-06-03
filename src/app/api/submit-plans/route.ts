@@ -22,6 +22,7 @@ export async function POST(req: Request) {
     const timeline = (form.get("timeline") as string) || "";
     const budget = (form.get("budget") as string) || "";
     const notes = (form.get("notes") as string) || "";
+    const plansLink = (form.get("plansLink") as string) || "";
 
     if (!name || !email) {
       return NextResponse.json(
@@ -61,6 +62,7 @@ export async function POST(req: Request) {
       timeline && `*Timeline:* ${timeline}`,
       budget && `*Budget:* ${budget}`,
       attachments.length && `*Files:* ${attachments.map((a) => a.filename).join(", ")}`,
+      plansLink && `*Plans Link:* ${plansLink}`,
       notes && `\n${notes}`,
     ]
       .filter(Boolean)

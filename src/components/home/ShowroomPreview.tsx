@@ -16,7 +16,7 @@ export function ShowroomPreview() {
           <AnimatedReveal>
             <div className="relative aspect-[4/3] overflow-hidden">
               <Image
-                src="/images/showroom/showroom-preview.jpg"
+                src="/images/showroom/hero.jpg"
                 alt="HDR Windows showroom in Los Angeles"
                 fill
                 className="object-cover"

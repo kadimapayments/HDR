@@ -228,6 +228,34 @@ const systemData: Record<
       { name: "Windsor", slug: "windsor" },
     ],
   },
+  "window-wall": {
+    name: "Window Wall",
+    category: "Windows",
+    description:
+      "Window wall systems are floor-to-ceiling glazing assemblies that span from slab to slab, creating a seamless glass facade with minimal framing. Unlike curtain wall (which hangs from the building structure) or punched windows (which interrupt the wall plane), window wall sits between floor slabs — delivering a continuous glass surface that maximizes light, views, and the sense of interior volume. It is the defining glazing system of contemporary high-end residential architecture.",
+    features: [
+      "Floor-to-ceiling glass from slab to slab",
+      "Minimal aluminum framing with thermally broken profiles",
+      "Fixed, operable, and mixed-panel configurations",
+      "Unitized and stick-built installation methods",
+      "Custom sightline widths from 2 to 4 inches",
+      "High-performance glazing for Title 24 compliance",
+      "Interior and exterior flush conditions available",
+      "Structural silicone and pressure-cap glazing options",
+    ],
+    bestFor: [
+      "Contemporary residences prioritizing maximum transparency",
+      "View corridors in hillside and coastal homes",
+      "Great rooms and living spaces with high ceilings",
+      "Full-floor master suites and primary living levels",
+      "Projects requiring a curtain-wall aesthetic at residential scale",
+    ],
+    manufacturers: [
+      { name: "Fleetwood", slug: "fleetwood" },
+      { name: "Marvin", slug: "marvin" },
+      { name: "All Weather", slug: "all-weather" },
+    ],
+  },
   "sliding-doors": {
     name: "Sliding Doors",
     category: "Doors",

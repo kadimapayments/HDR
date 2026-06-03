@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { generatePageMetadata } from "@/lib/metadata";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -16,6 +17,7 @@ const articles: Record<
     readTime: string;
     excerpt: string;
     body: string[];
+    furtherReading?: { label: string; href: string }[];
   }
 > = {
   "steel-vs-aluminum-windows": {
@@ -46,6 +48,12 @@ const articles: Record<
       "High-performance glazing packages from premium manufacturers like Fleetwood, Loewen, and Andersen can meet or exceed these requirements. Triple-pane configurations, low-E coatings, and argon or krypton gas fills deliver U-factors well below code minimums. The key is specifying the right glass package for each elevation and exposure.",
       "For projects with oversized openings or extensive west-facing glass, a performance trade-off analysis may be necessary. The energy consultant can use the performance approach (rather than prescriptive) to evaluate the building as a whole, allowing more flexibility in individual window specifications.",
       "We work closely with energy consultants and architects to navigate these requirements from the earliest design stages — ensuring that product selection supports both the architecture and the energy budget.",
+    ],
+    furtherReading: [
+      {
+        label: "California Title 24 — Official Code (Building Energy Efficiency Standards)",
+        href: "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards",
+      },
     ],
   },
 };
@@ -119,6 +127,31 @@ export default async function ArticlePage({ params }: Props) {
                   </p>
                 ))}
               </div>
+
+              {article.furtherReading && (
+                <div className="mt-10 border border-neutral-warm-200 bg-neutral-warm-50 p-6">
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
+                    Official Resources
+                  </p>
+                  <ul className="space-y-2">
+                    {article.furtherReading.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-neutral-warm-700 underline-offset-2 hover:text-brand-terracotta hover:underline"
+                        >
+                          {item.label}
+                          <svg className="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               <hr className="my-12 border-neutral-warm-200" />
 

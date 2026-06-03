@@ -190,8 +190,8 @@ export default function ShowroomSchedulePage() {
                 </h4>
                 <div className="space-y-1 text-sm text-neutral-warm-700">
                   <p>Monday – Friday: 9:00 AM – 5:00 PM</p>
-                  <p>Saturday: By appointment</p>
-                  <p>Sunday: Closed</p>
+                  <p>Saturday & Sunday: By Appointment</p>
+                  <p>Outside business hours: By Appointment</p>
                 </div>
               </div>
 

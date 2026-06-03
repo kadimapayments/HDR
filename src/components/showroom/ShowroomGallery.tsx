@@ -9,6 +9,24 @@ import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
  */
 const photos = [
   {
+    src: "/images/showroom/162A0730.jpg",
+    alt: "HDR showroom interior showcasing high-performance window and door specifications",
+    caption: "Showroom Interior",
+    filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
+  },
+  {
+    src: "/images/showroom/162A0773.jpg",
+    alt: "HDR Windows showroom — architectural window and door systems on display",
+    caption: "Showroom Display",
+    filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
+  },
+  {
+    src: "/images/showroom/162A0756.jpg",
+    alt: "HDR Windows showroom — material and finish library",
+    caption: "Material Library",
+    filter: "brightness(1.03) contrast(1.03) saturate(0.87)",
+  },
+  {
     src: "/images/showroom/162A2571.jpg",
     alt: "HDR Windows & Doors showroom — premium glazing and door system displays",
     caption: "Glazing Systems",
@@ -27,21 +45,15 @@ const photos = [
     filter: "brightness(1.02) contrast(1.04) saturate(0.86)",
   },
   {
-    src: "/images/showroom/162A2521.jpg",
-    alt: "HDR Windows showroom — full-scale display of architectural window systems",
-    caption: "Architectural Windows",
-    filter: "brightness(1.02) contrast(1.04) saturate(0.86)",
-  },
-  {
     src: "/images/showroom/showroom-andersen.jpg",
     alt: "Andersen Windows & Doors full-scale display — casement windows, arched entry and AW Architectural Collection",
     caption: "Andersen Windows & Doors",
     filter: "brightness(1.02) contrast(1.04) saturate(0.87)",
   },
   {
-    src: "/images/showroom/162A0730.jpg",
-    alt: "HDR showroom interior showcasing high-performance window and door specifications",
-    caption: "Showroom Interior",
+    src: "/images/showroom/162A0856.jpg",
+    alt: "HDR Windows showroom — architectural window and door systems on display",
+    caption: "Showroom Display",
     filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
   },
   {
@@ -51,10 +63,16 @@ const photos = [
     filter: "brightness(0.98) contrast(1.04) saturate(0.87)",
   },
   {
-    src: "/images/showroom/showroom-pivot.jpg",
-    alt: "Pivot entry door in warm wood with NanaWall sliding glass wall systems",
-    caption: "Pivot Doors & NanaWall",
-    filter: "brightness(0.99) contrast(1.04) saturate(0.86)",
+    src: "/images/showroom/162A2538.jpg",
+    alt: "HDR Windows showroom interior — full-scale operating displays",
+    caption: "Operating Displays",
+    filter: "brightness(1.02) contrast(1.04) saturate(0.86)",
+  },
+  {
+    src: "/images/showroom/162A2521.jpg",
+    alt: "HDR Windows showroom — full-scale display of architectural window systems",
+    caption: "Architectural Windows",
+    filter: "brightness(1.02) contrast(1.04) saturate(0.86)",
   },
   {
     src: "/images/showroom/showroom-loewen-steel.jpg",
@@ -69,16 +87,10 @@ const photos = [
     filter: "brightness(1.02) contrast(1.04) saturate(0.88)",
   },
   {
-    src: "/images/showroom/162A0773.jpg",
-    alt: "HDR Windows showroom — architectural window and door systems on display",
-    caption: "Showroom Display",
-    filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
-  },
-  {
-    src: "/images/showroom/162A0856.jpg",
-    alt: "HDR Windows showroom — architectural window and door systems on display",
-    caption: "Showroom Display",
-    filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
+    src: "/images/showroom/showroom-pivot.jpg",
+    alt: "Pivot entry door in warm wood with NanaWall sliding glass wall systems",
+    caption: "Pivot Doors & NanaWall",
+    filter: "brightness(0.99) contrast(1.04) saturate(0.86)",
   },
   {
     src: "/images/showroom/162A2494.jpg",
@@ -91,18 +103,6 @@ const photos = [
     alt: "HDR Windows showroom — architectural glazing displays",
     caption: "Architectural Glazing",
     filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
-  },
-  {
-    src: "/images/showroom/162A2538.jpg",
-    alt: "HDR Windows showroom interior — full-scale operating displays",
-    caption: "Operating Displays",
-    filter: "brightness(1.02) contrast(1.04) saturate(0.86)",
-  },
-  {
-    src: "/images/showroom/162A0756.jpg",
-    alt: "HDR Windows showroom — material and finish library",
-    caption: "Material Library",
-    filter: "brightness(1.03) contrast(1.03) saturate(0.87)",
   },
 ];
 

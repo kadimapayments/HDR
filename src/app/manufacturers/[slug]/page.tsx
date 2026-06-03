@@ -71,6 +71,54 @@ const data: Record<
       "Coastal and hillside projects",
       "Architect-driven specifications",
     ],
+    productLines: [
+      {
+        name: "3-Series",
+        material: "Thermally Broken Aluminum",
+        priceTier: "Premium",
+        priceIndicator: "$$$",
+        overview:
+          "Fleetwood's entry point into the aluminum system category — a thermally broken aluminum line engineered for solid energy performance and reliable operation at a lower price than the Gen4 and Edge. The 3-Series delivers the Fleetwood build quality and California manufacturing advantage on a more accessible budget, making it a practical specification for secondary spaces, ADUs, and projects where the full Gen4 premium isn't warranted.",
+        bestFor: [
+          "Secondary and accessory spaces within a larger project",
+          "ADUs and guesthouses on architect-led properties",
+          "Projects where Fleetwood quality is required but Gen4 is over-budget",
+          "Value-conscious new construction in contemporary style",
+        ],
+        notFor: "Primary living spaces on luxury architect-led projects — Gen4 or Edge is the correct specification there.",
+      },
+      {
+        name: "Gen4",
+        material: "Thermally Broken Aluminum",
+        priceTier: "Ultra-Premium",
+        priceIndicator: "$$$$",
+        overview:
+          "The Gen4 is Fleetwood's most-specified product line and the industry benchmark for aluminum multi-slide door systems. Engineered for maximum panel size, smooth operation, and slim sightlines, the Gen4 is the default specification for architect-designed indoor-outdoor living in California. Available in pocket, stack-back, and bi-parting configurations across a wide range of widths and heights — with one of the largest operable panel size envelopes in the market.",
+        bestFor: [
+          "Primary indoor-outdoor living spaces in luxury residential",
+          "Architect-led contemporary and modern projects",
+          "Large opening configurations — pocket, stack, and bi-parting",
+          "Coastal and hillside homes with expansive view corridors",
+          "Projects where panel size and sightline precision are the priority",
+        ],
+        notFor: "Projects requiring absolute minimum sightlines — Edge delivers a slimmer profile.",
+      },
+      {
+        name: "Edge",
+        material: "Thermally Broken Aluminum (Ultra-Slim Profiles)",
+        priceTier: "Ultra-Premium",
+        priceIndicator: "$$$$$",
+        overview:
+          "The Edge is Fleetwood's flagship line, engineered for projects where the glass-to-frame ratio is the design priority. It delivers the slimmest sightlines in the Fleetwood catalog — maximizing transparency and creating a near-frameless appearance at full architectural scale. The Edge is the right specification when the architect's intent depends on minimal aluminum presence and maximum visual openness.",
+        bestFor: [
+          "Luxury residences where minimal sightlines are a core design intent",
+          "Large fixed and operable lites requiring near-frameless aesthetics",
+          "Projects where the architect is specifying for maximum transparency",
+          "High-end contemporary architecture with a glass-forward design language",
+        ],
+        notFor: "Projects where the premium over Gen4 is not justified by the sightline requirement.",
+      },
+    ],
   },
   andersen: {
     name: "Andersen Windows",
@@ -153,21 +201,6 @@ const data: Record<
         notFor: "Contemporary architecture requiring slim sightlines or very large panels.",
       },
       {
-        name: "A-Series",
-        material: "Wood Interior / Aluminum-Clad Exterior",
-        priceTier: "Premium–Luxury",
-        priceIndicator: "$$$$",
-        overview:
-          "The A-Series is Andersen's architectural product — higher performance, more design flexibility, and better hardware than the 400 Series. It supports a wider range of custom sizes, configurations, and finishes, with improved structural performance for larger openings. A strong specification for luxury residential projects that don't require the full custom capability of the E-Series.",
-        bestFor: [
-          "Luxury residential with traditional or transitional design",
-          "Architects needing broader sizing and configuration options",
-          "Projects requiring better structural performance than 400 Series",
-          "High-end new construction on a defined budget",
-        ],
-        notFor: "Projects demanding fully custom profiles or the most minimal sightlines.",
-      },
-      {
         name: "E-Series",
         material: "Wood Interior / Aluminum-Clad Exterior (Fully Custom)",
         priceTier: "Ultra-Premium",
@@ -181,6 +214,21 @@ const data: Record<
           "Luxury estates where every detail is designed",
         ],
         notFor: "Budget-sensitive projects or builds where standard sizing works fine.",
+      },
+      {
+        name: "A-Series",
+        material: "Wood Interior / Aluminum-Clad Exterior",
+        priceTier: "Premium–Luxury",
+        priceIndicator: "$$$$",
+        overview:
+          "The A-Series is Andersen's architectural product — higher performance, more design flexibility, and better hardware than the 400 Series. It supports a wider range of custom sizes, configurations, and finishes, with improved structural performance for larger openings. A strong specification for luxury residential projects that don't require the full custom capability of the E-Series.",
+        bestFor: [
+          "Luxury residential with traditional or transitional design",
+          "Architects needing broader sizing and configuration options",
+          "Projects requiring better structural performance than 400 Series",
+          "High-end new construction on a defined budget",
+        ],
+        notFor: "Projects demanding fully custom profiles or the most minimal sightlines.",
       },
     ],
   },
@@ -710,10 +758,10 @@ export default async function ManufacturerPage({ params }: Props) {
                         <div key={line.name} className="border border-neutral-warm-200 bg-white p-6">
                           <div className="flex flex-wrap items-start justify-between gap-3">
                             <div>
-                              <h4 className="font-serif text-lg font-semibold text-neutral-warm-900">
+                              <h4 className="font-serif text-xl font-semibold tracking-tight text-neutral-warm-900">
                                 {line.name}
                               </h4>
-                              <p className="mt-0.5 text-xs text-neutral-warm-500">{line.material}</p>
+                              <p className="mt-1 text-xs uppercase tracking-wider text-neutral-warm-400">{line.material}</p>
                             </div>
                             <div className="flex items-center gap-3">
                               <span className="text-sm font-medium text-brand-terracotta tracking-wide">
