@@ -102,17 +102,18 @@ export function ServiceForm() {
 
       <div>
         <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">
-          Photos (optional, up to 15 MB total)
+          Photos * (up to 15 MB total)
         </label>
         <input
           name="images"
           type="file"
           multiple
+          required
           accept="image/*"
           className="block w-full border border-neutral-warm-300 bg-white px-4 py-3 text-sm file:mr-4 file:border-0 file:bg-brand-terracotta file:px-4 file:py-2 file:text-xs file:font-medium file:uppercase file:tracking-wide file:text-white"
         />
         <p className="mt-2 text-xs text-neutral-warm-500">
-          Photos help us diagnose faster. Include the issue and the surrounding installation if possible.
+          Photos are required to open a service ticket. Include the issue and the surrounding installation.
         </p>
       </div>
 

@@ -40,6 +40,13 @@ export async function POST(req: Request) {
       );
     }
 
+    if (images.length === 0) {
+      return NextResponse.json(
+        { ok: false, error: "At least one photo is required to open a service ticket." },
+        { status: 400 },
+      );
+    }
+
     const images = form.getAll("images").filter((f): f is File => f instanceof File && f.size > 0 && f.name !== "");
 
     let totalBytes = 0;
