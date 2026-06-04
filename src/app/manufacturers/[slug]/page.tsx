@@ -44,7 +44,7 @@ const data: Record<
     leadTime: "12–16 weeks",
     materials: ["Aluminum"],
     overview:
-      "Fleetwood is widely regarded as the industry leader in high-performance aluminum window and door systems. Based in Southern California, they manufacture some of the largest operable glass panels available, making them the default choice for architects designing expansive indoor-outdoor living spaces. Their multi-slide systems are legendary for smooth operation, minimal sightlines, and engineering precision.",
+      "Fleetwood is the industry standard for high-performance aluminum — Southern California-built multi-slide and bifold systems with the largest operable panel sizes, slimmest sightlines, and engineering precision in the category.",
     pros: [
       "Industry-leading multi-slide door engineering",
       "Massive panel sizes with slim sightlines",
@@ -239,7 +239,7 @@ const data: Record<
     leadTime: "10–14 weeks",
     materials: ["Aluminum-Clad", "Fiberglass", "Wood"],
     overview:
-      "Marvin is a fourth-generation, family-owned manufacturer based in Minnesota with a product line spanning from entry-level fiberglass to fully custom architectural wood. Their Modern collection is the benchmark for contemporary wood-and-aluminum design; the Ultimate collection sets the standard for bespoke residential specification.",
+      "Marvin is a fourth-generation family-owned manufacturer spanning entry-level fiberglass to fully custom architectural wood — their Modern collection is the benchmark for contemporary clad-wood design in luxury residential.",
     pros: [
       "Modern line delivers narrow sightlines with wood interiors",
       "Excellent fit and finish, well-engineered hardware",
@@ -348,7 +348,7 @@ const data: Record<
     leadTime: "12–18 weeks",
     materials: ["Aluminum", "Aluminum-Clad", "Composite", "Wood"],
     overview:
-      "NanaWall invented the modern folding glass wall in 1986 and has remained the category leader through more than three decades of engineering refinement. Headquartered in Corte Madera, California, NanaWall offers the broadest portfolio of opening glass walls in the industry — folding, single-track sliding, multi-slide, frameless, and pivoting systems — with options across aluminum, wood, and aluminum-clad wood. For projects where the opening is the architectural moment, NanaWall is the most-specified system in the U.S.",
+      "NanaWall invented the modern folding glass wall and remains the category leader — offering the broadest portfolio of opening glass wall systems in the industry across aluminum, wood, and aluminum-clad options.",
     pros: [
       "Inventor and category leader for folding glass walls",
       "Broadest portfolio: folding, sliding, frameless, pivoting",
@@ -383,7 +383,7 @@ const data: Record<
     leadTime: "16–22 weeks",
     materials: ["Steel"],
     overview:
-      "Euroline brings authentic European steel windows and doors to the U.S. market with thermally broken profiles that deliver the slim sightlines of traditional steel without the thermal penalty. Their systems are the definitive choice for steel-framed contemporary architecture, classic industrial conversions, and high-end transitional homes that demand the unique character of true steel.",
+      "Euroline brings authentic European steel windows and doors to the U.S. market — thermally broken profiles that deliver the slim sightlines of traditional steel without sacrificing energy performance.",
     pros: [
       "Authentic narrow steel sightlines",
       "Thermally broken profiles meet Title 24",
@@ -415,7 +415,7 @@ const data: Record<
     leadTime: "8–12 weeks",
     materials: ["Aluminum", "Wood"],
     overview:
-      "LaCantina specializes exclusively in folding, sliding, and stacking door systems. Based in Oceanside, California, they have become a go-to specification for opening walls where budget matters but design integrity cannot be compromised. Their aluminum systems balance performance and price, while wood and aluminum-clad options serve projects where material warmth is required.",
+      "LaCantina specializes exclusively in folding, sliding, and stacking door systems — a go-to specification for opening walls where performance and design integrity matter without the ultra-premium price tag.",
     pros: [
       "Strong value across folding and multi-slide categories",
       "Local Southern California manufacturing",
@@ -447,7 +447,7 @@ const data: Record<
     leadTime: "8–12 weeks",
     materials: ["Aluminum", "Vinyl"],
     overview:
-      "All Weather Architectural Aluminum manufactures dependable window and door systems for residential and light commercial projects in California. With strong Title 24 performance and reliable supply, All Weather is a sensible specification for projects that need solid energy compliance, clean aesthetics, and predictable scheduling without specifying an ultra-premium brand.",
+      "All Weather is a reliable California manufacturer offering strong Title 24 energy performance and predictable lead times — the right specification when compliance and supply consistency lead the brief.",
     pros: [
       "Strong Title 24 energy performance",
       "Reliable Southern California supply chain",
@@ -477,7 +477,7 @@ const data: Record<
     leadTime: "8–12 weeks",
     materials: ["Aluminum-Clad Wood", "Fiberglass", "Vinyl"],
     overview:
-      "Windsor is a family-owned Iowa manufacturer with a long track record in residential window and door systems. Their Pinnacle line is the architectural anchor — premium aluminum-clad wood with refined sightlines, deep custom options, and excellent fit and finish. Legend (wood), Next Dimension (fiberglass), and Pioneer (vinyl) extend the catalog across price points, making Windsor a useful mixed-tier specification partner for projects that need both architectural moments and sensible value-tier rooms in a single coordinated package.",
+      "Windsor is a family-owned manufacturer whose Pinnacle line delivers premium aluminum-clad wood at strong value — and whose broader catalog spans fiberglass and vinyl, making them a practical single-source partner for mixed-tier specifications.",
     pros: [
       "Pinnacle delivers premium clad-wood at strong value",
       "Deep custom sizing and configuration library",
@@ -510,7 +510,7 @@ const data: Record<
     leadTime: "4–8 weeks",
     materials: ["Vinyl"],
     overview:
-      "Plygem is one of the largest vinyl window and door manufacturers in North America, with a long track record of dependable energy performance, broad availability, and competitive pricing. For projects where vinyl is the right material — accessory dwelling units, value-tier rooms, secondary residences, and developments where Title 24 compliance and supply consistency lead the brief — Plygem is the workhorse specification.",
+      "Plygem is the workhorse vinyl specification — dependable Title 24 energy performance, short lead times, and competitive pricing for ADUs, value-tier rooms, and secondary spaces.",
     pros: [
       "Strong Title 24 energy performance across the catalog",
       "Short, reliable lead times — domestic manufacturing at scale",
@@ -542,7 +542,7 @@ const data: Record<
     leadTime: "6–10 weeks",
     materials: ["Aluminum", "Vinyl"],
     overview:
-      "IWC is a California-based manufacturer with a long track record in residential window and door systems. Their flexibility and short lead times make them a useful option for accessory dwellings, value-tier rooms, and projects mixing premium specifications in primary spaces with capable workhorses in secondary ones.",
+      "IWC is a California-based manufacturer offering flexible configurations and short lead times — a capable workhorse for ADUs, secondary spaces, and mixed-tier projects.",
     pros: [
       "Short lead times — local California manufacturing",
       "Flexible configurations and sizing",
@@ -573,7 +573,7 @@ const data: Record<
     leadTime: "14–20 weeks",
     materials: ["Aluminum-Clad", "Wood"],
     overview:
-      "Loewen is a Canadian manufacturer known for exceptional wood quality, sophisticated hardware, and meticulous craftsmanship. Their windows and doors are built from premium Douglas Fir and optional Mahogany, with aluminum-clad exteriors for durability. Loewen is the choice for projects where material authenticity and artisan-level quality are non-negotiable.",
+      "Loewen is a Canadian manufacturer built on premium Douglas Fir and artisan-level craftsmanship — the choice for projects where material authenticity and hardware quality are non-negotiable.",
     pros: [
       "Exceptional wood quality (Douglas Fir standard)",
       "Premium hardware and operation",
