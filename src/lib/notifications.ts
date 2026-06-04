@@ -20,7 +20,7 @@ type EmailPayload = {
 };
 
 export async function postToSlack(
-  webhookEnvVar: "SLACK_WEBHOOK_LEADS" | "SLACK_WEBHOOK_SERVICE",
+  webhookEnvVar: "SLACK_WEBHOOK_LEADS" | "SLACK_WEBHOOK_SERVICE" | "SLACK_WEBHOOK_CONTACT" | "SLACK_WEBHOOK_PLANS" | "SLACK_WEBHOOK_SHOWROOM",
   payload: SlackPayload,
 ): Promise<void> {
   const webhook = process.env[webhookEnvVar];

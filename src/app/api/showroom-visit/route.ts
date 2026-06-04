@@ -58,7 +58,7 @@ export async function POST(req: Request) {
       .join("\n");
 
     await Promise.all([
-      postToSlack("SLACK_WEBHOOK_LEADS", { text: summary }),
+      postToSlack("SLACK_WEBHOOK_SHOWROOM", { text: summary }),
       sendEmail({
         to: process.env.LEADS_EMAIL_TO ?? COMPANY.email,
         subject: `Showroom Visit Request — ${name} — ${dateFormatted} at ${time}`,
