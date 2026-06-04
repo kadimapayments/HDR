@@ -60,51 +60,37 @@ export async function uploadFilesToSlack(
 
   if (!token || !channelId || files.length === 0) return;
 
-  // Join the channel first (in case the bot isn't a member)
+  // Ensure the bot is in the channel
   await fetch("https://slack.com/api/conversations.join", {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
     body: JSON.stringify({ channel: channelId }),
   });
 
-  // Upload each file using the newer Slack upload API
-  for (const file of files) {
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
     try {
-      // Step 1: Get upload URL
-      const urlRes = await fetch("https://slack.com/api/files.getUploadURLExternal", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-        body: JSON.stringify({ filename: file.filename, length: file.content.length }),
-      });
-      const urlData = await urlRes.json();
-      if (!urlData.ok) {
-        console.error("[slack upload] getUploadURLExternal failed", urlData.error);
-        continue;
-      }
+      const formData = new FormData();
+      formData.append("channels", channelId);
+      formData.append("filename", file.filename);
+      formData.append(
+        "file",
+        new Blob([new Uint8Array(file.content)], { type: file.contentType }),
+        file.filename,
+      );
+      if (i === 0) formData.append("initial_comment", message);
 
-      // Step 2: Upload file content
-      await fetch(urlData.upload_url, {
+      const res = await fetch("https://slack.com/api/files.upload", {
         method: "POST",
-        headers: { "Content-Type": file.contentType },
-        body: new Uint8Array(file.content),
+        headers: { Authorization: `Bearer ${token}` },
+        body: formData,
       });
-
-      // Step 3: Complete upload and share to channel
-      const completeRes = await fetch("https://slack.com/api/files.completeUploadExternal", {
-        method: "POST",
-        headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-        body: JSON.stringify({
-          files: [{ id: urlData.file_id }],
-          channel_id: channelId,
-          initial_comment: files.indexOf(file) === 0 ? message : undefined,
-        }),
-      });
-      const completeData = await completeRes.json();
-      if (!completeData.ok) {
-        console.error("[slack upload] completeUploadExternal failed", completeData.error);
+      const data = await res.json();
+      if (!data.ok) {
+        console.error("[slack upload] files.upload failed", data.error, file.filename);
       }
     } catch (err) {
-      console.error("[slack upload] error uploading file", file.filename, err);
+      console.error("[slack upload] error uploading", file.filename, err);
     }
   }
 }
