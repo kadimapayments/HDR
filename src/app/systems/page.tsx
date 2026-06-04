@@ -26,6 +26,11 @@ const systemImages: Record<string, string> = {
   "automated-systems": "/images/systems/automated-systems.jpg",
   "bifold-doors": "/images/systems/folding-doors.jpg",
   "sliding-doors": "/images/systems/hinge-doors.jpg",
+  "window-wall": "/images/systems/window-wall.jpg",
+};
+
+const systemImagePositions: Record<string, string> = {
+  "pivot-doors": "object-right",
 };
 
 const systemDetails: Record<string, { description: string }> = {
@@ -91,7 +96,7 @@ export default function SystemsPage() {
                         src={systemImages[system.slug]}
                         alt={system.name}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className={`object-cover transition-transform duration-500 group-hover:scale-105 ${systemImagePositions[system.slug] ?? ""}`}
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
