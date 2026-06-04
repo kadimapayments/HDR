@@ -67,31 +67,67 @@ export async function uploadFilesToSlack(
     body: JSON.stringify({ channel: channelId }),
   });
 
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
-    try {
-      const formData = new FormData();
-      formData.append("channels", channelId);
-      formData.append("filename", file.filename);
-      formData.append(
-        "file",
-        new Blob([new Uint8Array(file.content)], { type: file.contentType }),
-        file.filename,
-      );
-      if (i === 0) formData.append("initial_comment", message);
+  const uploadedFileIds: string[] = [];
 
-      const res = await fetch("https://slack.com/api/files.upload", {
+  for (const file of files) {
+    try {
+      // Step 1: Get upload URL
+      const urlRes = await fetch("https://slack.com/api/files.getUploadURLExternal", {
         method: "POST",
-        headers: { Authorization: `Bearer ${token}` },
-        body: formData,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams({
+          filename: file.filename,
+          length: String(file.content.length),
+        }),
       });
-      const data = await res.json();
-      if (!data.ok) {
-        console.error("[slack upload] files.upload failed", data.error, file.filename);
+      const urlData = await urlRes.json();
+      if (!urlData.ok) {
+        console.error("[slack upload] getUploadURLExternal failed:", urlData.error, file.filename);
+        continue;
       }
+
+      // Step 2: Upload raw file bytes to the pre-signed URL
+      const uploadRes = await fetch(urlData.upload_url, {
+        method: "POST",
+        headers: { "Content-Type": "application/octet-stream" },
+        body: new Uint8Array(file.content),
+      });
+      if (!uploadRes.ok) {
+        console.error("[slack upload] upload to URL failed:", uploadRes.status, file.filename);
+        continue;
+      }
+
+      uploadedFileIds.push(urlData.file_id);
     } catch (err) {
       console.error("[slack upload] error uploading", file.filename, err);
     }
+  }
+
+  if (uploadedFileIds.length === 0) return;
+
+  // Step 3: Complete upload — share all files to channel in one call
+  try {
+    const completeRes = await fetch("https://slack.com/api/files.completeUploadExternal", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        files: uploadedFileIds.map((id) => ({ id })),
+        channel_id: channelId,
+        initial_comment: message,
+      }),
+    });
+    const completeData = await completeRes.json();
+    if (!completeData.ok) {
+      console.error("[slack upload] completeUploadExternal failed:", completeData.error);
+    }
+  } catch (err) {
+    console.error("[slack upload] error completing upload", err);
   }
 }
 
