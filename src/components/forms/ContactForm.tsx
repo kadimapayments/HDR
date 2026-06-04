@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -150,10 +151,7 @@ export function ContactForm() {
         />
       </div>
 
-      <div
-        className="g-recaptcha"
-        data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-      />
+      <RecaptchaWidget />
 
       {status === "error" && (
         <p className="text-sm text-red-600">{error}</p>

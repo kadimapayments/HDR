@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -149,10 +150,7 @@ export default function ShowroomSchedulePage() {
                     />
                   </div>
 
-                  <div
-                    className="g-recaptcha"
-                    data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-                  />
+                  <RecaptchaWidget />
 
                   {status === "error" && (
                     <p className="text-sm text-red-600">{error}</p>

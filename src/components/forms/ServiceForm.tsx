@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MANUFACTURERS } from "@/lib/constants";
+import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
 
 const inputCls =
   "w-full border border-neutral-warm-300 bg-white px-4 py-3 text-sm text-neutral-warm-900 placeholder-neutral-warm-400 focus:border-brand-terracotta focus:outline-none";
@@ -115,10 +116,7 @@ export function ServiceForm() {
         </p>
       </div>
 
-      <div
-        className="g-recaptcha"
-        data-sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
-      />
+      <RecaptchaWidget />
 
       {status === "error" && (
         <p className="text-sm text-red-600">{error}</p>
