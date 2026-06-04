@@ -5,7 +5,7 @@ import { COMPANY } from "@/lib/constants";
 
 export const runtime = "nodejs";
 
-const MAX_TOTAL_BYTES = 15 * 1024 * 1024;
+const MAX_TOTAL_BYTES = 25 * 1024 * 1024;
 
 export async function POST(req: Request) {
   try {
@@ -55,7 +55,7 @@ export async function POST(req: Request) {
       totalBytes += f.size;
       if (totalBytes > MAX_TOTAL_BYTES) {
         return NextResponse.json(
-          { ok: false, error: "Total image size exceeds 15 MB." },
+          { ok: false, error: "Total file size exceeds 25 MB." },
           { status: 413 },
         );
       }
