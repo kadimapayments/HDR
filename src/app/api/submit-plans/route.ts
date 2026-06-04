@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { postToSlack, sendEmail } from "@/lib/notifications";
+import { postToSlack, sendEmail, uploadFilesToSlack } from "@/lib/notifications";
 import { verifyRecaptcha } from "@/lib/recaptcha";
 import { COMPANY } from "@/lib/constants";
 
@@ -80,6 +80,7 @@ export async function POST(req: Request) {
 
     await Promise.all([
       postToSlack("SLACK_WEBHOOK_PLANS", { text: summary }),
+      uploadFilesToSlack("SLACK_WEBHOOK_PLANS", attachments, `📎 Files from ${name}`),
       sendEmail({
         to: process.env.LEADS_EMAIL_TO ?? COMPANY.email,
         subject: `New Plans Submission — ${name}`,
