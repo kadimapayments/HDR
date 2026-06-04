@@ -41,7 +41,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const files = form.getAll("files").filter((f): f is File => f instanceof File);
+    const files = form.getAll("files").filter((f): f is File => f instanceof File && f.size > 0 && f.name !== "");
 
     let totalBytes = 0;
     const attachments = [] as { filename: string; content: Buffer; contentType: string }[];
