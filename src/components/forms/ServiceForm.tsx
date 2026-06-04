@@ -23,7 +23,6 @@ export function ServiceForm() {
       if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");
       setStatus("success");
       form.reset();
-      (window as any).grecaptcha?.reset();
     } catch (err) {
       setStatus("error");
       setError(err instanceof Error ? err.message : "Submission failed");
