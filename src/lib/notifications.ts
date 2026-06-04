@@ -86,7 +86,7 @@ export async function uploadFilesToSlack(
       await fetch(urlData.upload_url, {
         method: "POST",
         headers: { "Content-Type": file.contentType },
-        body: file.content,
+        body: new Uint8Array(file.content),
       });
 
       // Step 3: Complete upload and share to channel
