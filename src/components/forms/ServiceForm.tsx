@@ -15,13 +15,14 @@ export function ServiceForm() {
     e.preventDefault();
     setStatus("submitting");
     setError("");
-    const data = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const data = new FormData(form);
     try {
       const res = await fetch("/api/service", { method: "POST", body: data });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");
       setStatus("success");
-      e.currentTarget.reset();
+      form.reset();
       (window as any).grecaptcha?.reset();
     } catch (err) {
       setStatus("error");
