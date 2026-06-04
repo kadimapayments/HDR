@@ -5,9 +5,23 @@ import { useState } from "react";
 const inputCls =
   "w-full border border-neutral-warm-300 bg-white px-4 py-3 text-sm text-neutral-warm-900 placeholder-neutral-warm-400 focus:border-brand-terracotta focus:outline-none";
 
+const MAX_BYTES = 25 * 1024 * 1024; // 25 MB
+
 export function SubmitPlansForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [error, setError] = useState<string>("");
+  const [fileError, setFileError] = useState<string>("");
+
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const files = Array.from(e.target.files ?? []);
+    const total = files.reduce((sum, f) => sum + f.size, 0);
+    if (total > MAX_BYTES) {
+      const mb = (total / 1024 / 1024).toFixed(1);
+      setFileError(`Your files total ${mb} MB, which exceeds the 25 MB limit. Please use the Plans Link field below to share a Dropbox, Google Drive, or WeTransfer link instead.`);
+    } else {
+      setFileError("");
+    }
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -108,8 +122,12 @@ export function SubmitPlansForm() {
           type="file"
           multiple
           accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.heic"
+          onChange={handleFileChange}
           className="block w-full border border-neutral-warm-300 bg-white px-4 py-3 text-sm file:mr-4 file:border-0 file:bg-brand-terracotta file:px-4 file:py-2 file:text-xs file:font-medium file:uppercase file:tracking-wide file:text-white"
         />
+        {fileError && (
+          <p className="mt-2 text-sm text-red-600">{fileError}</p>
+        )}
       </div>
 
       <div>
@@ -143,7 +161,7 @@ export function SubmitPlansForm() {
 
       <button
         type="submit"
-        disabled={status === "submitting"}
+        disabled={status === "submitting" || !!fileError}
         className="bg-brand-terracotta px-8 py-4 text-sm font-medium uppercase tracking-wide text-white transition-colors hover:bg-brand-terracotta-dark disabled:opacity-60"
       >
         {status === "submitting" ? "Submitting…" : "Submit Plans"}
