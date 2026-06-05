@@ -18,8 +18,7 @@ export const metadata: Metadata = generatePageMetadata({
 const stats = [
   { value: "1,000+", label: "Projects Completed" },
   { value: "15+", label: "Premium Manufacturers" },
-  { value: "45", label: "Years of Experience" },
-  { value: "100%", label: "Custom Specifications" },
+  { value: "36", label: "Years of Experience" },
 ];
 
 export default function AboutPage() {
@@ -81,7 +80,7 @@ export default function AboutPage() {
       {/* Stats */}
       <Section className="bg-neutral-warm-100">
         <Container>
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
             {stats.map((stat, i) => (
               <AnimatedReveal key={stat.label} delay={i * 0.1}>
                 <div className="text-center">
