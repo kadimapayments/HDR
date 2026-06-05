@@ -311,11 +311,11 @@ const data: Record<
       },
       {
         name: "Modern",
-        material: "Aluminum-Clad Exterior / Wood Interior",
+        material: "Fiberglass Exterior / Aluminum Interior",
         priceTier: "Premium–Luxury",
         priceIndicator: "$$$$",
         overview:
-          "The Modern collection is Marvin's architectural statement — slim aluminum-clad sightlines on the exterior, warm wood interiors on the inside. It's designed specifically for contemporary and transitional homes where clean lines and natural materials coexist. The Modern line is the most frequently specified Marvin product on architect-led luxury residential projects in Southern California.",
+          "The Modern collection is Marvin's architectural statement — slim fiberglass exterior sightlines with a clean aluminum interior. It's designed specifically for contemporary and transitional homes where clean lines and natural materials coexist. The Modern line is the most frequently specified Marvin product on architect-led luxury residential projects in Southern California.",
         bestFor: [
           "Contemporary and modern architecture",
           "Architect-led luxury residential specifications",
