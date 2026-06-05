@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 
@@ -107,43 +108,53 @@ const photos = [
 ];
 
 export function ShowroomGallery() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
   return (
     <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-      {photos.map((photo, i) => (
-        <AnimatedReveal key={photo.src} delay={i * 0.1}>
-          <div className="group relative aspect-[4/3] overflow-hidden bg-neutral-warm-200">
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-              style={{ filter: photo.filter }}
-            />
-
-            {/*
-              Warm unifying overlay — a very subtle amber wash applied identically
-              to all photos via mix-blend-mode. This pulls different color temps
-              toward the same warm-neutral midpoint without darkening the images.
-            */}
+      {photos.map((photo, i) => {
+        const isActive = activeIndex === i;
+        return (
+          <AnimatedReveal key={photo.src} delay={i * 0.1}>
             <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 mix-blend-overlay"
-              style={{ backgroundColor: "rgba(255, 248, 235, 0.07)" }}
-            />
-
-            {/* Caption — slides up on hover */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 translate-y-full bg-gradient-to-t from-neutral-warm-950/80 to-transparent px-5 pb-5 pt-14 transition-transform duration-300 ease-out group-hover:translate-y-0"
+              className="group relative aspect-[4/3] overflow-hidden bg-neutral-warm-200 cursor-pointer"
+              onClick={() => setActiveIndex(isActive ? null : i)}
             >
-              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/85">
-                {photo.caption}
-              </p>
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                style={{ filter: photo.filter }}
+              />
+
+              {/*
+                Warm unifying overlay — a very subtle amber wash applied identically
+                to all photos via mix-blend-mode. This pulls different color temps
+                toward the same warm-neutral midpoint without darkening the images.
+              */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 mix-blend-overlay"
+                style={{ backgroundColor: "rgba(255, 248, 235, 0.07)" }}
+              />
+
+              {/* Caption — slides up on hover (desktop) or tap (mobile) */}
+              <div
+                aria-hidden="true"
+                className={`absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-warm-950/80 to-transparent px-5 pb-5 pt-14 transition-transform duration-300 ease-out ${
+                  isActive ? "translate-y-0" : "translate-y-full group-hover:translate-y-0"
+                }`}
+              >
+                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/85">
+                  {photo.caption}
+                </p>
+              </div>
             </div>
-          </div>
-        </AnimatedReveal>
-      ))}
+          </AnimatedReveal>
+        );
+      })}
     </div>
   );
 }
