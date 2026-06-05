@@ -70,6 +70,10 @@ const systemDetails: Record<string, { description: string }> = {
     description:
       "Smart home integration for windows and doors with motorized operation, home automation compatibility, and effortless control.",
   },
+  "window-wall": {
+    description:
+      "Floor-to-ceiling glazing from slab to slab — maximum transparency, minimal framing, and the seamless glass facade of contemporary high-end residential architecture.",
+  },
 };
 
 export default function SystemsPage() {
@@ -77,7 +81,7 @@ export default function SystemsPage() {
     <>
       <PageHero
         title="Window & Door Systems"
-        subtitle="Systems"
+        subtitle="Innovation"
         description="We specify systems — not just brands. Every architectural challenge demands the right combination of performance, aesthetics, and engineering."
       />
 

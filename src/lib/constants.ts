@@ -150,7 +150,7 @@ export const NAV_ITEMS = [
     ],
   },
   {
-    label: "Systems",
+    label: "Innovation",
     href: "/systems",
     children: SYSTEMS.map((s) => ({
       label: s.name,
