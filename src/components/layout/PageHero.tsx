@@ -26,7 +26,7 @@ export function PageHero({
     <section
       className={cn(
         "relative flex items-start bg-neutral-warm-900",
-        compact ? "min-h-[40vh] pt-40" : "min-h-[60vh] pt-40",
+        compact ? "min-h-[40vh] pt-52 md:pt-40" : "min-h-[60vh] pt-52 md:pt-40",
         className
       )}
       style={
