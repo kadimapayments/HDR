@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { generatePageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -23,6 +24,7 @@ const articles = [
     excerpt:
       "Understanding the performance, aesthetic, and cost differences between steel and aluminum window systems.",
     date: "2026-04-15",
+    image: "/images/systems/steel-windows.jpg",
   },
   {
     title: "Title 24 Window Requirements for California Luxury Homes",
@@ -31,6 +33,7 @@ const articles = [
     excerpt:
       "How to meet and exceed California's energy compliance requirements without compromising design intent.",
     date: "2026-03-20",
+    image: "/images/systems/energy-efficient.jpg",
   },
   {
     title: "The Complete Guide to Multi-Slide Door Systems",
@@ -39,6 +42,7 @@ const articles = [
     excerpt:
       "Everything you need to know about multi-slide doors — configurations, manufacturers, pricing, and installation.",
     date: "2026-03-10",
+    image: "/images/systems/multi-slide-doors.jpg",
   },
   {
     title: "Oversized Window Openings: Structural Considerations",
@@ -47,6 +51,7 @@ const articles = [
     excerpt:
       "Engineering and structural coordination for floor-to-ceiling and wall-to-wall glass installations.",
     date: "2026-02-28",
+    image: "/images/systems/oversized-openings.jpg",
   },
   {
     title: "The True Cost of Luxury Windows in Los Angeles",
@@ -55,6 +60,7 @@ const articles = [
     excerpt:
       "An honest breakdown of what luxury architectural windows and doors cost — and what drives the price.",
     date: "2026-02-15",
+    image: "/images/systems/contemporary-aluminum.jpg",
   },
 ];
 
@@ -76,12 +82,13 @@ export default function ResourcesPage() {
                   href={`/resources/${article.slug}`}
                   className="group flex h-full flex-col overflow-hidden bg-white transition-shadow duration-300 hover:shadow-lg"
                 >
-                  <div className="relative aspect-[16/10] bg-neutral-warm-200">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                        Article Image
-                      </span>
-                    </div>
+                  <div className="relative aspect-[16/10] overflow-hidden bg-neutral-warm-200">
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <div className="mb-3 flex items-center gap-3">

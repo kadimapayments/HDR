@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { generatePageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -118,12 +119,13 @@ export default function ForHomeownersPage() {
             </AnimatedReveal>
 
             <AnimatedReveal delay={0.2}>
-              <div className="relative aspect-[4/3] bg-neutral-warm-200">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                    Homeowner Showroom Photo
-                  </span>
-                </div>
+              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-warm-200">
+                <Image
+                  src="/images/showroom/showroom-loewen-wood.jpg"
+                  alt="HDR Windows showroom — experiencing window and door systems in person"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </AnimatedReveal>
           </div>

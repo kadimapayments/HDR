@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { generatePageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -20,11 +21,13 @@ const systemData: Record<
     features: string[];
     bestFor: string[];
     manufacturers: { name: string; slug: string }[];
+    images?: string[];
   }
 > = {
   "multi-slide-doors": {
     name: "Multi-Slide Doors",
     category: "Doors",
+    images: ["/images/systems/multi-slide-doors.jpg", "/images/showroom/162A0730.jpg"],
     description:
       "Multi-slide door systems create expansive openings that blur the boundary between interior and exterior — the defining feature of contemporary California residential architecture.",
     features: [
@@ -51,6 +54,7 @@ const systemData: Record<
   "steel-windows": {
     name: "Steel Windows & Doors",
     category: "Windows",
+    images: ["/images/systems/steel-windows.jpg", "/images/showroom/showroom-loewen-steel.jpg"],
     description:
       "Steel windows and doors deliver the thinnest sightlines in the industry — thermally broken profiles that combine authentic industrial aesthetics with modern energy performance.",
     features: [
@@ -73,6 +77,7 @@ const systemData: Record<
   "pivot-doors": {
     name: "Pivot Doors",
     category: "Doors",
+    images: ["/images/systems/pivot-doors.jpg", "/images/showroom/showroom-pivot.jpg"],
     description:
       "Pivot doors rotate on a vertical axis, allowing for entry-statement scale that traditional hinges cannot support — an architectural moment that defines the entry of a modern luxury residence.",
     features: [
@@ -98,6 +103,7 @@ const systemData: Record<
   "contemporary-aluminum": {
     name: "Contemporary Aluminum",
     category: "Windows",
+    images: ["/images/systems/contemporary-aluminum.jpg", "/images/showroom/162A2571.jpg"],
     description:
       "Thermally broken aluminum is the workhorse of contemporary California residential — narrow sightlines, large panel sizes, excellent coastal durability, and full Title 24 compliance.",
     features: [
@@ -125,6 +131,7 @@ const systemData: Record<
   "energy-efficient": {
     name: "Energy Efficient Systems",
     category: "Specialty",
+    images: ["/images/systems/energy-efficient.jpg", "/images/showroom/162A2538.jpg"],
     description:
       "California's Title 24 is among the strictest energy codes in the country — we specify high-performance glazing systems that meet and routinely exceed its requirements without compromising design intent.",
     features: [
@@ -152,6 +159,7 @@ const systemData: Record<
   "oversized-openings": {
     name: "Oversized Openings",
     category: "Specialty",
+    images: ["/images/systems/oversized-openings.jpg", "/images/showroom/162A2521.jpg"],
     description:
       "When the design exceeds standard catalog limits, we specify and engineer truly oversized assemblies — single panels exceeding 100 sq ft, glass walls spanning 60+ feet, with full structural coordination.",
     features: [
@@ -178,6 +186,7 @@ const systemData: Record<
   "bifold-doors": {
     name: "Bifold Doors",
     category: "Doors",
+    images: ["/images/systems/folding-doors.jpg", "/images/showroom/showroom-doors.jpg"],
     description:
       "Bifold systems fold and stack against the jamb without a pocket cavity — ideal for retrofits, tighter footprints, and projects where wall depth is constrained.",
     features: [
@@ -204,6 +213,7 @@ const systemData: Record<
   "automated-systems": {
     name: "Automated Systems",
     category: "Smart Home",
+    images: ["/images/systems/automated-systems.jpg", "/images/showroom/162A0773.jpg"],
     description:
       "Motorized windows and doors integrate seamlessly with your smart home ecosystem — responding to schedules, sensors, and voice commands via Marvin's Connected Home platform and Windsor's automated systems.",
     features: [
@@ -231,6 +241,7 @@ const systemData: Record<
   "window-wall": {
     name: "Window Wall",
     category: "Windows",
+    images: ["/images/systems/window-wall.jpg", "/images/showroom/162A2433.jpg"],
     description:
       "Window wall systems span floor-to-ceiling from slab to slab, delivering a continuous glass surface with minimal framing — the defining glazing system of contemporary high-end residential architecture.",
     features: [
@@ -259,6 +270,7 @@ const systemData: Record<
   "sliding-doors": {
     name: "Sliding Doors",
     category: "Doors",
+    images: ["/images/systems/hinge-doors.jpg", "/images/showroom/162A0765.jpg"],
     description:
       "Sliding doors are the most-specified opening system in California residential — clean operation, narrow sightlines, and large panel sizes at a lower cost than multi-slide or folding alternatives.",
     features: [
@@ -320,22 +332,22 @@ export default async function SystemPage({ params }: Props) {
           <div className="grid gap-16 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-16">
               {/* Gallery */}
-              <AnimatedReveal>
-                <div className="grid gap-4 md:grid-cols-2">
-                  {Array.from({ length: 2 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="relative aspect-[4/3] bg-neutral-warm-200"
-                    >
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                          {system.name} Example {i + 1}
-                        </span>
+              {system.images && (
+                <AnimatedReveal>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {system.images.map((src, i) => (
+                      <div key={i} className="relative aspect-[4/3] overflow-hidden bg-neutral-warm-200">
+                        <Image
+                          src={src}
+                          alt={`${system.name} — example ${i + 1}`}
+                          fill
+                          className="object-cover"
+                        />
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </AnimatedReveal>
+                    ))}
+                  </div>
+                </AnimatedReveal>
+              )}
 
               {/* Features */}
               <AnimatedReveal>
