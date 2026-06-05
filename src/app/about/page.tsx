@@ -111,7 +111,7 @@ export default function AboutPage() {
               We start with your architecture — not a product catalog. By
               understanding the design intent, structural requirements, energy
               targets, and aesthetic vision, we recommend the right system from
-              the right manufacturer. No upselling. No compromises.
+              the right manufacturer. No upselling.
             </p>
           </AnimatedReveal>
 
