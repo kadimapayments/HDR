@@ -718,8 +718,28 @@ export default async function ManufacturerPage({ params }: Props) {
                   {/* At-a-Glance — shown first */}
                   <AnimatedReveal>
                     <Heading level="h3">At-a-Glance Comparison</Heading>
-                    <div className="mt-6 overflow-x-auto">
-                      <table className="w-full min-w-[560px] border-collapse text-sm">
+
+                    {/* Mobile: stacked cards */}
+                    <div className="mt-6 space-y-3 md:hidden">
+                      {m.productLines.map((line, i) => (
+                        <div
+                          key={line.name}
+                          className={`border border-neutral-warm-200 p-4 ${i % 2 === 0 ? "bg-neutral-warm-50" : "bg-white"}`}
+                        >
+                          <div className="flex items-start justify-between gap-2">
+                            <p className="font-semibold text-neutral-warm-900">{line.name}</p>
+                            <span className="shrink-0 font-medium text-brand-terracotta">{line.priceIndicator}</span>
+                          </div>
+                          <p className="mt-1 text-xs text-neutral-warm-500">{line.material}</p>
+                          <p className="mt-1 text-xs text-neutral-warm-400">{line.priceTier}</p>
+                          <p className="mt-2 text-xs text-neutral-warm-600">{line.bestFor[0]}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Desktop: table */}
+                    <div className="mt-6 hidden md:block">
+                      <table className="w-full border-collapse text-sm">
                         <thead>
                           <tr className="border-b border-neutral-warm-200">
                             <th className="pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">Series</th>
