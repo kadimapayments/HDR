@@ -26,7 +26,7 @@ const systemData: Record<
     name: "Multi-Slide Doors",
     category: "Doors",
     description:
-      "Multi-slide door systems feature multiple glass panels that slide along a track and stack or pocket into a wall cavity. They create expansive openings that blur the boundary between interior and exterior spaces — a defining feature of contemporary California architecture.",
+      "Multi-slide door systems create expansive openings that blur the boundary between interior and exterior — the defining feature of contemporary California residential architecture.",
     features: [
       "Panel widths up to 5 feet, heights up to 12 feet",
       "Configurations from 2 to 12+ panels",
@@ -52,7 +52,7 @@ const systemData: Record<
     name: "Steel Windows & Doors",
     category: "Windows",
     description:
-      "Steel window and door systems deliver the thinnest possible sightlines and strongest structural profiles in the industry. Thermally broken steel profiles combine authentic industrial aesthetics with modern energy performance, making them ideal for both contemporary and transitional architecture.",
+      "Steel windows and doors deliver the thinnest sightlines in the industry — thermally broken profiles that combine authentic industrial aesthetics with modern energy performance.",
     features: [
       "Sightlines as narrow as 1.5 inches",
       "Thermally broken profiles for energy code compliance",
@@ -74,7 +74,7 @@ const systemData: Record<
     name: "Pivot Doors",
     category: "Doors",
     description:
-      "Pivot doors rotate on a vertical axis rather than swinging from hinges, allowing for entry-statement scale and weight that traditional hinges cannot support. The result is an architectural moment — a door that feels like a wall when closed and disappears into the architecture when open. The defining entry for modern luxury residences.",
+      "Pivot doors rotate on a vertical axis, allowing for entry-statement scale that traditional hinges cannot support — an architectural moment that defines the entry of a modern luxury residence.",
     features: [
       "Heights up to 12 feet, widths up to 5 feet",
       "Concealed top-and-bottom pivot hardware",
@@ -99,7 +99,7 @@ const systemData: Record<
     name: "Contemporary Aluminum",
     category: "Windows",
     description:
-      "Thermally broken aluminum window and door systems are the workhorse of contemporary California residential architecture. They deliver narrow sightlines, large operable panel sizes, and excellent durability with minimal maintenance — particularly valuable in coastal and high-UV environments. Modern aluminum has solved the thermal performance problem that historically limited its use.",
+      "Thermally broken aluminum is the workhorse of contemporary California residential — narrow sightlines, large panel sizes, excellent coastal durability, and full Title 24 compliance.",
     features: [
       "Thermally broken profiles for Title 24 compliance",
       "Sightlines as narrow as 2 inches",
@@ -126,7 +126,7 @@ const systemData: Record<
     name: "Energy Efficient Systems",
     category: "Specialty",
     description:
-      "California's Title 24 energy code is among the strictest in the country, and luxury residential projects are not exempt. High-performance window and door systems use advanced glazing (Low-E, argon-filled, triple-glazed where needed), thermally broken frames, and engineered weatherstripping to meet — and routinely exceed — code requirements without compromising design ambition.",
+      "California's Title 24 is among the strictest energy codes in the country — we specify high-performance glazing systems that meet and routinely exceed its requirements without compromising design intent.",
     features: [
       "U-factors as low as 0.20 with triple glazing",
       "SHGC tuning for solar orientation",
@@ -153,7 +153,7 @@ const systemData: Record<
     name: "Oversized Openings",
     category: "Specialty",
     description:
-      "When the design calls for openings larger than standard product catalogs allow, manufacturer choice and engineering coordination become critical. We specify and engineer truly oversized window and door assemblies — single panels exceeding 100 square feet, opening glass walls spanning 60+ feet, and structural integrations with steel headers and engineered framing.",
+      "When the design exceeds standard catalog limits, we specify and engineer truly oversized assemblies — single panels exceeding 100 sq ft, glass walls spanning 60+ feet, with full structural coordination.",
     features: [
       "Single operable panels up to 12 feet × 16 feet",
       "Opening glass wall runs of 60+ feet",
@@ -179,7 +179,7 @@ const systemData: Record<
     name: "Bifold Doors",
     category: "Doors",
     description:
-      "Bifold (folding) door systems consist of multiple panels hinged together that fold and stack against the jamb, creating a wide-open clear opening. Compared with multi-slide systems, they require no pocket cavity and stack into a smaller footprint — making them ideal for retrofits, smaller lots, and cases where wall depth is constrained.",
+      "Bifold systems fold and stack against the jamb without a pocket cavity — ideal for retrofits, tighter footprints, and projects where wall depth is constrained.",
     features: [
       "Panel widths up to 3.5 feet, heights up to 10 feet",
       "Configurations from 3 to 8+ panels",
@@ -205,7 +205,7 @@ const systemData: Record<
     name: "Automated Systems",
     category: "Smart Home",
     description:
-      "Motorized windows and doors bring a new level of control to luxury residential design. Featuring Marvin's Connected Home platform and Windsor's Pinnacle automated gliding door systems, these products integrate seamlessly with your smart home ecosystem — opening, closing, and responding to schedules, sensors, and voice commands without touching a handle.",
+      "Motorized windows and doors integrate seamlessly with your smart home ecosystem — responding to schedules, sensors, and voice commands via Marvin's Connected Home platform and Windsor's automated systems.",
     features: [
       "Motorized operation via app, remote, or voice",
       "Marvin Connected Home platform integration",
@@ -232,7 +232,7 @@ const systemData: Record<
     name: "Window Wall",
     category: "Windows",
     description:
-      "Window wall systems are floor-to-ceiling glazing assemblies that span from slab to slab, creating a seamless glass facade with minimal framing. Unlike curtain wall (which hangs from the building structure) or punched windows (which interrupt the wall plane), window wall sits between floor slabs — delivering a continuous glass surface that maximizes light, views, and the sense of interior volume. It is the defining glazing system of contemporary high-end residential architecture.",
+      "Window wall systems span floor-to-ceiling from slab to slab, delivering a continuous glass surface with minimal framing — the defining glazing system of contemporary high-end residential architecture.",
     features: [
       "Floor-to-ceiling glass from slab to slab",
       "Minimal aluminum framing with thermally broken profiles",
@@ -260,7 +260,7 @@ const systemData: Record<
     name: "Sliding Doors",
     category: "Doors",
     description:
-      "Single and double-track sliding doors are the most-specified opening system in luxury California residential. They deliver clean operation, narrow sightlines, large panel sizes, and lower cost than multi-slide or folding systems. For most rooms — bedrooms, dens, secondary living spaces — a well-engineered sliding door is the right answer.",
+      "Sliding doors are the most-specified opening system in California residential — clean operation, narrow sightlines, and large panel sizes at a lower cost than multi-slide or folding alternatives.",
     features: [
       "Panel widths up to 6 feet, heights up to 10 feet",
       "Single, double, and triple-track configurations",
