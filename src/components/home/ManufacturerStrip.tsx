@@ -92,7 +92,7 @@ export function ManufacturerStrip() {
               key={`${m.slug}-${i}`}
               href={`/manufacturers/${m.slug}`}
               aria-label={`${m.name} — view manufacturer details`}
-              className="shrink-0 grayscale opacity-60 transition-all duration-300 hover:grayscale-0 hover:opacity-100"
+              className="shrink-0 transition-all duration-300"
             >
               <Image
                 src={m.logo}
