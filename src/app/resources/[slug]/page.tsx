@@ -131,8 +131,7 @@ export default async function ArticlePage({ params }: Props) {
       {/* Article Body */}
       <Section>
         <Container>
-          <AnimatedReveal>
-            <article className="mx-auto max-w-3xl">
+          <article className="mx-auto max-w-3xl">
               <div className="space-y-6">
                 {article.body.map((paragraph, i) => (
                   <p
@@ -180,7 +179,6 @@ export default async function ArticlePage({ params }: Props) {
                 </Button>
               </div>
             </article>
-          </AnimatedReveal>
         </Container>
       </Section>
     </>
