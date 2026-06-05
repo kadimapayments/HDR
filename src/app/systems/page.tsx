@@ -27,7 +27,7 @@ const systemImages: Record<string, string> = {
   "bifold-doors": "/images/systems/folding-doors.jpg",
   "sliding-doors": "/images/systems/hinge-doors.jpg",
   "window-wall": "/images/systems/window-wall.jpg",
-  "pocket-doors": "/images/showroom/showroom-pivot.jpg",
+  "pocket-doors": "/images/systems/pocket-doors.jpg",
 };
 
 const systemImagePositions: Record<string, string> = {

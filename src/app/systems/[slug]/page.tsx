@@ -278,7 +278,7 @@ const systemData: Record<
   "pocket-doors": {
     name: "Pocket Doors",
     category: "Doors",
-    images: ["/images/showroom/showroom-pivot.jpg"],
+    images: ["/images/systems/pocket-doors.jpg"],
     description:
       "Pocket door systems slide completely into the wall cavity when open, disappearing entirely — maximizing clear opening width with no panel stack and a completely unobstructed passage.",
     features: [
