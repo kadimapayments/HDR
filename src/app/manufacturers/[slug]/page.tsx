@@ -768,7 +768,7 @@ export default async function ManufacturerPage({ params }: Props) {
                     </div>
                   </AnimatedReveal>
 
-                  <AnimatedReveal>
+                  <div>
                     <Heading level="h3">Product Lines</Heading>
                     <p className="mt-2 text-sm text-neutral-warm-500">
                       Not all series are equal — understanding which line fits your project is the first step to a correct specification.
@@ -819,7 +819,7 @@ export default async function ManufacturerPage({ params }: Props) {
                         </div>
                       ))}
                     </div>
-                  </AnimatedReveal>
+                  </div>
 
                 </>
               )}
