@@ -334,17 +334,13 @@ export default async function SystemPage({ params }: Props) {
               {/* Gallery */}
               {system.images && (
                 <AnimatedReveal>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    {system.images.map((src, i) => (
-                      <div key={i} className="relative aspect-[4/3] overflow-hidden bg-neutral-warm-200">
-                        <Image
-                          src={src}
-                          alt={`${system.name} — example ${i + 1}`}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                    ))}
+                  <div className="relative aspect-[16/9] overflow-hidden bg-neutral-warm-200">
+                    <Image
+                      src={system.images[0]}
+                      alt={system.name}
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                 </AnimatedReveal>
               )}
