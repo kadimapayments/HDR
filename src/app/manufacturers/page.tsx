@@ -45,7 +45,7 @@ const manufacturers = [
     slug: "andersen",
     tagline: "Trusted Performance, Refined Design",
     tier: "Premium",
-    materials: ["Aluminum-Clad", "Composite", "Fiberglass"],
+    materials: ["Aluminum-Clad", "Composite", "Fiberglass", "Vinyl-Clad"],
     description:
       "America's most recognized window brand with the E-Series and A-Series offering exceptional versatility for luxury residential projects.",
   },

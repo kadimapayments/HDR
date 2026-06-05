@@ -125,7 +125,7 @@ const data: Record<
     tagline: "Trusted Performance, Refined Design",
     tier: "Premium",
     leadTime: "8–12 weeks",
-    materials: ["Aluminum-Clad", "Composite", "Fiberglass"],
+    materials: ["Aluminum-Clad", "Composite", "Fiberglass", "Vinyl-Clad"],
     overview:
       "Andersen is America's most recognized window manufacturer — a 120-year-old company with a product line that spans every tier of residential construction. More range under one brand than any competitor in the market.",
     pros: [
@@ -172,7 +172,7 @@ const data: Record<
       },
       {
         name: "200 Series",
-        material: "Pine Interior / Aluminum Exterior",
+        material: "Pine Interior / Vinyl-Clad Exterior",
         priceTier: "Value–Premium",
         priceIndicator: "$$",
         overview:
@@ -187,7 +187,7 @@ const data: Record<
       },
       {
         name: "400 Series",
-        material: "Pine Interior / Aluminum-Clad Exterior",
+        material: "Pine Interior / Vinyl-Clad Exterior",
         priceTier: "Premium",
         priceIndicator: "$$$",
         overview:
@@ -202,8 +202,8 @@ const data: Record<
       },
       {
         name: "E-Series",
-        material: "Wood Interior / Aluminum-Clad Exterior (Fully Custom)",
-        priceTier: "Premium–Luxury",
+        material: "Wood Interior / Aluminum-Clad Exterior",
+        priceTier: "Premium",
         priceIndicator: "$$$$",
         overview:
           "The E-Series (formerly Eagle) is Andersen's most customizable product line — essentially a bespoke window and door system built to specification. Any size, shape, configuration, color, hardware finish, and glass package is available. It's the right choice when a project demands true architectural flexibility: radius windows, complex shapes, very large fixed lites, and complete design coordination with the rest of the building.",
@@ -217,7 +217,7 @@ const data: Record<
       },
       {
         name: "A-Series",
-        material: "Wood Interior / Aluminum-Clad Exterior",
+        material: "Wood Interior / Composite-Clad Exterior",
         priceTier: "Ultra-Premium",
         priceIndicator: "$$$$$",
         overview:
