@@ -60,7 +60,7 @@ const systemDetails: Record<string, { description: string }> = {
   },
   "bifold-doors": {
     description:
-      "Multi-panel folding door systems that stack compactly to one or both sides, opening entire wall sections.",
+      "Multi-panel folding door systems that stack compactly to one or both sides, creating a wide-open clear opening.",
   },
   "sliding-doors": {
     description:

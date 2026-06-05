@@ -184,11 +184,11 @@ const systemData: Record<
     ],
   },
   "bifold-doors": {
-    name: "Bifold Doors",
+    name: "Folding Doors",
     category: "Doors",
-    images: ["/images/systems/folding-doors.jpg", "/images/showroom/showroom-doors.jpg"],
+    images: ["/images/systems/folding-doors.jpg", "/images/showroom/showroom-loewen-wood.jpg"],
     description:
-      "Bifold systems fold and stack against the jamb without a pocket cavity — ideal for retrofits, tighter footprints, and projects where wall depth is constrained.",
+      "Folding door systems stack against the jamb without a pocket cavity — ideal for retrofits, tighter footprints, and projects where wall depth is constrained.",
     features: [
       "Panel widths up to 3.5 feet, heights up to 10 feet",
       "Configurations from 3 to 8+ panels",
