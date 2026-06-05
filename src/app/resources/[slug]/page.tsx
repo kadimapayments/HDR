@@ -35,6 +35,22 @@ const articles: Record<
       "For Los Angeles projects, the choice often depends on architectural style. Contemporary modern homes gravitate toward aluminum's clean, consistent profiles. Transitional and industrial-inspired designs lean toward steel's authentic character. Many of our projects specify both — steel for the primary facade and aluminum for secondary elevations.",
     ],
   },
+  "oversized-window-openings": {
+    title: "Oversized Window Openings: Structural Considerations",
+    category: "Technical",
+    date: "2026-02-28",
+    readTime: "7 min read",
+    excerpt:
+      "Engineering and structural coordination for floor-to-ceiling and wall-to-wall glass installations.",
+    body: [
+      "Oversized window and door openings are one of the defining features of contemporary Los Angeles residential architecture — and one of the most technically demanding specifications a project team will navigate. When openings exceed standard catalog dimensions, the conversation shifts from product selection to structural engineering.",
+      "The first question is always the header. A single operable panel spanning 12 feet wide and 10 feet tall can weigh over 800 pounds. That load transfers to a structural header above the opening, which in most cases requires a steel beam engineered specifically for the span. Coordinating this early — ideally during design development — prevents costly changes during construction documents.",
+      "Glass is the second consideration. Standard tempered glass has size limits that vary by manufacturer, typically in the range of 96 to 130 inches on the long dimension. Beyond those thresholds, laminated glass is required. Laminated glass adds weight, cost, and lead time, but it also provides meaningful safety benefits — particularly for openings near grade or adjacent to living spaces.",
+      "Track and hardware engineering is equally critical. Oversized panels require concealed roller systems rated for the actual panel weight, not nominal weight. We specify hardware from manufacturers whose engineers will review the actual panel dimensions and provide stamped load calculations when required by the building department.",
+      "Installation logistics are often underestimated. Panels exceeding 500 pounds cannot be set by hand. Projects need to plan for crane or forklift access, temporary structural support during installation, and crews with documented experience handling large-scale glazing. We coordinate directly with installers before pricing to ensure the logistics are realistic.",
+      "The reward for getting it right is significant. A 40-foot opening glass wall or a single floor-to-ceiling panel that spans an entire living room facade is one of the most dramatic architectural moments available in residential design. We've specified and delivered some of the largest residential glazing assemblies in Southern California — and the process, when managed correctly, is entirely achievable.",
+    ],
+  },
   "title-24-window-requirements": {
     title: "Title 24 Window Requirements for California Luxury Homes",
     category: "Energy & Code",

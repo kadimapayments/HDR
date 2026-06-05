@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Heading } from "@/components/ui/Heading";
@@ -17,13 +18,7 @@ const articles = [
     excerpt:
       "Understanding the performance, aesthetic, and cost differences between steel and aluminum window systems for modern architecture.",
     slug: "steel-vs-aluminum-windows",
-  },
-  {
-    title: "Fleetwood vs Marvin: Which System Is Right for Your Project?",
-    category: "Comparison",
-    excerpt:
-      "A specification-level comparison of two of the industry's most respected manufacturers for luxury residential projects.",
-    slug: "fleetwood-vs-marvin-comparison",
+    image: "/images/systems/steel-windows.jpg",
   },
   {
     title: "Title 24 Window Requirements for California Luxury Homes",
@@ -31,6 +26,15 @@ const articles = [
     excerpt:
       "How to meet and exceed California's energy compliance requirements without compromising design intent.",
     slug: "title-24-window-requirements",
+    image: "/images/systems/energy-efficient.jpg",
+  },
+  {
+    title: "Oversized Window Openings: Structural Considerations",
+    category: "Technical",
+    excerpt:
+      "Engineering and structural coordination for floor-to-ceiling and wall-to-wall glass installations.",
+    slug: "oversized-window-openings",
+    image: "/images/systems/oversized-openings.jpg",
   },
 ];
 
@@ -63,12 +67,13 @@ export function ResourcesPreview() {
                 href={`/resources/${article.slug}`}
                 className="group block h-full bg-white transition-all duration-300 hover:shadow-lg"
               >
-                <div className="relative aspect-[16/10] bg-neutral-warm-200">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                      Article Image
-                    </span>
-                  </div>
+                <div className="relative aspect-[16/10] overflow-hidden bg-neutral-warm-200">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
                 <div className="p-6">
                   <Badge variant="outline" className="mb-4">

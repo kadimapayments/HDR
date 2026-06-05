@@ -16,6 +16,10 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/resources",
 });
 
+// Hidden articles (not ready for launch — revisit when adding resources):
+// - "The Complete Guide to Multi-Slide Door Systems" (slug: multi-slide-door-guide)
+// - "The True Cost of Luxury Windows in Los Angeles" (slug: luxury-window-pricing-los-angeles)
+
 const articles = [
   {
     title: "Steel vs Aluminum Windows: A Complete Comparison",
@@ -36,15 +40,6 @@ const articles = [
     image: "/images/systems/energy-efficient.jpg",
   },
   {
-    title: "The Complete Guide to Multi-Slide Door Systems",
-    slug: "multi-slide-door-guide",
-    category: "Buying Guide",
-    excerpt:
-      "Everything you need to know about multi-slide doors — configurations, manufacturers, pricing, and installation.",
-    date: "2026-03-10",
-    image: "/images/systems/multi-slide-doors.jpg",
-  },
-  {
     title: "Oversized Window Openings: Structural Considerations",
     slug: "oversized-window-openings",
     category: "Technical",
@@ -52,15 +47,6 @@ const articles = [
       "Engineering and structural coordination for floor-to-ceiling and wall-to-wall glass installations.",
     date: "2026-02-28",
     image: "/images/systems/oversized-openings.jpg",
-  },
-  {
-    title: "The True Cost of Luxury Windows in Los Angeles",
-    slug: "luxury-window-pricing-los-angeles",
-    category: "Buying Guide",
-    excerpt:
-      "An honest breakdown of what luxury architectural windows and doors cost — and what drives the price.",
-    date: "2026-02-15",
-    image: "/images/systems/contemporary-aluminum.jpg",
   },
 ];
 
