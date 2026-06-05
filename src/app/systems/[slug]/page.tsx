@@ -275,6 +275,32 @@ const systemData: Record<
       { name: "Loewen", slug: "loewen" },
     ],
   },
+  "pocket-doors": {
+    name: "Pocket Doors",
+    category: "Doors",
+    images: ["/images/showroom/showroom-pivot.jpg"],
+    description:
+      "Pocket door systems slide completely into the wall cavity when open, disappearing entirely — maximizing clear opening width with no panel stack and a completely unobstructed passage.",
+    features: [
+      "Panel slides fully into wall cavity when open",
+      "Single and double-pocket configurations",
+      "Thermally broken aluminum and clad-wood options",
+      "Flush sill profiles for seamless floor transitions",
+      "Soft-close and motorized options available",
+      "Compatible with oversized panel sizes",
+    ],
+    bestFor: [
+      "Interior transitions requiring full clear opening",
+      "Indoor-outdoor connections where panel stack is undesirable",
+      "Contemporary minimalist architecture",
+      "Projects requiring a clean, unobstructed threshold",
+      "Master suites and primary living spaces",
+    ],
+    manufacturers: [
+      { name: "Fleetwood", slug: "fleetwood" },
+      { name: "Windsor", slug: "windsor" },
+    ],
+  },
   "sliding-doors": {
     name: "Sliding Doors",
     category: "Doors",

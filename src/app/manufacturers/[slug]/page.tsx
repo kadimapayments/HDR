@@ -65,6 +65,7 @@ const data: Record<
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
       { name: "Hinge Doors", slug: "sliding-doors" },
+      { name: "Pocket Doors", slug: "pocket-doors" },
     ],
     bestFor: [
       "Modern and contemporary architecture",
@@ -500,6 +501,7 @@ const data: Record<
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
       { name: "Automated Systems", slug: "automated-systems" },
+      { name: "Pocket Doors", slug: "pocket-doors" },
     ],
     bestFor: [
       "Transitional and traditional architecture",

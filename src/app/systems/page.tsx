@@ -27,6 +27,7 @@ const systemImages: Record<string, string> = {
   "bifold-doors": "/images/systems/folding-doors.jpg",
   "sliding-doors": "/images/systems/hinge-doors.jpg",
   "window-wall": "/images/systems/window-wall.jpg",
+  "pocket-doors": "/images/showroom/showroom-pivot.jpg",
 };
 
 const systemImagePositions: Record<string, string> = {
@@ -73,6 +74,10 @@ const systemDetails: Record<string, { description: string }> = {
   "window-wall": {
     description:
       "Floor-to-ceiling glazing from slab to slab — maximum transparency, minimal framing, and the seamless glass facade of contemporary high-end residential architecture.",
+  },
+  "pocket-doors": {
+    description:
+      "Pocket door systems slide completely into the wall cavity when open, disappearing entirely and maximizing clear opening width without any visible panel stack.",
   },
 };
 
