@@ -322,7 +322,7 @@ export default async function SystemPage({ params }: Props) {
               {/* Gallery */}
               <AnimatedReveal>
                 <div className="grid gap-4 md:grid-cols-2">
-                  {Array.from({ length: 4 }).map((_, i) => (
+                  {Array.from({ length: 2 }).map((_, i) => (
                     <div
                       key={i}
                       className="relative aspect-[4/3] bg-neutral-warm-200"
