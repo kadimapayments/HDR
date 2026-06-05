@@ -202,8 +202,9 @@ const data: Record<
           "Homeowner-driven projects with a mid-to-upper budget",
           "Reliable performance across a wide style range",
           "Projects wanting wood interiors without full custom pricing",
+          "Contemporary architecture requiring slim sightlines",
         ],
-        notFor: "Contemporary architecture requiring slim sightlines or very large panels.",
+        notFor: "Projects requiring very large panels or aluminum-clad exteriors.",
       },
       {
         name: "E-Series",
