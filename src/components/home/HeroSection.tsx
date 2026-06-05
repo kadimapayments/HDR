@@ -7,7 +7,7 @@ import { heroReveal, staggerContainer, staggerItem } from "@/lib/animations";
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-neutral-warm-950">
+    <section className="relative flex min-h-screen items-start md:items-center justify-center overflow-hidden bg-neutral-warm-950">
       {/* Background Image */}
       <Image
         src="/images/home/hero.jpg"
@@ -19,7 +19,7 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-neutral-warm-950/95 via-neutral-warm-950/65 to-neutral-warm-950/50" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 pt-28 md:pt-0 md:px-8 xl:px-12">
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 pt-40 md:pt-0 md:px-8 xl:px-12">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -45,7 +45,7 @@ export function HeroSection() {
 
           <motion.p
             variants={staggerItem}
-            className="mt-8 max-w-xl text-sm leading-relaxed text-neutral-warm-400 md:text-lg"
+            className="mt-8 max-w-xl text-lg leading-relaxed text-neutral-warm-400"
           >
             From concept to completion, we help architects, builders, and
             homeowners navigate every step of the window &amp; door process.
@@ -58,7 +58,7 @@ export function HeroSection() {
             <Button href="/contact" variant="primary" size="lg">
               Schedule Consultation
             </Button>
-            <Button href="/showroom" variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/5 hover:text-white">
+            <Button href="/showroom/schedule" variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/5 hover:text-white">
               Visit Showroom
             </Button>
           </motion.div>
