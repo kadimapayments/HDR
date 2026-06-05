@@ -60,9 +60,11 @@ const data: Record<
     ],
     systems: [
       { name: "Multi-Slide Doors", slug: "multi-slide-doors" },
-      { name: "Bifold Doors", slug: "bifold-doors" },
-      { name: "Sliding Doors", slug: "sliding-doors" },
+      { name: "Pivot Doors", slug: "pivot-doors" },
       { name: "Contemporary Aluminum", slug: "contemporary-aluminum" },
+      { name: "Energy Efficient Systems", slug: "energy-efficient" },
+      { name: "Oversized Openings", slug: "oversized-openings" },
+      { name: "Hinge Doors", slug: "sliding-doors" },
     ],
     bestFor: [
       "Modern and contemporary architecture",
@@ -143,9 +145,11 @@ const data: Record<
       "100 Series not appropriate for architectural or luxury residential work",
     ],
     systems: [
-      { name: "Contemporary Aluminum", slug: "contemporary-aluminum" },
+      { name: "Multi-Slide Doors", slug: "multi-slide-doors" },
+      { name: "Pivot Doors", slug: "pivot-doors" },
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
-      { name: "Sliding Doors", slug: "sliding-doors" },
+      { name: "Oversized Openings", slug: "oversized-openings" },
+      { name: "Hinge Doors", slug: "sliding-doors" },
     ],
     bestFor: [
       "Traditional and transitional architecture (E-Series / A-Series)",
@@ -253,9 +257,10 @@ const data: Record<
       "Premium pricing vs. mainstream brands",
     ],
     systems: [
-      { name: "Contemporary Aluminum", slug: "contemporary-aluminum" },
-      { name: "Multi-Slide Doors", slug: "multi-slide-doors" },
-      { name: "Sliding Doors", slug: "sliding-doors" },
+      { name: "Energy Efficient Systems", slug: "energy-efficient" },
+      { name: "Oversized Openings", slug: "oversized-openings" },
+      { name: "Hinge Doors", slug: "sliding-doors" },
+      { name: "Automated Systems", slug: "automated-systems" },
     ],
     bestFor: [
       "Modern and transitional design",
@@ -363,10 +368,9 @@ const data: Record<
       "Complex configurations require certified installers",
     ],
     systems: [
-      { name: "Bifold Doors", slug: "bifold-doors" },
-      { name: "Multi-Slide Doors", slug: "multi-slide-doors" },
-      { name: "Sliding Doors", slug: "sliding-doors" },
+      { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
+      { name: "Folding Doors", slug: "bifold-doors" },
     ],
     bestFor: [
       "Folding glass walls and indoor-outdoor living",
@@ -398,8 +402,12 @@ const data: Record<
       "Heavier panels require structural coordination",
     ],
     systems: [
+      { name: "Multi-Slide Doors", slug: "multi-slide-doors" },
       { name: "Steel Windows & Doors", slug: "steel-windows" },
-      { name: "Pivot Doors", slug: "pivot-doors" },
+      { name: "Energy Efficient Systems", slug: "energy-efficient" },
+      { name: "Oversized Openings", slug: "oversized-openings" },
+      { name: "Folding Doors", slug: "bifold-doors" },
+      { name: "Hinge Doors", slug: "sliding-doors" },
     ],
     bestFor: [
       "Steel-framed contemporary architecture",
@@ -429,9 +437,10 @@ const data: Record<
       "Hardware finish options narrower than ultra-premium tier",
     ],
     systems: [
-      { name: "Bifold Doors", slug: "bifold-doors" },
-      { name: "Multi-Slide Doors", slug: "multi-slide-doors" },
-      { name: "Sliding Doors", slug: "sliding-doors" },
+      { name: "Energy Efficient Systems", slug: "energy-efficient" },
+      { name: "Oversized Openings", slug: "oversized-openings" },
+      { name: "Folding Doors", slug: "bifold-doors" },
+      { name: "Hinge Doors", slug: "sliding-doors" },
     ],
     bestFor: [
       "Indoor-outdoor living on a controlled budget",
@@ -459,11 +468,7 @@ const data: Record<
       "Narrower customization library",
       "Smaller maximum panel sizes",
     ],
-    systems: [
-      { name: "Contemporary Aluminum", slug: "contemporary-aluminum" },
-      { name: "Energy Efficient Systems", slug: "energy-efficient" },
-      { name: "Sliding Doors", slug: "sliding-doors" },
-    ],
+    systems: [],
     bestFor: [
       "Production residential where compliance matters",
       "Mixed-budget specifications",
@@ -491,9 +496,10 @@ const data: Record<
       "Dealer network thinner west of the Rockies — coordination matters",
     ],
     systems: [
-      { name: "Contemporary Aluminum", slug: "contemporary-aluminum" },
+      { name: "Multi-Slide Doors", slug: "multi-slide-doors" },
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
-      { name: "Sliding Doors", slug: "sliding-doors" },
+      { name: "Oversized Openings", slug: "oversized-openings" },
+      { name: "Automated Systems", slug: "automated-systems" },
     ],
     bestFor: [
       "Transitional and traditional architecture",
@@ -523,10 +529,7 @@ const data: Record<
       "Smaller maximum operable panel sizes than premium peers",
       "Not specified for primary spaces in luxury residential",
     ],
-    systems: [
-      { name: "Energy Efficient Systems", slug: "energy-efficient" },
-      { name: "Sliding Doors", slug: "sliding-doors" },
-    ],
+    systems: [],
     bestFor: [
       "Accessory dwelling units (ADUs)",
       "Value-tier residential and rental properties",
@@ -554,11 +557,7 @@ const data: Record<
       "Smaller maximum sizes than premium peers",
       "Best paired with premium brands in primary spaces",
     ],
-    systems: [
-      { name: "Contemporary Aluminum", slug: "contemporary-aluminum" },
-      { name: "Energy Efficient Systems", slug: "energy-efficient" },
-      { name: "Sliding Doors", slug: "sliding-doors" },
-    ],
+    systems: [],
     bestFor: [
       "Accessory dwelling units (ADUs)",
       "Secondary spaces in mixed-tier specifications",
@@ -587,8 +586,11 @@ const data: Record<
       "Wood requires periodic maintenance",
     ],
     systems: [
-      { name: "Contemporary Aluminum", slug: "contemporary-aluminum" },
-      { name: "Sliding Doors", slug: "sliding-doors" },
+      { name: "Pivot Doors", slug: "pivot-doors" },
+      { name: "Energy Efficient Systems", slug: "energy-efficient" },
+      { name: "Oversized Openings", slug: "oversized-openings" },
+      { name: "Hinge Doors", slug: "sliding-doors" },
+      { name: "Window Wall", slug: "window-wall" },
     ],
     bestFor: [
       "Luxury homes demanding natural materials",

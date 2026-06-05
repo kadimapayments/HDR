@@ -47,8 +47,9 @@ const systemData: Record<
     ],
     manufacturers: [
       { name: "Fleetwood", slug: "fleetwood" },
-      { name: "LaCantina", slug: "lacantina" },
       { name: "Andersen", slug: "andersen" },
+      { name: "Euroline", slug: "euroline" },
+      { name: "Windsor", slug: "windsor" },
     ],
   },
   "steel-windows": {
@@ -72,7 +73,9 @@ const systemData: Record<
       "Interior glass partitions and doors",
       "Projects requiring maximum transparency",
     ],
-    manufacturers: [{ name: "Euroline", slug: "euroline" }],
+    manufacturers: [
+      { name: "Euroline", slug: "euroline" },
+    ],
   },
   "pivot-doors": {
     name: "Pivot Doors",
@@ -96,8 +99,9 @@ const systemData: Record<
       "Garden-to-interior transitions",
     ],
     manufacturers: [
+      { name: "Loewen", slug: "loewen" },
+      { name: "Andersen", slug: "andersen" },
       { name: "Fleetwood", slug: "fleetwood" },
-      { name: "Euroline", slug: "euroline" },
     ],
   },
   "contemporary-aluminum": {
@@ -123,9 +127,6 @@ const systemData: Record<
     ],
     manufacturers: [
       { name: "Fleetwood", slug: "fleetwood" },
-      { name: "Marvin", slug: "marvin" },
-      { name: "Andersen", slug: "andersen" },
-      { name: "All Weather", slug: "all-weather" },
     ],
   },
   "energy-efficient": {
@@ -150,10 +151,14 @@ const systemData: Record<
       "LEED and Living Building Challenge certification targets",
     ],
     manufacturers: [
+      { name: "Fleetwood", slug: "fleetwood" },
       { name: "Andersen", slug: "andersen" },
       { name: "Marvin", slug: "marvin" },
-      { name: "All Weather", slug: "all-weather" },
-      { name: "IWC", slug: "iwc" },
+      { name: "Loewen", slug: "loewen" },
+      { name: "NanaWall", slug: "nanawall" },
+      { name: "Euroline", slug: "euroline" },
+      { name: "LaCantina", slug: "lacantina" },
+      { name: "Windsor", slug: "windsor" },
     ],
   },
   "oversized-openings": {
@@ -178,9 +183,14 @@ const systemData: Record<
       "Hospitality-influenced residential projects",
     ],
     manufacturers: [
+      { name: "Marvin", slug: "marvin" },
+      { name: "Andersen", slug: "andersen" },
       { name: "Fleetwood", slug: "fleetwood" },
+      { name: "LaCantina", slug: "lacantina" },
       { name: "NanaWall", slug: "nanawall" },
       { name: "Euroline", slug: "euroline" },
+      { name: "Windsor", slug: "windsor" },
+      { name: "Loewen", slug: "loewen" },
     ],
   },
   "bifold-doors": {
@@ -205,9 +215,9 @@ const systemData: Record<
       "Projects mixing folding and sliding systems",
     ],
     manufacturers: [
-      { name: "Fleetwood", slug: "fleetwood" },
       { name: "NanaWall", slug: "nanawall" },
       { name: "LaCantina", slug: "lacantina" },
+      { name: "Euroline", slug: "euroline" },
     ],
   },
   "automated-systems": {
@@ -262,9 +272,7 @@ const systemData: Record<
       "Projects requiring a curtain-wall aesthetic at residential scale",
     ],
     manufacturers: [
-      { name: "Fleetwood", slug: "fleetwood" },
-      { name: "Marvin", slug: "marvin" },
-      { name: "All Weather", slug: "all-weather" },
+      { name: "Loewen", slug: "loewen" },
     ],
   },
   "sliding-doors": {
@@ -290,8 +298,10 @@ const systemData: Record<
     ],
     manufacturers: [
       { name: "Fleetwood", slug: "fleetwood" },
-      { name: "Marvin", slug: "marvin" },
       { name: "Andersen", slug: "andersen" },
+      { name: "Marvin", slug: "marvin" },
+      { name: "Loewen", slug: "loewen" },
+      { name: "Euroline", slug: "euroline" },
       { name: "LaCantina", slug: "lacantina" },
     ],
   },
@@ -403,7 +413,7 @@ export default async function SystemPage({ params }: Props) {
 
                   <div>
                     <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
-                      Available From
+                      In Our Showroom
                     </h4>
                     <div className="space-y-2">
                       {system.manufacturers.map((mfr) => (
