@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { generatePageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -20,13 +21,15 @@ const systemData: Record<
     features: string[];
     bestFor: string[];
     manufacturers: { name: string; slug: string }[];
+    images?: string[];
   }
 > = {
   "multi-slide-doors": {
     name: "Multi-Slide Doors",
     category: "Doors",
+    images: ["/images/systems/multi-slide-doors.jpg", "/images/showroom/162A0730.jpg"],
     description:
-      "Multi-slide door systems feature multiple glass panels that slide along a track and stack or pocket into a wall cavity. They create expansive openings that blur the boundary between interior and exterior spaces — a defining feature of contemporary California architecture.",
+      "Multi-slide door systems create expansive openings that blur the boundary between interior and exterior — the defining feature of contemporary California residential architecture.",
     features: [
       "Panel widths up to 5 feet, heights up to 12 feet",
       "Configurations from 2 to 12+ panels",
@@ -44,16 +47,17 @@ const systemData: Record<
     ],
     manufacturers: [
       { name: "Fleetwood", slug: "fleetwood" },
-      { name: "Western Window Systems", slug: "western" },
-      { name: "LaCantina", slug: "lacantina" },
       { name: "Andersen", slug: "andersen" },
+      { name: "Euroline", slug: "euroline" },
+      { name: "Windsor", slug: "windsor" },
     ],
   },
   "steel-windows": {
     name: "Steel Windows & Doors",
     category: "Windows",
+    images: ["/images/systems/steel-windows.jpg", "/images/showroom/showroom-loewen-steel.jpg"],
     description:
-      "Steel window and door systems deliver the thinnest possible sightlines and strongest structural profiles in the industry. Thermally broken steel profiles combine authentic industrial aesthetics with modern energy performance, making them ideal for both contemporary and transitional architecture.",
+      "Steel windows and doors deliver the thinnest sightlines in the industry — thermally broken profiles that combine authentic industrial aesthetics with modern energy performance.",
     features: [
       "Sightlines as narrow as 1.5 inches",
       "Thermally broken profiles for energy code compliance",
@@ -69,13 +73,16 @@ const systemData: Record<
       "Interior glass partitions and doors",
       "Projects requiring maximum transparency",
     ],
-    manufacturers: [{ name: "Euroline", slug: "euroline" }],
+    manufacturers: [
+      { name: "Euroline", slug: "euroline" },
+    ],
   },
   "pivot-doors": {
     name: "Pivot Doors",
     category: "Doors",
+    images: ["/images/systems/pivot-doors.jpg", "/images/showroom/showroom-pivot.jpg"],
     description:
-      "Pivot doors rotate on a vertical axis rather than swinging from hinges, allowing for entry-statement scale and weight that traditional hinges cannot support. The result is an architectural moment — a door that feels like a wall when closed and disappears into the architecture when open. The defining entry for modern luxury residences.",
+      "Pivot doors rotate on a vertical axis, allowing for entry-statement scale that traditional hinges cannot support — an architectural moment that defines the entry of a modern luxury residence.",
     features: [
       "Heights up to 12 feet, widths up to 5 feet",
       "Concealed top-and-bottom pivot hardware",
@@ -92,15 +99,17 @@ const systemData: Record<
       "Garden-to-interior transitions",
     ],
     manufacturers: [
+      { name: "Loewen", slug: "loewen" },
+      { name: "Andersen", slug: "andersen" },
       { name: "Fleetwood", slug: "fleetwood" },
-      { name: "Euroline", slug: "euroline" },
     ],
   },
   "contemporary-aluminum": {
     name: "Contemporary Aluminum",
     category: "Windows",
+    images: ["/images/systems/contemporary-aluminum.jpg", "/images/showroom/162A2571.jpg"],
     description:
-      "Thermally broken aluminum window and door systems are the workhorse of contemporary California residential architecture. They deliver narrow sightlines, large operable panel sizes, and excellent durability with minimal maintenance — particularly valuable in coastal and high-UV environments. Modern aluminum has solved the thermal performance problem that historically limited its use.",
+      "Thermally broken aluminum is the workhorse of contemporary California residential — narrow sightlines, large panel sizes, excellent coastal durability, and full Title 24 compliance.",
     features: [
       "Thermally broken profiles for Title 24 compliance",
       "Sightlines as narrow as 2 inches",
@@ -118,17 +127,14 @@ const systemData: Record<
     ],
     manufacturers: [
       { name: "Fleetwood", slug: "fleetwood" },
-      { name: "Marvin", slug: "marvin" },
-      { name: "Western Window Systems", slug: "western" },
-      { name: "Andersen", slug: "andersen" },
-      { name: "All Weather", slug: "all-weather" },
     ],
   },
   "energy-efficient": {
     name: "Energy Efficient Systems",
     category: "Specialty",
+    images: ["/images/systems/energy-efficient.jpg", "/images/showroom/162A2538.jpg"],
     description:
-      "California's Title 24 energy code is among the strictest in the country, and luxury residential projects are not exempt. High-performance window and door systems use advanced glazing (Low-E, argon-filled, triple-glazed where needed), thermally broken frames, and engineered weatherstripping to meet — and routinely exceed — code requirements without compromising design ambition.",
+      "California's Title 24 is among the strictest energy codes in the country — we specify high-performance glazing systems that meet and routinely exceed its requirements without compromising design intent.",
     features: [
       "U-factors as low as 0.20 with triple glazing",
       "SHGC tuning for solar orientation",
@@ -145,17 +151,22 @@ const systemData: Record<
       "LEED and Living Building Challenge certification targets",
     ],
     manufacturers: [
+      { name: "Fleetwood", slug: "fleetwood" },
       { name: "Andersen", slug: "andersen" },
       { name: "Marvin", slug: "marvin" },
-      { name: "All Weather", slug: "all-weather" },
-      { name: "IWC", slug: "iwc" },
+      { name: "Loewen", slug: "loewen" },
+      { name: "NanaWall", slug: "nanawall" },
+      { name: "Euroline", slug: "euroline" },
+      { name: "LaCantina", slug: "lacantina" },
+      { name: "Windsor", slug: "windsor" },
     ],
   },
   "oversized-openings": {
     name: "Oversized Openings",
     category: "Specialty",
+    images: ["/images/systems/oversized-openings.jpg", "/images/showroom/162A2521.jpg"],
     description:
-      "When the design calls for openings larger than standard product catalogs allow, manufacturer choice and engineering coordination become critical. We specify and engineer truly oversized window and door assemblies — single panels exceeding 100 square feet, opening glass walls spanning 60+ feet, and structural integrations with steel headers and engineered framing.",
+      "When the design exceeds standard catalog limits, we specify and engineer truly oversized assemblies — single panels exceeding 100 sq ft, glass walls spanning 60+ feet, with full structural coordination.",
     features: [
       "Single operable panels up to 12 feet × 16 feet",
       "Opening glass wall runs of 60+ feet",
@@ -172,16 +183,22 @@ const systemData: Record<
       "Hospitality-influenced residential projects",
     ],
     manufacturers: [
+      { name: "Marvin", slug: "marvin" },
+      { name: "Andersen", slug: "andersen" },
       { name: "Fleetwood", slug: "fleetwood" },
+      { name: "LaCantina", slug: "lacantina" },
       { name: "NanaWall", slug: "nanawall" },
       { name: "Euroline", slug: "euroline" },
+      { name: "Windsor", slug: "windsor" },
+      { name: "Loewen", slug: "loewen" },
     ],
   },
   "bifold-doors": {
-    name: "Bifold Doors",
+    name: "Folding Doors",
     category: "Doors",
+    images: ["/images/systems/folding-doors.jpg", "/images/showroom/showroom-loewen-wood.jpg"],
     description:
-      "Bifold (folding) door systems consist of multiple panels hinged together that fold and stack against the jamb, creating a wide-open clear opening. Compared with multi-slide systems, they require no pocket cavity and stack into a smaller footprint — making them ideal for retrofits, smaller lots, and cases where wall depth is constrained.",
+      "Folding door systems stack against the jamb without a pocket cavity — ideal for retrofits, tighter footprints, and projects where wall depth is constrained.",
     features: [
       "Panel widths up to 3.5 feet, heights up to 10 feet",
       "Configurations from 3 to 8+ panels",
@@ -198,16 +215,98 @@ const systemData: Record<
       "Projects mixing folding and sliding systems",
     ],
     manufacturers: [
-      { name: "Fleetwood", slug: "fleetwood" },
       { name: "NanaWall", slug: "nanawall" },
       { name: "LaCantina", slug: "lacantina" },
+      { name: "Euroline", slug: "euroline" },
+    ],
+  },
+  "automated-systems": {
+    name: "Automated Systems",
+    category: "Smart Home",
+    images: ["/images/systems/automated-systems.jpg", "/images/showroom/162A0773.jpg"],
+    description:
+      "Motorized windows and doors integrate seamlessly with your smart home ecosystem — responding to schedules, sensors, and voice commands via Marvin's Connected Home platform and Windsor's automated systems.",
+    features: [
+      "Motorized operation via app, remote, or voice",
+      "Marvin Connected Home platform integration",
+      "Windsor Pinnacle automated gliding door systems",
+      "Compatible with Apple Home, Google Home, and Amazon Alexa",
+      "Lutron, Control4, Crestron, and Savant integration",
+      "Programmable schedules and scene-based automations",
+      "Sensor-driven operation — wind, rain, and occupancy",
+      "Quiet, precision motors engineered for daily use",
+    ],
+    bestFor: [
+      "Full smart home and connected home projects",
+      "High-tech luxury residences",
+      "Projects with Lutron or Control4 systems",
+      "Indoor-outdoor living with automated control",
+      "Homeowners prioritizing convenience and accessibility",
+    ],
+    manufacturers: [
+      { name: "Marvin", slug: "marvin" },
+      { name: "Windsor", slug: "windsor" },
+    ],
+  },
+  "window-wall": {
+    name: "Window Wall",
+    category: "Windows",
+    images: ["/images/systems/window-wall.jpg", "/images/showroom/162A2433.jpg"],
+    description:
+      "Window wall systems span floor-to-ceiling from slab to slab, delivering a continuous glass surface with minimal framing — the defining glazing system of contemporary high-end residential architecture.",
+    features: [
+      "Floor-to-ceiling glass from slab to slab",
+      "Minimal aluminum framing with thermally broken profiles",
+      "Fixed, operable, and mixed-panel configurations",
+      "Unitized and stick-built installation methods",
+      "Custom sightline widths from 2 to 4 inches",
+      "High-performance glazing for Title 24 compliance",
+      "Interior and exterior flush conditions available",
+      "Structural silicone and pressure-cap glazing options",
+    ],
+    bestFor: [
+      "Contemporary residences prioritizing maximum transparency",
+      "View corridors in hillside and coastal homes",
+      "Great rooms and living spaces with high ceilings",
+      "Full-floor master suites and primary living levels",
+      "Projects requiring a curtain-wall aesthetic at residential scale",
+    ],
+    manufacturers: [
+      { name: "Loewen", slug: "loewen" },
+    ],
+  },
+  "pocket-doors": {
+    name: "Pocket Doors",
+    category: "Doors",
+    images: ["/images/systems/pocket-doors.jpg"],
+    description:
+      "Pocket door systems slide completely into the wall cavity when open, disappearing entirely — maximizing clear opening width with no panel stack and a completely unobstructed passage.",
+    features: [
+      "Panel slides fully into wall cavity when open",
+      "Single and double-pocket configurations",
+      "Thermally broken aluminum and clad-wood options",
+      "Flush sill profiles for seamless floor transitions",
+      "Soft-close and motorized options available",
+      "Compatible with oversized panel sizes",
+    ],
+    bestFor: [
+      "Interior transitions requiring full clear opening",
+      "Indoor-outdoor connections where panel stack is undesirable",
+      "Contemporary minimalist architecture",
+      "Projects requiring a clean, unobstructed threshold",
+      "Master suites and primary living spaces",
+    ],
+    manufacturers: [
+      { name: "Fleetwood", slug: "fleetwood" },
+      { name: "Windsor", slug: "windsor" },
     ],
   },
   "sliding-doors": {
     name: "Sliding Doors",
     category: "Doors",
+    images: ["/images/systems/hinge-doors.jpg", "/images/showroom/162A0765.jpg"],
     description:
-      "Single and double-track sliding doors are the most-specified opening system in luxury California residential. They deliver clean operation, narrow sightlines, large panel sizes, and lower cost than multi-slide or folding systems. For most rooms — bedrooms, dens, secondary living spaces — a well-engineered sliding door is the right answer.",
+      "Sliding doors are the most-specified opening system in California residential — clean operation, narrow sightlines, and large panel sizes at a lower cost than multi-slide or folding alternatives.",
     features: [
       "Panel widths up to 6 feet, heights up to 10 feet",
       "Single, double, and triple-track configurations",
@@ -225,9 +324,10 @@ const systemData: Record<
     ],
     manufacturers: [
       { name: "Fleetwood", slug: "fleetwood" },
-      { name: "Marvin", slug: "marvin" },
       { name: "Andersen", slug: "andersen" },
-      { name: "Western Window Systems", slug: "western" },
+      { name: "Marvin", slug: "marvin" },
+      { name: "Loewen", slug: "loewen" },
+      { name: "Euroline", slug: "euroline" },
       { name: "LaCantina", slug: "lacantina" },
     ],
   },
@@ -268,22 +368,18 @@ export default async function SystemPage({ params }: Props) {
           <div className="grid gap-16 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-16">
               {/* Gallery */}
-              <AnimatedReveal>
-                <div className="grid gap-4 md:grid-cols-2">
-                  {Array.from({ length: 4 }).map((_, i) => (
-                    <div
-                      key={i}
-                      className="relative aspect-[4/3] bg-neutral-warm-200"
-                    >
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                          {system.name} Example {i + 1}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </AnimatedReveal>
+              {system.images && (
+                <AnimatedReveal>
+                  <div className="relative aspect-[16/9] overflow-hidden bg-neutral-warm-200">
+                    <Image
+                      src={system.images[0]}
+                      alt={system.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </AnimatedReveal>
+              )}
 
               {/* Features */}
               <AnimatedReveal>
@@ -343,7 +439,7 @@ export default async function SystemPage({ params }: Props) {
 
                   <div>
                     <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
-                      Available From
+                      In Our Showroom
                     </h4>
                     <div className="space-y-2">
                       {system.manufacturers.map((mfr) => (

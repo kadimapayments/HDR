@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
-import { postToSlack, sendEmail } from "@/lib/notifications";
+import { postToSlack, sendEmail, uploadFilesToSlack } from "@/lib/notifications";
+import { verifyRecaptcha } from "@/lib/recaptcha";
 import { COMPANY } from "@/lib/constants";
 
 export const runtime = "nodejs";
 
-const MAX_TOTAL_BYTES = 15 * 1024 * 1024;
+const MAX_TOTAL_BYTES = 25 * 1024 * 1024;
 
 export async function POST(req: Request) {
   try {
@@ -22,6 +23,15 @@ export async function POST(req: Request) {
     const orderNumber = (form.get("orderNumber") as string) || "";
     const lineItem = (form.get("lineItem") as string) || "";
     const issue = (form.get("issue") as string) || "";
+    const recaptchaToken = (form.get("g-recaptcha-response") as string) || "";
+
+    const isHuman = await verifyRecaptcha(recaptchaToken);
+    if (!isHuman) {
+      return NextResponse.json(
+        { ok: false, error: "reCAPTCHA verification failed. Please try again." },
+        { status: 400 }
+      );
+    }
 
     if (!name || !email || !manufacturer || !issue) {
       return NextResponse.json(
@@ -30,7 +40,14 @@ export async function POST(req: Request) {
       );
     }
 
-    const images = form.getAll("images").filter((f): f is File => f instanceof File);
+    const images = form.getAll("images").filter((f): f is File => f instanceof File && f.size > 0 && f.name !== "");
+
+    if (images.length === 0) {
+      return NextResponse.json(
+        { ok: false, error: "At least one photo is required to open a service ticket." },
+        { status: 400 },
+      );
+    }
 
     let totalBytes = 0;
     const attachments = [] as { filename: string; content: Buffer; contentType: string }[];
@@ -38,7 +55,7 @@ export async function POST(req: Request) {
       totalBytes += f.size;
       if (totalBytes > MAX_TOTAL_BYTES) {
         return NextResponse.json(
-          { ok: false, error: "Total image size exceeds 15 MB." },
+          { ok: false, error: "Total file size exceeds 25 MB." },
           { status: 413 },
         );
       }
@@ -68,6 +85,7 @@ export async function POST(req: Request) {
 
     await Promise.all([
       postToSlack("SLACK_WEBHOOK_SERVICE", { text: summary }),
+      uploadFilesToSlack("SLACK_WEBHOOK_SERVICE", attachments, `📷 Photos from ${name}`),
       sendEmail({
         to: process.env.SERVICE_EMAIL_TO ?? COMPANY.serviceEmail,
         subject: `Service Ticket — ${manufacturer} — ${name}`,

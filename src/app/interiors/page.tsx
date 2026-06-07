@@ -5,11 +5,9 @@ import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Heading } from "@/components/ui/Heading";
-import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 import { FinalCTA } from "@/components/home/FinalCTA";
-import { INTERIOR_PARTNERS } from "@/lib/constants";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Interiors — Doors & Hardware",
@@ -18,20 +16,80 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/interiors",
 });
 
-const interiorCategories = [
+const partners = [
   {
-    title: "Interior Doors",
-    body: "Flush, MDF, glass, and stile-and-rail interior doors specified to match the architectural intent of the residence — paint-grade and stain-grade, with custom panel layouts, sticking profiles, and glass options.",
+    name: "TruStile Doors",
+    slug: "trustile",
+    logo: "/images/interiors/trustile.webp" as string | null,
+    logoHeight: "h-10",
+    category: "Interior Doors",
+    tagline: "Architectural Interior Doors",
+    description:
+      "TruStile builds the most refined interior doors in the industry — flush, MDF, glass, and stile-and-rail with custom architectural details. A Marvin company, TruStile is the natural complement to Marvin window and door specifications.",
     points: [
-      "TruStile architectural interior doors",
+      "Flush, MDF, glass, and stile-and-rail configurations",
       "Custom sizes, panel layouts, and sticking profiles",
       "Pre-hung and slab options",
-      "Coordinated finish to match exterior systems",
+      "Paint-grade and stain-grade finishes coordinated to exterior systems",
     ],
   },
   {
-    title: "Door Hardware",
-    body: "Emtek provides one of the deepest hardware libraries in the industry — passage, privacy, dummy, multi-point, and electronic locks — across modern, transitional, and traditional design vocabularies.",
+    name: "Metrie El & El Wood Products",
+    slug: "metrie",
+    logo: "/images/interiors/metrie.svg" as string | null,
+    logoHeight: "h-10",
+    category: "Interior Doors",
+    tagline: "Architectural Wood Doors & Millwork",
+    description:
+      "Metrie El & El produces premium architectural wood interior doors and millwork with an emphasis on quality craftsmanship and design flexibility. A trusted specification for projects requiring custom profiles, species, and coordinated moulding programs.",
+    points: [
+      "Architectural wood interior doors in a range of panel configurations",
+      "Custom species, finishes, and sizing",
+      "Coordinated moulding and casing profiles",
+      "Paint-grade and stain-grade options",
+    ],
+  },
+  {
+    name: "AAW Inc Quality Wood Doors",
+    slug: "aaw",
+    logo: "/images/interiors/aaw.png" as string | null,
+    logoHeight: "h-10",
+    category: "Interior Doors",
+    tagline: "Quality Wood Doors",
+    description:
+      "AAW Inc manufactures quality wood interior doors built for residential applications that demand reliable craftsmanship and consistent supply. A practical specification for projects requiring well-made wood doors across a range of styles.",
+    points: [
+      "Solid and engineered wood construction",
+      "Custom sizing and panel layouts available",
+      "Pre-hung and slab configurations",
+      "Competitive lead times for production schedules",
+    ],
+  },
+  {
+    name: "American Building Supply",
+    slug: "abs",
+    logo: "/images/interiors/abs-new.jpg" as string | null,
+    logoHeight: "h-14",
+    category: "Interior Doors",
+    tagline: "Premium Doors & Building Products",
+    description:
+      "American Building Supply offers a comprehensive catalog of premium interior doors and building products, covering a wide range of styles, materials, and custom configurations for residential and commercial applications.",
+    points: [
+      "Broad door catalog across styles and materials",
+      "Custom sizing and configuration options",
+      "Residential and commercial applications",
+      "Reliable regional supply and distribution",
+    ],
+  },
+  {
+    name: "Emtek",
+    slug: "emtek",
+    logo: "/images/interiors/emtek.jpg" as string | null,
+    logoHeight: "h-6",
+    category: "Hardware",
+    tagline: "Architectural Door Hardware",
+    description:
+      "Emtek manufactures the most comprehensive line of architectural door hardware in North America — knobs, levers, pulls, multi-points, and electronic locks across a wide range of finishes and design vocabularies.",
     points: [
       "Knobs, levers, and pulls in dozens of finishes",
       "Multi-point hardware for tall and oversized doors",
@@ -39,6 +97,20 @@ const interiorCategories = [
       "Coordinated bath, cabinet, and accessory lines",
     ],
   },
+];
+
+// Hardware gallery
+const hardwareImages: { src: string; alt: string }[] = [
+  { src: "/images/interiors/162A0779.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0795.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0805.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0827.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0980.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0784.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0788.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0797.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0804.jpg", alt: "Architectural door hardware detail" },
+  { src: "/images/interiors/162A0828.jpg", alt: "Architectural door hardware detail" },
 ];
 
 export default function InteriorsPage() {
@@ -50,19 +122,43 @@ export default function InteriorsPage() {
         description="A complete residential package extends past the exterior envelope. We specify and supply architectural interior doors from TruStile and the full Emtek hardware library — coordinated to the same standard as our window and door work."
       />
 
-      {/* Categories */}
+      {/* Partners */}
       <Section>
         <Container>
-          <div className="grid gap-12 md:grid-cols-2">
-            {interiorCategories.map((cat, i) => (
-              <AnimatedReveal key={cat.title} delay={i * 0.1}>
-                <div>
-                  <Heading level="h3">{cat.title}</Heading>
-                  <p className="mt-4 text-sm leading-relaxed text-neutral-warm-600">
-                    {cat.body}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {partners.map((p, i) => (
+              <AnimatedReveal key={p.slug} delay={i * 0.1}>
+                <div className="flex h-full flex-col border border-neutral-warm-200 bg-white p-8">
+                  <div className="mb-6 flex h-14 items-center">
+                    {p.logo ? (
+                      <div className={`relative w-44 ${p.logoHeight}`}>
+                        <Image
+                          src={p.logo}
+                          alt={`${p.name} logo`}
+                          fill
+                          className="object-contain object-left"
+                        />
+                      </div>
+                    ) : (
+                      <span className="font-serif text-lg font-semibold text-neutral-warm-700">
+                        {p.name}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs font-medium uppercase tracking-[0.15em] text-brand-terracotta">
+                    {p.category}
+                  </p>
+                  <h3 className="mt-2 font-serif text-2xl font-semibold text-neutral-warm-900">
+                    {p.name}
+                  </h3>
+                  <p className="mt-1 text-xs font-medium text-brand-brown">
+                    {p.tagline}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-neutral-warm-500">
+                    {p.description}
                   </p>
                   <ul className="mt-6 space-y-2">
-                    {cat.points.map((point) => (
+                    {p.points.map((point) => (
                       <li
                         key={point}
                         className="flex items-start gap-3 text-sm text-neutral-warm-600"
@@ -79,39 +175,26 @@ export default function InteriorsPage() {
         </Container>
       </Section>
 
-      {/* Partners */}
+      {/* Hardware Gallery */}
       <Section className="bg-neutral-warm-100">
         <Container>
-          <AnimatedReveal className="mb-12 text-center">
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-brand-terracotta">
-              Partners
+          <AnimatedReveal className="mb-10">
+            <p className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-brand-terracotta">
+              Gallery
             </p>
-            <Heading level="h2">Specified Interior Brands</Heading>
+            <Heading level="h2">Hardware</Heading>
           </AnimatedReveal>
 
-          <div className="grid gap-8 md:grid-cols-2">
-            {INTERIOR_PARTNERS.map((p, i) => (
-              <AnimatedReveal key={p.slug} delay={i * 0.1}>
-                <div className="flex h-full flex-col border border-neutral-warm-200 bg-white p-8">
-                  <div className="mb-6 flex h-16 items-center">
-                    <Image
-                      src={p.logo}
-                      alt={`${p.name} logo`}
-                      width={220}
-                      height={64}
-                      className="max-h-12 w-auto object-contain"
-                    />
-                  </div>
-                  <Badge variant="terracotta">{p.category}</Badge>
-                  <h3 className="mt-4 font-serif text-2xl font-semibold text-neutral-warm-900">
-                    {p.name}
-                  </h3>
-                  <p className="mt-1 text-xs font-medium text-brand-brown">
-                    {p.tagline}
-                  </p>
-                  <p className="mt-4 flex-1 text-sm leading-relaxed text-neutral-warm-500">
-                    {p.description}
-                  </p>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
+            {hardwareImages.map((img, i) => (
+              <AnimatedReveal key={img.src} delay={i * 0.05}>
+                <div className="relative aspect-[3/4] overflow-hidden bg-neutral-warm-200">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover transition-transform duration-500 hover:scale-105"
+                  />
                 </div>
               </AnimatedReveal>
             ))}

@@ -9,7 +9,7 @@ import { COMPANY } from "@/lib/constants";
 export const metadata: Metadata = generatePageMetadata({
   title: "Open a Service Ticket",
   description:
-    "Report an issue with windows or doors HDR supplied or installed. Our service team will respond within one business day.",
+    "Report an issue with windows or doors HDR supplied or installed. Our service team will respond as soon as possible.",
   path: "/service",
 });
 
@@ -35,7 +35,7 @@ export default function ServicePage() {
                   Response Time
                 </h3>
                 <p className="text-sm text-neutral-warm-600">
-                  Tickets are routed directly to our service team. You&apos;ll hear back within one business day.
+                  Tickets are routed directly to our service team. You&apos;ll hear back as soon as possible.
                 </p>
               </div>
 

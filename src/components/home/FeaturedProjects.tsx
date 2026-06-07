@@ -15,7 +15,7 @@ const projects = [
     title: "Las Pulgas Residence",
     neighborhood: "Pacific Palisades",
     systems: ["Multi-Slide Doors", "Fixed Glass"],
-    manufacturers: ["Fleetwood", "Western"],
+    manufacturers: ["Fleetwood"],
     slug: "1204-las-pulgas",
   },
   {

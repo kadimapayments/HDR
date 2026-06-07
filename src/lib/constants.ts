@@ -28,29 +28,28 @@ export const COMPANY = {
 } as const;
 
 export const MANUFACTURERS = [
-  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.jpg" },
   { name: "Andersen", slug: "andersen", logo: "/images/manufacturers/andersen.png" },
-  { name: "Marvin", slug: "marvin", logo: "/images/manufacturers/marvin.jpg" },
-  { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg" },
-  { name: "NanaWall", slug: "nanawall", logo: "/images/manufacturers/nanawall.webp" },
   { name: "Euroline", slug: "euroline", logo: "/images/manufacturers/euroline.png", logoScale: 1.4, logoDarkBg: true },
+  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.jpg" },
   { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp" },
-  { name: "Western Window Systems", slug: "western", logo: "/images/manufacturers/western.webp" },
+  { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg" },
+  { name: "Marvin", slug: "marvin", logo: "/images/manufacturers/marvin.jpg" },
+  { name: "NanaWall", slug: "nanawall", logo: "/images/manufacturers/nanawall.webp" },
+  { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png" },
   { name: "All Weather", slug: "all-weather", logo: "/images/manufacturers/all-weather.svg" },
   { name: "IWC", slug: "iwc", logo: "/images/manufacturers/iwc.jpeg" },
   { name: "Plygem", slug: "plygem", logo: "/images/manufacturers/plygem.jpg" },
-  { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png" },
 ] as const;
 
 export const MARQUEE_BRANDS = [
-  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.jpg", scale: 1 },
+  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.jpg", scale: 1.4 },
   { name: "Andersen", slug: "andersen", logo: "/images/manufacturers/andersen.png", scale: 1 },
   { name: "Marvin", slug: "marvin", logo: "/images/manufacturers/marvin.jpg", scale: 1 },
-  { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg", scale: 1 },
-  { name: "NanaWall", slug: "nanawall", logo: "/images/manufacturers/nanawall.webp", scale: 1 },
-  { name: "Euroline", slug: "euroline", logo: "/images/manufacturers/euroline.png", scale: 1.4 },
-  { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp", scale: 1 },
-  { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png", scale: 1 },
+  { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg", scale: 1.3 },
+  { name: "NanaWall", slug: "nanawall", logo: "/images/manufacturers/nanawall.webp", scale: 0.55 },
+  { name: "Euroline", slug: "euroline", logo: "/images/manufacturers/euroline.png", scale: 1.3 },
+  { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp", scale: 0.7 },
+  { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png", scale: 0.55 },
 ] as const;
 
 export const FIRE_REBUILD_PROGRAMS = [
@@ -104,8 +103,11 @@ export const SYSTEMS = [
     slug: "oversized-openings",
     category: "Specialty",
   },
-  { name: "Bifold Doors", slug: "bifold-doors", category: "Doors" },
-  { name: "Sliding Doors", slug: "sliding-doors", category: "Doors" },
+  { name: "Folding Doors", slug: "bifold-doors", category: "Doors" },
+  { name: "Hinge Doors", slug: "sliding-doors", category: "Doors" },
+  { name: "Automated Systems", slug: "automated-systems", category: "Smart Home" },
+  { name: "Window Wall", slug: "window-wall", category: "Windows" },
+  { name: "Pocket Doors", slug: "pocket-doors", category: "Doors" },
 ] as const;
 
 export const NEIGHBORHOODS = [
@@ -129,7 +131,7 @@ export const NEIGHBORHOODS = [
 
 export const NAV_ITEMS = [
   { label: "About", href: "/about" },
-  { label: "Portfolio", href: "/portfolio" },
+  { label: "Showroom", href: "/showroom" },
   {
     label: "Manufacturers",
     href: "/manufacturers",
@@ -139,23 +141,23 @@ export const NAV_ITEMS = [
     })),
   },
   {
-    label: "Systems",
+    label: "Who We Serve",
+    href: "/who-we-serve",
+    children: [
+      { label: "Architects", href: "/for-architects" },
+      { label: "Builders", href: "/for-builders" },
+      { label: "Developers", href: "/for-developers" },
+      { label: "Homeowners", href: "/for-homeowners" },
+    ],
+  },
+  {
+    label: "Innovation",
     href: "/systems",
-    children: SYSTEMS.slice(0, 6).map((s) => ({
+    children: SYSTEMS.map((s) => ({
       label: s.name,
       href: `/systems/${s.slug}`,
     })),
   },
   { label: "Interiors", href: "/interiors" },
-  { label: "Showroom", href: "/showroom" },
-  {
-    label: "Trade",
-    href: "/for-architects",
-    children: [
-      { label: "For Architects", href: "/for-architects" },
-      { label: "For Builders", href: "/for-builders" },
-      { label: "Submit Plans", href: "/submit-plans" },
-    ],
-  },
   { label: "Resources", href: "/resources" },
 ] as const;

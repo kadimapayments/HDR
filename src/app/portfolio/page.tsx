@@ -20,7 +20,7 @@ const projects = [
     title: "Las Pulgas Residence",
     neighborhood: "Pacific Palisades",
     type: "New Construction",
-    manufacturers: ["Fleetwood", "Western"],
+    manufacturers: ["Fleetwood"],
     slug: "1204-las-pulgas",
   },
   {

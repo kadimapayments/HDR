@@ -106,7 +106,6 @@ export function Footer() {
               {[
                 { label: "About", href: "/about" },
                 { label: "Showroom", href: "/showroom" },
-                { label: "Portfolio", href: "/portfolio" },
                 { label: "Interiors", href: "/interiors" },
                 { label: "Resources", href: "/resources" },
                 { label: "For Architects", href: "/for-architects" },

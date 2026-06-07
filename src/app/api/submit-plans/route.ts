@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { postToSlack, sendEmail } from "@/lib/notifications";
+import { postToSlack, sendEmail, uploadFilesToSlack } from "@/lib/notifications";
+import { verifyRecaptcha } from "@/lib/recaptcha";
 import { COMPANY } from "@/lib/constants";
 
 export const runtime = "nodejs";
@@ -22,6 +23,16 @@ export async function POST(req: Request) {
     const timeline = (form.get("timeline") as string) || "";
     const budget = (form.get("budget") as string) || "";
     const notes = (form.get("notes") as string) || "";
+    const plansLink = (form.get("plansLink") as string) || "";
+    const recaptchaToken = (form.get("g-recaptcha-response") as string) || "";
+
+    const isHuman = await verifyRecaptcha(recaptchaToken);
+    if (!isHuman) {
+      return NextResponse.json(
+        { ok: false, error: "reCAPTCHA verification failed. Please try again." },
+        { status: 400 }
+      );
+    }
 
     if (!name || !email) {
       return NextResponse.json(
@@ -30,7 +41,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const files = form.getAll("files").filter((f): f is File => f instanceof File);
+    const files = form.getAll("files").filter((f): f is File => f instanceof File && f.size > 0 && f.name !== "");
 
     let totalBytes = 0;
     const attachments = [] as { filename: string; content: Buffer; contentType: string }[];
@@ -61,13 +72,15 @@ export async function POST(req: Request) {
       timeline && `*Timeline:* ${timeline}`,
       budget && `*Budget:* ${budget}`,
       attachments.length && `*Files:* ${attachments.map((a) => a.filename).join(", ")}`,
+      plansLink && `*Plans Link:* ${plansLink}`,
       notes && `\n${notes}`,
     ]
       .filter(Boolean)
       .join("\n");
 
     await Promise.all([
-      postToSlack("SLACK_WEBHOOK_LEADS", { text: summary }),
+      postToSlack("SLACK_WEBHOOK_PLANS", { text: summary }),
+      uploadFilesToSlack("SLACK_WEBHOOK_PLANS", attachments, `📎 Files from ${name}`),
       sendEmail({
         to: process.env.LEADS_EMAIL_TO ?? COMPANY.email,
         subject: `New Plans Submission — ${name}`,

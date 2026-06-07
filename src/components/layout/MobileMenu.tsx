@@ -21,7 +21,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
           transition={{ duration: 0.3 }}
           className="fixed inset-0 z-40 bg-neutral-warm-950 lg:hidden"
         >
-          <nav className="flex h-full flex-col justify-center px-8">
+          <nav className="flex h-full flex-col justify-start pt-40 pb-8 px-8 overflow-y-auto">
             <motion.div
               initial="hidden"
               animate="visible"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { generatePageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -87,12 +88,13 @@ export default function ForArchitectsPage() {
             </AnimatedReveal>
 
             <AnimatedReveal delay={0.2}>
-              <div className="relative aspect-[4/3] bg-neutral-warm-200">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                    Architect Collaboration Photo
-                  </span>
-                </div>
+              <div className="relative aspect-[4/3] overflow-hidden bg-neutral-warm-200">
+                <Image
+                  src="/images/showroom/162A0856.jpg"
+                  alt="HDR Windows showroom — architect collaboration and product specification"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </AnimatedReveal>
           </div>
@@ -163,20 +165,24 @@ export default function ForArchitectsPage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-10">
-                <Button href="/contact" variant="primary" size="lg">
-                  Schedule a Specification Consultation
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Button href="/submit-plans" variant="primary" size="lg">
+                  Submit Plans
+                </Button>
+                <Button href="/contact" variant="outline" size="lg">
+                  Schedule a Consultation
                 </Button>
               </div>
             </AnimatedReveal>
 
             <AnimatedReveal delay={0.2}>
-              <div className="relative aspect-square bg-neutral-warm-200">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                    Showroom / Plans Photo
-                  </span>
-                </div>
+              <div className="relative aspect-square overflow-hidden bg-neutral-warm-200">
+                <Image
+                  src="/images/showroom/162A0730.jpg"
+                  alt="HDR Windows showroom — reviewing plans and specifications"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </AnimatedReveal>
           </div>

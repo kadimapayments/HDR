@@ -27,7 +27,37 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/manufacturers",
 });
 
+const LOGO_HEIGHT: Record<string, string> = {
+  fleetwood: "h-20",
+  andersen: "h-14",
+  marvin: "h-14",
+  loewen: "h-14",
+  euroline: "h-14",
+  plygem: "h-20",
+  nanawall: "h-8",
+};
+
 const manufacturers = [
+  // Alphabetical, All Weather / IWC / Plygem at bottom
+  // Ultra-Premium
+  {
+    name: "Andersen",
+    slug: "andersen",
+    tagline: "Trusted Performance, Refined Design",
+    tier: "Premium",
+    materials: ["Aluminum-Clad", "Composite", "Fiberglass", "Vinyl-Clad"],
+    description:
+      "America's most recognized window brand with the E-Series and A-Series offering exceptional versatility for luxury residential projects.",
+  },
+  {
+    name: "Euroline",
+    slug: "euroline",
+    tagline: "Authentic Steel, Modern Performance",
+    tier: "Ultra-Premium",
+    materials: ["Steel"],
+    description:
+      "Thermally broken steel window and door systems with authentic profiles. The definitive choice for steel-framed architecture.",
+  },
   {
     name: "Fleetwood",
     slug: "fleetwood",
@@ -36,51 +66,6 @@ const manufacturers = [
     materials: ["Aluminum"],
     description:
       "Industry-leading multi-slide and bi-fold door systems. Fleetwood is the go-to for architects designing expansive openings with minimal sightlines.",
-  },
-  {
-    name: "Andersen",
-    slug: "andersen",
-    tagline: "Trusted Performance, Refined Design",
-    tier: "Premium",
-    materials: ["Wood", "Composite", "Aluminum-Clad"],
-    description:
-      "America's most recognized window brand with the E-Series and A-Series offering exceptional versatility for luxury residential projects.",
-  },
-  {
-    name: "Marvin",
-    slug: "marvin",
-    tagline: "Modern Elegance in Wood & Aluminum",
-    tier: "Premium",
-    materials: ["Wood", "Aluminum-Clad"],
-    description:
-      "The Modern line delivers clean contemporary aesthetics with the warmth of natural wood interiors and durable aluminum exteriors.",
-  },
-  {
-    name: "Loewen",
-    slug: "loewen",
-    tagline: "Craftsmanship Without Compromise",
-    tier: "Ultra-Premium",
-    materials: ["Wood", "Aluminum-Clad"],
-    description:
-      "Canadian-crafted windows and doors with exceptional wood quality and hardware. Ideal for projects demanding uncompromising craftsmanship.",
-  },
-  {
-    name: "NanaWall",
-    slug: "nanawall",
-    tagline: "The Original Opening Glass Wall",
-    tier: "Ultra-Premium",
-    materials: ["Aluminum", "Wood", "Aluminum-Clad", "Composite"],
-    description:
-      "The pioneer of the modern folding glass wall. NanaWall systems open entire walls with engineered precision — folding, sliding, frameless, and single-track configurations for every architectural intent.",
-  },
-  {
-    name: "Euroline",
-    slug: "euroline",
-    tagline: "Authentic Steel, Modern Performance",
-    tier: "Luxury",
-    materials: ["Steel"],
-    description:
-      "Thermally broken steel window and door systems with authentic profiles. The definitive choice for steel-framed architecture.",
   },
   {
     name: "LaCantina",
@@ -92,20 +77,48 @@ const manufacturers = [
       "Folding, sliding, and stacking door systems that transform walls into openings. Excellent value in the multi-panel category.",
   },
   {
-    name: "Western Window Systems",
-    slug: "western",
-    tagline: "Performance-Driven Aluminum",
-    tier: "Value-Premium",
-    materials: ["Aluminum"],
+    name: "Loewen",
+    slug: "loewen",
+    tagline: "Craftsmanship Without Compromise",
+    tier: "Premium",
+    materials: ["Aluminum-Clad", "Wood"],
     description:
-      "High-performance aluminum windows and multi-slide doors offering exceptional value without sacrificing modern aesthetics.",
+      "Canadian-crafted windows and doors with exceptional wood quality and hardware. Ideal for projects demanding uncompromising craftsmanship.",
   },
+  {
+    name: "Marvin",
+    slug: "marvin",
+    tagline: "Modern Elegance in Wood & Aluminum",
+    tier: "Premium",
+    materials: ["Aluminum-Clad", "Fiberglass", "Wood"],
+    description:
+      "The Modern line delivers clean contemporary aesthetics with the warmth of natural wood interiors and durable aluminum exteriors.",
+  },
+  {
+    name: "NanaWall",
+    slug: "nanawall",
+    tagline: "The Original Opening Glass Wall",
+    tier: "Premium",
+    materials: ["Aluminum", "Aluminum-Clad", "Composite", "Wood"],
+    description:
+      "The pioneer of the modern folding glass wall. NanaWall systems open entire walls with engineered precision — folding, sliding, frameless, and single-track configurations for every architectural intent.",
+  },
+  {
+    name: "Windsor",
+    slug: "windsor",
+    tagline: "Quiet Craftsmanship in Wood & Clad",
+    tier: "Premium",
+    materials: ["Aluminum-Clad Wood", "Fiberglass", "Vinyl"],
+    description:
+      "Family-owned Iowa manufacturer with a strong design point of view. The Pinnacle line delivers premium aluminum-clad wood with refined sightlines, while Legend, Next Dimension, and Pioneer cover wood, fiberglass, and vinyl across price points.",
+  },
+  // Value
   {
     name: "All Weather",
     slug: "all-weather",
     tagline: "Reliable Vinyl & Aluminum Solutions",
-    tier: "Premium",
-    materials: ["Vinyl", "Aluminum"],
+    tier: "Value",
+    materials: ["Aluminum", "Vinyl"],
     description:
       "Dependable window and door systems with strong energy performance. A trusted choice for projects balancing budget and quality.",
   },
@@ -114,7 +127,7 @@ const manufacturers = [
     slug: "iwc",
     tagline: "Versatile Custom Solutions",
     tier: "Value",
-    materials: ["Vinyl", "Aluminum"],
+    materials: ["Aluminum", "Vinyl"],
     description:
       "International Window Corporation delivers flexible configurations and reliable performance for diverse residential applications.",
   },
@@ -127,15 +140,6 @@ const manufacturers = [
     description:
       "Plygem manufactures dependable vinyl windows and doors with strong energy performance and broad availability. The right specification for ADUs, value-tier rooms, and projects where supply consistency and code compliance lead the brief.",
   },
-  {
-    name: "Windsor",
-    slug: "windsor",
-    tagline: "Quiet Craftsmanship in Wood & Clad",
-    tier: "Premium",
-    materials: ["Wood", "Aluminum-Clad Wood", "Vinyl", "Fiberglass"],
-    description:
-      "Family-owned Iowa manufacturer with a strong design point of view. The Pinnacle line delivers premium aluminum-clad wood with refined sightlines, while Legend, Next Dimension, and Pioneer cover wood, fiberglass, and vinyl across price points.",
-  },
 ];
 
 export default function ManufacturersPage() {
@@ -143,7 +147,7 @@ export default function ManufacturersPage() {
     <>
       <PageHero
         title="Our Manufacturers"
-        subtitle="Partners"
+        subtitle="From classic to contemporary"
         description="We carry the industry's most respected window and door manufacturers — each selected for their quality, performance, and architectural relevance."
       />
 
@@ -156,18 +160,16 @@ export default function ManufacturersPage() {
                   href={`/manufacturers/${m.slug}`}
                   className="group flex h-full flex-col border border-neutral-warm-200 bg-white p-8 transition-all duration-300 hover:border-brand-terracotta/30 hover:shadow-lg"
                 >
-                  <div className="mb-6 flex h-20 items-center">
+                  <div className="mb-6 flex h-14 items-center">
                     {logoMetaBySlug[m.slug] ? (
-                      <Image
-                        src={logoMetaBySlug[m.slug]!.logo}
-                        alt={`${m.name} logo`}
-                        width={Math.round(200 * logoMetaBySlug[m.slug]!.scale)}
-                        height={Math.round(64 * logoMetaBySlug[m.slug]!.scale)}
-                        className="w-auto object-contain"
-                        style={{
-                          maxHeight: `${Math.round(48 * logoMetaBySlug[m.slug]!.scale)}px`,
-                        }}
-                      />
+                      <div className={`relative w-44 ${LOGO_HEIGHT[m.slug] ?? "h-10"}`}>
+                        <Image
+                          src={logoMetaBySlug[m.slug]!.logo}
+                          alt={`${m.name} logo`}
+                          fill
+                          className="object-contain object-left"
+                        />
+                      </div>
                     ) : (
                       <span className="font-serif text-xl font-semibold uppercase tracking-wide text-neutral-warm-700">
                         {m.name}

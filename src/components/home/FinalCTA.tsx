@@ -37,7 +37,7 @@ export function FinalCTA() {
               Schedule a Consultation
             </Button>
             <Button
-              href="/showroom"
+              href="/showroom/schedule"
               variant="outline"
               size="lg"
               className="border-neutral-warm-700 text-white hover:bg-white/5 hover:text-white"

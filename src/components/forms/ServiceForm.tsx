@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { MANUFACTURERS } from "@/lib/constants";
+import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
 
 const inputCls =
   "w-full border border-neutral-warm-300 bg-white px-4 py-3 text-sm text-neutral-warm-900 placeholder-neutral-warm-400 focus:border-brand-terracotta focus:outline-none";
@@ -14,13 +15,14 @@ export function ServiceForm() {
     e.preventDefault();
     setStatus("submitting");
     setError("");
-    const data = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const data = new FormData(form);
     try {
       const res = await fetch("/api/service", { method: "POST", body: data });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");
       setStatus("success");
-      e.currentTarget.reset();
+      form.reset();
     } catch (err) {
       setStatus("error");
       setError(err instanceof Error ? err.message : "Submission failed");
@@ -32,7 +34,7 @@ export function ServiceForm() {
       <div className="border border-accent-sage/30 bg-accent-sage/5 p-8 text-center">
         <h3 className="font-serif text-2xl text-neutral-warm-900">Ticket received.</h3>
         <p className="mt-3 text-sm text-neutral-warm-600">
-          Our service team has been notified. We&apos;ll reach out within one business day to schedule next steps.
+          Our service team has been notified. We&apos;ll reach out as soon as possible to schedule next steps.
         </p>
       </div>
     );
@@ -52,12 +54,12 @@ export function ServiceForm() {
           <input required type="email" name="email" className={inputCls} />
         </div>
         <div>
-          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Phone</label>
-          <input name="phone" type="tel" className={inputCls} />
+          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Phone *</label>
+          <input required name="phone" type="tel" className={inputCls} />
         </div>
         <div>
-          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Project Address</label>
-          <input name="projectAddress" className={inputCls} />
+          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Project Address *</label>
+          <input required name="projectAddress" className={inputCls} />
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Manufacturer *</label>
@@ -100,19 +102,22 @@ export function ServiceForm() {
 
       <div>
         <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">
-          Photos (optional, up to 15 MB total)
+          Photos & Videos * (up to 25 MB total)
         </label>
         <input
           name="images"
           type="file"
           multiple
-          accept="image/*"
+          required
+          accept="image/*,video/*"
           className="block w-full border border-neutral-warm-300 bg-white px-4 py-3 text-sm file:mr-4 file:border-0 file:bg-brand-terracotta file:px-4 file:py-2 file:text-xs file:font-medium file:uppercase file:tracking-wide file:text-white"
         />
         <p className="mt-2 text-xs text-neutral-warm-500">
-          Photos help us diagnose faster. Include the issue and the surrounding installation if possible.
+          Required to open a service ticket. Include the issue and the surrounding installation. Photos and videos accepted.
         </p>
       </div>
+
+      <RecaptchaWidget />
 
       {status === "error" && (
         <p className="text-sm text-red-600">{error}</p>

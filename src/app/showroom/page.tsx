@@ -7,6 +7,7 @@ import { Heading } from "@/components/ui/Heading";
 import { Button } from "@/components/ui/Button";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 import { FinalCTA } from "@/components/home/FinalCTA";
+import { ShowroomGallery } from "@/components/showroom/ShowroomGallery";
 import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = generatePageMetadata({
@@ -45,25 +46,13 @@ export default function ShowroomPage() {
       <PageHero
         title="Visit Our Showroom"
         subtitle="West Los Angeles"
-        description={`${COMPANY.address.street}, ${COMPANY.address.city}, ${COMPANY.address.state} ${COMPANY.address.zip} — open by appointment. There's no substitute for seeing, touching, and operating the systems that will define your home.`}
+        description="There's no substitute for seeing, touching, and operating the systems that will define your home."
       />
 
       {/* Gallery */}
       <Section>
         <Container>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <AnimatedReveal key={i} delay={i * 0.1}>
-                <div className="relative aspect-[4/3] bg-neutral-warm-200">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                      Showroom Photo {i + 1}
-                    </span>
-                  </div>
-                </div>
-              </AnimatedReveal>
-            ))}
-          </div>
+          <ShowroomGallery />
         </Container>
       </Section>
 
@@ -95,7 +84,7 @@ export default function ShowroomPage() {
           </div>
 
           <AnimatedReveal className="mt-16 text-center">
-            <Button href="/contact" variant="primary" size="lg">
+            <Button href="/showroom/schedule" variant="primary" size="lg">
               Schedule a Showroom Visit
             </Button>
           </AnimatedReveal>

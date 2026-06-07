@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { generatePageMetadata } from "@/lib/metadata";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -16,6 +17,7 @@ const articles: Record<
     readTime: string;
     excerpt: string;
     body: string[];
+    furtherReading?: { label: string; href: string }[];
   }
 > = {
   "steel-vs-aluminum-windows": {
@@ -33,6 +35,22 @@ const articles: Record<
       "For Los Angeles projects, the choice often depends on architectural style. Contemporary modern homes gravitate toward aluminum's clean, consistent profiles. Transitional and industrial-inspired designs lean toward steel's authentic character. Many of our projects specify both — steel for the primary facade and aluminum for secondary elevations.",
     ],
   },
+  "oversized-window-openings": {
+    title: "Oversized Window Openings: Structural Considerations",
+    category: "Technical",
+    date: "2026-02-28",
+    readTime: "7 min read",
+    excerpt:
+      "Engineering and structural coordination for floor-to-ceiling and wall-to-wall glass installations.",
+    body: [
+      "Oversized window and door openings are one of the defining features of contemporary Los Angeles residential architecture — and one of the most technically demanding specifications a project team will navigate. When openings exceed standard catalog dimensions, the conversation shifts from product selection to structural engineering.",
+      "The first question is always the header. A single operable panel spanning 12 feet wide and 10 feet tall can weigh over 800 pounds. That load transfers to a structural header above the opening, which in most cases requires a steel beam engineered specifically for the span. Coordinating this early — ideally during design development — prevents costly changes during construction documents.",
+      "Glass is the second consideration. Standard tempered glass has size limits that vary by manufacturer, typically in the range of 96 to 130 inches on the long dimension. Beyond those thresholds, laminated glass is required. Laminated glass adds weight, cost, and lead time, but it also provides meaningful safety benefits — particularly for openings near grade or adjacent to living spaces.",
+      "Track and hardware engineering is equally critical. Oversized panels require concealed roller systems rated for the actual panel weight, not nominal weight. We specify hardware from manufacturers whose engineers will review the actual panel dimensions and provide stamped load calculations when required by the building department.",
+      "Installation logistics are often underestimated. Panels exceeding 500 pounds cannot be set by hand. Projects need to plan for crane or forklift access, temporary structural support during installation, and crews with documented experience handling large-scale glazing. We coordinate directly with installers before pricing to ensure the logistics are realistic.",
+      "The reward for getting it right is significant. A 40-foot opening glass wall or a single floor-to-ceiling panel that spans an entire living room facade is one of the most dramatic architectural moments available in residential design. We've specified and delivered some of the largest residential glazing assemblies in Southern California — and the process, when managed correctly, is entirely achievable.",
+    ],
+  },
   "title-24-window-requirements": {
     title: "Title 24 Window Requirements for California Luxury Homes",
     category: "Energy & Code",
@@ -46,6 +64,12 @@ const articles: Record<
       "High-performance glazing packages from premium manufacturers like Fleetwood, Loewen, and Andersen can meet or exceed these requirements. Triple-pane configurations, low-E coatings, and argon or krypton gas fills deliver U-factors well below code minimums. The key is specifying the right glass package for each elevation and exposure.",
       "For projects with oversized openings or extensive west-facing glass, a performance trade-off analysis may be necessary. The energy consultant can use the performance approach (rather than prescriptive) to evaluate the building as a whole, allowing more flexibility in individual window specifications.",
       "We work closely with energy consultants and architects to navigate these requirements from the earliest design stages — ensuring that product selection supports both the architecture and the energy budget.",
+    ],
+    furtherReading: [
+      {
+        label: "California Title 24 — Official Code (Building Energy Efficiency Standards)",
+        href: "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards",
+      },
     ],
   },
 };
@@ -107,8 +131,7 @@ export default async function ArticlePage({ params }: Props) {
       {/* Article Body */}
       <Section>
         <Container>
-          <AnimatedReveal>
-            <article className="mx-auto max-w-3xl">
+          <article className="mx-auto max-w-3xl">
               <div className="space-y-6">
                 {article.body.map((paragraph, i) => (
                   <p
@@ -119,6 +142,31 @@ export default async function ArticlePage({ params }: Props) {
                   </p>
                 ))}
               </div>
+
+              {article.furtherReading && (
+                <div className="mt-10 border border-neutral-warm-200 bg-neutral-warm-50 p-6">
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
+                    Official Resources
+                  </p>
+                  <ul className="space-y-2">
+                    {article.furtherReading.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-sm font-medium text-neutral-warm-700 underline-offset-2 hover:text-brand-terracotta hover:underline"
+                        >
+                          {item.label}
+                          <svg className="h-3 w-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
 
               <hr className="my-12 border-neutral-warm-200" />
 
@@ -131,7 +179,6 @@ export default async function ArticlePage({ params }: Props) {
                 </Button>
               </div>
             </article>
-          </AnimatedReveal>
         </Container>
       </Section>
     </>

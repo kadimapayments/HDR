@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { generatePageMetadata } from "@/lib/metadata";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -34,6 +35,25 @@ export default function ContactPage() {
                 <Heading level="h2" className="mb-8">
                   Start a Conversation
                 </Heading>
+
+                {/* Submit Plans callout */}
+                <div className="mb-8 flex items-center justify-between gap-6 border border-neutral-warm-200 bg-neutral-warm-50 px-6 py-5">
+                  <div>
+                    <p className="text-sm font-medium text-neutral-warm-900">
+                      Already have plans or a full project brief?
+                    </p>
+                    <p className="mt-0.5 text-xs text-neutral-warm-500">
+                      Skip the general form — upload your plans and share the full project details directly.
+                    </p>
+                  </div>
+                  <Link
+                    href="/submit-plans"
+                    className="shrink-0 border border-brand-terracotta px-5 py-2.5 text-xs font-medium uppercase tracking-wide text-brand-terracotta transition-colors hover:bg-brand-terracotta hover:text-white"
+                  >
+                    Submit Plans →
+                  </Link>
+                </div>
+
                 <ContactForm />
               </AnimatedReveal>
             </div>
@@ -81,8 +101,8 @@ export default function ContactPage() {
                     </h3>
                     <div className="space-y-1 text-sm text-neutral-warm-600">
                       <p>Monday – Friday: 9:00 AM – 5:00 PM</p>
-                      <p>Saturday: By Appointment</p>
-                      <p>Sunday: Closed</p>
+                      <p>Saturday & Sunday: By Appointment</p>
+                      <p>Outside business hours: By Appointment</p>
                     </div>
                   </div>
                 </div>
