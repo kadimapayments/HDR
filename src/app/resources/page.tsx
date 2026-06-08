@@ -46,7 +46,7 @@ const articles = [
     excerpt:
       "Why laminated glass has become a top specification request for Los Angeles homeowners seeking better protection against forced entry — without sacrificing design.",
     date: "2026-05-10",
-    image: "/images/systems/window-wall.jpg",
+    image: "/images/showroom/162A2571.jpg",
   },
   {
     title: "Oversized Window Openings: Structural Considerations",

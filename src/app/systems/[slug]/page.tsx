@@ -196,7 +196,7 @@ const systemData: Record<
   "security-glass": {
     name: "Security Glass",
     category: "Specialty",
-    images: ["/images/showroom/showroom-andersen.jpg"],
+    images: ["/images/showroom/162A2571.jpg"],
     description:
       "Laminated security glazing pairs the architectural quality of premium window and door systems with meaningful protection against forced entry — a specification we're seeing requested far more often as Los Angeles homeowners prioritize home security without compromising on design.",
     features: [
