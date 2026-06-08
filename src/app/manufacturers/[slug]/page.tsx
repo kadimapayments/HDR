@@ -320,8 +320,8 @@ const data: Record<
       {
         name: "Ultimate",
         material: "Wood or Aluminum-Clad Wood (Fully Custom)",
-        priceTier: "Ultra-Premium",
-        priceIndicator: "$$$$$",
+        priceTier: "Premium–Luxury",
+        priceIndicator: "$$$$",
         overview:
           "The Ultimate collection is Marvin's most customizable product — essentially a bespoke window and door system built to the exact specification of the project. Any size, configuration, species, finish, and hardware combination is available. It's the right choice when a project demands complete design control and material authenticity without compromise.",
         bestFor: [
@@ -335,8 +335,8 @@ const data: Record<
       {
         name: "Modern",
         material: "Fiberglass Exterior / Aluminum Interior",
-        priceTier: "Premium–Luxury",
-        priceIndicator: "$$$$",
+        priceTier: "Ultra-Premium",
+        priceIndicator: "$$$$$",
         overview:
           "The Modern collection is Marvin's architectural statement — slim high density fiberglass exterior sightlines with a clean aluminum interior. It's designed specifically for contemporary and transitional homes where clean lines and natural materials coexist. The Modern line is the most frequently specified Marvin product on architect-led luxury residential projects in Southern California.",
         bestFor: [
@@ -741,21 +741,24 @@ export default async function ManufacturerPage({ params }: Props) {
 
               {/* Featured Collections */}
               {m.collections && (
-                <AnimatedReveal>
+                <div>
                   <Heading level="h3">Featured Collections</Heading>
-                  <div className="mt-4 space-y-6">
+                  <p className="mt-2 text-sm text-neutral-warm-500">
+                    Specialized lines worth knowing about when scoping a Loewen specification.
+                  </p>
+                  <div className="mt-6 space-y-4">
                     {m.collections.map((collection) => (
-                      <div key={collection.name}>
-                        <p className="text-sm font-medium uppercase tracking-wide text-brand-terracotta">
+                      <div key={collection.name} className="border border-neutral-warm-200 bg-white p-6">
+                        <h4 className="font-serif text-2xl font-semibold tracking-tight text-brand-terracotta">
                           {collection.name}
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-neutral-warm-600">
+                        </h4>
+                        <p className="mt-3 text-sm leading-relaxed text-neutral-warm-600">
                           {collection.description}
                         </p>
                       </div>
                     ))}
                   </div>
-                </AnimatedReveal>
+                </div>
               )}
 
               {/* Product Lines */}
