@@ -20,6 +20,7 @@ type ButtonAsLink = {
   href: string;
   target?: string;
   rel?: string;
+  onClick?: () => void;
 };
 
 type ButtonProps = ButtonAsButton | ButtonAsLink;
@@ -56,9 +57,9 @@ export function Button({
   );
 
   if ("href" in props && props.href) {
-    const { href, target, rel } = props as ButtonAsLink;
+    const { href, target, rel, onClick } = props as ButtonAsLink;
     return (
-      <Link href={href} className={styles} target={target} rel={rel}>
+      <Link href={href} className={styles} target={target} rel={rel} onClick={onClick}>
         {children}
       </Link>
     );

@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { COMPANY, MANUFACTURERS, SYSTEMS } from "@/lib/constants";
+import { trackEvent } from "@/lib/analytics";
 
 const socialLinks = [
   {
@@ -65,6 +68,7 @@ export function Footer() {
               <p>
                 <a
                   href={`tel:${COMPANY.phoneRaw}`}
+                  onClick={() => trackEvent("phone_click", { location: "footer" })}
                   className="transition-colors hover:text-white"
                 >
                   {COMPANY.phone}
@@ -73,6 +77,7 @@ export function Footer() {
               <p>
                 <a
                   href={`mailto:${COMPANY.email}`}
+                  onClick={() => trackEvent("email_click", { location: "footer" })}
                   className="transition-colors hover:text-white"
                 >
                   {COMPANY.email}

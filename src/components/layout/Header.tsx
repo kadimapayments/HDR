@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { NAV_ITEMS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
+import { trackEvent } from "@/lib/analytics";
 import { MobileMenu } from "./MobileMenu";
 import { FireRebuildBanner } from "./FireRebuildBanner";
 
@@ -142,6 +143,7 @@ export function Header() {
                 variant="primary"
                 size="sm"
                 className="whitespace-nowrap"
+                onClick={() => trackEvent("cta_click", { label: "Submit Plans", location: "header" })}
               >
                 Submit Plans
               </Button>

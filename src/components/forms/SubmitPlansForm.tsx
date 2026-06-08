@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
+import { trackEvent } from "@/lib/analytics";
 
 const inputCls =
   "w-full border border-neutral-warm-300 bg-white px-4 py-3 text-sm text-neutral-warm-900 placeholder-neutral-warm-400 focus:border-brand-terracotta focus:outline-none";
@@ -34,6 +35,7 @@ export function SubmitPlansForm() {
       const res = await fetch("/api/submit-plans", { method: "POST", body: data });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");
+      trackEvent("form_submit", { form_name: "submit_plans" });
       setStatus("success");
       form.reset();
     } catch (err) {
