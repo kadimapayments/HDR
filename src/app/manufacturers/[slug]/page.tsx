@@ -713,19 +713,19 @@ export default async function ManufacturerPage({ params }: Props) {
         <Container>
           <div className="grid gap-16 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-16">
-              {/* Pros & Cons — hidden when product lines are present */}
+              {/* Advantages, Considerations & Best For — hidden when product lines are present */}
               {!m.productLines && (
                 <AnimatedReveal>
-                  <div className="grid gap-8 md:grid-cols-2">
-                    <div>
-                      <Heading level="h3" serif={false}>
+                  <div className="grid gap-6 md:grid-cols-3">
+                    <div className="border border-neutral-warm-200 bg-white p-6">
+                      <h3 className="font-serif text-lg font-semibold tracking-tight text-neutral-warm-900">
                         Advantages
-                      </Heading>
+                      </h3>
                       <ul className="mt-4 space-y-3">
                         {m.pros.map((pro) => (
                           <li
                             key={pro}
-                            className="flex items-start gap-3 text-sm text-neutral-warm-600"
+                            className="flex items-start gap-3 text-sm leading-relaxed text-neutral-warm-600"
                           >
                             <svg
                               className="mt-0.5 h-4 w-4 shrink-0 text-accent-sage"
@@ -745,15 +745,15 @@ export default async function ManufacturerPage({ params }: Props) {
                         ))}
                       </ul>
                     </div>
-                    <div>
-                      <Heading level="h3" serif={false}>
+                    <div className="border border-neutral-warm-200 bg-white p-6">
+                      <h3 className="font-serif text-lg font-semibold tracking-tight text-neutral-warm-900">
                         Considerations
-                      </Heading>
+                      </h3>
                       <ul className="mt-4 space-y-3">
                         {m.cons.map((con) => (
                           <li
                             key={con}
-                            className="flex items-start gap-3 text-sm text-neutral-warm-600"
+                            className="flex items-start gap-3 text-sm leading-relaxed text-neutral-warm-600"
                           >
                             <svg
                               className="mt-0.5 h-4 w-4 shrink-0 text-neutral-warm-400"
@@ -773,25 +773,35 @@ export default async function ManufacturerPage({ params }: Props) {
                         ))}
                       </ul>
                     </div>
+                    <div className="border border-neutral-warm-200 bg-white p-6">
+                      <h3 className="font-serif text-lg font-semibold tracking-tight text-brand-terracotta">
+                        Best For
+                      </h3>
+                      <ul className="mt-4 space-y-3">
+                        {m.bestFor.map((item) => (
+                          <li
+                            key={item}
+                            className="flex items-start gap-3 text-sm leading-relaxed text-neutral-warm-600"
+                          >
+                            <svg
+                              className="mt-0.5 h-4 w-4 shrink-0 text-brand-terracotta"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
+                            </svg>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </AnimatedReveal>
-              )}
-
-              {/* Best For — hidden when product lines are present */}
-              {!m.productLines && (
-                <AnimatedReveal>
-                  <Heading level="h3">Best For</Heading>
-                  <ul className="mt-4 space-y-3">
-                    {m.bestFor.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-center gap-3 text-sm text-neutral-warm-600"
-                      >
-                        <div className="h-1.5 w-1.5 rounded-full bg-brand-terracotta" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
                 </AnimatedReveal>
               )}
 
