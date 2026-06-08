@@ -359,6 +359,8 @@ const data: Record<
       "Broadest portfolio: folding, sliding, frameless, pivoting",
       "Industry-leading air, water, and structural test ratings",
       "Single-track sliding (HSW) and frameless (cero) options unique to NanaWall",
+      "Corner-opening configurations that remove the post for uninterrupted views",
+      "Acoustical line for sound isolation near busy streets or shared walls",
       "Strong coastal and high-wind performance",
       "Exceptional engineering documentation for architects",
     ],
@@ -506,6 +508,66 @@ const data: Record<
       "Residences valuing wood interiors at premium-tier pricing",
       "Builder-spec luxury homes",
       "Projects where lead-time certainty matters",
+    ],
+    productLines: [
+      {
+        name: "Pinnacle",
+        material: "Aluminum-Clad Wood",
+        priceTier: "Premium",
+        priceIndicator: "$$$",
+        overview:
+          "Windsor's flagship wood line, built with Clear Select Pine, Natural Alder, or Douglas Fir interiors and heavy-duty extruded aluminum cladding rather than thin roll-formed alternatives. Pinnacle spans both traditional profiles and a newer contemporary collection with slimmer sightlines and expanded glass area, giving architects real range without leaving the line.",
+        bestFor: [
+          "Custom homes wanting genuine wood interiors at a premium-tier price",
+          "Traditional and transitional architecture",
+          "Contemporary projects specifying the slimmer Pinnacle collection",
+          "Mixed-tier projects where Windsor is the single-source manufacturer",
+        ],
+        notFor: "Ultra-premium architectural work where Marvin Modern or Fleetwood-level sightlines and panel sizes are the brief.",
+      },
+      {
+        name: "Legend",
+        material: "Cellular PVC / Wood-Clad Hybrid",
+        priceTier: "Mid-Tier",
+        priceIndicator: "$$",
+        overview:
+          "A hybrid line that pairs high-density cellular PVC with wood-clad sashes, engineered to resist rot and warping while keeping a paintable, traditional wood look. Legend is built for authenticity in replacement and renovation work, holding original glass sizes and trim details that standard vinyl products typically can't match.",
+        bestFor: [
+          "Historic home renovations and period-appropriate replacements",
+          "Coastal properties needing durable, low-maintenance performance",
+          "Projects prioritizing traditional aesthetics with modern performance",
+          "Builder-spec homes wanting a paintable, wood-look exterior",
+        ],
+        notFor: "Architect-led contemporary projects where a true wood-interior line like Pinnacle is the better fit.",
+      },
+      {
+        name: "Next Dimension",
+        material: "Multi-Chambered Vinyl",
+        priceTier: "Value",
+        priceIndicator: "$",
+        overview:
+          "Windsor's reimagined vinyl line, built on multi-chambered extrusions with galvanized steel reinforcement for larger openings. It carries the same Cardinal LoE 366 glass and Super Spacer technology found in the higher-tier lines, making it a dependable, code-compliant option where budget and energy performance lead the brief.",
+        bestFor: [
+          "Value-tier rooms, secondary spaces, and builder-spec scopes",
+          "Projects where Title 24 compliance and budget both matter",
+          "Replacement and renovation work outside architectural scopes",
+        ],
+        notFor: "Architect-led or luxury residential work where Pinnacle's wood interiors and design flexibility are expected.",
+      },
+      {
+        name: "Revive",
+        material: "Wood-Clad / Hybrid / Vinyl Pocket Replacement",
+        priceTier: "Value",
+        priceIndicator: "$",
+        overview:
+          "A pocket-replacement line designed to install into existing frames, preserving original interior and exterior trim, with wood-clad, hybrid, and vinyl options depending on the project. Installation is fast, often under an hour per opening, which makes Revive a practical choice for renovation work where disturbing surrounding finishes isn't an option.",
+        bestFor: [
+          "Renovations and remodels preserving existing trim and millwork",
+          "Period homes where matching original sightlines matters",
+          "Projects with tight schedules or occupied homes during construction",
+        ],
+        notFor: "New construction or projects requiring full-frame replacement and larger configurations.",
+      },
     ],
   },
   plygem: {
