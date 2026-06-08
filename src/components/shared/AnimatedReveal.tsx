@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import type { Variants } from "framer-motion";
+import { useEffect, useState } from "react";
 import { fadeUp } from "@/lib/animations";
 import { cn } from "@/lib/utils";
 
@@ -21,8 +22,13 @@ export function AnimatedReveal({
   once = true,
 }: AnimatedRevealProps) {
   const prefersReducedMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
 
-  if (prefersReducedMotion) {
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  if (prefersReducedMotion || isMobile) {
     return <div className={className}>{children}</div>;
   }
 
@@ -30,7 +36,7 @@ export function AnimatedReveal({
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, amount: 0.2 }}
+      viewport={{ once, amount: 0.1 }}
       variants={variants}
       transition={delay ? { delay } : undefined}
       className={cn(className)}
