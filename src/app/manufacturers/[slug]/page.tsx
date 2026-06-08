@@ -65,7 +65,6 @@ const data: Record<
       { name: "Contemporary Aluminum", slug: "contemporary-aluminum" },
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
-      { name: "Hinge Doors", slug: "sliding-doors" },
       { name: "Pocket Doors", slug: "pocket-doors" },
     ],
     bestFor: [
@@ -151,7 +150,6 @@ const data: Record<
       { name: "Pivot Doors", slug: "pivot-doors" },
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
-      { name: "Hinge Doors", slug: "sliding-doors" },
     ],
     bestFor: [
       "Traditional and transitional architecture (E-Series / A-Series)",
@@ -262,7 +260,6 @@ const data: Record<
     systems: [
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
-      { name: "Hinge Doors", slug: "sliding-doors" },
       { name: "Automated Systems", slug: "automated-systems" },
     ],
     bestFor: [
@@ -345,7 +342,7 @@ const data: Record<
           "Projects pairing slim exterior sightlines with clean interiors",
           "High-end new construction where design drives the brief",
         ],
-        notFor: "Traditional architecture or projects where panel sizes need to exceed Marvin's maximum configurations.",
+        notFor: "Traditional architecture.",
       },
     ],
   },
@@ -410,7 +407,6 @@ const data: Record<
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
       { name: "Folding Doors", slug: "bifold-doors" },
-      { name: "Hinge Doors", slug: "sliding-doors" },
     ],
     bestFor: [
       "Steel-framed contemporary architecture",
@@ -443,7 +439,6 @@ const data: Record<
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
       { name: "Folding Doors", slug: "bifold-doors" },
-      { name: "Hinge Doors", slug: "sliding-doors" },
     ],
     bestFor: [
       "Indoor-outdoor living on a controlled budget",
@@ -592,7 +587,6 @@ const data: Record<
       { name: "Pivot Doors", slug: "pivot-doors" },
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
-      { name: "Hinge Doors", slug: "sliding-doors" },
       { name: "Window Wall", slug: "window-wall" },
     ],
     bestFor: [

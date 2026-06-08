@@ -109,7 +109,6 @@ export const SYSTEMS = [
     category: "Specialty",
   },
   { name: "Folding Doors", slug: "bifold-doors", category: "Doors" },
-  { name: "Hinge Doors", slug: "sliding-doors", category: "Doors" },
   { name: "Automated Systems", slug: "automated-systems", category: "Smart Home" },
   { name: "Window Wall", slug: "window-wall", category: "Windows" },
   { name: "Pocket Doors", slug: "pocket-doors", category: "Doors" },

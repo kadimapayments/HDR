@@ -329,36 +329,6 @@ const systemData: Record<
       { name: "Windsor", slug: "windsor" },
     ],
   },
-  "sliding-doors": {
-    name: "Sliding Doors",
-    category: "Doors",
-    images: ["/images/systems/hinge-doors.jpg", "/images/showroom/162A0765.jpg"],
-    description:
-      "Sliding doors are the most-specified opening system in California residential — clean operation, narrow sightlines, and large panel sizes at a lower cost than multi-slide or folding alternatives.",
-    features: [
-      "Panel widths up to 6 feet, heights up to 10 feet",
-      "Single, double, and triple-track configurations",
-      "Concealed bottom-rolling hardware",
-      "Thermally broken aluminum, steel, and clad-wood options",
-      "Soft-close and motorized options",
-      "Flush sill profiles for ADA and aesthetic continuity",
-    ],
-    bestFor: [
-      "Master bedroom and den exterior doors",
-      "Secondary indoor-outdoor connections",
-      "Projects balancing performance and cost",
-      "Volume residential and multi-unit projects",
-      "Hospitality-influenced suites",
-    ],
-    manufacturers: [
-      { name: "Fleetwood", slug: "fleetwood" },
-      { name: "Andersen", slug: "andersen" },
-      { name: "Marvin", slug: "marvin" },
-      { name: "Loewen", slug: "loewen" },
-      { name: "Euroline", slug: "euroline" },
-      { name: "LaCantina", slug: "lacantina" },
-    ],
-  },
 };
 
 type Props = {
