@@ -11,7 +11,7 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 export const metadata: Metadata = generatePageMetadata({
   title: "About HDR Windows",
   description:
-    "Learn about Horizon Design & Renovation, Los Angeles's trusted specification partner for luxury architectural windows and doors.",
+    "Learn about Horizon Design & Renovation, Los Angeles's trusted partner in choosing the right luxury architectural windows and doors.",
   path: "/about",
 });
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
       <PageHero
         title="Who We Are"
         subtitle="About HDR"
-        description="More than a window dealer: we're your specification partner for luxury architectural projects across Los Angeles."
+        description="More than a window dealer: we guide product selection for luxury architectural projects across Los Angeles."
       />
 
       {/* Story */}
@@ -46,8 +46,8 @@ export default function AboutPage() {
                   and homeowners who demand the best.
                 </p>
                 <p>
-                  We don&apos;t just sell windows. We consult on specifications,
-                  navigate complex product selections, manage procurement and
+                  We don&apos;t just sell windows. We consult on product selection,
+                  navigate complex decisions, manage procurement and
                   lead times, and ensure every unit arrives and installs
                   correctly. Our team understands the technical demands of
                   modern architecture, from oversized structural openings to
@@ -105,7 +105,7 @@ export default function AboutPage() {
               Our Approach
             </p>
             <Heading level="h2">
-              Specification-First, Every Time
+              Architecture-First, Every Time
             </Heading>
             <p className="mt-6 text-neutral-warm-500 leading-relaxed">
               Architecture comes first; the product catalog comes second. By
@@ -119,7 +119,7 @@ export default function AboutPage() {
             {[
               {
                 step: "01",
-                title: "Consult & Specify",
+                title: "Consult & Recommend",
                 description:
                   "We review plans, discuss design intent, and recommend the optimal window and door systems for your project.",
               },

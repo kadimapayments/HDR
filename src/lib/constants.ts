@@ -3,7 +3,7 @@ export const SITE_FULL_NAME = "Horizon Design & Renovation";
 export const SITE_TAGLINE =
   "Architectural Windows & Doors for Los Angeles's Finest Residences";
 export const SITE_DESCRIPTION =
-  "HDR Windows is Los Angeles's premier specification partner for luxury architectural windows and doors. We serve architects, builders, and homeowners with Fleetwood, NanaWall, Loewen, Andersen, and more.";
+  "HDR Windows is Los Angeles's premier source for luxury architectural windows and doors. We serve architects, builders, and homeowners with Fleetwood, NanaWall, Loewen, Andersen, and more.";
 export const SITE_URL = "https://hdrwindows.com";
 
 export const COMPANY = {
@@ -71,7 +71,7 @@ export const INTERIOR_PARTNERS = [
     category: "Interior Doors",
     tagline: "Architectural Interior Doors",
     description:
-      "TruStile builds the most refined interior doors in the industry: flush, MDF, glass, and stile-and-rail, with custom architectural details. A Marvin company, TruStile is the natural complement to Marvin window and door specifications.",
+      "TruStile builds the most refined interior doors in the industry: flush, MDF, glass, and stile-and-rail, with custom architectural details. A Marvin company, TruStile is the natural complement to Marvin window and door systems.",
   },
   {
     name: "Emtek",

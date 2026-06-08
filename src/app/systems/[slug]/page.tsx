@@ -122,7 +122,7 @@ const systemData: Record<
       "Modern and minimalist architecture",
       "Coastal and hillside residences",
       "Large fixed glazing and oversized operable panels",
-      "Low-maintenance specifications",
+      "Low-maintenance projects",
       "Mixed-use and high-end multi-family",
     ],
     manufacturers: [
@@ -134,7 +134,7 @@ const systemData: Record<
     category: "Specialty",
     images: ["/images/systems/energy-efficient.jpg", "/images/showroom/162A2538.jpg"],
     description:
-      "California's Title 24 is among the strictest energy codes in the country, and we specify high-performance glazing systems that meet and routinely exceed its requirements without compromising design intent.",
+      "California's Title 24 is among the strictest energy codes in the country, and we recommend high-performance glazing systems that meet and routinely exceed its requirements without compromising design intent.",
     features: [
       "U-factors as low as 0.20 with triple glazing",
       "SHGC tuning for solar orientation",
@@ -166,7 +166,7 @@ const systemData: Record<
     category: "Specialty",
     images: ["/images/systems/oversized-openings.jpg", "/images/showroom/162A2521.jpg"],
     description:
-      "When the design exceeds standard catalog limits, we specify and engineer truly oversized assemblies: single panels exceeding 100 sq ft, glass walls spanning 60+ feet, with full structural coordination.",
+      "When the design exceeds standard catalog limits, we source and engineer truly oversized assemblies: single panels exceeding 100 sq ft, glass walls spanning 60+ feet, with full structural coordination.",
     features: [
       "Single operable panels up to 12 feet × 16 feet",
       "Opening glass wall runs of 60+ feet",
@@ -198,7 +198,7 @@ const systemData: Record<
     category: "Specialty",
     images: ["/images/showroom/162A2571.jpg"],
     description:
-      "Laminated security glazing pairs the architectural quality of premium window and door systems with meaningful protection against forced entry, a specification we're seeing requested far more often as Los Angeles homeowners prioritize home security without compromising on design.",
+      "Laminated security glazing pairs the architectural quality of premium window and door systems with meaningful protection against forced entry, an upgrade we're seeing requested far more often as Los Angeles homeowners prioritize home security without compromising on design.",
     features: [
       "Laminated construction with a durable polymer interlayer",
       "Significantly more resistant to forced entry and impact than standard glass",

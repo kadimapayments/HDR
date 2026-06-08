@@ -19,15 +19,15 @@ export const metadata: Metadata = generatePageMetadata({
 const steps = [
   {
     step: "01",
-    title: "Design Review & Specification",
+    title: "Design Review & Product Planning",
     description:
-      "We review your plans and unit types, then develop a consistent window and door specification across the project, balancing design intent, energy performance, and cost targets.",
+      "We review your plans and unit types, then develop a consistent window and door product plan across the project, balancing design intent, energy performance, and cost targets.",
   },
   {
     step: "02",
     title: "Volume Pricing & Value Engineering",
     description:
-      "With confirmed specifications, we engage our manufacturer partners for volume pricing programs. Where needed, we explore alternative systems that deliver the same aesthetic at a better margin.",
+      "With products confirmed, we engage our manufacturer partners for volume pricing programs. Where needed, we explore alternative systems that deliver the same aesthetic at a better margin.",
   },
   {
     step: "03",
@@ -79,7 +79,7 @@ export default function ForDevelopersPage() {
                 </p>
                 <p>
                   We carry nine premium manufacturers and can develop a unified
-                  specification across your project, or value-engineer specific
+                  product plan across your project, or value-engineer specific
                   unit types, while maintaining a cohesive design language
                   throughout the development.
                 </p>

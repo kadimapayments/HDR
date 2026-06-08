@@ -12,7 +12,7 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 export const metadata: Metadata = generatePageMetadata({
   title: "Interiors: Doors & Hardware",
   description:
-    "HDR specifies and supplies architectural interior doors from TruStile and the full Emtek hardware library. The natural counterpart to our window and door specifications.",
+    "HDR sources and supplies architectural interior doors from TruStile and the full Emtek hardware library. The natural counterpart to our window and door work.",
   path: "/interiors",
 });
 
@@ -25,7 +25,7 @@ const partners = [
     category: "Interior Doors",
     tagline: "Architectural Interior Doors",
     description:
-      "TruStile builds the most refined interior doors in the industry: flush, MDF, glass, and stile-and-rail, with custom architectural details. A Marvin company, TruStile is the natural complement to Marvin window and door specifications.",
+      "TruStile builds the most refined interior doors in the industry: flush, MDF, glass, and stile-and-rail, with custom architectural details. A Marvin company, TruStile is the natural complement to Marvin window and door systems.",
     points: [
       "Flush, MDF, glass, and stile-and-rail configurations",
       "Custom sizes, panel layouts, and sticking profiles",
@@ -41,7 +41,7 @@ const partners = [
     category: "Interior Doors",
     tagline: "Architectural Wood Doors & Millwork",
     description:
-      "Metrie El & El produces premium architectural wood interior doors and millwork with an emphasis on quality craftsmanship and design flexibility. A trusted specification for projects requiring custom profiles, species, and coordinated moulding programs.",
+      "Metrie El & El produces premium architectural wood interior doors and millwork with an emphasis on quality craftsmanship and design flexibility. A trusted choice for projects requiring custom profiles, species, and coordinated moulding programs.",
     points: [
       "Architectural wood interior doors in a range of panel configurations",
       "Custom species, finishes, and sizing",
@@ -57,7 +57,7 @@ const partners = [
     category: "Interior Doors",
     tagline: "Quality Wood Doors",
     description:
-      "AAW Inc manufactures quality wood interior doors built for residential applications that demand reliable craftsmanship and consistent supply. A practical specification for projects requiring well-made wood doors across a range of styles.",
+      "AAW Inc manufactures quality wood interior doors built for residential applications that demand reliable craftsmanship and consistent supply. A practical fit for projects requiring well-made wood doors across a range of styles.",
     points: [
       "Solid and engineered wood construction",
       "Custom sizing and panel layouts available",
@@ -119,7 +119,7 @@ export default function InteriorsPage() {
       <PageHero
         title="Interiors"
         subtitle="Doors & Hardware"
-        description="A complete residential package extends past the exterior envelope. We specify and supply architectural interior doors from TruStile and the full Emtek hardware library, coordinated to the same standard as our window and door work."
+        description="A complete residential package extends past the exterior envelope. We source and supply architectural interior doors from TruStile and the full Emtek hardware library, coordinated to the same standard as our window and door work."
       />
 
       {/* Partners */}
@@ -202,7 +202,7 @@ export default function InteriorsPage() {
 
           <AnimatedReveal className="mt-12 text-center">
             <Button href="/contact" variant="primary" size="lg">
-              Specify Interiors with HDR
+              Furnish Your Interiors with HDR
             </Button>
           </AnimatedReveal>
         </Container>

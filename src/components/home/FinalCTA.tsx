@@ -29,7 +29,7 @@ export function FinalCTA() {
             Let&apos;s Discuss Your Project
           </Heading>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-neutral-warm-400">
-            Whether you&apos;re an architect specifying a new build, a builder
+            Whether you&apos;re an architect planning a new build, a builder
             sourcing materials, or a homeowner planning a renovation, we&apos;re
             here to help.
           </p>

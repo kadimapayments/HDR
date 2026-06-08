@@ -12,7 +12,7 @@ const audiences = [
   {
     title: "Architects",
     description:
-      "Your specification partner from concept to completion. We provide technical support, product selection, and detailed system recommendations.",
+      "Your trusted partner from concept to completion. We provide technical support, product selection, and detailed system recommendations.",
     href: "/for-architects",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

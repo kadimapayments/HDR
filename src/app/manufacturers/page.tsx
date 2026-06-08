@@ -138,7 +138,7 @@ const manufacturers = [
     tier: "Value",
     materials: ["Vinyl"],
     description:
-      "Plygem manufactures dependable vinyl windows and doors with strong energy performance and broad availability. The right specification for ADUs, value-tier rooms, and projects where supply consistency and code compliance lead the brief.",
+      "Plygem manufactures dependable vinyl windows and doors with strong energy performance and broad availability. The right fit for ADUs, value-tier rooms, and projects where supply consistency and code compliance lead the brief.",
   },
 ];
 

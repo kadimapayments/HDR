@@ -55,7 +55,7 @@ export function Footer() {
               />
             </div>
             <p className="mb-6 text-sm leading-relaxed">
-              Los Angeles&apos;s premier specification partner for luxury
+              Los Angeles&apos;s premier partner in choosing luxury
               architectural windows and doors. Serving architects, builders, and
               homeowners.
             </p>

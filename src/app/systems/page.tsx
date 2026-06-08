@@ -87,7 +87,7 @@ export default function SystemsPage() {
       <PageHero
         title="Window & Door Systems"
         subtitle="Innovation"
-        description="We specify systems, not just brands. Every architectural challenge demands the right combination of performance, aesthetics, and engineering."
+        description="We match the system to the architecture, not just the brand. Every challenge demands the right combination of performance, aesthetics, and engineering."
       />
 
       <Section>
