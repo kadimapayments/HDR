@@ -45,7 +45,7 @@ const data: Record<
     leadTime: "12–16 weeks",
     materials: ["Aluminum"],
     overview:
-      "Fleetwood is the industry standard for high-performance aluminum: Southern California-built multi-slide and bifold systems with the largest operable panel sizes, slimmest sightlines, and engineering precision in the category.",
+      "Fleetwood is the industry standard for high-performance aluminum — Southern California-built multi-slide and bifold systems with the largest operable panel sizes, slimmest sightlines, and engineering precision in the category.",
     pros: [
       "Industry-leading multi-slide door engineering",
       "Massive panel sizes with slim sightlines",
@@ -130,7 +130,7 @@ const data: Record<
     leadTime: "8–12 weeks",
     materials: ["Aluminum-Clad", "Composite", "Fiberglass", "Vinyl-Clad"],
     overview:
-      "Andersen is America's most recognized window manufacturer, a 120-year-old company with a product line that spans every tier of residential construction. More range under one brand than any competitor in the market.",
+      "Andersen is America's most recognized window manufacturer, a 120-year-old company with a product line that spans every tier of residential construction — more range under one brand than any competitor in the market.",
     pros: [
       "E-Series is fully custom: sizes, shapes, colors, finishes",
       "Reliable lead times and nationwide service network",
@@ -387,7 +387,7 @@ const data: Record<
     leadTime: "16–22 weeks",
     materials: ["Steel"],
     overview:
-      "Euroline brings authentic European steel windows and doors to the U.S. market: thermally broken profiles that deliver the slim sightlines of traditional steel without sacrificing energy performance.",
+      "Euroline brings authentic European steel windows and doors to the U.S. market — thermally broken profiles that deliver the slim sightlines of traditional steel without sacrificing energy performance.",
     pros: [
       "Authentic narrow steel sightlines",
       "Thermally broken profiles meet Title 24",
@@ -422,7 +422,7 @@ const data: Record<
     leadTime: "8–12 weeks",
     materials: ["Aluminum", "Wood"],
     overview:
-      "LaCantina specializes exclusively in folding, sliding, and stacking door systems, a go-to specification for opening walls where performance and design integrity matter without the ultra-premium price tag.",
+      "LaCantina specializes exclusively in folding, sliding, and stacking door systems — a go-to choice for opening walls where performance and design integrity matter without the ultra-premium price tag.",
     pros: [
       "Strong value across folding and multi-slide categories",
       "Local Southern California manufacturing",
@@ -509,13 +509,13 @@ const data: Record<
     ],
   },
   plygem: {
-    name: "Plygem",
+    name: "Ply Gem",
     tagline: "Dependable Vinyl at Scale",
     tier: "Value",
     leadTime: "4–8 weeks",
     materials: ["Vinyl"],
     overview:
-      "Plygem is the workhorse vinyl specification: dependable Title 24 energy performance, short lead times, and competitive pricing for ADUs, value-tier rooms, and secondary spaces.",
+      "Ply Gem is the workhorse vinyl specification: dependable Title 24 energy performance, short lead times, and competitive pricing for ADUs, value-tier rooms, and secondary spaces.",
     pros: [
       "Strong Title 24 energy performance across the catalog",
       "Short, reliable lead times from domestic manufacturing at scale",
@@ -571,7 +571,7 @@ const data: Record<
     leadTime: "14–20 weeks",
     materials: ["Aluminum-Clad", "Wood"],
     overview:
-      "Loewen is a Canadian manufacturer built on premium Douglas Fir and artisan-level craftsmanship: the choice for projects where material authenticity and hardware quality are non-negotiable.",
+      "Loewen is a Canadian manufacturer built on premium Douglas Fir and artisan-level craftsmanship — the choice for projects where material authenticity and hardware quality are non-negotiable.",
     pros: [
       "Exceptional wood quality (Douglas Fir standard)",
       "Premium hardware and operation",
@@ -868,6 +868,7 @@ export default async function ManufacturerPage({ params }: Props) {
               )}
 
               {/* Available Systems */}
+              {m.systems.length > 0 && (
               <AnimatedReveal>
                 <Heading level="h3">Available Systems</Heading>
                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -897,6 +898,7 @@ export default async function ManufacturerPage({ params }: Props) {
                   ))}
                 </div>
               </AnimatedReveal>
+              )}
             </div>
 
             {/* Sidebar */}

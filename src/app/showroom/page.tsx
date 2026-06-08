@@ -36,7 +36,7 @@ const features = [
   {
     title: "Private Consultation Rooms",
     description:
-      "Sit down with our product team to review plans, discuss options, and develop your project strategy.",
+      "Sit down with our team to review plans, discuss options, and develop your project strategy.",
   },
 ];
 

@@ -17,7 +17,7 @@ export default function WhoWeServePage() {
       <PageHero
         title="Who We Serve"
         subtitle="Clients"
-        description="From concept to completion, we partner with the full team behind exceptional homes: architects, builders, developers, and homeowners."
+        description="From concept to completion, we partner with the full team behind exceptional homes — architects, builders, developers, and homeowners."
       />
       <WhoWeServe />
       <FinalCTA />

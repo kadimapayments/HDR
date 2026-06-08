@@ -27,7 +27,7 @@ export default function AboutPage() {
       <PageHero
         title="Who We Are"
         subtitle="About HDR"
-        description="More than a window dealer: we guide product selection for luxury architectural projects across Los Angeles."
+        description="More than a window dealer — we guide product selection for luxury architectural projects across Los Angeles."
       />
 
       {/* Story */}
@@ -41,7 +41,7 @@ export default function AboutPage() {
               <div className="mt-8 space-y-6 text-neutral-warm-600 leading-relaxed">
                 <p>
                   Horizon Design & Renovation was founded with a singular
-                  focus: to bridge the gap between the world&apos;s finest
+                  focus — to bridge the gap between the world&apos;s finest
                   window and door manufacturers and the architects, builders,
                   and homeowners who demand the best.
                 </p>
@@ -108,7 +108,7 @@ export default function AboutPage() {
               Architecture-First, Every Time
             </Heading>
             <p className="mt-6 text-neutral-warm-500 leading-relaxed">
-              Architecture comes first; the product catalog comes second. By
+              We start with your architecture — not a product catalog. By
               understanding the design intent, structural requirements, energy
               targets, and aesthetic vision, we recommend the right system from
               the right manufacturer, not the most expensive one.

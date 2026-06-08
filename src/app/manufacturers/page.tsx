@@ -38,7 +38,7 @@ const LOGO_HEIGHT: Record<string, string> = {
 };
 
 const manufacturers = [
-  // Alphabetical, All Weather / IWC / Plygem at bottom
+  // Alphabetical, All Weather / IWC / Ply Gem at bottom
   // Ultra-Premium
   {
     name: "Andersen",
@@ -132,13 +132,13 @@ const manufacturers = [
       "International Window Corporation delivers flexible configurations and reliable performance for diverse residential applications.",
   },
   {
-    name: "Plygem",
+    name: "Ply Gem",
     slug: "plygem",
     tagline: "Dependable Vinyl at Scale",
     tier: "Value",
     materials: ["Vinyl"],
     description:
-      "Plygem manufactures dependable vinyl windows and doors with strong energy performance and broad availability. The right fit for ADUs, value-tier rooms, and projects where supply consistency and code compliance lead the brief.",
+      "Ply Gem manufactures dependable vinyl windows and doors with strong energy performance and broad availability. The right fit for ADUs, value-tier rooms, and projects where supply consistency and code compliance lead the brief.",
   },
 ];
 

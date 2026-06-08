@@ -48,7 +48,7 @@ const projects = [
     title: "Fourth Street Townhomes",
     neighborhood: "Manhattan Beach",
     type: "New Construction",
-    manufacturers: ["IWC", "Plygem"],
+    manufacturers: ["IWC", "Ply Gem"],
     slug: "3104-fourth-st",
   },
   {

@@ -38,7 +38,7 @@ export const MANUFACTURERS = [
   { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png" },
   { name: "All Weather", slug: "all-weather", logo: "/images/manufacturers/all-weather.svg" },
   { name: "IWC", slug: "iwc", logo: "/images/manufacturers/iwc.jpeg" },
-  { name: "Plygem", slug: "plygem", logo: "/images/manufacturers/plygem.jpg" },
+  { name: "Ply Gem", slug: "plygem", logo: "/images/manufacturers/plygem.jpg" },
 ] as const;
 
 export const MARQUEE_BRANDS = [
