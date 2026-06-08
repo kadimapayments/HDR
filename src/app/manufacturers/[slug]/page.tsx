@@ -35,6 +35,7 @@ const data: Record<
     systems: { name: string; slug: string }[];
     bestFor: string[];
     productLines?: ProductLine[];
+    collections?: { name: string; description: string }[];
   }
 > = {
   fleetwood: {
@@ -584,9 +585,8 @@ const data: Record<
       "Strong thermal performance",
     ],
     cons: [
-      "Longer lead times (Canadian manufacturing)",
       "Higher price point",
-      "Wood requires periodic maintenance",
+      "All wood requires periodic maintenance",
     ],
     systems: [
       { name: "Pivot Doors", slug: "pivot-doors" },
@@ -600,6 +600,28 @@ const data: Record<
       "Transitional and contemporary-traditional designs",
       "Projects prioritizing interior aesthetics",
       "High-end custom residences",
+    ],
+    collections: [
+      {
+        name: "Cyprium Collection",
+        description:
+          "Loewen's Cyprium Collection pairs the warmth of wood interiors with a durable, low-maintenance copper-alloy exterior cladding — engineered for projects that demand a distinctive, modern look without sacrificing the performance and craftsmanship Loewen is known for. It's a striking option for architects seeking a non-traditional exterior finish that develops a natural patina over time.",
+      },
+      {
+        name: "Stormforce Series",
+        description:
+          "The Stormforce Series is Loewen's high-performance line engineered for coastal and storm-prone regions, built to meet demanding impact and pressure requirements without compromising on design or sightlines. It's the right choice for luxury properties in exposed locations that need windows and doors capable of withstanding severe weather while still delivering Loewen's signature fit, finish, and craftsmanship.",
+      },
+      {
+        name: "Curtain Wall",
+        description:
+          "Loewen's curtain wall systems bring the same wood-and-cladding craftsmanship to large-scale glazed facades, allowing architects to design expansive walls of glass with continuous, unbroken sightlines. It's suited to statement architectural moments — great rooms, stairwells, and whole-wall openings — where the structure itself becomes part of the design.",
+      },
+      {
+        name: "Tranquility Glass",
+        description:
+          "Tranquility is Loewen's upgraded glazing option, combining laminated glass with specialized acoustic construction to deliver significantly better sound-dampening performance than standard insulated glass. The laminated layer also adds a meaningful security benefit — making the glass far more resistant to forced entry and impact. It's an excellent option for properties on busy streets, near airports, or anywhere both quiet and security are a priority.",
+      },
     ],
   },
 };
@@ -714,6 +736,25 @@ export default async function ManufacturerPage({ params }: Props) {
                       </li>
                     ))}
                   </ul>
+                </AnimatedReveal>
+              )}
+
+              {/* Featured Collections */}
+              {m.collections && (
+                <AnimatedReveal>
+                  <Heading level="h3">Featured Collections</Heading>
+                  <div className="mt-4 space-y-6">
+                    {m.collections.map((collection) => (
+                      <div key={collection.name}>
+                        <p className="text-sm font-medium uppercase tracking-wide text-brand-terracotta">
+                          {collection.name}
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-neutral-warm-600">
+                          {collection.description}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </AnimatedReveal>
               )}
 

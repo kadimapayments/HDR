@@ -40,6 +40,15 @@ const articles = [
     image: "/images/systems/energy-efficient.jpg",
   },
   {
+    title: "Laminated Glass for Residential Security: What LA Homeowners Should Know",
+    slug: "laminated-glass-residential-security",
+    category: "Technical",
+    excerpt:
+      "Why laminated glass has become a top specification request for Los Angeles homeowners seeking better protection against forced entry — without sacrificing design.",
+    date: "2026-05-10",
+    image: "/images/systems/window-wall.jpg",
+  },
+  {
     title: "Oversized Window Openings: Structural Considerations",
     slug: "oversized-window-openings",
     category: "Technical",

@@ -35,6 +35,22 @@ const articles: Record<
       "For Los Angeles projects, the choice often depends on architectural style. Contemporary modern homes gravitate toward aluminum's clean, consistent profiles. Transitional and industrial-inspired designs lean toward steel's authentic character. Many of our projects specify both — steel for the primary facade and aluminum for secondary elevations.",
     ],
   },
+  "laminated-glass-residential-security": {
+    title: "Laminated Glass for Residential Security: What LA Homeowners Should Know",
+    category: "Technical",
+    date: "2026-05-10",
+    readTime: "5 min read",
+    excerpt:
+      "Why laminated glass has become a top specification request for Los Angeles homeowners seeking better protection against forced entry — without sacrificing design.",
+    body: [
+      "Over the past couple of years, we've seen a clear shift in what Los Angeles homeowners are asking for: alongside the usual conversations about light, sightlines, and energy performance, security has moved firmly to the top of the list. High-profile break-ins across LA's luxury neighborhoods have made many homeowners rethink how their windows and doors perform — not just aesthetically, but structurally.",
+      "Laminated glass is one of the most effective answers to that concern. Unlike standard insulated glass, laminated glass is constructed with two or more layers of glass bonded together with an interlayer, typically a tough polymer such as PVB (polyvinyl butyral). When the glass is struck — whether by a tool, a rock, or a body — it cracks but stays bonded to the interlayer rather than shattering into the room. That dramatically slows down, and often stops, a forced-entry attempt.",
+      "The security benefit comes from time. Most break-in attempts rely on speed and minimal noise. A standard annealed or even tempered pane can be defeated quickly and quietly. Laminated glass requires sustained, repeated effort to penetrate — effort that is loud, slow, and far more likely to be noticed by neighbors, passersby, or a security system. For many of our clients, that alone is the deciding factor.",
+      "Beyond security, laminated glass brings real quality-of-life advantages that make it an easy specification to justify. The same interlayer that resists impact also significantly reduces sound transmission, which is a major draw for homes near busy streets, flight paths, or in dense neighborhoods. It also blocks the vast majority of UV transmission, helping protect interior finishes, art, and furnishings from fading.",
+      "From a specification standpoint, laminated glass is now offered as an upgrade option across nearly every premium manufacturer we work with — including Loewen's Tranquility glazing, which combines laminated construction with acoustic performance specifically for projects where both quiet and security matter. It can typically be specified on entry doors, ground-floor windows, and other vulnerable openings without changing the overall look of a home's glazing package.",
+      "If security has become a priority for your project — whether you're building new or upgrading existing openings — it's worth having a conversation early. Laminated glass can usually be incorporated into a design without compromise, and for many LA homeowners right now, it's quickly becoming less of an upgrade and more of a standard.",
+    ],
+  },
   "oversized-window-openings": {
     title: "Oversized Window Openings: Structural Considerations",
     category: "Technical",
