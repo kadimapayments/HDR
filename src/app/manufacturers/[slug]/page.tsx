@@ -930,38 +930,6 @@ export default async function ManufacturerPage({ params }: Props) {
                 </>
               )}
 
-              {/* Available Systems */}
-              {m.systems.length > 0 && (
-              <AnimatedReveal>
-                <Heading level="h3">Available Systems</Heading>
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  {m.systems.map((system) => (
-                    <Link
-                      key={system.slug}
-                      href={`/systems/${system.slug}`}
-                      className="group flex items-center justify-between border border-neutral-warm-200 bg-white p-4 transition-all hover:border-brand-terracotta/30"
-                    >
-                      <span className="text-sm font-medium text-neutral-warm-700 group-hover:text-brand-terracotta">
-                        {system.name}
-                      </span>
-                      <svg
-                        className="h-4 w-4 text-neutral-warm-400 transition-transform group-hover:translate-x-1"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </Link>
-                  ))}
-                </div>
-              </AnimatedReveal>
-              )}
             </div>
 
             {/* Sidebar */}
@@ -987,6 +955,40 @@ export default async function ManufacturerPage({ params }: Props) {
                       ))}
                     </div>
                   </div>
+
+                  {m.systems.length > 0 && (
+                  <div>
+                    <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
+                      Available Systems
+                    </h4>
+                    <div className="space-y-2">
+                      {m.systems.map((system) => (
+                        <Link
+                          key={system.slug}
+                          href={`/systems/${system.slug}`}
+                          className="group flex items-center justify-between border border-neutral-warm-200 bg-white px-3 py-2.5 transition-all hover:border-brand-terracotta/30"
+                        >
+                          <span className="text-sm font-medium text-neutral-warm-700 group-hover:text-brand-terracotta">
+                            {system.name}
+                          </span>
+                          <svg
+                            className="h-3.5 w-3.5 shrink-0 text-neutral-warm-400 transition-transform group-hover:translate-x-1"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                  )}
 
                   <div className="pt-4">
                     <Button
