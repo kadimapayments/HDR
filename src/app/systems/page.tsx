@@ -65,7 +65,7 @@ const systemDetails: Record<string, { description: string }> = {
   },
   "security-glass": {
     description:
-      "Laminated glazing that adds meaningful protection against forced entry — without compromising the architectural look of your windows and doors.",
+      "Laminated glazing that adds meaningful protection against forced entry, without compromising the architectural look of your windows and doors.",
   },
   "automated-systems": {
     description:
@@ -73,7 +73,7 @@ const systemDetails: Record<string, { description: string }> = {
   },
   "window-wall": {
     description:
-      "Floor-to-ceiling glazing from slab to slab — maximum transparency, minimal framing, and the seamless glass facade of contemporary high-end residential architecture.",
+      "Floor-to-ceiling glazing from slab to slab: maximum transparency, minimal framing, and the seamless glass facade of contemporary high-end residential architecture.",
   },
   "pocket-doors": {
     description:
@@ -87,7 +87,7 @@ export default function SystemsPage() {
       <PageHero
         title="Window & Door Systems"
         subtitle="Innovation"
-        description="We specify systems — not just brands. Every architectural challenge demands the right combination of performance, aesthetics, and engineering."
+        description="We specify systems, not just brands. Every architectural challenge demands the right combination of performance, aesthetics, and engineering."
       />
 
       <Section>

@@ -43,7 +43,7 @@ export default function ContactPage() {
                       Already have plans or a full project brief?
                     </p>
                     <p className="mt-0.5 text-xs text-neutral-warm-500">
-                      Skip the general form — upload your plans and share the full project details directly.
+                      Skip the general form: upload your plans and share the full project details directly.
                     </p>
                   </div>
                   <Link

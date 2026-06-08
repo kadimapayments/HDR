@@ -23,15 +23,15 @@ const offerings = [
   },
   {
     title: "Expedited Specification & Lead Times",
-    body: "Rebuild projects are routed through a dedicated specification track. We work alongside your architect and builder to compress lead times where manufacturers can accommodate it — without sacrificing quality.",
+    body: "Rebuild projects are routed through a dedicated specification track. We work alongside your architect and builder to compress lead times where manufacturers can accommodate it, without sacrificing quality.",
   },
   {
     title: "Code & Compliance Guidance",
-    body: "Title 24 energy compliance and updated WUI (Wildland-Urban Interface) requirements affect every rebuild. We help specify systems that meet — and document — current code without surprises during permit review.",
+    body: "Title 24 energy compliance and updated WUI (Wildland-Urban Interface) requirements affect every rebuild. We help specify systems that meet (and document) current code, without surprises during permit review.",
   },
   {
     title: "No-Cost Project Consultation",
-    body: "If you're rebuilding, we'll review your plans and existing window schedule at no cost. You leave with a written specification estimate and a clear next step — whether or not you ultimately work with us.",
+    body: "If you're rebuilding, we'll review your plans and existing window schedule at no cost. You leave with a written specification estimate and a clear next step, whether or not you ultimately work with us.",
   },
 ];
 
@@ -49,12 +49,12 @@ const steps = [
   {
     n: "03",
     title: "Specification & quote",
-    body: "You receive a complete specification, pricing breakdown, and timeline. We coordinate directly with your architect and builder — no telephone game.",
+    body: "You receive a complete specification, pricing breakdown, and timeline. We coordinate directly with your architect and builder, so there's no telephone game.",
   },
   {
     n: "04",
     title: "Procurement & install",
-    body: "Once approved, we manage the order, delivery, and installation crews — through punch list and warranty registration.",
+    body: "Once approved, we manage the order, delivery, and installation crews, through punch list and warranty registration.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function FireRebuildPage() {
               <p className="font-serif text-2xl leading-relaxed text-neutral-warm-800 md:text-3xl">
                 Rebuilding a home isn&apos;t just construction. It&apos;s
                 reclaiming a place. We&apos;re committed to making the windows
-                and doors part of that story straightforward — not another
+                and doors part of that story straightforward, not another
                 source of stress.
               </p>
             </div>

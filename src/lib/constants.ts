@@ -58,7 +58,7 @@ export const FIRE_REBUILD_PROGRAMS = [
     slug: "fleetwood",
     headline: "Palisades Rebuild Program",
     detail:
-      "Fleetwood has announced a dedicated rebuild program for the Pacific Palisades and Eaton fire-affected homeowners — including expedited lead times and verified discounted pricing.",
+      "Fleetwood has announced a dedicated rebuild program for the Pacific Palisades and Eaton fire-affected homeowners, including expedited lead times and verified discounted pricing.",
     externalUrl: "https://www.fleetwoodusa.com/en-us/palisades",
   },
 ] as const;
@@ -71,7 +71,7 @@ export const INTERIOR_PARTNERS = [
     category: "Interior Doors",
     tagline: "Architectural Interior Doors",
     description:
-      "TruStile builds the most refined interior doors in the industry — flush, MDF, glass, and stile-and-rail with custom architectural details. A Marvin company, TruStile is the natural complement to Marvin window and door specifications.",
+      "TruStile builds the most refined interior doors in the industry: flush, MDF, glass, and stile-and-rail, with custom architectural details. A Marvin company, TruStile is the natural complement to Marvin window and door specifications.",
   },
   {
     name: "Emtek",
@@ -80,7 +80,7 @@ export const INTERIOR_PARTNERS = [
     category: "Hardware",
     tagline: "Architectural Door Hardware",
     description:
-      "Emtek manufactures the most comprehensive line of architectural door hardware in North America — knobs, levers, pulls, multi-points, and electronic locks across a wide range of finishes and design vocabularies.",
+      "Emtek manufactures the most comprehensive line of architectural door hardware in North America: knobs, levers, pulls, multi-points, and electronic locks across a wide range of finishes and design vocabularies.",
   },
 ] as const;
 

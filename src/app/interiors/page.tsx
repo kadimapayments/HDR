@@ -10,7 +10,7 @@ import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 import { FinalCTA } from "@/components/home/FinalCTA";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Interiors — Doors & Hardware",
+  title: "Interiors: Doors & Hardware",
   description:
     "HDR specifies and supplies architectural interior doors from TruStile and the full Emtek hardware library. The natural counterpart to our window and door specifications.",
   path: "/interiors",
@@ -25,7 +25,7 @@ const partners = [
     category: "Interior Doors",
     tagline: "Architectural Interior Doors",
     description:
-      "TruStile builds the most refined interior doors in the industry — flush, MDF, glass, and stile-and-rail with custom architectural details. A Marvin company, TruStile is the natural complement to Marvin window and door specifications.",
+      "TruStile builds the most refined interior doors in the industry: flush, MDF, glass, and stile-and-rail, with custom architectural details. A Marvin company, TruStile is the natural complement to Marvin window and door specifications.",
     points: [
       "Flush, MDF, glass, and stile-and-rail configurations",
       "Custom sizes, panel layouts, and sticking profiles",
@@ -89,7 +89,7 @@ const partners = [
     category: "Hardware",
     tagline: "Architectural Door Hardware",
     description:
-      "Emtek manufactures the most comprehensive line of architectural door hardware in North America — knobs, levers, pulls, multi-points, and electronic locks across a wide range of finishes and design vocabularies.",
+      "Emtek manufactures the most comprehensive line of architectural door hardware in North America: knobs, levers, pulls, multi-points, and electronic locks across a wide range of finishes and design vocabularies.",
     points: [
       "Knobs, levers, and pulls in dozens of finishes",
       "Multi-point hardware for tall and oversized doors",
@@ -119,7 +119,7 @@ export default function InteriorsPage() {
       <PageHero
         title="Interiors"
         subtitle="Doors & Hardware"
-        description="A complete residential package extends past the exterior envelope. We specify and supply architectural interior doors from TruStile and the full Emtek hardware library — coordinated to the same standard as our window and door work."
+        description="A complete residential package extends past the exterior envelope. We specify and supply architectural interior doors from TruStile and the full Emtek hardware library, coordinated to the same standard as our window and door work."
       />
 
       {/* Partners */}

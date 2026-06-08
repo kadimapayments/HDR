@@ -101,7 +101,7 @@ const manufacturers = [
     tier: "Premium",
     materials: ["Aluminum", "Aluminum-Clad", "Composite", "Wood"],
     description:
-      "The pioneer of the modern folding glass wall. NanaWall systems open entire walls with engineered precision — folding, sliding, frameless, and single-track configurations for every architectural intent.",
+      "The pioneer of the modern folding glass wall. NanaWall systems open entire walls with engineered precision: folding, sliding, frameless, and single-track configurations for every architectural intent.",
   },
   {
     name: "Windsor",
@@ -148,7 +148,7 @@ export default function ManufacturersPage() {
       <PageHero
         title="Our Manufacturers"
         subtitle="From classic to contemporary"
-        description="We carry the industry's most respected window and door manufacturers — each selected for their quality, performance, and architectural relevance."
+        description="We carry the industry's most respected window and door manufacturers, each selected for their quality, performance, and architectural relevance."
       />
 
       <Section>

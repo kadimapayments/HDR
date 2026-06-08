@@ -21,7 +21,7 @@ const steps = [
     step: "01",
     title: "Review Plans & Design Intent",
     description:
-      "Share your drawings and we'll identify the optimal window and door systems for your design — considering aesthetics, performance targets, and budget parameters.",
+      "Share your drawings and we'll identify the optimal window and door systems for your design, considering aesthetics, performance targets, and budget parameters.",
   },
   {
     step: "02",
@@ -33,7 +33,7 @@ const steps = [
     step: "03",
     title: "Pricing & Procurement",
     description:
-      "Once specifications are finalized, we deliver comprehensive pricing and manage the procurement process — including lead time coordination and production scheduling.",
+      "Once specifications are finalized, we deliver comprehensive pricing and manage the procurement process, including lead time coordination and production scheduling.",
   },
   {
     step: "04",
@@ -73,7 +73,7 @@ export default function ForArchitectsPage() {
               <div className="mt-8 space-y-6 text-neutral-warm-600 leading-relaxed">
                 <p>
                   As architects, you need a window and door partner who
-                  understands design intent — not just product catalogs. Our
+                  understands design intent, not just product catalogs. Our
                   team works from your drawings, understands your aesthetic
                   vision, and recommends systems that deliver on both
                   performance and design.
@@ -81,7 +81,7 @@ export default function ForArchitectsPage() {
                 <p>
                   We carry nine premium manufacturers and can specify across
                   brands to find the optimal solution for each opening in your
-                  project. One manufacturer rarely does everything best — and we
+                  project. One manufacturer rarely does everything best, and we
                   have the expertise to navigate those decisions with you.
                 </p>
               </div>

@@ -11,7 +11,7 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 export const metadata: Metadata = generatePageMetadata({
   title: "About HDR Windows",
   description:
-    "Learn about Horizon Design & Renovation — Los Angeles's trusted specification partner for luxury architectural windows and doors.",
+    "Learn about Horizon Design & Renovation, Los Angeles's trusted specification partner for luxury architectural windows and doors.",
   path: "/about",
 });
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
       <PageHero
         title="Who We Are"
         subtitle="About HDR"
-        description="More than a window dealer — we're your specification partner for luxury architectural projects across Los Angeles."
+        description="More than a window dealer: we're your specification partner for luxury architectural projects across Los Angeles."
       />
 
       {/* Story */}
@@ -50,7 +50,7 @@ export default function AboutPage() {
                   navigate complex product selections, manage procurement and
                   lead times, and ensure every unit arrives and installs
                   correctly. Our team understands the technical demands of
-                  modern architecture — from oversized structural openings to
+                  modern architecture, from oversized structural openings to
                   coastal performance ratings to Title 24 compliance.
                 </p>
                 <p>
@@ -108,10 +108,10 @@ export default function AboutPage() {
               Specification-First, Every Time
             </Heading>
             <p className="mt-6 text-neutral-warm-500 leading-relaxed">
-              We start with your architecture — not a product catalog. By
+              Architecture comes first; the product catalog comes second. By
               understanding the design intent, structural requirements, energy
               targets, and aesthetic vision, we recommend the right system from
-              the right manufacturer — not the most expensive one.
+              the right manufacturer, not the most expensive one.
             </p>
           </AnimatedReveal>
 

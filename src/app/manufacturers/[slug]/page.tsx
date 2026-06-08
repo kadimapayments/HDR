@@ -45,17 +45,17 @@ const data: Record<
     leadTime: "12–16 weeks",
     materials: ["Aluminum"],
     overview:
-      "Fleetwood is the industry standard for high-performance aluminum — Southern California-built multi-slide and bifold systems with the largest operable panel sizes, slimmest sightlines, and engineering precision in the category.",
+      "Fleetwood is the industry standard for high-performance aluminum: Southern California-built multi-slide and bifold systems with the largest operable panel sizes, slimmest sightlines, and engineering precision in the category.",
     pros: [
       "Industry-leading multi-slide door engineering",
       "Massive panel sizes with slim sightlines",
-      "Local SoCal manufacturing — faster lead times",
+      "Local SoCal manufacturing for faster lead times",
       "Extensive custom configuration options",
       "Strong coastal performance ratings",
       "Excellent architect and builder support",
     ],
     cons: [
-      "Premium pricing — highest in category",
+      "Premium pricing, highest in category",
       "Aluminum-only (no wood interior option)",
       "Complex configurations require experienced installers",
     ],
@@ -81,14 +81,14 @@ const data: Record<
         priceTier: "Premium",
         priceIndicator: "$$$",
         overview:
-          "Fleetwood's entry point into the aluminum system category — a thermally broken aluminum line engineered for solid energy performance and reliable operation at a lower price than the Gen4 and Edge. The 3-Series delivers the Fleetwood build quality and California manufacturing advantage on a more accessible budget, making it a practical specification for secondary spaces, ADUs, and projects where the full Gen4 premium isn't warranted.",
+          "Fleetwood's entry point into the aluminum system category: a thermally broken aluminum line engineered for solid energy performance and reliable operation at a lower price than the Gen4 and Edge. The 3-Series delivers the Fleetwood build quality and California manufacturing advantage on a more accessible budget, making it a practical specification for secondary spaces, ADUs, and projects where the full Gen4 premium isn't warranted.",
         bestFor: [
           "Secondary and accessory spaces within a larger project",
           "ADUs and guesthouses on architect-led properties",
           "Projects where Fleetwood quality is required but Gen4 is over-budget",
           "Value-conscious new construction in contemporary style",
         ],
-        notFor: "Primary living spaces on luxury architect-led projects — Gen4 or Edge is the correct specification there.",
+        notFor: "Primary living spaces on luxury architect-led projects; Gen4 or Edge is the correct specification there.",
       },
       {
         name: "Gen4",
@@ -96,15 +96,15 @@ const data: Record<
         priceTier: "Ultra-Premium",
         priceIndicator: "$$$$",
         overview:
-          "The Gen4 is Fleetwood's most-specified product line and the industry benchmark for aluminum multi-slide door systems. Engineered for maximum panel size, smooth operation, and slim sightlines, the Gen4 is the default specification for architect-designed indoor-outdoor living in California. Available in pocket, stack-back, and bi-parting configurations across a wide range of widths and heights — with one of the largest operable panel size envelopes in the market.",
+          "The Gen4 is Fleetwood's most-specified product line and the industry benchmark for aluminum multi-slide door systems. Engineered for maximum panel size, smooth operation, and slim sightlines, the Gen4 is the default specification for architect-designed indoor-outdoor living in California. Available in pocket, stack-back, and bi-parting configurations across a wide range of widths and heights, with one of the largest operable panel size envelopes in the market.",
         bestFor: [
           "Primary indoor-outdoor living spaces in luxury residential",
           "Architect-led contemporary and modern projects",
-          "Large opening configurations — pocket, stack, and bi-parting",
+          "Large opening configurations: pocket, stack, and bi-parting",
           "Coastal and hillside homes with expansive view corridors",
           "Projects where panel size and sightline precision are the priority",
         ],
-        notFor: "Projects requiring absolute minimum sightlines — Edge delivers a slimmer profile.",
+        notFor: "Projects requiring absolute minimum sightlines; Edge delivers a slimmer profile.",
       },
       {
         name: "Edge",
@@ -112,7 +112,7 @@ const data: Record<
         priceTier: "Ultra-Premium",
         priceIndicator: "$$$$$",
         overview:
-          "The Edge is Fleetwood's flagship line, engineered for projects where the glass-to-frame ratio is the design priority. It delivers the slimmest sightlines in the Fleetwood catalog — maximizing transparency and creating a near-frameless appearance at full architectural scale. The Edge is the right specification when the architect's intent depends on minimal aluminum presence and maximum visual openness.",
+          "The Edge is Fleetwood's flagship line, engineered for projects where the glass-to-frame ratio is the design priority. It delivers the slimmest sightlines in the Fleetwood catalog, maximizing transparency and creating a near-frameless appearance at full architectural scale. The Edge is the right specification when the architect's intent depends on minimal aluminum presence and maximum visual openness.",
         bestFor: [
           "Luxury residences where minimal sightlines are a core design intent",
           "Large fixed and operable lites requiring near-frameless aesthetics",
@@ -130,9 +130,9 @@ const data: Record<
     leadTime: "8–12 weeks",
     materials: ["Aluminum-Clad", "Composite", "Fiberglass", "Vinyl-Clad"],
     overview:
-      "Andersen is America's most recognized window manufacturer — a 120-year-old company with a product line that spans every tier of residential construction. More range under one brand than any competitor in the market.",
+      "Andersen is America's most recognized window manufacturer, a 120-year-old company with a product line that spans every tier of residential construction. More range under one brand than any competitor in the market.",
     pros: [
-      "E-Series is fully custom — sizes, shapes, colors, finishes",
+      "E-Series is fully custom: sizes, shapes, colors, finishes",
       "Reliable lead times and nationwide service network",
       "Excellent warranty and post-installation support",
       "Strong energy-performance options (Title 24 compliant)",
@@ -165,7 +165,7 @@ const data: Record<
         priceTier: "Value",
         priceIndicator: "$",
         overview:
-          "Andersen's entry-level line built from Fibrex — a proprietary blend of reclaimed wood fiber and thermoplastic polymer. It won't rot, warp, or require painting, which makes it genuinely low-maintenance. The tradeoff is that it lacks the design flexibility, sightline quality, and hardware options expected on architectural work.",
+          "Andersen's entry-level line, built from Fibrex, a proprietary blend of reclaimed wood fiber and thermoplastic polymer. It won't rot, warp, or require painting, which makes it genuinely low-maintenance. The tradeoff is that it lacks the design flexibility, sightline quality, and hardware options expected on architectural work.",
         bestFor: [
           "Replacement windows in existing homes",
           "ADUs and accessory structures",
@@ -180,7 +180,7 @@ const data: Record<
         priceTier: "Value–Premium",
         priceIndicator: "$$",
         overview:
-          "A step up from the 100 Series, the 200 Series introduces a real wood pine interior with an aluminum-clad exterior. It bridges the gap between entry-level and the more specified 400 Series — offering better aesthetics and a wider product selection without moving into full architectural territory.",
+          "A step up from the 100 Series, the 200 Series introduces a real wood pine interior with an aluminum-clad exterior. It bridges the gap between entry-level and the more specified 400 Series, offering better aesthetics and a wider product selection without moving into full architectural territory.",
         bestFor: [
           "Mid-tier residential construction",
           "Projects that want a wood interior look on a controlled budget",
@@ -195,7 +195,7 @@ const data: Record<
         priceTier: "Premium",
         priceIndicator: "$$$",
         overview:
-          "The 400 Series is Andersen's best-selling and most versatile line — a pine wood interior with a durable aluminum-clad exterior. It offers a broad range of styles, sizes, and configurations, with good energy performance and solid hardware. A reliable specification for traditional and transitional homes where design matters but the budget doesn't support full E-Series customization.",
+          "The 400 Series is Andersen's best-selling and most versatile line, a pine wood interior with a durable aluminum-clad exterior. It offers a broad range of styles, sizes, and configurations, with good energy performance and solid hardware. A reliable specification for traditional and transitional homes where design matters but the budget doesn't support full E-Series customization.",
         bestFor: [
           "Traditional, craftsman, and transitional architecture",
           "Homeowner-driven projects with a mid-to-upper budget",
@@ -211,7 +211,7 @@ const data: Record<
         priceTier: "Premium",
         priceIndicator: "$$$$",
         overview:
-          "The E-Series (formerly Eagle) is Andersen's most customizable product line — essentially a bespoke window and door system built to specification. Any size, shape, configuration, color, hardware finish, and glass package is available. It's the right choice when a project demands true architectural flexibility: radius windows, complex shapes, very large fixed lites, and complete design coordination with the rest of the building.",
+          "The E-Series (formerly Eagle) is Andersen's most customizable product line, essentially a bespoke window and door system built to specification. Any size, shape, configuration, color, hardware finish, and glass package is available. It's the right choice when a project demands true architectural flexibility: radius windows, complex shapes, very large fixed lites, and complete design coordination with the rest of the building.",
         bestFor: [
           "Architect-led custom residential specifications",
           "Complex shapes, arches, and non-standard configurations",
@@ -226,7 +226,7 @@ const data: Record<
         priceTier: "Ultra-Premium",
         priceIndicator: "$$$$$",
         overview:
-          "The A-Series is Andersen's architectural product — higher performance, more design flexibility, and better hardware than the 400 Series. It supports a wider range of custom sizes, configurations, and finishes, with improved structural performance for larger openings. A strong specification for luxury residential projects that don't require the full custom capability of the E-Series.",
+          "The A-Series is Andersen's architectural product: higher performance, more design flexibility, and better hardware than the 400 Series. It supports a wider range of custom sizes, configurations, and finishes, with improved structural performance for larger openings. A strong specification for luxury residential projects that don't require the full custom capability of the E-Series.",
         bestFor: [
           "Luxury residential with traditional or transitional design",
           "Architects needing broader sizing and configuration options",
@@ -254,7 +254,7 @@ const data: Record<
     ],
     cons: [
       "Multi-slide door panel sizes smaller than Fleetwood",
-      "Aluminum-clad finishes are factory-only — limited field touch-up",
+      "Aluminum-clad finishes are factory-only, with limited field touch-up",
       "Premium pricing vs. mainstream brands",
     ],
     systems: [
@@ -275,7 +275,7 @@ const data: Record<
         priceTier: "Value",
         priceIndicator: "$",
         overview:
-          "Marvin's entry-level collection built from fiberglass composite — durable, low-maintenance, and energy efficient. It won't rot, warp, or require repainting, which makes it a practical choice for replacement windows and budget-constrained scopes. Design flexibility and customization options are limited compared to the upper collections.",
+          "Marvin's entry-level collection, built from fiberglass composite: durable, low-maintenance, and energy efficient. It won't rot, warp, or require repainting, which makes it a practical choice for replacement windows and budget-constrained scopes. Design flexibility and customization options are limited compared to the upper collections.",
         bestFor: [
           "Replacement windows in existing homes",
           "ADUs and accessory structures",
@@ -290,7 +290,7 @@ const data: Record<
         priceTier: "Value–Premium",
         priceIndicator: "$$",
         overview:
-          "The Elevate collection introduces a real pine wood interior paired with a durable fiberglass exterior — a meaningful step up in warmth and aesthetics over the Essential. It's well-suited to production residential and mid-range new construction where a wood interior look is desired without moving into full architectural pricing.",
+          "The Elevate collection introduces a real pine wood interior paired with a durable fiberglass exterior, a meaningful step up in warmth and aesthetics over the Essential. It's well-suited to production residential and mid-range new construction where a wood interior look is desired without moving into full architectural pricing.",
         bestFor: [
           "Mid-range new construction and production builders",
           "Homeowners wanting a wood interior on a managed budget",
@@ -320,7 +320,7 @@ const data: Record<
         priceTier: "Premium–Luxury",
         priceIndicator: "$$$$",
         overview:
-          "The Ultimate collection is Marvin's most customizable product — essentially a bespoke window and door system built to the exact specification of the project. Any size, configuration, species, finish, and hardware combination is available. It's the right choice when a project demands complete design control and material authenticity without compromise.",
+          "The Ultimate collection is Marvin's most customizable product, essentially a bespoke window and door system built to the exact specification of the project. Any size, configuration, species, finish, and hardware combination is available. It's the right choice when a project demands complete design control and material authenticity without compromise.",
         bestFor: [
           "Fully custom architectural residential specifications",
           "Projects requiring unusual sizes, shapes, or configurations",
@@ -335,7 +335,7 @@ const data: Record<
         priceTier: "Ultra-Premium",
         priceIndicator: "$$$$$",
         overview:
-          "The Modern collection is Marvin's architectural statement — slim high density fiberglass exterior sightlines with a clean aluminum interior. It's designed specifically for contemporary and transitional homes where clean lines and natural materials coexist. The Modern line is the most frequently specified Marvin product on architect-led luxury residential projects in Southern California.",
+          "The Modern collection is Marvin's architectural statement: slim high density fiberglass exterior sightlines with a clean aluminum interior. It's designed specifically for contemporary and transitional homes where clean lines and natural materials coexist. The Modern line is the most frequently specified Marvin product on architect-led luxury residential projects in Southern California.",
         bestFor: [
           "Contemporary and modern architecture",
           "Architect-led luxury residential specifications",
@@ -353,7 +353,7 @@ const data: Record<
     leadTime: "12–18 weeks",
     materials: ["Aluminum", "Aluminum-Clad", "Composite", "Wood"],
     overview:
-      "NanaWall invented the modern folding glass wall and remains the category leader — offering the broadest portfolio of opening glass wall systems in the industry across aluminum, wood, and aluminum-clad options.",
+      "NanaWall invented the modern folding glass wall and remains the category leader, offering the broadest portfolio of opening glass wall systems in the industry across aluminum, wood, and aluminum-clad options.",
     pros: [
       "Inventor and category leader for folding glass walls",
       "Broadest portfolio: folding, sliding, frameless, pivoting",
@@ -363,7 +363,7 @@ const data: Record<
       "Exceptional engineering documentation for architects",
     ],
     cons: [
-      "Premium pricing — generally above category average",
+      "Premium pricing, generally above category average",
       "Lead times longer than aluminum-only alternatives",
       "Complex configurations require certified installers",
     ],
@@ -387,7 +387,7 @@ const data: Record<
     leadTime: "16–22 weeks",
     materials: ["Steel"],
     overview:
-      "Euroline brings authentic European steel windows and doors to the U.S. market — thermally broken profiles that deliver the slim sightlines of traditional steel without sacrificing energy performance.",
+      "Euroline brings authentic European steel windows and doors to the U.S. market: thermally broken profiles that deliver the slim sightlines of traditional steel without sacrificing energy performance.",
     pros: [
       "Authentic narrow steel sightlines",
       "Thermally broken profiles meet Title 24",
@@ -397,7 +397,7 @@ const data: Record<
     ],
     cons: [
       "Highest material cost in the category",
-      "Long lead times — manufactured in Europe",
+      "Long lead times, manufactured in Europe",
       "Specialized installation expertise required",
       "Heavier panels require structural coordination",
     ],
@@ -422,7 +422,7 @@ const data: Record<
     leadTime: "8–12 weeks",
     materials: ["Aluminum", "Wood"],
     overview:
-      "LaCantina specializes exclusively in folding, sliding, and stacking door systems — a go-to specification for opening walls where performance and design integrity matter without the ultra-premium price tag.",
+      "LaCantina specializes exclusively in folding, sliding, and stacking door systems, a go-to specification for opening walls where performance and design integrity matter without the ultra-premium price tag.",
     pros: [
       "Strong value across folding and multi-slide categories",
       "Local Southern California manufacturing",
@@ -454,7 +454,7 @@ const data: Record<
     leadTime: "8–12 weeks",
     materials: ["Aluminum", "Vinyl"],
     overview:
-      "All Weather is a reliable California manufacturer offering strong Title 24 energy performance and predictable lead times — the right specification when compliance and supply consistency lead the brief.",
+      "All Weather is a reliable California manufacturer offering strong Title 24 energy performance and predictable lead times: the right specification when compliance and supply consistency lead the brief.",
     pros: [
       "Strong Title 24 energy performance",
       "Reliable Southern California supply chain",
@@ -480,7 +480,7 @@ const data: Record<
     leadTime: "8–12 weeks",
     materials: ["Aluminum-Clad Wood", "Fiberglass", "Vinyl"],
     overview:
-      "Windsor is a family-owned manufacturer whose Pinnacle line delivers premium aluminum-clad wood at strong value — and whose broader catalog spans fiberglass and vinyl, making them a practical single-source partner for mixed-tier specifications.",
+      "Windsor is a family-owned manufacturer whose Pinnacle line delivers premium aluminum-clad wood at strong value, and whose broader catalog spans fiberglass and vinyl, making them a practical single-source partner for mixed-tier specifications.",
     pros: [
       "Pinnacle delivers premium clad-wood at strong value",
       "Deep custom sizing and configuration library",
@@ -491,7 +491,7 @@ const data: Record<
     cons: [
       "Maximum operable panel sizes more limited than Fleetwood / Marvin Modern",
       "Less brand recognition in California luxury market than peers",
-      "Dealer network thinner west of the Rockies — coordination matters",
+      "Dealer network thinner west of the Rockies, so coordination matters",
     ],
     systems: [
       { name: "Multi-Slide Doors", slug: "multi-slide-doors" },
@@ -515,16 +515,16 @@ const data: Record<
     leadTime: "4–8 weeks",
     materials: ["Vinyl"],
     overview:
-      "Plygem is the workhorse vinyl specification — dependable Title 24 energy performance, short lead times, and competitive pricing for ADUs, value-tier rooms, and secondary spaces.",
+      "Plygem is the workhorse vinyl specification: dependable Title 24 energy performance, short lead times, and competitive pricing for ADUs, value-tier rooms, and secondary spaces.",
     pros: [
       "Strong Title 24 energy performance across the catalog",
-      "Short, reliable lead times — domestic manufacturing at scale",
+      "Short, reliable lead times from domestic manufacturing at scale",
       "Competitive pricing for the performance level",
       "Wide product breadth (windows + doors)",
       "Good warranty support",
     ],
     cons: [
-      "Vinyl-only — limited architectural finish options",
+      "Vinyl-only, with limited architectural finish options",
       "Smaller maximum operable panel sizes than premium peers",
       "Not specified for primary spaces in luxury residential",
     ],
@@ -538,15 +538,15 @@ const data: Record<
     ],
   },
   iwc: {
-    name: "IWC — International Window Corporation",
+    name: "IWC: International Window Corporation",
     tagline: "Versatile Custom Solutions",
     tier: "Value",
     leadTime: "6–10 weeks",
     materials: ["Aluminum", "Vinyl"],
     overview:
-      "IWC is a California-based manufacturer offering flexible configurations and short lead times — a capable workhorse for ADUs, secondary spaces, and mixed-tier projects.",
+      "IWC is a California-based manufacturer offering flexible configurations and short lead times, a capable workhorse for ADUs, secondary spaces, and mixed-tier projects.",
     pros: [
-      "Short lead times — local California manufacturing",
+      "Short lead times from local California manufacturing",
       "Flexible configurations and sizing",
       "Strong value-tier pricing",
       "Reliable Title 24 options",
@@ -571,7 +571,7 @@ const data: Record<
     leadTime: "14–20 weeks",
     materials: ["Aluminum-Clad", "Wood"],
     overview:
-      "Loewen is a Canadian manufacturer built on premium Douglas Fir and artisan-level craftsmanship — the choice for projects where material authenticity and hardware quality are non-negotiable.",
+      "Loewen is a Canadian manufacturer built on premium Douglas Fir and artisan-level craftsmanship: the choice for projects where material authenticity and hardware quality are non-negotiable.",
     pros: [
       "Exceptional wood quality (Douglas Fir standard)",
       "Premium hardware and operation",
@@ -599,7 +599,7 @@ const data: Record<
       {
         name: "Cyprium Collection",
         description:
-          "Loewen's Cyprium Collection pairs the warmth of wood interiors with a durable, low-maintenance copper-alloy exterior cladding — engineered for projects that demand a distinctive, modern look without sacrificing the performance and craftsmanship Loewen is known for. It's a striking option for architects seeking a non-traditional exterior finish that develops a natural patina over time.",
+          "Loewen's Cyprium Collection pairs the warmth of wood interiors with a durable, low-maintenance copper-alloy exterior cladding, engineered for projects that demand a distinctive, modern look without sacrificing the performance and craftsmanship Loewen is known for. It's a striking option for architects seeking a non-traditional exterior finish that develops a natural patina over time.",
       },
       {
         name: "Stormforce Series",
@@ -609,12 +609,12 @@ const data: Record<
       {
         name: "Curtain Wall",
         description:
-          "Loewen's curtain wall systems bring the same wood-and-cladding craftsmanship to large-scale glazed facades, allowing architects to design expansive walls of glass with continuous, unbroken sightlines. It's suited to statement architectural moments — great rooms, stairwells, and whole-wall openings — where the structure itself becomes part of the design.",
+          "Loewen's curtain wall systems bring the same wood-and-cladding craftsmanship to large-scale glazed facades, allowing architects to design expansive walls of glass with continuous, unbroken sightlines. It's suited to statement architectural moments (great rooms, stairwells, and whole-wall openings) where the structure itself becomes part of the design.",
       },
       {
         name: "Tranquility Glass",
         description:
-          "Tranquility is Loewen's upgraded glazing option, combining laminated glass with specialized acoustic construction to deliver significantly better sound-dampening performance than standard insulated glass. The laminated layer also adds a meaningful security benefit — making the glass far more resistant to forced entry and impact. It's an excellent option for properties on busy streets, near airports, or anywhere both quiet and security are a priority.",
+          "Tranquility is Loewen's upgraded glazing option, combining laminated glass with specialized acoustic construction to deliver significantly better sound-dampening performance than standard insulated glass. The laminated layer also adds a meaningful security benefit, making the glass far more resistant to forced entry and impact. It's an excellent option for properties on busy streets, near airports, or anywhere both quiet and security are a priority.",
       },
     ],
   },
@@ -630,7 +630,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!manufacturer) return {};
 
   return generatePageMetadata({
-    title: `${manufacturer.name} — Authorized Dealer in Los Angeles`,
+    title: `${manufacturer.name}: Authorized Dealer in Los Angeles`,
     description: `HDR Windows is an authorized ${manufacturer.name} dealer in Los Angeles. ${manufacturer.overview.slice(0, 120)}...`,
     path: `/manufacturers/${slug}`,
   });
@@ -814,7 +814,7 @@ export default async function ManufacturerPage({ params }: Props) {
                   <div>
                     <Heading level="h3">Product Lines</Heading>
                     <p className="mt-2 text-sm text-neutral-warm-500">
-                      Not all series are equal — understanding which line fits your project is the first step to a correct specification.
+                      Not all series are equal: understanding which line fits your project is the first step to a correct specification.
                     </p>
                     <div className="mt-6 space-y-4">
                       {m.productLines.map((line) => (

@@ -148,7 +148,7 @@ export default function ShowroomSchedulePage() {
                       name="notes"
                       rows={4}
                       className={inputCls}
-                      placeholder="Anything you'd like us to know before your visit — manufacturers you're interested in, project details, etc."
+                      placeholder="Anything you'd like us to know before your visit, such as manufacturers you're interested in, project details, etc."
                     />
                   </div>
 

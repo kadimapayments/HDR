@@ -24,7 +24,7 @@ const benefits = [
   {
     title: "Accurate Takeoffs",
     description:
-      "Detailed window and door schedules from architectural plans — verified against rough opening dimensions before ordering.",
+      "Detailed window and door schedules from architectural plans, verified against rough opening dimensions before ordering.",
   },
   {
     title: "Lead Time Management",
@@ -54,7 +54,7 @@ export default function ForBuildersPage() {
       <PageHero
         title="Reliable Partner for Builders"
         subtitle="For Builders & GCs"
-        description="We keep your window and door supply chain running smoothly — from accurate takeoffs through delivery and installation support."
+        description="We keep your window and door supply chain running smoothly, from accurate takeoffs through delivery and installation support."
       />
 
       {/* Value Prop */}
@@ -67,7 +67,7 @@ export default function ForBuildersPage() {
             <p className="mt-6 text-neutral-warm-500 leading-relaxed">
               On luxury residential projects, windows and doors are often the
               longest lead-time items and the most complex to coordinate. We
-              take that burden off your plate — managing manufacturer timelines,
+              take that burden off your plate, managing manufacturer timelines,
               verifying dimensions, staging deliveries, and supporting
               installation crews.
             </p>

@@ -21,7 +21,7 @@ const features = [
   {
     title: "Full-Scale Operating Displays",
     description:
-      "See and operate complete window and door systems — not just samples. Experience the hardware, the action, and the scale.",
+      "See and operate complete window and door systems, not just samples. Experience the hardware, the action, and the scale.",
   },
   {
     title: "Side-by-Side Comparisons",

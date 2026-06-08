@@ -19,7 +19,7 @@ export default function ServicePage() {
       <PageHero
         title="Service & Warranty"
         subtitle="For Existing Customers"
-        description="Open a ticket with our service team. The more detail you can provide — manufacturer, order number, photos — the faster we can resolve the issue."
+        description="Open a ticket with our service team. The more detail you can provide (manufacturer, order number, photos) the faster we can resolve the issue."
       />
 
       <Section>

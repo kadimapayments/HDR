@@ -12,7 +12,7 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 export const metadata: Metadata = generatePageMetadata({
   title: "For Homeowners",
   description:
-    "HDR Windows helps Los Angeles homeowners choose the right windows and doors for new builds and renovations — personal guidance, showroom visits, and expert recommendations.",
+    "HDR Windows helps Los Angeles homeowners choose the right windows and doors for new builds and renovations: personal guidance, showroom visits, and expert recommendations.",
   path: "/for-homeowners",
 });
 
@@ -27,13 +27,13 @@ const steps = [
     step: "02",
     title: "Tell Us About Your Home",
     description:
-      "Share your plans, inspiration, and goals. Whether you're building new or renovating, we'll ask the right questions to understand what you need — style, performance, budget, and timeline.",
+      "Share your plans, inspiration, and goals. Whether you're building new or renovating, we'll ask the right questions to understand what you need: style, performance, budget, and timeline.",
   },
   {
     step: "03",
     title: "Receive a Clear Recommendation",
     description:
-      "We'll recommend specific systems and manufacturers that match your project — with straight answers on pricing, lead times, and what to expect during installation.",
+      "We'll recommend specific systems and manufacturers that match your project, with straight answers on pricing, lead times, and what to expect during installation.",
   },
   {
     step: "04",
@@ -52,7 +52,7 @@ const benefits = [
   {
     title: "Showroom Experience",
     description:
-      "Our West Los Angeles showroom features full-scale operating displays — so you can see exactly how a system looks and feels before committing.",
+      "Our West Los Angeles showroom features full-scale operating displays, so you can see exactly how a system looks and feels before committing.",
   },
   {
     title: "Honest Guidance",
@@ -67,7 +67,7 @@ const benefits = [
   {
     title: "Managed Installation",
     description:
-      "We work with trusted installation crews and stay involved through completion — so your windows and doors are installed to manufacturer standards.",
+      "We work with trusted installation crews and stay involved through completion, so your windows and doors are installed to manufacturer standards.",
   },
   {
     title: "Warranty Support",
@@ -95,8 +95,8 @@ export default function ForHomeownersPage() {
               </Heading>
               <div className="mt-8 space-y-6 text-neutral-warm-600 leading-relaxed">
                 <p>
-                  Windows and doors are among the most impactful — and most
-                  permanent — decisions you'll make in a home project. The wrong
+                  Windows and doors are among the most impactful and most
+                  permanent decisions you'll make in a home project. The wrong
                   choice affects how your home looks, how it feels, and how it
                   performs for decades.
                 </p>

@@ -35,7 +35,7 @@ export function ShowroomPreview() {
             <p className="mt-6 text-neutral-warm-500 leading-relaxed">
               Our Los Angeles showroom features full-scale operating displays
               from the industry&apos;s leading manufacturers. Touch the
-              hardware, operate the systems, and see the finishes — there&apos;s
+              hardware, operate the systems, and see the finishes. There&apos;s
               no substitute for hands-on experience.
             </p>
 
