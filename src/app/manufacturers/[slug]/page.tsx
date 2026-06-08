@@ -700,6 +700,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
+const LOGO_HEIGHT: Record<string, string> = {
+  fleetwood: "h-20",
+  andersen: "h-14",
+  marvin: "h-14",
+  loewen: "h-14",
+  euroline: "h-14",
+  plygem: "h-20",
+  nanawall: "h-8",
+};
+
 export default async function ManufacturerPage({ params }: Props) {
   const { slug } = await params;
   const m = data[slug];
@@ -940,8 +950,8 @@ export default async function ManufacturerPage({ params }: Props) {
               <AnimatedReveal delay={0.2}>
                 <div className="space-y-8 border-l border-neutral-warm-200 pl-8">
                   {mfr?.logo && (
-                    <div className="flex items-center justify-start border border-neutral-warm-200 bg-white px-6 py-5">
-                      <div className="relative h-12 w-full">
+                    <div className="flex items-center border border-neutral-warm-200 bg-white px-6 py-5">
+                      <div className={`relative w-44 ${LOGO_HEIGHT[slug] ?? "h-10"}`}>
                         <Image
                           src={mfr.logo}
                           alt={m.name}
