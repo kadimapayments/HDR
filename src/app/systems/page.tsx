@@ -93,7 +93,9 @@ export default function SystemsPage() {
       <Section>
         <Container>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {SYSTEMS.map((system, i) => (
+            {[...SYSTEMS]
+              .sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name))
+              .map((system, i) => (
               <AnimatedReveal key={system.slug} delay={i * 0.05}>
                 <Link
                   href={`/systems/${system.slug}`}

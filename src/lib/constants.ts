@@ -87,11 +87,11 @@ export const INTERIOR_PARTNERS = [
 export const SYSTEMS = [
   { name: "Multi-Slide Doors", slug: "multi-slide-doors", category: "Doors" },
   { name: "Pivot Doors", slug: "pivot-doors", category: "Doors" },
-  { name: "Steel Windows & Doors", slug: "steel-windows", category: "Windows" },
+  { name: "Steel Windows & Doors", slug: "steel-windows", category: "Specialty" },
   {
     name: "Contemporary Aluminum",
     slug: "contemporary-aluminum",
-    category: "Windows",
+    category: "Specialty",
   },
   {
     name: "Energy Efficient Systems",
@@ -109,7 +109,7 @@ export const SYSTEMS = [
     category: "Specialty",
   },
   { name: "Folding Doors", slug: "bifold-doors", category: "Doors" },
-  { name: "Automated Systems", slug: "automated-systems", category: "Smart Home" },
+  { name: "Automated Systems", slug: "automated-systems", category: "Specialty" },
   { name: "Window Wall", slug: "window-wall", category: "Windows" },
   { name: "Pocket Doors", slug: "pocket-doors", category: "Doors" },
 ] as const;
@@ -157,10 +157,12 @@ export const NAV_ITEMS = [
   {
     label: "Innovation",
     href: "/systems",
-    children: SYSTEMS.map((s) => ({
-      label: s.name,
-      href: `/systems/${s.slug}`,
-    })),
+    children: [...SYSTEMS]
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map((s) => ({
+        label: s.name,
+        href: `/systems/${s.slug}`,
+      })),
   },
   { label: "Interiors", href: "/interiors" },
   { label: "Resources", href: "/resources" },
