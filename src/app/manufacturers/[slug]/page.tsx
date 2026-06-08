@@ -317,21 +317,6 @@ const data: Record<
         notFor: "Projects requiring the slim sightlines or full material quality of the Modern or Ultimate collections.",
       },
       {
-        name: "Modern",
-        material: "Fiberglass Exterior / Aluminum Interior",
-        priceTier: "Premium–Luxury",
-        priceIndicator: "$$$$",
-        overview:
-          "The Modern collection is Marvin's architectural statement — slim fiberglass exterior sightlines with a clean aluminum interior. It's designed specifically for contemporary and transitional homes where clean lines and natural materials coexist. The Modern line is the most frequently specified Marvin product on architect-led luxury residential projects in Southern California.",
-        bestFor: [
-          "Contemporary and modern architecture",
-          "Architect-led luxury residential specifications",
-          "Projects pairing slim exterior sightlines with warm wood interiors",
-          "High-end new construction where design drives the brief",
-        ],
-        notFor: "Traditional architecture or projects where panel sizes need to exceed Marvin's maximum configurations.",
-      },
-      {
         name: "Ultimate",
         material: "Wood or Aluminum-Clad Wood (Fully Custom)",
         priceTier: "Ultra-Premium",
@@ -345,6 +330,21 @@ const data: Record<
           "Specifications that demand the highest Marvin fit and finish",
         ],
         notFor: "Budget-sensitive projects or builds where standard sizing and configurations work fine.",
+      },
+      {
+        name: "Modern",
+        material: "Fiberglass Exterior / Aluminum Interior",
+        priceTier: "Premium–Luxury",
+        priceIndicator: "$$$$",
+        overview:
+          "The Modern collection is Marvin's architectural statement — slim high density fiberglass exterior sightlines with a clean aluminum interior. It's designed specifically for contemporary and transitional homes where clean lines and natural materials coexist. The Modern line is the most frequently specified Marvin product on architect-led luxury residential projects in Southern California.",
+        bestFor: [
+          "Contemporary and modern architecture",
+          "Architect-led luxury residential specifications",
+          "Projects pairing slim exterior sightlines with clean interiors",
+          "High-end new construction where design drives the brief",
+        ],
+        notFor: "Traditional architecture or projects where panel sizes need to exceed Marvin's maximum configurations.",
       },
     ],
   },
