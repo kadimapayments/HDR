@@ -10,6 +10,8 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 import { FinalCTA } from "@/components/home/FinalCTA";
+import Image from "next/image";
+import { MANUFACTURERS } from "@/lib/constants";
 
 type ProductLine = {
   name: string;
@@ -701,6 +703,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ManufacturerPage({ params }: Props) {
   const { slug } = await params;
   const m = data[slug];
+  const mfr = MANUFACTURERS.find((x) => x.slug === slug);
 
   if (!m) notFound();
 
@@ -936,6 +939,19 @@ export default async function ManufacturerPage({ params }: Props) {
             <div>
               <AnimatedReveal delay={0.2}>
                 <div className="space-y-8 border-l border-neutral-warm-200 pl-8">
+                  {mfr?.logo && (
+                    <div className="flex items-center justify-start border border-neutral-warm-200 bg-white px-6 py-5">
+                      <div className="relative h-12 w-full">
+                        <Image
+                          src={mfr.logo}
+                          alt={m.name}
+                          fill
+                          className="object-contain object-left"
+                        />
+                      </div>
+                    </div>
+                  )}
+
                   <div>
                     <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
                       Pricing Tier
