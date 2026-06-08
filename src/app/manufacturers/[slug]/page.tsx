@@ -718,9 +718,10 @@ export default async function ManufacturerPage({ params }: Props) {
                 <AnimatedReveal>
                   <div className="grid gap-6 md:grid-cols-3">
                     <div className="border border-neutral-warm-200 bg-white p-6">
-                      <h3 className="font-serif text-lg font-semibold tracking-tight text-neutral-warm-900">
+                      <h3 className="font-serif text-2xl font-semibold tracking-tight text-neutral-warm-900">
                         Advantages
                       </h3>
+                      <div className="mt-2 h-0.5 w-10 bg-accent-sage" />
                       <ul className="mt-4 space-y-3">
                         {m.pros.map((pro) => (
                           <li
@@ -746,37 +747,27 @@ export default async function ManufacturerPage({ params }: Props) {
                       </ul>
                     </div>
                     <div className="border border-neutral-warm-200 bg-white p-6">
-                      <h3 className="font-serif text-lg font-semibold tracking-tight text-neutral-warm-900">
+                      <h3 className="font-serif text-2xl font-semibold tracking-tight text-neutral-warm-900">
                         Considerations
                       </h3>
+                      <div className="mt-2 h-0.5 w-10 bg-neutral-warm-400" />
                       <ul className="mt-4 space-y-3">
                         {m.cons.map((con) => (
                           <li
                             key={con}
                             className="flex items-start gap-3 text-sm leading-relaxed text-neutral-warm-600"
                           >
-                            <svg
-                              className="mt-0.5 h-4 w-4 shrink-0 text-neutral-warm-400"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M12 9v2m0 4h.01"
-                              />
-                            </svg>
+                            <span className="mt-2 h-px w-3 shrink-0 bg-neutral-warm-400" />
                             {con}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div className="border border-neutral-warm-200 bg-white p-6">
-                      <h3 className="font-serif text-lg font-semibold tracking-tight text-brand-terracotta">
+                      <h3 className="font-serif text-2xl font-semibold tracking-tight text-brand-terracotta">
                         Best For
                       </h3>
+                      <div className="mt-2 h-0.5 w-10 bg-brand-terracotta" />
                       <ul className="mt-4 space-y-3">
                         {m.bestFor.map((item) => (
                           <li
