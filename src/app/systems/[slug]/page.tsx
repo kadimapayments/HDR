@@ -193,6 +193,34 @@ const systemData: Record<
       { name: "Loewen", slug: "loewen" },
     ],
   },
+  "security-glass": {
+    name: "Security Glass",
+    category: "Specialty",
+    images: ["/images/showroom/showroom-andersen.jpg"],
+    description:
+      "Laminated security glazing pairs the architectural quality of premium window and door systems with meaningful protection against forced entry — a specification we're seeing requested far more often as Los Angeles homeowners prioritize home security without compromising on design.",
+    features: [
+      "Laminated construction with a durable polymer interlayer",
+      "Significantly more resistant to forced entry and impact than standard glass",
+      "Glass cracks but stays intact rather than shattering inward",
+      "Added benefits: improved sound dampening and UV protection",
+      "Available as an upgrade across most premium manufacturer lines",
+      "Can be specified selectively on vulnerable openings — entry doors, ground-floor windows",
+    ],
+    bestFor: [
+      "Homeowners prioritizing security without sacrificing design",
+      "Ground-floor and entry-level openings",
+      "Properties in high-visibility or high-traffic neighborhoods",
+      "Projects also seeking improved acoustic performance",
+      "Luxury estates requiring discreet, design-forward protection",
+    ],
+    manufacturers: [
+      { name: "Loewen", slug: "loewen" },
+      { name: "Andersen", slug: "andersen" },
+      { name: "Marvin", slug: "marvin" },
+      { name: "Fleetwood", slug: "fleetwood" },
+    ],
+  },
   "bifold-doors": {
     name: "Folding Doors",
     category: "Doors",

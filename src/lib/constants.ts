@@ -103,6 +103,11 @@ export const SYSTEMS = [
     slug: "oversized-openings",
     category: "Specialty",
   },
+  {
+    name: "Security Glass",
+    slug: "security-glass",
+    category: "Specialty",
+  },
   { name: "Folding Doors", slug: "bifold-doors", category: "Doors" },
   { name: "Hinge Doors", slug: "sliding-doors", category: "Doors" },
   { name: "Automated Systems", slug: "automated-systems", category: "Smart Home" },

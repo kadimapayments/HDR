@@ -23,6 +23,7 @@ const systemImages: Record<string, string> = {
   "contemporary-aluminum": "/images/systems/contemporary-aluminum.jpg",
   "energy-efficient": "/images/systems/energy-efficient.jpg",
   "oversized-openings": "/images/systems/oversized-openings.jpg",
+  "security-glass": "/images/showroom/showroom-andersen.jpg",
   "automated-systems": "/images/systems/automated-systems.jpg",
   "bifold-doors": "/images/systems/folding-doors.jpg",
   "sliding-doors": "/images/systems/hinge-doors.jpg",
