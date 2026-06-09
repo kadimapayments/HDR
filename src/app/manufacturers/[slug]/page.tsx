@@ -726,10 +726,10 @@ export default async function ManufacturerPage({ params }: Props) {
         <Container>
           <div className="grid gap-16 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-16">
-              {/* Advantages, Considerations & Best For — hidden when product lines are present */}
+              {/* Advantages & Best For — hidden when product lines are present */}
               {!m.productLines && (
                 <AnimatedReveal>
-                  <div className="grid gap-6 md:grid-cols-3">
+                  <div className="grid gap-6 md:grid-cols-2">
                     <div className="border border-neutral-warm-200 bg-white p-6">
                       <h3 className="font-serif text-2xl font-semibold tracking-tight text-neutral-warm-900">
                         Advantages
@@ -755,23 +755,6 @@ export default async function ManufacturerPage({ params }: Props) {
                               />
                             </svg>
                             {pro}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="border border-neutral-warm-200 bg-white p-6">
-                      <h3 className="font-serif text-2xl font-semibold tracking-tight text-neutral-warm-900">
-                        Considerations
-                      </h3>
-                      <div className="mt-2 h-0.5 w-10 bg-neutral-warm-400" />
-                      <ul className="mt-4 space-y-3">
-                        {m.cons.map((con) => (
-                          <li
-                            key={con}
-                            className="flex items-start gap-3 text-sm leading-relaxed text-neutral-warm-600"
-                          >
-                            <span className="mt-2 h-px w-3 shrink-0 bg-neutral-warm-400" />
-                            {con}
                           </li>
                         ))}
                       </ul>
@@ -926,14 +909,6 @@ export default async function ManufacturerPage({ params }: Props) {
                                 ))}
                               </ul>
                             </div>
-                            {line.notFor && (
-                              <div>
-                                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-neutral-warm-400">
-                                  Not Recommended For
-                                </p>
-                                <p className="text-xs text-neutral-warm-500">{line.notFor}</p>
-                              </div>
-                            )}
                           </div>
                         </div>
                       ))}
