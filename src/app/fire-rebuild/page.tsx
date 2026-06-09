@@ -10,16 +10,16 @@ import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 import { COMPANY, FIRE_REBUILD_PROGRAMS } from "@/lib/constants";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Palisades & Eaton Fire Rebuild Program",
+  title: "CA Wildfire Rebuild Program",
   description:
-    "HDR Windows is supporting Pacific Palisades and Eaton fire rebuild with discounted manufacturer pricing, expedited product selection, and dedicated project management for affected homeowners.",
+    "HDR Windows is supporting Palisades, Eaton, and Malibu fire rebuild with discounted manufacturer pricing, expedited product selection, and dedicated project management for affected homeowners.",
   path: "/fire-rebuild",
 });
 
 const offerings = [
   {
     title: "Verified Manufacturer Discounts",
-    body: "We've coordinated directly with our manufacturer partners to secure discounted pricing programs specifically for homeowners and rebuilders affected by the Palisades and Eaton fires.",
+    body: "We've coordinated directly with our manufacturer partners to secure discounted pricing programs specifically for homeowners and rebuilders affected by the Palisades, Eaton, and Malibu fires.",
   },
   {
     title: "Expedited Product Selection & Lead Times",
@@ -63,9 +63,9 @@ export default function FireRebuildPage() {
     <>
       <PageHero
         title="Helping You Rebuild"
-        subtitle="Palisades & Eaton Fires"
+        subtitle="Palisades, Eaton & Malibu Fires"
         backgroundImage="/images/fire-rebuild/hero.jpg"
-        description="To the families and communities rebuilding from the Palisades and Eaton fires, we're here to help. HDR has coordinated discounted manufacturer pricing and a dedicated fast-track process for rebuild projects."
+        description="To the families and communities rebuilding from the Palisades, Eaton, and Malibu fires, we're here to help. HDR has coordinated discounted manufacturer pricing and a dedicated fast-track process for rebuild projects."
       />
 
       {/* Statement of support */}
