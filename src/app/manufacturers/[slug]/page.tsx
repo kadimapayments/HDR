@@ -873,7 +873,7 @@ export default async function ManufacturerPage({ params }: Props) {
                   <div>
                     <Heading level="h3">Product Lines</Heading>
                     <p className="mt-2 text-sm text-neutral-warm-500">
-                      Not all series are equal: understanding which line fits your project is the first step to a correct specification.
+                      Not all series are equal. We&apos;ll help you understand which line fits your project best.
                     </p>
                     <div className="mt-6 space-y-4">
                       {m.productLines.map((line) => (
