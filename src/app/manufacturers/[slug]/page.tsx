@@ -448,55 +448,55 @@ const data: Record<
     materialComparison: {
       title: "Why Steel",
       intro:
-        "Steel offers a combination of strength, slim sightlines, and aesthetic character that aluminum and fiberglass can't fully replicate. Here's how Euroline's thermally broken steel compares to the alternatives.",
+        "Steel is the premier framing material for architects and homeowners who want the narrowest possible sightlines and an unmatched material presence. Here's how Euroline's thermally broken steel compares to aluminum and fiberglass alternatives.",
       columns: ["Steel", "Aluminum", "Fiberglass"],
       rows: [
         {
           attribute: "Sightlines",
           values: [
-            "The narrowest sightlines of any framing material, thanks to steel's exceptional strength relative to its cross-section.",
-            "Slim profiles, especially in thermally broken systems, but generally heavier than steel at comparable spans.",
-            "Slimmer than vinyl but still bulkier than steel, since fiberglass needs more material to match steel's rigidity.",
+            "The narrowest sightlines of any framing material on the market, period, giving the most glass and the cleanest, most minimal look possible.",
+            "Profiles are noticeably heavier than steel at comparable spans, especially once a thermal break is added to the frame.",
+            "The bulkiest profiles of the three; fiberglass needs significantly more material than steel to achieve comparable rigidity.",
           ],
         },
         {
           attribute: "Strength & Spans",
           values: [
-            "Highest strength-to-size ratio, allowing larger panels and taller openings with minimal visual bulk.",
-            "Strong and capable of large spans, though frames must be sized up compared to steel for the same performance.",
-            "Stronger and more rigid than vinyl, but maximum panel sizes still trail steel and aluminum.",
+            "The highest strength-to-size ratio of any framing material, enabling larger panels and taller openings without added visual bulk.",
+            "Capable of large spans, but frames must be sized up well beyond steel dimensions to match its performance.",
+            "The least structurally capable of the three, with maximum panel sizes well below what steel can achieve.",
           ],
         },
         {
           attribute: "Thermal Performance",
           values: [
-            "Thermally broken steel profiles meet Title 24 while preserving the authentic narrow steel look.",
-            "Thermally broken aluminum performs well, though frames are typically larger to achieve the same rating.",
-            "Naturally low conductivity gives strong thermal performance without a separate thermal break.",
+            "Thermally broken steel profiles meet Title 24 while preserving steel's authentic, ultra-narrow look, the best of both worlds.",
+            "Meets code with a thermal break, but the larger frame required adds bulk that works against a minimal aesthetic.",
+            "Acceptable thermal performance, but comes at the cost of the slim, refined sightlines steel delivers.",
           ],
         },
         {
           attribute: "Durability",
           values: [
-            "Extremely durable and resistant to denting or warping; finishes can develop a desirable patina over time.",
-            "Highly durable and corrosion-resistant with proper finishing, a long-standing standard for performance applications.",
-            "Resistant to corrosion and won't rot or rust, with expansion and contraction closely matching glass.",
+            "Exceptionally durable, holding fine tolerances over decades; custom finishes can develop a desirable, living patina over time.",
+            "Durable with proper finishing, but lacks the long-term character and refinement of a steel finish.",
+            "Holds up reasonably well, but can become brittle and show wear with prolonged sun exposure in ways steel does not.",
           ],
         },
         {
           attribute: "Aesthetic",
           values: [
-            "A distinctive, industrial-modern character with custom finishes including factory patinas, unmatched by other materials.",
-            "Clean, contemporary look available in a wide range of powder-coat and anodized finishes.",
-            "Paintable, wood-like surface that can mimic painted wood trim, but with fewer custom finish options than steel or aluminum.",
+            "A distinctive, architectural presence with custom finishes including factory patinas that aluminum and fiberglass simply cannot replicate.",
+            "A clean, contemporary look, but a more common one, lacking the bespoke, high-end character of steel.",
+            "A more utilitarian appearance with a limited range of finishes, generally not considered a luxury material.",
           ],
         },
         {
           attribute: "Typical Use",
           values: [
-            "Steel-framed contemporary architecture, industrial conversions, and estate restorations where authenticity matters.",
-            "The standard for most premium contemporary residential window and door systems.",
-            "Energy-conscious residential projects wanting better performance and durability than vinyl at a moderate price.",
+            "The defining choice for steel-framed contemporary architecture, industrial conversions, and estate restorations where authenticity is the point.",
+            "A solid, widely used option, but typically chosen when budget or lead time rule out steel.",
+            "Best suited to budget-driven residential projects where steel's premium look and performance aren't the priority.",
           ],
         },
       ],
