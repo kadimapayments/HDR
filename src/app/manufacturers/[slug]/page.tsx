@@ -673,7 +673,7 @@ const data: Record<
     leadTime: "14–20 weeks",
     materials: ["Aluminum-Clad", "Wood"],
     overview:
-      "Loewen is a Canadian manufacturer built on premium Coastal Douglas Fir and artisan-level craftsmanship — the choice for projects where material authenticity and hardware quality are non-negotiable.",
+      "Based in Canada, Loewen is the leading manufacturer of premium windows and doors for the luxury architectural market in North America. Built on premium Coastal Douglas Fir and artisan-level craftsmanship, this is the top choice for projects where material authenticity and hardware quality are non-negotiable.",
     pros: [
       "Exceptional wood quality (Coastal Douglas Fir standard)",
       "Premium hardware and operation",
