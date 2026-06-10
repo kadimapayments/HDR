@@ -40,6 +40,11 @@ const data: Record<
     productLines?: ProductLine[];
     collections?: { name: string; description: string }[];
     galleryImages?: string[];
+    woodComparison?: {
+      intro: string;
+      columns: string[];
+      rows: { attribute: string; values: string[] }[];
+    };
   }
 > = {
   fleetwood: {
@@ -719,6 +724,61 @@ const data: Record<
           "Tranquility is Loewen's upgraded glazing option, combining laminated glass with specialized acoustic construction to deliver significantly better sound-dampening performance than standard insulated glass. The laminated layer also adds a meaningful security benefit, making the glass far more resistant to forced entry and impact. It's an excellent option for properties on busy streets, near airports, or anywhere both quiet and security are a priority.",
       },
     ],
+    woodComparison: {
+      intro:
+        "Not all wood species are equal when it comes to windows and doors. Loewen builds its premium lines from Coastal Douglas Fir, a slower-growing, denser variant that outperforms the regular Douglas Fir and Ponderosa Pine used in many lower-tier wood products.",
+      columns: ["Coastal Douglas Fir", "Regular Douglas Fir", "Ponderosa Pine"],
+      rows: [
+        {
+          attribute: "Growth & Grain",
+          values: [
+            "Slow-growth coastal climate produces tight, straight, consistent grain with narrow growth rings.",
+            "Faster inland growth creates wider growth rings and more variable grain patterns.",
+            "Fast-growing with wide rings, an open grain, and frequent knots.",
+          ],
+        },
+        {
+          attribute: "Density & Strength",
+          values: [
+            "Highest density of the three, holding hardware, joinery, and large units exceptionally well.",
+            "Moderate density; strong, but softer than coastal-grown stock.",
+            "Lowest density and softest of the three, more prone to dents and surface damage.",
+          ],
+        },
+        {
+          attribute: "Dimensional Stability",
+          values: [
+            "Tight grain resists warping, twisting, and shrinkage, critical for large, precise window and door units.",
+            "More movement with humidity and temperature swings than coastal stock.",
+            "Most prone to warping and movement, especially in larger sizes.",
+          ],
+        },
+        {
+          attribute: "Decay & Moisture Resistance",
+          values: [
+            "Naturally higher resistance to decay and moisture, well suited to coastal Southern California conditions.",
+            "Moderate natural resistance to decay and moisture.",
+            "Lower natural resistance, more reliant on coatings and finishes for protection.",
+          ],
+        },
+        {
+          attribute: "Appearance & Finish",
+          values: [
+            "Fine, consistent grain takes stains and clear finishes beautifully for a premium architectural look.",
+            "Visible grain variation and knots can show through stained finishes.",
+            "Frequent knots and resin pockets typically call for paint rather than stain.",
+          ],
+        },
+        {
+          attribute: "Typical Use",
+          values: [
+            "The standard for Loewen's premium wood window and door lines.",
+            "Used in lower-tier or budget wood lines from some manufacturers.",
+            "Common in entry-level wood windows and doors.",
+          ],
+        },
+      ],
+    },
   },
 };
 
@@ -762,7 +822,7 @@ export default async function ManufacturerPage({ params }: Props) {
       {/* Key Details */}
       <Section className={m.galleryImages && m.galleryImages.length > 0 ? "pb-8 md:pb-10 lg:pb-12" : undefined}>
         <Container>
-          <div className="grid gap-16 lg:grid-cols-3">
+          <div className="grid gap-16 lg:grid-cols-3 items-start">
             <div className="lg:col-span-2 space-y-16">
               {/* Advantages & Best For — hidden when product lines are present */}
               {!m.productLines && (
@@ -1045,6 +1105,87 @@ export default async function ManufacturerPage({ params }: Props) {
           </div>
         </Container>
       </Section>
+
+      {/* Wood Comparison */}
+      {m.woodComparison && (
+        <Section className="pt-0 md:pt-0 lg:pt-0">
+          <Container>
+            <AnimatedReveal>
+              <div className="mx-auto max-w-3xl text-center">
+                <Heading level="h2">Why Coastal Douglas Fir</Heading>
+                <div className="mx-auto mt-3 h-0.5 w-10 bg-brand-terracotta" />
+                <p className="mt-4 text-sm leading-relaxed text-neutral-warm-600">
+                  {m.woodComparison.intro}
+                </p>
+              </div>
+
+              {/* Mobile: stacked cards */}
+              <div className="mt-10 space-y-6 lg:hidden">
+                {m.woodComparison.rows.map((row) => (
+                  <div key={row.attribute} className="border border-neutral-warm-200 bg-white p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
+                      {row.attribute}
+                    </p>
+                    <div className="mt-3 space-y-3">
+                      {row.values.map((value, i) => (
+                        <div key={m.woodComparison!.columns[i]}>
+                          <p className="text-xs font-semibold text-neutral-warm-900">
+                            {m.woodComparison!.columns[i]}
+                          </p>
+                          <p className="mt-1 text-xs leading-relaxed text-neutral-warm-600">{value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop: table */}
+              <div className="mt-10 hidden lg:block">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="border-b border-neutral-warm-200">
+                      <th className="w-1/5 pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500" />
+                      {m.woodComparison.columns.map((col, i) => (
+                        <th
+                          key={col}
+                          className={`pb-3 px-4 text-left text-xs font-semibold uppercase tracking-wider ${
+                            i === 0 ? "text-brand-terracotta" : "text-neutral-warm-500"
+                          }`}
+                        >
+                          {col}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {m.woodComparison.rows.map((row, i) => (
+                      <tr
+                        key={row.attribute}
+                        className={`border-b border-neutral-warm-100 ${i % 2 === 0 ? "bg-neutral-warm-50" : "bg-white"}`}
+                      >
+                        <td className="py-4 pr-4 align-top text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">
+                          {row.attribute}
+                        </td>
+                        {row.values.map((value, j) => (
+                          <td
+                            key={m.woodComparison!.columns[j]}
+                            className={`py-4 px-4 align-top leading-relaxed text-neutral-warm-600 ${
+                              j === 0 ? "font-medium text-neutral-warm-900" : ""
+                            }`}
+                          >
+                            {value}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </AnimatedReveal>
+          </Container>
+        </Section>
+      )}
 
       {/* On Display in Our Showroom */}
       {m.galleryImages && m.galleryImages.length > 0 && (
