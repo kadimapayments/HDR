@@ -760,7 +760,7 @@ export default async function ManufacturerPage({ params }: Props) {
       <PageHero title={m.name} subtitle={m.tagline} description={m.overview} />
 
       {/* Key Details */}
-      <Section>
+      <Section className={m.galleryImages && m.galleryImages.length > 0 ? "pb-8 md:pb-10 lg:pb-12" : undefined}>
         <Container>
           <div className="grid gap-16 lg:grid-cols-3">
             <div className="lg:col-span-2 space-y-16">
