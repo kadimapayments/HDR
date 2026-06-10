@@ -820,7 +820,15 @@ export default async function ManufacturerPage({ params }: Props) {
       <PageHero title={m.name} subtitle={m.tagline} description={m.overview} />
 
       {/* Key Details */}
-      <Section className={m.galleryImages && m.galleryImages.length > 0 ? "pb-8 md:pb-10 lg:pb-12" : undefined}>
+      <Section
+        className={
+          m.woodComparison
+            ? "pb-0 md:pb-0 lg:pb-0"
+            : m.galleryImages && m.galleryImages.length > 0
+            ? "pb-8 md:pb-10 lg:pb-12"
+            : undefined
+        }
+      >
         <Container>
           <div className="grid gap-16 lg:grid-cols-3 items-start">
             <div className="lg:col-span-2 space-y-16">
@@ -1108,7 +1116,7 @@ export default async function ManufacturerPage({ params }: Props) {
 
       {/* Wood Comparison */}
       {m.woodComparison && (
-        <Section className="pt-0 md:pt-0 lg:pt-0">
+        <Section className="py-8 md:py-10 lg:py-12">
           <Container>
             <AnimatedReveal>
               <div className="mx-auto max-w-3xl text-center">
