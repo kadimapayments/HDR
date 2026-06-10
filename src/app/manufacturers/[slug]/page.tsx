@@ -448,15 +448,15 @@ const data: Record<
     materialComparison: {
       title: "Why Steel",
       intro:
-        "Steel offers a combination of strength, slim sightlines, and aesthetic character that aluminum and vinyl can't fully replicate. Here's how Euroline's thermally broken steel compares to the alternatives.",
-      columns: ["Steel", "Aluminum", "Vinyl"],
+        "Steel offers a combination of strength, slim sightlines, and aesthetic character that aluminum and fiberglass can't fully replicate. Here's how Euroline's thermally broken steel compares to the alternatives.",
+      columns: ["Steel", "Aluminum", "Fiberglass"],
       rows: [
         {
           attribute: "Sightlines",
           values: [
             "The narrowest sightlines of any framing material, thanks to steel's exceptional strength relative to its cross-section.",
             "Slim profiles, especially in thermally broken systems, but generally heavier than steel at comparable spans.",
-            "The thickest profiles of the three, since vinyl needs more material to achieve structural rigidity.",
+            "Slimmer than vinyl but still bulkier than steel, since fiberglass needs more material to match steel's rigidity.",
           ],
         },
         {
@@ -464,7 +464,7 @@ const data: Record<
           values: [
             "Highest strength-to-size ratio, allowing larger panels and taller openings with minimal visual bulk.",
             "Strong and capable of large spans, though frames must be sized up compared to steel for the same performance.",
-            "Lowest structural strength, limiting maximum panel sizes and spans.",
+            "Stronger and more rigid than vinyl, but maximum panel sizes still trail steel and aluminum.",
           ],
         },
         {
@@ -472,7 +472,7 @@ const data: Record<
           values: [
             "Thermally broken steel profiles meet Title 24 while preserving the authentic narrow steel look.",
             "Thermally broken aluminum performs well, though frames are typically larger to achieve the same rating.",
-            "Naturally good thermal performance due to vinyl's low conductivity, but with bulkier frames.",
+            "Naturally low conductivity gives strong thermal performance without a separate thermal break.",
           ],
         },
         {
@@ -480,7 +480,7 @@ const data: Record<
           values: [
             "Extremely durable and resistant to denting or warping; finishes can develop a desirable patina over time.",
             "Highly durable and corrosion-resistant with proper finishing, a long-standing standard for performance applications.",
-            "Durable for its price point, but can become brittle and discolor with prolonged sun exposure.",
+            "Resistant to corrosion and won't rot or rust, with expansion and contraction closely matching glass.",
           ],
         },
         {
@@ -488,7 +488,7 @@ const data: Record<
           values: [
             "A distinctive, industrial-modern character with custom finishes including factory patinas, unmatched by other materials.",
             "Clean, contemporary look available in a wide range of powder-coat and anodized finishes.",
-            "Functional appearance with a more limited range of colors and finishes, typically white or tan.",
+            "Paintable, wood-like surface that can mimic painted wood trim, but with fewer custom finish options than steel or aluminum.",
           ],
         },
         {
@@ -496,7 +496,7 @@ const data: Record<
           values: [
             "Steel-framed contemporary architecture, industrial conversions, and estate restorations where authenticity matters.",
             "The standard for most premium contemporary residential window and door systems.",
-            "Budget-conscious or production residential projects where cost and energy compliance lead the brief.",
+            "Energy-conscious residential projects wanting better performance and durability than vinyl at a moderate price.",
           ],
         },
       ],
