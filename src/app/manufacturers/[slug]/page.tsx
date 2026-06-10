@@ -40,7 +40,8 @@ const data: Record<
     productLines?: ProductLine[];
     collections?: { name: string; description: string }[];
     galleryImages?: string[];
-    woodComparison?: {
+    materialComparison?: {
+      title: string;
       intro: string;
       columns: string[];
       rows: { attribute: string; values: string[] }[];
@@ -444,6 +445,62 @@ const data: Record<
       "Classic 1920s-style estate restorations",
       "Pivot entry doors with dramatic scale",
     ],
+    materialComparison: {
+      title: "Why Steel",
+      intro:
+        "Steel offers a combination of strength, slim sightlines, and aesthetic character that aluminum and vinyl can't fully replicate. Here's how Euroline's thermally broken steel compares to the alternatives.",
+      columns: ["Steel", "Aluminum", "Vinyl"],
+      rows: [
+        {
+          attribute: "Sightlines",
+          values: [
+            "The narrowest sightlines of any framing material, thanks to steel's exceptional strength relative to its cross-section.",
+            "Slim profiles, especially in thermally broken systems, but generally heavier than steel at comparable spans.",
+            "The thickest profiles of the three, since vinyl needs more material to achieve structural rigidity.",
+          ],
+        },
+        {
+          attribute: "Strength & Spans",
+          values: [
+            "Highest strength-to-size ratio, allowing larger panels and taller openings with minimal visual bulk.",
+            "Strong and capable of large spans, though frames must be sized up compared to steel for the same performance.",
+            "Lowest structural strength, limiting maximum panel sizes and spans.",
+          ],
+        },
+        {
+          attribute: "Thermal Performance",
+          values: [
+            "Thermally broken steel profiles meet Title 24 while preserving the authentic narrow steel look.",
+            "Thermally broken aluminum performs well, though frames are typically larger to achieve the same rating.",
+            "Naturally good thermal performance due to vinyl's low conductivity, but with bulkier frames.",
+          ],
+        },
+        {
+          attribute: "Durability",
+          values: [
+            "Extremely durable and resistant to denting or warping; finishes can develop a desirable patina over time.",
+            "Highly durable and corrosion-resistant with proper finishing, a long-standing standard for performance applications.",
+            "Durable for its price point, but can become brittle and discolor with prolonged sun exposure.",
+          ],
+        },
+        {
+          attribute: "Aesthetic",
+          values: [
+            "A distinctive, industrial-modern character with custom finishes including factory patinas, unmatched by other materials.",
+            "Clean, contemporary look available in a wide range of powder-coat and anodized finishes.",
+            "Functional appearance with a more limited range of colors and finishes, typically white or tan.",
+          ],
+        },
+        {
+          attribute: "Typical Use",
+          values: [
+            "Steel-framed contemporary architecture, industrial conversions, and estate restorations where authenticity matters.",
+            "The standard for most premium contemporary residential window and door systems.",
+            "Budget-conscious or production residential projects where cost and energy compliance lead the brief.",
+          ],
+        },
+      ],
+    },
   },
   lacantina: {
     name: "LaCantina Doors",
@@ -724,7 +781,8 @@ const data: Record<
           "Tranquility is Loewen's upgraded glazing option, combining laminated glass with specialized acoustic construction to deliver significantly better sound-dampening performance than standard insulated glass. The laminated layer also adds a meaningful security benefit, making the glass far more resistant to forced entry and impact. It's an excellent option for properties on busy streets, near airports, or anywhere both quiet and security are a priority.",
       },
     ],
-    woodComparison: {
+    materialComparison: {
+      title: "Why Coastal Douglas Fir",
       intro:
         "Not all wood species are equal when it comes to windows and doors. Loewen builds its premium lines from Coastal Douglas Fir, a slower-growing, denser variant that outperforms the regular Douglas Fir and Ponderosa Pine used in many lower-tier wood products.",
       columns: ["Coastal Douglas Fir", "Regular Douglas Fir", "Ponderosa Pine"],
@@ -822,7 +880,7 @@ export default async function ManufacturerPage({ params }: Props) {
       {/* Key Details */}
       <Section
         className={
-          m.woodComparison
+          m.materialComparison
             ? "pb-0 md:pb-0 lg:pb-0"
             : m.galleryImages && m.galleryImages.length > 0
             ? "pb-8 md:pb-10 lg:pb-12"
@@ -1114,31 +1172,31 @@ export default async function ManufacturerPage({ params }: Props) {
         </Container>
       </Section>
 
-      {/* Wood Comparison */}
-      {m.woodComparison && (
+      {/* Material Comparison */}
+      {m.materialComparison && (
         <Section className="py-10 md:py-12 lg:py-16">
           <Container>
             <AnimatedReveal>
               <div className="mx-auto max-w-3xl text-center">
-                <Heading level="h2">Why Coastal Douglas Fir</Heading>
+                <Heading level="h2">{m.materialComparison.title}</Heading>
                 <div className="mx-auto mt-3 h-0.5 w-10 bg-brand-terracotta" />
                 <p className="mt-4 text-sm leading-relaxed text-neutral-warm-600">
-                  {m.woodComparison.intro}
+                  {m.materialComparison.intro}
                 </p>
               </div>
 
               {/* Mobile: stacked cards */}
               <div className="mt-10 space-y-6 lg:hidden">
-                {m.woodComparison.rows.map((row) => (
+                {m.materialComparison.rows.map((row) => (
                   <div key={row.attribute} className="border border-neutral-warm-200 bg-white p-4">
                     <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
                       {row.attribute}
                     </p>
                     <div className="mt-3 space-y-3">
                       {row.values.map((value, i) => (
-                        <div key={m.woodComparison!.columns[i]}>
+                        <div key={m.materialComparison!.columns[i]}>
                           <p className="text-xs font-semibold text-neutral-warm-900">
-                            {m.woodComparison!.columns[i]}
+                            {m.materialComparison!.columns[i]}
                           </p>
                           <p className="mt-1 text-xs leading-relaxed text-neutral-warm-600">{value}</p>
                         </div>
@@ -1154,7 +1212,7 @@ export default async function ManufacturerPage({ params }: Props) {
                   <thead>
                     <tr className="border-b border-neutral-warm-200">
                       <th className="w-1/5 pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500" />
-                      {m.woodComparison.columns.map((col, i) => (
+                      {m.materialComparison.columns.map((col, i) => (
                         <th
                           key={col}
                           className={`pb-3 px-4 text-left text-xs font-semibold uppercase tracking-wider ${
@@ -1167,7 +1225,7 @@ export default async function ManufacturerPage({ params }: Props) {
                     </tr>
                   </thead>
                   <tbody>
-                    {m.woodComparison.rows.map((row, i) => (
+                    {m.materialComparison.rows.map((row, i) => (
                       <tr
                         key={row.attribute}
                         className={`border-b border-neutral-warm-100 ${i % 2 === 0 ? "bg-neutral-warm-50" : "bg-white"}`}
@@ -1177,7 +1235,7 @@ export default async function ManufacturerPage({ params }: Props) {
                         </td>
                         {row.values.map((value, j) => (
                           <td
-                            key={m.woodComparison!.columns[j]}
+                            key={m.materialComparison!.columns[j]}
                             className={`py-4 px-4 align-top leading-relaxed text-neutral-warm-600 ${
                               j === 0 ? "font-medium text-neutral-warm-900" : ""
                             }`}
