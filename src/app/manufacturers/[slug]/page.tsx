@@ -1116,7 +1116,7 @@ export default async function ManufacturerPage({ params }: Props) {
 
       {/* Wood Comparison */}
       {m.woodComparison && (
-        <Section className="py-8 md:py-10 lg:py-12">
+        <Section className="py-10 md:py-12 lg:py-16">
           <Container>
             <AnimatedReveal>
               <div className="mx-auto max-w-3xl text-center">
