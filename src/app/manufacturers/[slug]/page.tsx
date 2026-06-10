@@ -1249,7 +1249,7 @@ export default async function ManufacturerPage({ params }: Props) {
 
       {/* On Display in Our Showroom */}
       {m.galleryImages && m.galleryImages.length > 0 && (
-        <Section className="bg-neutral-warm-50 pt-4 md:pt-6 lg:pt-8">
+        <Section id="gallery" className="bg-neutral-warm-50 pt-4 md:pt-6 lg:pt-8">
           <Container>
             <AnimatedReveal>
               <div className="mb-10 text-center">
