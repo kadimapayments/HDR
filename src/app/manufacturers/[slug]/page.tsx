@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 import { FinalCTA } from "@/components/home/FinalCTA";
+import { GalleryLightbox } from "@/components/manufacturers/GalleryLightbox";
 import Image from "next/image";
 import { MANUFACTURERS } from "@/lib/constants";
 
@@ -38,12 +39,18 @@ const data: Record<
     bestFor: string[];
     productLines?: ProductLine[];
     collections?: { name: string; description: string }[];
+    galleryImages?: string[];
   }
 > = {
   fleetwood: {
     name: "Fleetwood Windows & Doors",
     tagline: "The Gold Standard in Aluminum",
     tier: "Ultra-Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/fleetwood/162A2563.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A2571.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A2573.jpg",
+    ],
     leadTime: "12–16 weeks",
     materials: ["Aluminum"],
     overview:
@@ -83,7 +90,7 @@ const data: Record<
         priceTier: "Premium",
         priceIndicator: "$$$",
         overview:
-          "Fleetwood's entry point into the aluminum system category: a thermally broken aluminum line engineered for solid energy performance and reliable operation at a lower price than the Gen4 and Edge. The 3-Series delivers the Fleetwood build quality and California manufacturing advantage on a more accessible budget, making it a practical specification for secondary spaces, ADUs, and projects where the full Gen4 premium isn't warranted.",
+          "Fleetwood's entry point into the aluminum system category — a thermally broken aluminum line engineered for solid energy performance and reliable operation at a lower price than the Gen4 and Edge. The 3-Series delivers the Fleetwood build quality and California manufacturing advantage on a more accessible budget, making it a practical specification for secondary spaces, ADUs, and projects where the full Gen4 premium isn't warranted.",
         bestFor: [
           "Secondary and accessory spaces within a larger project",
           "ADUs and guesthouses on architect-led properties",
@@ -95,7 +102,7 @@ const data: Record<
       {
         name: "Gen4",
         material: "Thermally Broken Aluminum",
-        priceTier: "Ultra-Premium",
+        priceTier: "Premium–Luxury",
         priceIndicator: "$$$$",
         overview:
           "The Gen4 is Fleetwood's most-specified product line and the industry benchmark for aluminum multi-slide door systems. Engineered for maximum panel size, smooth operation, and slim sightlines, the Gen4 is the default specification for architect-designed indoor-outdoor living in California. Available in pocket, stack-back, and bi-parting configurations across a wide range of widths and heights, with one of the largest operable panel size envelopes in the market.",
@@ -129,10 +136,14 @@ const data: Record<
     name: "Andersen Windows",
     tagline: "Trusted Performance, Refined Design",
     tier: "Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/andersen/162A2547.jpg",
+      "/images/manufacturers/gallery/andersen/162A2553.jpg",
+    ],
     leadTime: "8–12 weeks",
     materials: ["Aluminum-Clad", "Composite", "Fiberglass", "Vinyl-Clad"],
     overview:
-      "Andersen is America's most recognized window manufacturer, a 120-year-old company with a product line that spans every tier of residential construction — more range under one brand than any competitor in the market.",
+      "Andersen is America's most recognized window manufacturer. A 120-year-old company with a product line that spans every tier of residential construction — more range under one brand than any competitor in the market.",
     pros: [
       "E-Series is fully custom: sizes, shapes, colors, finishes",
       "Reliable lead times and nationwide service network",
@@ -164,10 +175,10 @@ const data: Record<
       {
         name: "100 Series",
         material: "Fibrex® Composite",
-        priceTier: "Value",
-        priceIndicator: "$",
+        priceTier: "Value–Premium",
+        priceIndicator: "$$",
         overview:
-          "Andersen's entry-level line, built from Fibrex, a proprietary blend of reclaimed wood fiber and thermoplastic polymer. It won't rot, warp, or require painting, which makes it genuinely low-maintenance. The tradeoff is that it lacks the design flexibility, sightline quality, and hardware options expected on architectural work.",
+          "Andersen's entry-level line, built from Fibrex, a proprietary blend of reclaimed wood fiber and thermoplastic polymer. It won't rot, warp, or require painting, which makes it genuinely low-maintenance. Less design flexibility and hardware options than the higher tier product lines.",
         bestFor: [
           "Replacement windows in existing homes",
           "ADUs and accessory structures",
@@ -177,40 +188,25 @@ const data: Record<
         notFor: "Primary spaces in luxury residential or architect-led specifications.",
       },
       {
-        name: "200 Series",
-        material: "Pine Interior / Vinyl-Clad Exterior",
-        priceTier: "Value–Premium",
-        priceIndicator: "$$",
-        overview:
-          "A step up from the 100 Series, the 200 Series introduces a real wood pine interior with an aluminum-clad exterior. It bridges the gap between entry-level and the more specified 400 Series, offering better aesthetics and a wider product selection without moving into full architectural territory.",
-        bestFor: [
-          "Mid-tier residential construction",
-          "Projects that want a wood interior look on a controlled budget",
-          "Builder-grade new construction",
-          "Secondary rooms in mixed-tier specifications",
-        ],
-        notFor: "High-end architectural work where E-Series or A-Series is expected.",
-      },
-      {
-        name: "400 Series",
-        material: "Pine Interior / Vinyl-Clad Exterior",
+        name: "200 / 400 Series",
+        material: "Pine Interior / Clad Exterior",
         priceTier: "Premium",
         priceIndicator: "$$$",
         overview:
-          "The 400 Series is Andersen's best-selling and most versatile line, a pine wood interior with a durable aluminum-clad exterior. It offers a broad range of styles, sizes, and configurations, with good energy performance and solid hardware. A reliable specification for traditional and transitional homes where design matters but the budget doesn't support full E-Series customization.",
+          "Andersen's most popular lines, both built with real wood pine interiors and durable clad exteriors. The 200 Series offers an accessible entry into the wood interior category; the 400 Series is Andersen's best-selling line, adding a broader range of styles, sizes, and configurations with solid hardware and energy performance. A reliable choice for traditional and transitional homes where design matters and the budget doesn't call for full E-Series customization.",
         bestFor: [
           "Traditional, craftsman, and transitional architecture",
           "Homeowner-driven projects with a mid-to-upper budget",
           "Reliable performance across a wide style range",
           "Projects wanting wood interiors without full custom pricing",
-          "Contemporary architecture requiring slim sightlines",
+          "Mid-tier residential construction and builder-grade new construction",
         ],
-        notFor: "Projects requiring very large panels or aluminum-clad exteriors.",
+        notFor: "Projects requiring very large panels or full architectural customization.",
       },
       {
         name: "E-Series",
         material: "Wood Interior / Aluminum-Clad Exterior",
-        priceTier: "Premium",
+        priceTier: "Premium–Luxury",
         priceIndicator: "$$$$",
         overview:
           "The E-Series (formerly Eagle) is Andersen's most customizable product line, essentially a bespoke window and door system built to specification. Any size, shape, configuration, color, hardware finish, and glass package is available. It's the right choice when a project demands true architectural flexibility: radius windows, complex shapes, very large fixed lites, and complete design coordination with the rest of the building.",
@@ -225,10 +221,10 @@ const data: Record<
       {
         name: "A-Series",
         material: "Wood Interior / Composite-Clad Exterior",
-        priceTier: "Ultra-Premium",
-        priceIndicator: "$$$$$",
+        priceTier: "Premium–Luxury",
+        priceIndicator: "$$$$",
         overview:
-          "The A-Series is Andersen's architectural product: higher performance, more design flexibility, and better hardware than the 400 Series. It supports a wider range of custom sizes, configurations, and finishes, with improved structural performance for larger openings. A strong specification for luxury residential projects that don't require the full custom capability of the E-Series.",
+          "The A-Series is Andersen's architectural product — higher performance, more design flexibility, and better hardware than the 400 Series. It supports a wider range of custom sizes, configurations, and finishes, with improved structural performance for larger openings. A strong specification for luxury residential projects that don't require the full custom capability of the E-Series.",
         bestFor: [
           "Luxury residential with traditional or transitional design",
           "Architects needing broader sizing and configuration options",
@@ -243,6 +239,21 @@ const data: Record<
     name: "Marvin Windows & Doors",
     tagline: "Modern Elegance in Wood & Aluminum",
     tier: "Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/marvin/162A2425.jpg",
+      "/images/manufacturers/gallery/marvin/162A2430.jpg",
+      "/images/manufacturers/gallery/marvin/162A2453.jpg",
+      "/images/manufacturers/gallery/marvin/162A2456.jpg",
+      "/images/manufacturers/gallery/marvin/162A2460.jpg",
+      "/images/manufacturers/gallery/marvin/162A2465.jpg",
+      "/images/manufacturers/gallery/marvin/162A2472.jpg",
+      "/images/manufacturers/gallery/marvin/162A2526.jpg",
+      "/images/manufacturers/gallery/marvin/162A2529.jpg",
+      "/images/manufacturers/gallery/marvin/162A2531.jpg",
+      "/images/manufacturers/gallery/marvin/162A2535.jpg",
+      "/images/manufacturers/gallery/marvin/162A2537.jpg",
+      "/images/manufacturers/gallery/marvin/162A2538.jpg",
+    ],
     leadTime: "10–14 weeks",
     materials: ["Aluminum-Clad", "Fiberglass", "Wood"],
     overview:
@@ -274,10 +285,10 @@ const data: Record<
       {
         name: "Essential",
         material: "Fiberglass Composite",
-        priceTier: "Value",
-        priceIndicator: "$",
+        priceTier: "Value–Premium",
+        priceIndicator: "$$",
         overview:
-          "Marvin's entry-level collection, built from fiberglass composite: durable, low-maintenance, and energy efficient. It won't rot, warp, or require repainting, which makes it a practical choice for replacement windows and budget-constrained scopes. Design flexibility and customization options are limited compared to the upper collections.",
+          "Marvin's entry-level collection, built from fiberglass composite — durable, low-maintenance, and energy efficient. It won't rot, warp, or require repainting, which makes it a practical choice for replacement windows and budget-constrained scopes. Design flexibility and customization options are limited compared to the upper collections.",
         bestFor: [
           "Replacement windows in existing homes",
           "ADUs and accessory structures",
@@ -289,8 +300,8 @@ const data: Record<
       {
         name: "Elevate",
         material: "Fiberglass Exterior / Pine Interior",
-        priceTier: "Value–Premium",
-        priceIndicator: "$$",
+        priceTier: "Premium",
+        priceIndicator: "$$$",
         overview:
           "The Elevate collection introduces a real pine wood interior paired with a durable fiberglass exterior, a meaningful step up in warmth and aesthetics over the Essential. It's well-suited to production residential and mid-range new construction where a wood interior look is desired without moving into full architectural pricing.",
         bestFor: [
@@ -334,10 +345,10 @@ const data: Record<
       {
         name: "Modern",
         material: "Fiberglass Exterior / Aluminum Interior",
-        priceTier: "Ultra-Premium",
-        priceIndicator: "$$$$$",
+        priceTier: "Premium–Luxury",
+        priceIndicator: "$$$$",
         overview:
-          "The Modern collection is Marvin's architectural statement: slim high density fiberglass exterior sightlines with a clean aluminum interior. It's designed specifically for contemporary and transitional homes where clean lines and natural materials coexist. The Modern line is the most frequently specified Marvin product on architect-led luxury residential projects in Southern California.",
+          "The Modern collection is Marvin's architectural statement — slim high density fiberglass exterior sightlines with a clean aluminum interior. It's designed specifically for contemporary and transitional homes where clean lines and natural materials coexist. The Modern line is the most frequently specified Marvin product on architect-led luxury residential projects in Southern California.",
         bestFor: [
           "Contemporary and modern architecture",
           "Architect-led luxury residential specifications",
@@ -351,7 +362,11 @@ const data: Record<
   nanawall: {
     name: "NanaWall Systems",
     tagline: "The Original Opening Glass Wall",
-    tier: "Ultra-Premium",
+    tier: "Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/nanawall/162A2519.jpg",
+      "/images/manufacturers/gallery/nanawall/162A2521.jpg",
+    ],
     leadTime: "12–18 weeks",
     materials: ["Aluminum", "Aluminum-Clad", "Composite", "Wood"],
     overview:
@@ -387,7 +402,13 @@ const data: Record<
   euroline: {
     name: "Euroline Steel Windows & Doors",
     tagline: "Authentic Steel, Modern Performance",
-    tier: "Luxury",
+    tier: "Ultra-Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/euroline/162A2433.jpg",
+      "/images/manufacturers/gallery/euroline/162A2438.jpg",
+      "/images/manufacturers/gallery/euroline/162A2442.jpg",
+      "/images/manufacturers/gallery/euroline/162A2445.jpg",
+    ],
     leadTime: "16–22 weeks",
     materials: ["Steel"],
     overview:
@@ -423,6 +444,10 @@ const data: Record<
     name: "LaCantina Doors",
     tagline: "Opening Walls for Living",
     tier: "Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/lacantina/162A2576.jpg",
+      "/images/manufacturers/gallery/lacantina/162A2579.jpg",
+    ],
     leadTime: "8–12 weeks",
     materials: ["Aluminum", "Wood"],
     overview:
@@ -454,7 +479,7 @@ const data: Record<
   "all-weather": {
     name: "All Weather Architectural Aluminum",
     tagline: "Reliable Vinyl & Aluminum Solutions",
-    tier: "Premium",
+    tier: "Value",
     leadTime: "8–12 weeks",
     materials: ["Aluminum", "Vinyl"],
     overview:
@@ -513,36 +538,6 @@ const data: Record<
     ],
     productLines: [
       {
-        name: "Pinnacle",
-        material: "Aluminum-Clad Wood",
-        priceTier: "Premium",
-        priceIndicator: "$$$",
-        overview:
-          "Windsor's flagship wood line, built with Clear Select Pine, Natural Alder, or Douglas Fir interiors and heavy-duty extruded aluminum cladding rather than thin roll-formed alternatives. Pinnacle spans both traditional profiles and a newer contemporary collection with slimmer sightlines and expanded glass area, giving architects real range without leaving the line.",
-        bestFor: [
-          "Custom homes wanting genuine wood interiors at a premium-tier price",
-          "Traditional and transitional architecture",
-          "Contemporary projects specifying the slimmer Pinnacle collection",
-          "Mixed-tier projects where Windsor is the single-source manufacturer",
-        ],
-        notFor: "Ultra-premium architectural work where Marvin Modern or Fleetwood-level sightlines and panel sizes are the brief.",
-      },
-      {
-        name: "Legend",
-        material: "Cellular PVC / Wood-Clad Hybrid",
-        priceTier: "Mid-Tier",
-        priceIndicator: "$$",
-        overview:
-          "A hybrid line that pairs high-density cellular PVC with wood-clad sashes, engineered to resist rot and warping while keeping a paintable, traditional wood look. Legend is built for authenticity in replacement and renovation work, holding original glass sizes and trim details that standard vinyl products typically can't match.",
-        bestFor: [
-          "Historic home renovations and period-appropriate replacements",
-          "Coastal properties needing durable, low-maintenance performance",
-          "Projects prioritizing traditional aesthetics with modern performance",
-          "Builder-spec homes wanting a paintable, wood-look exterior",
-        ],
-        notFor: "Architect-led contemporary projects where a true wood-interior line like Pinnacle is the better fit.",
-      },
-      {
         name: "Next Dimension",
         material: "Multi-Chambered Vinyl",
         priceTier: "Value",
@@ -569,6 +564,36 @@ const data: Record<
           "Projects with tight schedules or occupied homes during construction",
         ],
         notFor: "New construction or projects requiring full-frame replacement and larger configurations.",
+      },
+      {
+        name: "Legend",
+        material: "Cellular PVC / Wood-Clad Hybrid",
+        priceTier: "Value–Premium",
+        priceIndicator: "$$",
+        overview:
+          "A hybrid line that pairs high-density cellular PVC with wood-clad sashes, engineered to resist rot and warping while keeping a paintable, traditional wood look. Legend is built for authenticity in replacement and renovation work, holding original glass sizes and trim details that standard vinyl products typically can't match.",
+        bestFor: [
+          "Historic home renovations and period-appropriate replacements",
+          "Coastal properties needing durable, low-maintenance performance",
+          "Projects prioritizing traditional aesthetics with modern performance",
+          "Builder-spec homes wanting a paintable, wood-look exterior",
+        ],
+        notFor: "Architect-led contemporary projects where a true wood-interior line like Pinnacle is the better fit.",
+      },
+      {
+        name: "Pinnacle",
+        material: "Aluminum-Clad Wood",
+        priceTier: "Premium",
+        priceIndicator: "$$$",
+        overview:
+          "Windsor's flagship wood line, built with Clear Select Pine, Natural Alder, or Douglas Fir interiors and heavy-duty extruded aluminum cladding rather than thin roll-formed alternatives. Pinnacle spans both traditional profiles and a newer contemporary collection with slimmer sightlines and expanded glass area, giving architects real range without leaving the line.",
+        bestFor: [
+          "Custom homes wanting genuine wood interiors at a premium-tier price",
+          "Traditional and transitional architecture",
+          "Contemporary projects specifying the slimmer Pinnacle collection",
+          "Mixed-tier projects where Windsor is the single-source manufacturer",
+        ],
+        notFor: "Ultra-premium architectural work where Marvin Modern or Fleetwood-level sightlines and panel sizes are the brief.",
       },
     ],
   },
@@ -631,7 +656,20 @@ const data: Record<
   loewen: {
     name: "Loewen Windows & Doors",
     tagline: "Craftsmanship Without Compromise",
-    tier: "Ultra-Premium",
+    tier: "Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/loewen/162A2479.jpg",
+      "/images/manufacturers/gallery/loewen/162A2480.jpg",
+      "/images/manufacturers/gallery/loewen/162A2482.jpg",
+      "/images/manufacturers/gallery/loewen/162A2486.jpg",
+      "/images/manufacturers/gallery/loewen/162A2489.jpg",
+      "/images/manufacturers/gallery/loewen/162A2494.jpg",
+      "/images/manufacturers/gallery/loewen/162A2495.jpg",
+      "/images/manufacturers/gallery/loewen/162A2499.jpg",
+      "/images/manufacturers/gallery/loewen/162A2510.jpg",
+      "/images/manufacturers/gallery/loewen/162A2513.jpg",
+      "/images/manufacturers/gallery/loewen/162A2515.jpg",
+    ],
     leadTime: "14–20 weeks",
     materials: ["Aluminum-Clad", "Wood"],
     overview:
@@ -1007,6 +1045,33 @@ export default async function ManufacturerPage({ params }: Props) {
           </div>
         </Container>
       </Section>
+
+      {/* On Display in Our Showroom */}
+      {m.galleryImages && m.galleryImages.length > 0 && (
+        <Section className="bg-neutral-warm-50 pt-0 md:pt-0 lg:pt-0">
+          <Container>
+            <AnimatedReveal>
+              <div className="mb-10 text-center">
+                <h2 className="font-serif text-3xl font-semibold tracking-tight text-neutral-warm-900 md:text-4xl">
+                  On Display in Our Showroom
+                </h2>
+                <div className="mx-auto mt-3 h-0.5 w-10 bg-brand-terracotta" />
+                <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-neutral-warm-600">
+                  See {m.name} in person at our Los Angeles showroom — a sample
+                  of what we currently have on display.
+                </p>
+              </div>
+              <GalleryLightbox
+                images={m.galleryImages}
+                alt={`${m.name} on display in the HDR Windows showroom`}
+              />
+              <p className="mt-4 text-center text-xs text-neutral-warm-400">
+                Tap a photo to view it full size.
+              </p>
+            </AnimatedReveal>
+          </Container>
+        </Section>
+      )}
 
       <FinalCTA />
     </>

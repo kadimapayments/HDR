@@ -48,8 +48,8 @@ export default function AboutPage() {
                 <p>
                   We don&apos;t just sell windows. We consult on product selection,
                   navigate complex decisions, manage procurement and
-                  lead times, and ensure every unit arrives and installs
-                  correctly. Our team understands the technical demands of
+                  lead times, and ensure every unit arrives correct and
+                  ready for your installer. Our team understands the technical demands of
                   modern architecture, from oversized structural openings to
                   coastal performance ratings to Title 24 compliance.
                 </p>
@@ -133,7 +133,7 @@ export default function AboutPage() {
                 step: "03",
                 title: "Deliver & Support",
                 description:
-                  "From delivery coordination to installation support and warranty management, we're with you through completion.",
+                  "From delivery coordination to preferred installer referrals and warranty management, we're with you through completion.",
               },
             ].map((item, i) => (
               <AnimatedReveal key={item.step} delay={i * 0.15}>

@@ -37,9 +37,9 @@ const steps = [
   },
   {
     step: "04",
-    title: "Delivery & Installation Support",
+    title: "Delivery & Installer Coordination",
     description:
-      "We coordinate delivery logistics, provide installation guidelines, and offer on-site support to ensure every unit is installed to manufacturer standards.",
+      "We coordinate delivery logistics, provide installation guidelines, and recommend trusted, licensed installers to help ensure every unit meets manufacturer standards.",
   },
 ];
 
@@ -49,7 +49,7 @@ const capabilities = [
   "Energy performance analysis for Title 24 compliance",
   "Custom configuration and engineering support",
   "Showroom consultations with your clients",
-  "Project coordination with GCs and installation crews",
+  "Project coordination with GCs and trusted installers",
   "Warranty management and post-installation support",
 ];
 

@@ -37,9 +37,9 @@ const steps = [
   },
   {
     step: "04",
-    title: "Delivery, Installation & Warranty",
+    title: "Delivery, Installer Referrals & Warranty",
     description:
-      "Coordinated deliveries across building phases, installation support for your crews, and centralized warranty management across all units and manufacturers.",
+      "Coordinated deliveries across building phases, referrals to trusted, licensed installers, and centralized warranty management across all units and manufacturers.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function ForDevelopersPage() {
                 <p>
                   Managing window and door procurement across dozens or hundreds
                   of units means coordinating manufacturers, lead times,
-                  deliveries, and installation crews, all while keeping costs
+                  deliveries, and installer schedules, all while keeping costs
                   in line and finishes consistent. We handle all of it.
                 </p>
                 <p>

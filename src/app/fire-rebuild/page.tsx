@@ -53,8 +53,8 @@ const steps = [
   },
   {
     n: "04",
-    title: "Procurement & install",
-    body: "Once approved, we manage the order, delivery, and installation crews, through punch list and warranty registration.",
+    title: "Procurement & delivery",
+    body: "Once approved, we manage the order and delivery, connect you with trusted, licensed installers, and stay involved through punch list and warranty registration.",
   },
 ];
 

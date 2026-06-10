@@ -23,7 +23,7 @@ const audiences = [
   {
     title: "Builders",
     description:
-      "Reliable supply chain, expert coordination, and installation support. We keep your projects on schedule and on spec.",
+      "Reliable supply chain, expert coordination, and trusted installer referrals. We keep your projects on schedule and on spec.",
     href: "/for-builders",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>

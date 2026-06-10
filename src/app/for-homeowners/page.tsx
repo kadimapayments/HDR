@@ -39,7 +39,7 @@ const steps = [
     step: "04",
     title: "We Handle the Rest",
     description:
-      "From order through delivery and installation, we manage the details. You'll have one point of contact and a team that stays accountable from start to finish.",
+      "From order through delivery and installer coordination, we manage the details. You'll have one point of contact and a team that stays accountable from start to finish.",
   },
 ];
 
@@ -65,9 +65,9 @@ const benefits = [
       "Working with an architect or interior designer? We coordinate directly with your design team to make sure every selection aligns with the overall vision.",
   },
   {
-    title: "Managed Installation",
+    title: "Trusted Installer Referrals",
     description:
-      "We work with trusted installation crews and stay involved through completion, so your windows and doors are installed to manufacturer standards.",
+      "We connect you with trusted, licensed installers and stay involved through completion to help ensure your windows and doors are installed to manufacturer standards.",
   },
   {
     title: "Warranty Support",
