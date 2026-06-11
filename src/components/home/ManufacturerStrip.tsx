@@ -90,7 +90,7 @@ export function ManufacturerStrip() {
           {doubled.map((m, i) => (
             <Link
               key={`${m.slug}-${i}`}
-              href={`/manufacturers/${m.slug}`}
+              href={"link" in m ? m.link : `/manufacturers/${m.slug}`}
               aria-label={`${m.name} — view manufacturer details`}
               className="shrink-0 transition-all duration-300"
             >

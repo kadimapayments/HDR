@@ -50,6 +50,7 @@ export const MARQUEE_BRANDS = [
   { name: "Euroline", slug: "euroline", logo: "/images/manufacturers/euroline.png", scale: 1.3 },
   { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp", scale: 0.7 },
   { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png", scale: 0.55 },
+  { name: "TruStile", slug: "trustile", logo: "/images/interiors/trustile.webp", scale: 1, link: "/interiors" },
 ] as const;
 
 export const FIRE_REBUILD_PROGRAMS = [
