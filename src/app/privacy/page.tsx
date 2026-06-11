@@ -7,7 +7,7 @@ import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Privacy Policy",
-  description: "Privacy Policy for HDR Windows — Horizon Design & Renovation.",
+  description: "Privacy Policy for HDR Windows, a Horizon Design & Renovation company.",
   path: "/privacy",
 });
 
@@ -30,7 +30,7 @@ export default function PrivacyPage() {
               </h2>
               <p>
                 When you contact us, submit plans, or request a consultation through
-                this website, we collect the information you voluntarily provide —
+                this website, we collect the information you voluntarily provide,
                 such as your name, email address, phone number, and project details.
                 We do not sell or rent your personal information to third parties.
               </p>

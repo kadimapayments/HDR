@@ -10,6 +10,9 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 import { FinalCTA } from "@/components/home/FinalCTA";
+import { GalleryLightbox } from "@/components/manufacturers/GalleryLightbox";
+import Image from "next/image";
+import { MANUFACTURERS } from "@/lib/constants";
 
 type ProductLine = {
   name: string;
@@ -35,12 +38,35 @@ const data: Record<
     systems: { name: string; slug: string }[];
     bestFor: string[];
     productLines?: ProductLine[];
+    collections?: { name: string; description: string }[];
+    galleryImages?: string[];
+    materialComparison?: {
+      title: string;
+      intro: string;
+      columns: string[];
+      rows: { attribute: string; values: string[] }[];
+    };
   }
 > = {
   fleetwood: {
     name: "Fleetwood Windows & Doors",
     tagline: "The Gold Standard in Aluminum",
     tier: "Ultra-Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/fleetwood/162A2563.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A2571.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A0726.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A0729.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A0730.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A0732.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A0748.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A0756.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A0779.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A0773.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A0937.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A0896.jpg",
+      "/images/manufacturers/gallery/fleetwood/162A0912.jpg",
+    ],
     leadTime: "12–16 weeks",
     materials: ["Aluminum"],
     overview:
@@ -48,13 +74,13 @@ const data: Record<
     pros: [
       "Industry-leading multi-slide door engineering",
       "Massive panel sizes with slim sightlines",
-      "Local SoCal manufacturing — faster lead times",
+      "Local SoCal manufacturing for faster lead times",
       "Extensive custom configuration options",
       "Strong coastal performance ratings",
       "Excellent architect and builder support",
     ],
     cons: [
-      "Premium pricing — highest in category",
+      "Premium pricing, highest in category",
       "Aluminum-only (no wood interior option)",
       "Complex configurations require experienced installers",
     ],
@@ -64,7 +90,6 @@ const data: Record<
       { name: "Contemporary Aluminum", slug: "contemporary-aluminum" },
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
-      { name: "Hinge Doors", slug: "sliding-doors" },
       { name: "Pocket Doors", slug: "pocket-doors" },
     ],
     bestFor: [
@@ -88,23 +113,23 @@ const data: Record<
           "Projects where Fleetwood quality is required but Gen4 is over-budget",
           "Value-conscious new construction in contemporary style",
         ],
-        notFor: "Primary living spaces on luxury architect-led projects — Gen4 or Edge is the correct specification there.",
+        notFor: "Primary living spaces on luxury architect-led projects; Gen4 or Edge is the correct specification there.",
       },
       {
         name: "Gen4",
         material: "Thermally Broken Aluminum",
-        priceTier: "Ultra-Premium",
+        priceTier: "Premium–Luxury",
         priceIndicator: "$$$$",
         overview:
-          "The Gen4 is Fleetwood's most-specified product line and the industry benchmark for aluminum multi-slide door systems. Engineered for maximum panel size, smooth operation, and slim sightlines, the Gen4 is the default specification for architect-designed indoor-outdoor living in California. Available in pocket, stack-back, and bi-parting configurations across a wide range of widths and heights — with one of the largest operable panel size envelopes in the market.",
+          "The Gen4 is Fleetwood's most-specified product line and the industry benchmark for aluminum multi-slide door systems. Engineered for maximum panel size, smooth operation, and slim sightlines, the Gen4 is the default specification for architect-designed indoor-outdoor living in California. Available in pocket, stack-back, and bi-parting configurations across a wide range of widths and heights, with one of the largest operable panel size envelopes in the market.",
         bestFor: [
           "Primary indoor-outdoor living spaces in luxury residential",
           "Architect-led contemporary and modern projects",
-          "Large opening configurations — pocket, stack, and bi-parting",
+          "Large opening configurations: pocket, stack, and bi-parting",
           "Coastal and hillside homes with expansive view corridors",
           "Projects where panel size and sightline precision are the priority",
         ],
-        notFor: "Projects requiring absolute minimum sightlines — Edge delivers a slimmer profile.",
+        notFor: "Projects requiring absolute minimum sightlines; Edge delivers a slimmer profile.",
       },
       {
         name: "Edge",
@@ -112,7 +137,7 @@ const data: Record<
         priceTier: "Ultra-Premium",
         priceIndicator: "$$$$$",
         overview:
-          "The Edge is Fleetwood's flagship line, engineered for projects where the glass-to-frame ratio is the design priority. It delivers the slimmest sightlines in the Fleetwood catalog — maximizing transparency and creating a near-frameless appearance at full architectural scale. The Edge is the right specification when the architect's intent depends on minimal aluminum presence and maximum visual openness.",
+          "The Edge is Fleetwood's flagship line, engineered for projects where the glass-to-frame ratio is the design priority. It delivers the slimmest sightlines in the Fleetwood catalog, maximizing transparency and creating a near-frameless appearance at full architectural scale. The Edge is the right specification when the architect's intent depends on minimal aluminum presence and maximum visual openness.",
         bestFor: [
           "Luxury residences where minimal sightlines are a core design intent",
           "Large fixed and operable lites requiring near-frameless aesthetics",
@@ -127,12 +152,21 @@ const data: Record<
     name: "Andersen Windows",
     tagline: "Trusted Performance, Refined Design",
     tier: "Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/andersen/162A2553.jpg",
+      "/images/manufacturers/gallery/andersen/162A0839.jpg",
+      "/images/manufacturers/gallery/andersen/162A0824.jpg",
+      "/images/manufacturers/gallery/andersen/162A0829.jpg",
+      "/images/manufacturers/gallery/andersen/162A0843.jpg",
+      "/images/manufacturers/gallery/andersen/162A0856.jpg",
+      "/images/manufacturers/gallery/andersen/showroom-andersen.jpg",
+    ],
     leadTime: "8–12 weeks",
     materials: ["Aluminum-Clad", "Composite", "Fiberglass", "Vinyl-Clad"],
     overview:
-      "Andersen is America's most recognized window manufacturer — a 120-year-old company with a product line that spans every tier of residential construction. More range under one brand than any competitor in the market.",
+      "Andersen is America's most recognized window manufacturer. A 120-year-old company with a product line that spans every tier of residential construction — more range under one brand than any competitor in the market.",
     pros: [
-      "E-Series is fully custom — sizes, shapes, colors, finishes",
+      "E-Series is fully custom: sizes, shapes, colors, finishes",
       "Reliable lead times and nationwide service network",
       "Excellent warranty and post-installation support",
       "Strong energy-performance options (Title 24 compliant)",
@@ -150,7 +184,6 @@ const data: Record<
       { name: "Pivot Doors", slug: "pivot-doors" },
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
-      { name: "Hinge Doors", slug: "sliding-doors" },
     ],
     bestFor: [
       "Traditional and transitional architecture (E-Series / A-Series)",
@@ -163,10 +196,10 @@ const data: Record<
       {
         name: "100 Series",
         material: "Fibrex® Composite",
-        priceTier: "Value",
-        priceIndicator: "$",
+        priceTier: "Value–Premium",
+        priceIndicator: "$$",
         overview:
-          "Andersen's entry-level line built from Fibrex — a proprietary blend of reclaimed wood fiber and thermoplastic polymer. It won't rot, warp, or require painting, which makes it genuinely low-maintenance. The tradeoff is that it lacks the design flexibility, sightline quality, and hardware options expected on architectural work.",
+          "Andersen's entry-level line, built from Fibrex, a proprietary blend of reclaimed wood fiber and thermoplastic polymer. It won't rot, warp, or require painting, which makes it genuinely low-maintenance. Less design flexibility and hardware options than the higher tier product lines.",
         bestFor: [
           "Replacement windows in existing homes",
           "ADUs and accessory structures",
@@ -176,43 +209,28 @@ const data: Record<
         notFor: "Primary spaces in luxury residential or architect-led specifications.",
       },
       {
-        name: "200 Series",
-        material: "Pine Interior / Vinyl-Clad Exterior",
-        priceTier: "Value–Premium",
-        priceIndicator: "$$",
-        overview:
-          "A step up from the 100 Series, the 200 Series introduces a real wood pine interior with an aluminum-clad exterior. It bridges the gap between entry-level and the more specified 400 Series — offering better aesthetics and a wider product selection without moving into full architectural territory.",
-        bestFor: [
-          "Mid-tier residential construction",
-          "Projects that want a wood interior look on a controlled budget",
-          "Builder-grade new construction",
-          "Secondary rooms in mixed-tier specifications",
-        ],
-        notFor: "High-end architectural work where E-Series or A-Series is expected.",
-      },
-      {
-        name: "400 Series",
-        material: "Pine Interior / Vinyl-Clad Exterior",
+        name: "200 / 400 Series",
+        material: "Pine Interior / Clad Exterior",
         priceTier: "Premium",
         priceIndicator: "$$$",
         overview:
-          "The 400 Series is Andersen's best-selling and most versatile line — a pine wood interior with a durable aluminum-clad exterior. It offers a broad range of styles, sizes, and configurations, with good energy performance and solid hardware. A reliable specification for traditional and transitional homes where design matters but the budget doesn't support full E-Series customization.",
+          "Andersen's most popular lines, both built with real wood pine interiors and durable clad exteriors. The 200 Series offers an accessible entry into the wood interior category; the 400 Series is Andersen's best-selling line, adding a broader range of styles, sizes, and configurations with solid hardware and energy performance. A reliable choice for traditional and transitional homes where design matters and the budget doesn't call for full E-Series customization.",
         bestFor: [
           "Traditional, craftsman, and transitional architecture",
           "Homeowner-driven projects with a mid-to-upper budget",
           "Reliable performance across a wide style range",
           "Projects wanting wood interiors without full custom pricing",
-          "Contemporary architecture requiring slim sightlines",
+          "Mid-tier residential construction and builder-grade new construction",
         ],
-        notFor: "Projects requiring very large panels or aluminum-clad exteriors.",
+        notFor: "Projects requiring very large panels or full architectural customization.",
       },
       {
         name: "E-Series",
         material: "Wood Interior / Aluminum-Clad Exterior",
-        priceTier: "Premium",
+        priceTier: "Premium–Luxury",
         priceIndicator: "$$$$",
         overview:
-          "The E-Series (formerly Eagle) is Andersen's most customizable product line — essentially a bespoke window and door system built to specification. Any size, shape, configuration, color, hardware finish, and glass package is available. It's the right choice when a project demands true architectural flexibility: radius windows, complex shapes, very large fixed lites, and complete design coordination with the rest of the building.",
+          "The E-Series (formerly Eagle) is Andersen's most customizable product line, essentially a bespoke window and door system built to specification. Any size, shape, configuration, color, hardware finish, and glass package is available. It's the right choice when a project demands true architectural flexibility: radius windows, complex shapes, very large fixed lites, and complete design coordination with the rest of the building.",
         bestFor: [
           "Architect-led custom residential specifications",
           "Complex shapes, arches, and non-standard configurations",
@@ -224,8 +242,8 @@ const data: Record<
       {
         name: "A-Series",
         material: "Wood Interior / Composite-Clad Exterior",
-        priceTier: "Ultra-Premium",
-        priceIndicator: "$$$$$",
+        priceTier: "Premium–Luxury",
+        priceIndicator: "$$$$",
         overview:
           "The A-Series is Andersen's architectural product — higher performance, more design flexibility, and better hardware than the 400 Series. It supports a wider range of custom sizes, configurations, and finishes, with improved structural performance for larger openings. A strong specification for luxury residential projects that don't require the full custom capability of the E-Series.",
         bestFor: [
@@ -242,6 +260,23 @@ const data: Record<
     name: "Marvin Windows & Doors",
     tagline: "Modern Elegance in Wood & Aluminum",
     tier: "Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/marvin/162A2425.jpg",
+      "/images/manufacturers/gallery/marvin/162A2430.jpg",
+      "/images/manufacturers/gallery/marvin/162A2453.jpg",
+      "/images/manufacturers/gallery/marvin/162A2456.jpg",
+      "/images/manufacturers/gallery/marvin/162A2465.jpg",
+      "/images/manufacturers/gallery/marvin/162A2472.jpg",
+      "/images/manufacturers/gallery/marvin/162A2526.jpg",
+      "/images/manufacturers/gallery/marvin/162A2529.jpg",
+      "/images/manufacturers/gallery/marvin/162A2531.jpg",
+      "/images/manufacturers/gallery/marvin/162A2535.jpg",
+      "/images/manufacturers/gallery/marvin/162A2537.jpg",
+      "/images/manufacturers/gallery/marvin/162A2538.jpg",
+      "/images/manufacturers/gallery/marvin/162A0973.jpg",
+      "/images/manufacturers/gallery/marvin/162A0974.jpg",
+      "/images/manufacturers/gallery/marvin/162A0978.jpg",
+    ],
     leadTime: "10–14 weeks",
     materials: ["Aluminum-Clad", "Fiberglass", "Wood"],
     overview:
@@ -255,13 +290,12 @@ const data: Record<
     ],
     cons: [
       "Multi-slide door panel sizes smaller than Fleetwood",
-      "Aluminum-clad finishes are factory-only — limited field touch-up",
+      "Aluminum-clad finishes are factory-only, with limited field touch-up",
       "Premium pricing vs. mainstream brands",
     ],
     systems: [
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
-      { name: "Hinge Doors", slug: "sliding-doors" },
       { name: "Automated Systems", slug: "automated-systems" },
     ],
     bestFor: [
@@ -274,10 +308,10 @@ const data: Record<
       {
         name: "Essential",
         material: "Fiberglass Composite",
-        priceTier: "Value",
-        priceIndicator: "$",
+        priceTier: "Value–Premium",
+        priceIndicator: "$$",
         overview:
-          "Marvin's entry-level collection built from fiberglass composite — durable, low-maintenance, and energy efficient. It won't rot, warp, or require repainting, which makes it a practical choice for replacement windows and budget-constrained scopes. Design flexibility and customization options are limited compared to the upper collections.",
+          "Marvin's entry-level collection, built from fiberglass composite — durable, low-maintenance, and energy efficient. It won't rot, warp, or require repainting, which makes it a practical choice for replacement windows and budget-constrained scopes. Design flexibility and customization options are limited compared to the upper collections.",
         bestFor: [
           "Replacement windows in existing homes",
           "ADUs and accessory structures",
@@ -289,10 +323,10 @@ const data: Record<
       {
         name: "Elevate",
         material: "Fiberglass Exterior / Pine Interior",
-        priceTier: "Value–Premium",
-        priceIndicator: "$$",
+        priceTier: "Premium",
+        priceIndicator: "$$$",
         overview:
-          "The Elevate collection introduces a real pine wood interior paired with a durable fiberglass exterior — a meaningful step up in warmth and aesthetics over the Essential. It's well-suited to production residential and mid-range new construction where a wood interior look is desired without moving into full architectural pricing.",
+          "The Elevate collection introduces a real pine wood interior paired with a durable fiberglass exterior, a meaningful step up in warmth and aesthetics over the Essential. It's well-suited to production residential and mid-range new construction where a wood interior look is desired without moving into full architectural pricing.",
         bestFor: [
           "Mid-range new construction and production builders",
           "Homeowners wanting a wood interior on a managed budget",
@@ -317,27 +351,12 @@ const data: Record<
         notFor: "Projects requiring the slim sightlines or full material quality of the Modern or Ultimate collections.",
       },
       {
-        name: "Modern",
-        material: "Fiberglass Exterior / Aluminum Interior",
+        name: "Ultimate",
+        material: "Wood or Aluminum-Clad Wood (Fully Custom)",
         priceTier: "Premium–Luxury",
         priceIndicator: "$$$$",
         overview:
-          "The Modern collection is Marvin's architectural statement — slim fiberglass exterior sightlines with a clean aluminum interior. It's designed specifically for contemporary and transitional homes where clean lines and natural materials coexist. The Modern line is the most frequently specified Marvin product on architect-led luxury residential projects in Southern California.",
-        bestFor: [
-          "Contemporary and modern architecture",
-          "Architect-led luxury residential specifications",
-          "Projects pairing slim exterior sightlines with warm wood interiors",
-          "High-end new construction where design drives the brief",
-        ],
-        notFor: "Traditional architecture or projects where panel sizes need to exceed Marvin's maximum configurations.",
-      },
-      {
-        name: "Ultimate",
-        material: "Wood or Aluminum-Clad Wood (Fully Custom)",
-        priceTier: "Ultra-Premium",
-        priceIndicator: "$$$$$",
-        overview:
-          "The Ultimate collection is Marvin's most customizable product — essentially a bespoke window and door system built to the exact specification of the project. Any size, configuration, species, finish, and hardware combination is available. It's the right choice when a project demands complete design control and material authenticity without compromise.",
+          "The Ultimate collection is Marvin's most customizable product, essentially a bespoke window and door system built to the exact specification of the project. Any size, configuration, species, finish, and hardware combination is available. It's the right choice when a project demands complete design control and material authenticity without compromise.",
         bestFor: [
           "Fully custom architectural residential specifications",
           "Projects requiring unusual sizes, shapes, or configurations",
@@ -346,26 +365,48 @@ const data: Record<
         ],
         notFor: "Budget-sensitive projects or builds where standard sizing and configurations work fine.",
       },
+      {
+        name: "Modern",
+        material: "Fiberglass Exterior / Aluminum Interior",
+        priceTier: "Premium–Luxury",
+        priceIndicator: "$$$$",
+        overview:
+          "The Modern collection is Marvin's architectural statement — slim high density fiberglass exterior sightlines with a clean aluminum interior. It's designed specifically for contemporary and transitional homes where clean lines and natural materials coexist. The Modern line is the most frequently specified Marvin product on architect-led luxury residential projects in Southern California.",
+        bestFor: [
+          "Contemporary and modern architecture",
+          "Architect-led luxury residential specifications",
+          "Projects pairing slim exterior sightlines with clean interiors",
+          "High-end new construction where design drives the brief",
+        ],
+        notFor: "Traditional architecture.",
+      },
     ],
   },
   nanawall: {
     name: "NanaWall Systems",
     tagline: "The Original Opening Glass Wall",
-    tier: "Ultra-Premium",
+    tier: "Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/nanawall/162A2519.jpg",
+      "/images/manufacturers/gallery/nanawall/162A2521.jpg",
+      "/images/manufacturers/gallery/nanawall/162A1044.jpg",
+    ],
     leadTime: "12–18 weeks",
     materials: ["Aluminum", "Aluminum-Clad", "Composite", "Wood"],
     overview:
-      "NanaWall invented the modern folding glass wall and remains the category leader — offering the broadest portfolio of opening glass wall systems in the industry across aluminum, wood, and aluminum-clad options.",
+      "NanaWall invented the modern folding glass wall and remains the category leader, offering the broadest portfolio of opening glass wall systems in the industry across aluminum, wood, and aluminum-clad options.",
     pros: [
       "Inventor and category leader for folding glass walls",
       "Broadest portfolio: folding, sliding, frameless, pivoting",
       "Industry-leading air, water, and structural test ratings",
       "Single-track sliding (HSW) and frameless (cero) options unique to NanaWall",
+      "Corner-opening configurations that remove the post for uninterrupted views",
+      "Acoustical line for sound isolation near busy streets or shared walls",
       "Strong coastal and high-wind performance",
       "Exceptional engineering documentation for architects",
     ],
     cons: [
-      "Premium pricing — generally above category average",
+      "Premium pricing, generally above category average",
       "Lead times longer than aluminum-only alternatives",
       "Complex configurations require certified installers",
     ],
@@ -385,7 +426,18 @@ const data: Record<
   euroline: {
     name: "Euroline Steel Windows & Doors",
     tagline: "Authentic Steel, Modern Performance",
-    tier: "Luxury",
+    tier: "Ultra-Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/euroline/162A2433.jpg",
+      "/images/manufacturers/gallery/euroline/162A2438.jpg",
+      "/images/manufacturers/gallery/euroline/162A2442.jpg",
+      "/images/manufacturers/gallery/euroline/162A2445.jpg",
+      "/images/manufacturers/gallery/euroline/162A0766.jpg",
+      "/images/manufacturers/gallery/euroline/162A0765.jpg",
+      "/images/manufacturers/gallery/euroline/162A0784.jpg",
+      "/images/manufacturers/gallery/euroline/162A0884.jpg",
+      "/images/manufacturers/gallery/euroline/162A0942.jpg",
+    ],
     leadTime: "16–22 weeks",
     materials: ["Steel"],
     overview:
@@ -399,7 +451,7 @@ const data: Record<
     ],
     cons: [
       "Highest material cost in the category",
-      "Long lead times — manufactured in Europe",
+      "Long lead times, manufactured in Europe",
       "Specialized installation expertise required",
       "Heavier panels require structural coordination",
     ],
@@ -409,7 +461,6 @@ const data: Record<
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
       { name: "Folding Doors", slug: "bifold-doors" },
-      { name: "Hinge Doors", slug: "sliding-doors" },
     ],
     bestFor: [
       "Steel-framed contemporary architecture",
@@ -417,15 +468,61 @@ const data: Record<
       "Classic 1920s-style estate restorations",
       "Pivot entry doors with dramatic scale",
     ],
+    materialComparison: {
+      title: "Why Steel",
+      intro:
+        "Steel is the premier framing material for architects and homeowners who want the narrowest possible sightlines and an unmatched material presence. Here's how it compares to aluminum and fiberglass.",
+      columns: ["Steel", "Aluminum", "Fiberglass"],
+      rows: [
+        {
+          attribute: "Sightlines",
+          values: [
+            "The narrowest sightlines of any framing material, for the most glass and the cleanest look.",
+            "Slim, but noticeably heavier than steel once a thermal break is added.",
+            "The bulkiest profiles of the three.",
+          ],
+        },
+        {
+          attribute: "Strength & Spans",
+          values: [
+            "Highest strength-to-size ratio, enabling larger panels without added bulk.",
+            "Capable of large spans, but frames must be sized up to match steel.",
+            "Least structurally capable, limiting maximum panel sizes.",
+          ],
+        },
+        {
+          attribute: "Durability",
+          values: [
+            "Exceptionally durable; custom finishes develop a desirable patina over time.",
+            "Durable with proper finishing, but lacks steel's long-term character.",
+            "Holds up reasonably well, but can become brittle with sun exposure.",
+          ],
+        },
+        {
+          attribute: "Aesthetic",
+          values: [
+            "A distinctive architectural presence, including factory patinas, unmatched by other materials.",
+            "Clean and contemporary, but a more common look lacking steel's character.",
+            "A more utilitarian appearance, generally not considered a luxury material.",
+          ],
+        },
+      ],
+    },
   },
   lacantina: {
     name: "LaCantina Doors",
     tagline: "Opening Walls for Living",
     tier: "Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/lacantina/162A2576.jpg",
+      "/images/manufacturers/gallery/lacantina/162A2579.jpg",
+      "/images/manufacturers/gallery/lacantina/162A0897.jpg",
+      "/images/manufacturers/gallery/lacantina/162A0899.jpg",
+    ],
     leadTime: "8–12 weeks",
     materials: ["Aluminum", "Wood"],
     overview:
-      "LaCantina specializes exclusively in folding, sliding, and stacking door systems — a go-to specification for opening walls where performance and design integrity matter without the ultra-premium price tag.",
+      "LaCantina specializes exclusively in folding, sliding, and stacking door systems — a go-to choice for opening walls where performance and design integrity matter without the ultra-premium price tag.",
     pros: [
       "Strong value across folding and multi-slide categories",
       "Local Southern California manufacturing",
@@ -442,7 +539,6 @@ const data: Record<
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
       { name: "Folding Doors", slug: "bifold-doors" },
-      { name: "Hinge Doors", slug: "sliding-doors" },
     ],
     bestFor: [
       "Indoor-outdoor living on a controlled budget",
@@ -454,11 +550,11 @@ const data: Record<
   "all-weather": {
     name: "All Weather Architectural Aluminum",
     tagline: "Reliable Vinyl & Aluminum Solutions",
-    tier: "Premium",
+    tier: "Value",
     leadTime: "8–12 weeks",
     materials: ["Aluminum", "Vinyl"],
     overview:
-      "All Weather is a reliable California manufacturer offering strong Title 24 energy performance and predictable lead times — the right specification when compliance and supply consistency lead the brief.",
+      "All Weather is a reliable California manufacturer offering strong Title 24 energy performance and predictable lead times: the right specification when compliance and supply consistency lead the brief.",
     pros: [
       "Strong Title 24 energy performance",
       "Reliable Southern California supply chain",
@@ -484,7 +580,7 @@ const data: Record<
     leadTime: "8–12 weeks",
     materials: ["Aluminum-Clad Wood", "Fiberglass", "Vinyl"],
     overview:
-      "Windsor is a family-owned manufacturer whose Pinnacle line delivers premium aluminum-clad wood at strong value — and whose broader catalog spans fiberglass and vinyl, making them a practical single-source partner for mixed-tier specifications.",
+      "Windsor is a family-owned manufacturer whose Pinnacle line delivers premium aluminum-clad wood at strong value, and whose broader catalog spans fiberglass and vinyl, making them a practical single-source partner for mixed-tier specifications.",
     pros: [
       "Pinnacle delivers premium clad-wood at strong value",
       "Deep custom sizing and configuration library",
@@ -495,7 +591,7 @@ const data: Record<
     cons: [
       "Maximum operable panel sizes more limited than Fleetwood / Marvin Modern",
       "Less brand recognition in California luxury market than peers",
-      "Dealer network thinner west of the Rockies — coordination matters",
+      "Dealer network thinner west of the Rockies, so coordination matters",
     ],
     systems: [
       { name: "Multi-Slide Doors", slug: "multi-slide-doors" },
@@ -511,24 +607,84 @@ const data: Record<
       "Builder-spec luxury homes",
       "Projects where lead-time certainty matters",
     ],
+    productLines: [
+      {
+        name: "Next Dimension",
+        material: "Multi-Chambered Vinyl",
+        priceTier: "Value",
+        priceIndicator: "$",
+        overview:
+          "Windsor's reimagined vinyl line, built on multi-chambered extrusions with galvanized steel reinforcement for larger openings. It carries the same Cardinal LoE 366 glass and Super Spacer technology found in the higher-tier lines, making it a dependable, code-compliant option where budget and energy performance lead the brief.",
+        bestFor: [
+          "Value-tier rooms, secondary spaces, and builder-spec scopes",
+          "Projects where Title 24 compliance and budget both matter",
+          "Replacement and renovation work outside architectural scopes",
+        ],
+        notFor: "Architect-led or luxury residential work where Pinnacle's wood interiors and design flexibility are expected.",
+      },
+      {
+        name: "Revive",
+        material: "Wood-Clad / Hybrid / Vinyl Pocket Replacement",
+        priceTier: "Value",
+        priceIndicator: "$",
+        overview:
+          "A pocket-replacement line designed to install into existing frames, preserving original interior and exterior trim, with wood-clad, hybrid, and vinyl options depending on the project. Installation is fast, often under an hour per opening, which makes Revive a practical choice for renovation work where disturbing surrounding finishes isn't an option.",
+        bestFor: [
+          "Renovations and remodels preserving existing trim and millwork",
+          "Period homes where matching original sightlines matters",
+          "Projects with tight schedules or occupied homes during construction",
+        ],
+        notFor: "New construction or projects requiring full-frame replacement and larger configurations.",
+      },
+      {
+        name: "Legend",
+        material: "Cellular PVC / Wood-Clad Hybrid",
+        priceTier: "Value–Premium",
+        priceIndicator: "$$",
+        overview:
+          "A hybrid line that pairs high-density cellular PVC with wood-clad sashes, engineered to resist rot and warping while keeping a paintable, traditional wood look. Legend is built for authenticity in replacement and renovation work, holding original glass sizes and trim details that standard vinyl products typically can't match.",
+        bestFor: [
+          "Historic home renovations and period-appropriate replacements",
+          "Coastal properties needing durable, low-maintenance performance",
+          "Projects prioritizing traditional aesthetics with modern performance",
+          "Builder-spec homes wanting a paintable, wood-look exterior",
+        ],
+        notFor: "Architect-led contemporary projects where a true wood-interior line like Pinnacle is the better fit.",
+      },
+      {
+        name: "Pinnacle",
+        material: "Aluminum-Clad Wood",
+        priceTier: "Premium",
+        priceIndicator: "$$$",
+        overview:
+          "Windsor's flagship wood line, built with Clear Select Pine, Natural Alder, or Douglas Fir interiors and heavy-duty extruded aluminum cladding rather than thin roll-formed alternatives. Pinnacle spans both traditional profiles and a newer contemporary collection with slimmer sightlines and expanded glass area, giving architects real range without leaving the line.",
+        bestFor: [
+          "Custom homes wanting genuine wood interiors at a premium-tier price",
+          "Traditional and transitional architecture",
+          "Contemporary projects specifying the slimmer Pinnacle collection",
+          "Mixed-tier projects where Windsor is the single-source manufacturer",
+        ],
+        notFor: "Ultra-premium architectural work where Marvin Modern or Fleetwood-level sightlines and panel sizes are the brief.",
+      },
+    ],
   },
   plygem: {
-    name: "Plygem",
+    name: "Ply Gem",
     tagline: "Dependable Vinyl at Scale",
     tier: "Value",
     leadTime: "4–8 weeks",
     materials: ["Vinyl"],
     overview:
-      "Plygem is the workhorse vinyl specification — dependable Title 24 energy performance, short lead times, and competitive pricing for ADUs, value-tier rooms, and secondary spaces.",
+      "Ply Gem is the workhorse vinyl specification: dependable Title 24 energy performance, short lead times, and competitive pricing for ADUs, value-tier rooms, and secondary spaces.",
     pros: [
       "Strong Title 24 energy performance across the catalog",
-      "Short, reliable lead times — domestic manufacturing at scale",
+      "Short, reliable lead times from domestic manufacturing at scale",
       "Competitive pricing for the performance level",
       "Wide product breadth (windows + doors)",
       "Good warranty support",
     ],
     cons: [
-      "Vinyl-only — limited architectural finish options",
+      "Vinyl-only, with limited architectural finish options",
       "Smaller maximum operable panel sizes than premium peers",
       "Not specified for primary spaces in luxury residential",
     ],
@@ -542,15 +698,15 @@ const data: Record<
     ],
   },
   iwc: {
-    name: "IWC — International Window Corporation",
+    name: "IWC: International Window Corporation",
     tagline: "Versatile Custom Solutions",
     tier: "Value",
     leadTime: "6–10 weeks",
     materials: ["Aluminum", "Vinyl"],
     overview:
-      "IWC is a California-based manufacturer offering flexible configurations and short lead times — a capable workhorse for ADUs, secondary spaces, and mixed-tier projects.",
+      "IWC is a California-based manufacturer offering flexible configurations and short lead times, a capable workhorse for ADUs, secondary spaces, and mixed-tier projects.",
     pros: [
-      "Short lead times — local California manufacturing",
+      "Short lead times from local California manufacturing",
       "Flexible configurations and sizing",
       "Strong value-tier pricing",
       "Reliable Title 24 options",
@@ -571,28 +727,40 @@ const data: Record<
   loewen: {
     name: "Loewen Windows & Doors",
     tagline: "Craftsmanship Without Compromise",
-    tier: "Ultra-Premium",
+    tier: "Premium",
+    galleryImages: [
+      "/images/manufacturers/gallery/loewen/162A2479.jpg",
+      "/images/manufacturers/gallery/loewen/162A2480.jpg",
+      "/images/manufacturers/gallery/loewen/162A2482.jpg",
+      "/images/manufacturers/gallery/loewen/162A2486.jpg",
+      "/images/manufacturers/gallery/loewen/162A2494.jpg",
+      "/images/manufacturers/gallery/loewen/162A2495.jpg",
+      "/images/manufacturers/gallery/loewen/162A2499.jpg",
+      "/images/manufacturers/gallery/loewen/162A2510.jpg",
+      "/images/manufacturers/gallery/loewen/162A2513.jpg",
+      "/images/manufacturers/gallery/loewen/162A2515.jpg",
+      "/images/manufacturers/gallery/loewen/162A1023.jpg",
+      "/images/manufacturers/gallery/loewen/162A1018.jpg",
+    ],
     leadTime: "14–20 weeks",
     materials: ["Aluminum-Clad", "Wood"],
     overview:
-      "Loewen is a Canadian manufacturer built on premium Douglas Fir and artisan-level craftsmanship — the choice for projects where material authenticity and hardware quality are non-negotiable.",
+      "Based in Canada, Loewen is the leading manufacturer of premium windows and doors for the luxury architectural market in North America. Built on premium Coastal Douglas Fir and artisan-level craftsmanship, this is the top choice for projects where material authenticity and hardware quality are non-negotiable.",
     pros: [
-      "Exceptional wood quality (Douglas Fir standard)",
+      "Exceptional wood quality (Coastal Douglas Fir standard)",
       "Premium hardware and operation",
       "Highly customizable profiles and configurations",
       "Beautiful interior wood aesthetics",
       "Strong thermal performance",
     ],
     cons: [
-      "Longer lead times (Canadian manufacturing)",
       "Higher price point",
-      "Wood requires periodic maintenance",
+      "All wood requires periodic maintenance",
     ],
     systems: [
       { name: "Pivot Doors", slug: "pivot-doors" },
       { name: "Energy Efficient Systems", slug: "energy-efficient" },
       { name: "Oversized Openings", slug: "oversized-openings" },
-      { name: "Hinge Doors", slug: "sliding-doors" },
       { name: "Window Wall", slug: "window-wall" },
     ],
     bestFor: [
@@ -601,6 +769,68 @@ const data: Record<
       "Projects prioritizing interior aesthetics",
       "High-end custom residences",
     ],
+    collections: [
+      {
+        name: "Cyprium Collection",
+        description:
+          "Loewen's Cyprium Collection pairs the warmth of wood interiors with a durable, low-maintenance copper-alloy exterior cladding, engineered for projects that demand a distinctive, modern look without sacrificing the performance and craftsmanship Loewen is known for. It's a striking option for architects seeking a non-traditional exterior finish that develops a natural patina over time.",
+      },
+      {
+        name: "Stormforce Series",
+        description:
+          "The Stormforce Series is Loewen's high-performance line engineered for coastal and storm-prone regions, built to meet demanding impact and pressure requirements without compromising on design or sightlines. It's the right choice for luxury properties in exposed locations that need windows and doors capable of withstanding severe weather while still delivering Loewen's signature fit, finish, and craftsmanship.",
+      },
+      {
+        name: "Curtain Wall",
+        description:
+          "Loewen's curtain wall systems bring the same wood-and-cladding craftsmanship to large-scale glazed facades, allowing architects to design expansive walls of glass with continuous, unbroken sightlines. It's suited to statement architectural moments (great rooms, stairwells, and whole-wall openings) where the structure itself becomes part of the design.",
+      },
+      {
+        name: "Tranquility Glass",
+        description:
+          "Tranquility is Loewen's upgraded glazing option, combining laminated glass with specialized acoustic construction to deliver significantly better sound-dampening performance than standard insulated glass. The laminated layer also adds a meaningful security benefit, making the glass far more resistant to forced entry and impact. It's an excellent option for properties on busy streets, near airports, or anywhere both quiet and security are a priority.",
+      },
+    ],
+    materialComparison: {
+      title: "Why Coastal Douglas Fir",
+      intro:
+        "Loewen builds its premium lines from Coastal Douglas Fir, a slower-growing, denser variant that outperforms the regular Douglas Fir and Ponderosa Pine used in many lower-tier wood products.",
+      columns: ["Coastal Douglas Fir", "Regular Douglas Fir", "Ponderosa Pine"],
+      rows: [
+        {
+          attribute: "Density & Strength",
+          values: [
+            "Highest density; holds hardware and joinery exceptionally well.",
+            "Moderate density, softer than coastal-grown stock.",
+            "Lowest density, more prone to dents and damage.",
+          ],
+        },
+        {
+          attribute: "Dimensional Stability",
+          values: [
+            "Tight grain resists warping, twisting, and shrinkage.",
+            "More movement with humidity and temperature swings.",
+            "Most prone to warping, especially in larger sizes.",
+          ],
+        },
+        {
+          attribute: "Decay & Moisture Resistance",
+          values: [
+            "Naturally higher resistance, ideal for coastal SoCal climates.",
+            "Moderate natural resistance to decay and moisture.",
+            "Lower resistance, relies more on coatings and finishes.",
+          ],
+        },
+        {
+          attribute: "Appearance & Finish",
+          values: [
+            "Fine, consistent grain for a premium stained finish.",
+            "Visible grain variation and knots show through stains.",
+            "Frequent knots and resin pockets call for paint, not stain.",
+          ],
+        },
+      ],
+    },
   },
 };
 
@@ -614,15 +844,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!manufacturer) return {};
 
   return generatePageMetadata({
-    title: `${manufacturer.name} — Authorized Dealer in Los Angeles`,
+    title: `${manufacturer.name}: Authorized Dealer in Los Angeles`,
     description: `HDR Windows is an authorized ${manufacturer.name} dealer in Los Angeles. ${manufacturer.overview.slice(0, 120)}...`,
     path: `/manufacturers/${slug}`,
   });
 }
 
+const LOGO_HEIGHT: Record<string, string> = {
+  fleetwood: "h-20",
+  andersen: "h-14",
+  marvin: "h-14",
+  loewen: "h-14",
+  euroline: "h-14",
+  plygem: "h-20",
+  nanawall: "h-8",
+};
+
 export default async function ManufacturerPage({ params }: Props) {
   const { slug } = await params;
   const m = data[slug];
+  const mfr = MANUFACTURERS.find((x) => x.slug === slug);
 
   if (!m) notFound();
 
@@ -631,23 +872,32 @@ export default async function ManufacturerPage({ params }: Props) {
       <PageHero title={m.name} subtitle={m.tagline} description={m.overview} />
 
       {/* Key Details */}
-      <Section>
+      <Section
+        className={
+          m.materialComparison
+            ? "pb-0 md:pb-0 lg:pb-0"
+            : m.galleryImages && m.galleryImages.length > 0
+            ? "pb-8 md:pb-10 lg:pb-12"
+            : undefined
+        }
+      >
         <Container>
-          <div className="grid gap-16 lg:grid-cols-3">
+          <div className="grid gap-16 lg:grid-cols-3 items-start">
             <div className="lg:col-span-2 space-y-16">
-              {/* Pros & Cons — hidden when product lines are present */}
+              {/* Advantages & Best For — hidden when product lines are present */}
               {!m.productLines && (
                 <AnimatedReveal>
-                  <div className="grid gap-8 md:grid-cols-2">
-                    <div>
-                      <Heading level="h3" serif={false}>
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <div className="border border-neutral-warm-200 bg-white p-6">
+                      <h3 className="font-serif text-2xl font-semibold tracking-tight text-neutral-warm-900">
                         Advantages
-                      </Heading>
+                      </h3>
+                      <div className="mt-2 h-0.5 w-10 bg-accent-sage" />
                       <ul className="mt-4 space-y-3">
                         {m.pros.map((pro) => (
                           <li
                             key={pro}
-                            className="flex items-start gap-3 text-sm text-neutral-warm-600"
+                            className="flex items-start gap-3 text-sm leading-relaxed text-neutral-warm-600"
                           >
                             <svg
                               className="mt-0.5 h-4 w-4 shrink-0 text-accent-sage"
@@ -667,18 +917,19 @@ export default async function ManufacturerPage({ params }: Props) {
                         ))}
                       </ul>
                     </div>
-                    <div>
-                      <Heading level="h3" serif={false}>
-                        Considerations
-                      </Heading>
+                    <div className="border border-neutral-warm-200 bg-white p-6">
+                      <h3 className="font-serif text-2xl font-semibold tracking-tight text-brand-terracotta">
+                        Best For
+                      </h3>
+                      <div className="mt-2 h-0.5 w-10 bg-brand-terracotta" />
                       <ul className="mt-4 space-y-3">
-                        {m.cons.map((con) => (
+                        {m.bestFor.map((item) => (
                           <li
-                            key={con}
-                            className="flex items-start gap-3 text-sm text-neutral-warm-600"
+                            key={item}
+                            className="flex items-start gap-3 text-sm leading-relaxed text-neutral-warm-600"
                           >
                             <svg
-                              className="mt-0.5 h-4 w-4 shrink-0 text-neutral-warm-400"
+                              className="mt-0.5 h-4 w-4 shrink-0 text-brand-terracotta"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -687,10 +938,10 @@ export default async function ManufacturerPage({ params }: Props) {
                                 strokeLinecap="round"
                                 strokeLinejoin="round"
                                 strokeWidth={2}
-                                d="M12 9v2m0 4h.01"
+                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
                               />
                             </svg>
-                            {con}
+                            {item}
                           </li>
                         ))}
                       </ul>
@@ -699,22 +950,26 @@ export default async function ManufacturerPage({ params }: Props) {
                 </AnimatedReveal>
               )}
 
-              {/* Best For — hidden when product lines are present */}
-              {!m.productLines && (
-                <AnimatedReveal>
-                  <Heading level="h3">Best For</Heading>
-                  <ul className="mt-4 space-y-3">
-                    {m.bestFor.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-center gap-3 text-sm text-neutral-warm-600"
-                      >
-                        <div className="h-1.5 w-1.5 rounded-full bg-brand-terracotta" />
-                        {item}
-                      </li>
+              {/* Featured Collections */}
+              {m.collections && (
+                <div>
+                  <Heading level="h3">Featured Collections</Heading>
+                  <p className="mt-2 text-sm text-neutral-warm-500">
+                    Specialized lines worth knowing about when scoping a Loewen specification.
+                  </p>
+                  <div className="mt-6 space-y-4">
+                    {m.collections.map((collection) => (
+                      <div key={collection.name} className="border border-neutral-warm-200 bg-white p-6">
+                        <h4 className="font-serif text-2xl font-semibold tracking-tight text-brand-terracotta">
+                          {collection.name}
+                        </h4>
+                        <p className="mt-3 text-sm leading-relaxed text-neutral-warm-600">
+                          {collection.description}
+                        </p>
+                      </div>
                     ))}
-                  </ul>
-                </AnimatedReveal>
+                  </div>
+                </div>
               )}
 
               {/* Product Lines */}
@@ -776,7 +1031,7 @@ export default async function ManufacturerPage({ params }: Props) {
                   <div>
                     <Heading level="h3">Product Lines</Heading>
                     <p className="mt-2 text-sm text-neutral-warm-500">
-                      Not all series are equal — understanding which line fits your project is the first step to a correct specification.
+                      Not all series are equal. We&apos;ll help you understand which line fits your project best.
                     </p>
                     <div className="mt-6 space-y-4">
                       {m.productLines.map((line) => (
@@ -812,14 +1067,6 @@ export default async function ManufacturerPage({ params }: Props) {
                                 ))}
                               </ul>
                             </div>
-                            {line.notFor && (
-                              <div>
-                                <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-neutral-warm-400">
-                                  Not Recommended For
-                                </p>
-                                <p className="text-xs text-neutral-warm-500">{line.notFor}</p>
-                              </div>
-                            )}
                           </div>
                         </div>
                       ))}
@@ -829,42 +1076,25 @@ export default async function ManufacturerPage({ params }: Props) {
                 </>
               )}
 
-              {/* Available Systems */}
-              <AnimatedReveal>
-                <Heading level="h3">Available Systems</Heading>
-                <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                  {m.systems.map((system) => (
-                    <Link
-                      key={system.slug}
-                      href={`/systems/${system.slug}`}
-                      className="group flex items-center justify-between border border-neutral-warm-200 bg-white p-4 transition-all hover:border-brand-terracotta/30"
-                    >
-                      <span className="text-sm font-medium text-neutral-warm-700 group-hover:text-brand-terracotta">
-                        {system.name}
-                      </span>
-                      <svg
-                        className="h-4 w-4 text-neutral-warm-400 transition-transform group-hover:translate-x-1"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </Link>
-                  ))}
-                </div>
-              </AnimatedReveal>
             </div>
 
             {/* Sidebar */}
             <div>
               <AnimatedReveal delay={0.2}>
                 <div className="space-y-8 border-l border-neutral-warm-200 pl-8">
+                  {mfr?.logo && (
+                    <div className="flex items-center border border-neutral-warm-200 bg-white px-6 py-5">
+                      <div className={`relative w-44 ${LOGO_HEIGHT[slug] ?? "h-10"}`}>
+                        <Image
+                          src={mfr.logo}
+                          alt={m.name}
+                          fill
+                          className="object-contain object-left"
+                        />
+                      </div>
+                    </div>
+                  )}
+
                   <div>
                     <h4 className="mb-2 text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
                       Pricing Tier
@@ -885,6 +1115,40 @@ export default async function ManufacturerPage({ params }: Props) {
                     </div>
                   </div>
 
+                  {m.systems.length > 0 && (
+                  <div>
+                    <h4 className="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
+                      Available Systems
+                    </h4>
+                    <div className="space-y-2">
+                      {m.systems.map((system) => (
+                        <Link
+                          key={system.slug}
+                          href={`/systems/${system.slug}`}
+                          className="group flex items-center justify-between border border-neutral-warm-200 bg-white px-3 py-2.5 transition-all hover:border-brand-terracotta/30"
+                        >
+                          <span className="text-sm font-medium text-neutral-warm-700 group-hover:text-brand-terracotta">
+                            {system.name}
+                          </span>
+                          <svg
+                            className="h-3.5 w-3.5 shrink-0 text-neutral-warm-400 transition-transform group-hover:translate-x-1"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                  )}
+
                   <div className="pt-4">
                     <Button
                       href="/contact"
@@ -901,6 +1165,114 @@ export default async function ManufacturerPage({ params }: Props) {
           </div>
         </Container>
       </Section>
+
+      {/* Material Comparison */}
+      {m.materialComparison && (
+        <Section className="py-10 md:py-12 lg:py-16">
+          <Container>
+            <AnimatedReveal>
+              <div className="mx-auto max-w-3xl text-center">
+                <Heading level="h2">{m.materialComparison.title}</Heading>
+                <div className="mx-auto mt-3 h-0.5 w-10 bg-brand-terracotta" />
+                <p className="mt-4 text-sm leading-relaxed text-neutral-warm-600">
+                  {m.materialComparison.intro}
+                </p>
+              </div>
+
+              {/* Mobile: stacked cards */}
+              <div className="mt-10 space-y-6 lg:hidden">
+                {m.materialComparison.rows.map((row) => (
+                  <div key={row.attribute} className="border border-neutral-warm-200 bg-white p-4">
+                    <p className="text-xs font-semibold uppercase tracking-[0.15em] text-brand-terracotta">
+                      {row.attribute}
+                    </p>
+                    <div className="mt-3 space-y-3">
+                      {row.values.map((value, i) => (
+                        <div key={m.materialComparison!.columns[i]}>
+                          <p className="text-xs font-semibold text-neutral-warm-900">
+                            {m.materialComparison!.columns[i]}
+                          </p>
+                          <p className="mt-1 text-xs leading-relaxed text-neutral-warm-600">{value}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Desktop: table */}
+              <div className="mt-10 hidden lg:block">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="border-b border-neutral-warm-200">
+                      <th className="w-1/5 pb-3 pr-4 text-left text-xs font-semibold uppercase tracking-wider text-neutral-warm-500" />
+                      {m.materialComparison.columns.map((col, i) => (
+                        <th
+                          key={col}
+                          className={`pb-3 px-4 text-left text-xs font-semibold uppercase tracking-wider ${
+                            i === 0 ? "text-brand-terracotta" : "text-neutral-warm-500"
+                          }`}
+                        >
+                          {col}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {m.materialComparison.rows.map((row, i) => (
+                      <tr
+                        key={row.attribute}
+                        className={`border-b border-neutral-warm-100 ${i % 2 === 0 ? "bg-neutral-warm-50" : "bg-white"}`}
+                      >
+                        <td className="py-4 pr-4 align-top text-xs font-semibold uppercase tracking-wider text-neutral-warm-500">
+                          {row.attribute}
+                        </td>
+                        {row.values.map((value, j) => (
+                          <td
+                            key={m.materialComparison!.columns[j]}
+                            className={`py-4 px-4 align-top leading-relaxed text-neutral-warm-600 ${
+                              j === 0 ? "font-medium text-neutral-warm-900" : ""
+                            }`}
+                          >
+                            {value}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </AnimatedReveal>
+          </Container>
+        </Section>
+      )}
+
+      {/* On Display in Our Showroom */}
+      {m.galleryImages && m.galleryImages.length > 0 && (
+        <Section id="gallery" className="bg-neutral-warm-50 pt-4 md:pt-6 lg:pt-8">
+          <Container>
+            <AnimatedReveal>
+              <div className="mb-10 text-center">
+                <h2 className="font-serif text-3xl font-semibold tracking-tight text-neutral-warm-900 md:text-4xl">
+                  On Display in Our Showroom
+                </h2>
+                <div className="mx-auto mt-3 h-0.5 w-10 bg-brand-terracotta" />
+                <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-neutral-warm-600">
+                  See {m.name} in person at our Los Angeles showroom — a sample
+                  of what we currently have on display.
+                </p>
+              </div>
+              <GalleryLightbox
+                images={m.galleryImages}
+                alt={`${m.name} on display in the HDR Windows showroom`}
+              />
+              <p className="mt-4 text-center text-xs text-neutral-warm-400">
+                Tap a photo to view it full size.
+              </p>
+            </AnimatedReveal>
+          </Container>
+        </Section>
+      )}
 
       <FinalCTA />
     </>

@@ -11,7 +11,7 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 export const metadata: Metadata = generatePageMetadata({
   title: "For Builders",
   description:
-    "HDR Windows provides builders and general contractors with reliable supply, expert coordination, and installation support for luxury window and door projects.",
+    "HDR Windows provides builders and general contractors with reliable supply, expert coordination, and trusted installer referrals for luxury window and door projects.",
   path: "/for-builders",
 });
 
@@ -24,7 +24,7 @@ const benefits = [
   {
     title: "Accurate Takeoffs",
     description:
-      "Detailed window and door schedules from architectural plans — verified against rough opening dimensions before ordering.",
+      "Detailed window and door schedules from architectural plans, verified against rough opening dimensions before ordering.",
   },
   {
     title: "Lead Time Management",
@@ -37,9 +37,9 @@ const benefits = [
       "Staged delivery scheduling aligned with your framing and installation timeline. Secure storage coordination when needed.",
   },
   {
-    title: "Installation Support",
+    title: "Installer Coordination",
     description:
-      "On-site guidance, installation documentation, and direct manufacturer support when complex installations demand it.",
+      "Installation documentation and direct manufacturer support, plus referrals to trusted, licensed installers for complex projects.",
   },
   {
     title: "Warranty & Service",
@@ -54,7 +54,7 @@ export default function ForBuildersPage() {
       <PageHero
         title="Reliable Partner for Builders"
         subtitle="For Builders & GCs"
-        description="We keep your window and door supply chain running smoothly — from accurate takeoffs through delivery and installation support."
+        description="We keep your window and door supply chain running smoothly, from accurate takeoffs through delivery and installer coordination."
       />
 
       {/* Value Prop */}
@@ -67,9 +67,9 @@ export default function ForBuildersPage() {
             <p className="mt-6 text-neutral-warm-500 leading-relaxed">
               On luxury residential projects, windows and doors are often the
               longest lead-time items and the most complex to coordinate. We
-              take that burden off your plate — managing manufacturer timelines,
-              verifying dimensions, staging deliveries, and supporting
-              installation crews.
+              take that burden off your plate, managing manufacturer timelines,
+              verifying dimensions, staging deliveries, and coordinating
+              with your installation crews.
             </p>
           </AnimatedReveal>
         </Container>

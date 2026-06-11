@@ -12,7 +12,7 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 export const metadata: Metadata = generatePageMetadata({
   title: "For Architects",
   description:
-    "HDR Windows is the specification partner architects trust for luxury window and door systems in Los Angeles.",
+    "HDR Windows is the trusted partner architects rely on for luxury window and door systems in Los Angeles.",
   path: "/for-architects",
 });
 
@@ -21,35 +21,35 @@ const steps = [
     step: "01",
     title: "Review Plans & Design Intent",
     description:
-      "Share your drawings and we'll identify the optimal window and door systems for your design — considering aesthetics, performance targets, and budget parameters.",
+      "Share your drawings and we'll identify the optimal window and door systems for your design, considering aesthetics, performance targets, and budget parameters.",
   },
   {
     step: "02",
-    title: "System Recommendation & Specification",
+    title: "System Recommendation & Documentation",
     description:
-      "We provide detailed product recommendations with manufacturer cut sheets, frame profiles, glass options, and energy performance data for your specification documents.",
+      "We provide detailed product recommendations with manufacturer cut sheets, frame profiles, glass options, and energy performance data for your project documents.",
   },
   {
     step: "03",
     title: "Pricing & Procurement",
     description:
-      "Once specifications are finalized, we deliver comprehensive pricing and manage the procurement process — including lead time coordination and production scheduling.",
+      "Once products are finalized, we deliver comprehensive pricing and manage the procurement process, including lead time coordination and production scheduling.",
   },
   {
     step: "04",
-    title: "Delivery & Installation Support",
+    title: "Delivery & Installer Coordination",
     description:
-      "We coordinate delivery logistics, provide installation guidelines, and offer on-site support to ensure every unit is installed to manufacturer standards.",
+      "We coordinate delivery logistics, provide installation guidelines, and recommend trusted, licensed installers to help ensure every unit meets manufacturer standards.",
   },
 ];
 
 const capabilities = [
-  "Multi-manufacturer specification across 9+ premium brands",
+  "Multi-manufacturer product matching across 9+ premium brands",
   "Detailed takeoffs from architectural drawings",
   "Energy performance analysis for Title 24 compliance",
   "Custom configuration and engineering support",
   "Showroom consultations with your clients",
-  "Project coordination with GCs and installation crews",
+  "Project coordination with GCs and trusted installers",
   "Warranty management and post-installation support",
 ];
 
@@ -57,9 +57,9 @@ export default function ForArchitectsPage() {
   return (
     <>
       <PageHero
-        title="Your Specification Partner"
+        title="A Consultative Approach"
         subtitle="For Architects"
-        description="We don't just sell windows. We help you specify, source, and deliver the right systems for your most demanding projects."
+        description="We don't just sell windows. We help you choose, source, and deliver the right systems for your most demanding projects."
       />
 
       {/* Value Prop */}
@@ -73,15 +73,15 @@ export default function ForArchitectsPage() {
               <div className="mt-8 space-y-6 text-neutral-warm-600 leading-relaxed">
                 <p>
                   As architects, you need a window and door partner who
-                  understands design intent — not just product catalogs. Our
+                  understands design intent, not just product catalogs. Our
                   team works from your drawings, understands your aesthetic
                   vision, and recommends systems that deliver on both
                   performance and design.
                 </p>
                 <p>
-                  We carry nine premium manufacturers and can specify across
+                  We carry nine premium manufacturers and can mix and match across
                   brands to find the optimal solution for each opening in your
-                  project. One manufacturer rarely does everything best — and we
+                  project. One manufacturer rarely does everything best, and we
                   have the expertise to navigate those decisions with you.
                 </p>
               </div>

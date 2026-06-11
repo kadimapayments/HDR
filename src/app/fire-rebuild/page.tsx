@@ -10,28 +10,28 @@ import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 import { COMPANY, FIRE_REBUILD_PROGRAMS } from "@/lib/constants";
 
 export const metadata: Metadata = generatePageMetadata({
-  title: "Palisades & Eaton Fire Rebuild Program",
+  title: "CA Wildfire Rebuild Program",
   description:
-    "HDR Windows is supporting Pacific Palisades and Eaton fire rebuild with discounted manufacturer pricing, expedited specification, and dedicated project management for affected homeowners.",
+    "HDR Windows is supporting Palisades, Eaton, and Malibu fire rebuild with discounted manufacturer pricing, expedited product selection, and dedicated project management for affected homeowners.",
   path: "/fire-rebuild",
 });
 
 const offerings = [
   {
     title: "Verified Manufacturer Discounts",
-    body: "We've coordinated directly with our manufacturer partners to secure discounted pricing programs specifically for homeowners and rebuilders affected by the Palisades and Eaton fires.",
+    body: "We've coordinated directly with our manufacturer partners to secure discounted pricing programs specifically for homeowners and rebuilders affected by the Palisades, Eaton, and Malibu fires.",
   },
   {
-    title: "Expedited Specification & Lead Times",
-    body: "Rebuild projects are routed through a dedicated specification track. We work alongside your architect and builder to compress lead times where manufacturers can accommodate it — without sacrificing quality.",
+    title: "Expedited Product Selection & Lead Times",
+    body: "Rebuild projects are routed through a dedicated fast-track process. We work alongside your architect and builder to compress lead times where manufacturers can accommodate it, without sacrificing quality.",
   },
   {
     title: "Code & Compliance Guidance",
-    body: "Title 24 energy compliance and updated WUI (Wildland-Urban Interface) requirements affect every rebuild. We help specify systems that meet — and document — current code without surprises during permit review.",
+    body: "Title 24 energy compliance and updated WUI (Wildland-Urban Interface) requirements affect every rebuild. We help match the right systems to current code requirements (and document them), without surprises during permit review.",
   },
   {
     title: "No-Cost Project Consultation",
-    body: "If you're rebuilding, we'll review your plans and existing window schedule at no cost. You leave with a written specification estimate and a clear next step — whether or not you ultimately work with us.",
+    body: "If you're rebuilding, we'll review your plans and existing window schedule at no cost. You leave with a written product estimate and a clear next step, whether or not you ultimately work with us.",
   },
 ];
 
@@ -48,13 +48,13 @@ const steps = [
   },
   {
     n: "03",
-    title: "Specification & quote",
-    body: "You receive a complete specification, pricing breakdown, and timeline. We coordinate directly with your architect and builder — no telephone game.",
+    title: "Product plan & quote",
+    body: "You receive a complete product plan, pricing breakdown, and timeline. We coordinate directly with your architect and builder, so there's no telephone game.",
   },
   {
     n: "04",
-    title: "Procurement & install",
-    body: "Once approved, we manage the order, delivery, and installation crews — through punch list and warranty registration.",
+    title: "Procurement & delivery",
+    body: "Once approved, we manage the order and delivery, connect you with trusted, licensed installers, and stay involved through punch list and warranty registration.",
   },
 ];
 
@@ -63,9 +63,9 @@ export default function FireRebuildPage() {
     <>
       <PageHero
         title="Helping You Rebuild"
-        subtitle="Palisades & Eaton Fires"
+        subtitle="Palisades, Eaton & Malibu Fires"
         backgroundImage="/images/fire-rebuild/hero.jpg"
-        description="To the families and communities rebuilding from the Palisades and Eaton fires, we're here to help. HDR has coordinated discounted manufacturer pricing and a dedicated specification track for rebuild projects."
+        description="To the families and communities rebuilding from the Palisades, Eaton, and Malibu fires, we're here to help. HDR has coordinated discounted manufacturer pricing and a dedicated fast-track process for rebuild projects."
       />
 
       {/* Statement of support */}
@@ -76,7 +76,7 @@ export default function FireRebuildPage() {
               <p className="font-serif text-2xl leading-relaxed text-neutral-warm-800 md:text-3xl">
                 Rebuilding a home isn&apos;t just construction. It&apos;s
                 reclaiming a place. We&apos;re committed to making the windows
-                and doors part of that story straightforward — not another
+                and doors part of that story straightforward, not another
                 source of stress.
               </p>
             </div>
@@ -218,7 +218,7 @@ export default function FireRebuildPage() {
             <Heading level="h2">Start Your Rebuild Conversation</Heading>
             <p className="mt-6 text-base leading-relaxed text-neutral-warm-600">
               Whether you&apos;re mid-design with an architect or just
-              starting to think about specifications, reach out. We&apos;ll
+              starting to think about product selection, reach out. We&apos;ll
               respond as soon as possible.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">

@@ -11,7 +11,7 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 export const metadata: Metadata = generatePageMetadata({
   title: "About HDR Windows",
   description:
-    "Learn about Horizon Design & Renovation — Los Angeles's trusted specification partner for luxury architectural windows and doors.",
+    "Learn about Horizon Design & Renovation, Los Angeles's trusted partner in choosing the right luxury architectural windows and doors.",
   path: "/about",
 });
 
@@ -27,7 +27,7 @@ export default function AboutPage() {
       <PageHero
         title="Who We Are"
         subtitle="About HDR"
-        description="More than a window dealer — we're your specification partner for luxury architectural projects across Los Angeles."
+        description="More than a window dealer — we guide product selection for luxury architectural projects across Los Angeles."
       />
 
       {/* Story */}
@@ -41,16 +41,16 @@ export default function AboutPage() {
               <div className="mt-8 space-y-6 text-neutral-warm-600 leading-relaxed">
                 <p>
                   Horizon Design & Renovation was founded with a singular
-                  focus: to bridge the gap between the world&apos;s finest
+                  focus — to bridge the gap between the world&apos;s finest
                   window and door manufacturers and the architects, builders,
                   and homeowners who demand the best.
                 </p>
                 <p>
-                  We don&apos;t just sell windows. We consult on specifications,
-                  navigate complex product selections, manage procurement and
-                  lead times, and ensure every unit arrives and installs
-                  correctly. Our team understands the technical demands of
-                  modern architecture — from oversized structural openings to
+                  We don&apos;t just sell windows. We consult on product selection,
+                  navigate complex decisions, manage procurement and
+                  lead times, and ensure every unit arrives correct and
+                  ready for your installer. Our team understands the technical demands of
+                  modern architecture, from oversized structural openings to
                   coastal performance ratings to Title 24 compliance.
                 </p>
                 <p>
@@ -105,13 +105,13 @@ export default function AboutPage() {
               Our Approach
             </p>
             <Heading level="h2">
-              Specification-First, Every Time
+              Architecture-First, Every Time
             </Heading>
             <p className="mt-6 text-neutral-warm-500 leading-relaxed">
               We start with your architecture — not a product catalog. By
               understanding the design intent, structural requirements, energy
               targets, and aesthetic vision, we recommend the right system from
-              the right manufacturer — not the most expensive one.
+              the right manufacturer, not the most expensive one.
             </p>
           </AnimatedReveal>
 
@@ -119,7 +119,7 @@ export default function AboutPage() {
             {[
               {
                 step: "01",
-                title: "Consult & Specify",
+                title: "Consult & Recommend",
                 description:
                   "We review plans, discuss design intent, and recommend the optimal window and door systems for your project.",
               },
@@ -133,7 +133,7 @@ export default function AboutPage() {
                 step: "03",
                 title: "Deliver & Support",
                 description:
-                  "From delivery coordination to installation support and warranty management, we're with you through completion.",
+                  "From delivery coordination to preferred installer referrals and warranty management, we're with you through completion.",
               },
             ].map((item, i) => (
               <AnimatedReveal key={item.step} delay={i * 0.15}>

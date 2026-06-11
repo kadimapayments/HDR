@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { trackEvent } from "@/lib/analytics";
 import { heroReveal, staggerContainer, staggerItem } from "@/lib/animations";
 
 export function HeroSection() {
@@ -55,10 +56,21 @@ export function HeroSection() {
             variants={staggerItem}
             className="mt-10 flex flex-col gap-4 sm:flex-row"
           >
-            <Button href="/contact" variant="primary" size="lg">
+            <Button
+              href="/contact"
+              variant="primary"
+              size="lg"
+              onClick={() => trackEvent("cta_click", { label: "Schedule Consultation", location: "hero" })}
+            >
               Schedule Consultation
             </Button>
-            <Button href="/showroom/schedule" variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/5 hover:text-white">
+            <Button
+              href="/showroom/schedule"
+              variant="outline"
+              size="lg"
+              className="border-white/20 text-white hover:bg-white/5 hover:text-white"
+              onClick={() => trackEvent("cta_click", { label: "Visit Showroom", location: "hero" })}
+            >
               Visit Showroom
             </Button>
           </motion.div>

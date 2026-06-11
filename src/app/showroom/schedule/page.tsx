@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
+import { trackEvent } from "@/lib/analytics";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -38,6 +39,7 @@ export default function ShowroomSchedulePage() {
       const res = await fetch("/api/showroom-visit", { method: "POST", body: data });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");
+      trackEvent("form_submit", { form_name: "showroom_schedule" });
       setStatus("success");
     } catch (err) {
       setStatus("error");
@@ -146,7 +148,7 @@ export default function ShowroomSchedulePage() {
                       name="notes"
                       rows={4}
                       className={inputCls}
-                      placeholder="Anything you'd like us to know before your visit — manufacturers you're interested in, project details, etc."
+                      placeholder="Anything you'd like us to know before your visit, such as manufacturers you're interested in, project details, etc."
                     />
                   </div>
 

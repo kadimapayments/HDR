@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Heading } from "@/components/ui/Heading";
 import { Button } from "@/components/ui/Button";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
+import { trackEvent } from "@/lib/analytics";
 
 export function FinalCTA() {
   return (
@@ -28,12 +29,17 @@ export function FinalCTA() {
             Let&apos;s Discuss Your Project
           </Heading>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-neutral-warm-400">
-            Whether you&apos;re an architect specifying a new build, a builder
-            sourcing materials, or a homeowner planning a renovation — we&apos;re
+            Whether you&apos;re an architect planning a new build, a builder
+            sourcing materials, or a homeowner planning a renovation, we&apos;re
             here to help.
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-            <Button href="/contact" variant="primary" size="lg">
+            <Button
+              href="/contact"
+              variant="primary"
+              size="lg"
+              onClick={() => trackEvent("cta_click", { label: "Schedule a Consultation", location: "final_cta" })}
+            >
               Schedule a Consultation
             </Button>
             <Button
@@ -41,6 +47,7 @@ export function FinalCTA() {
               variant="outline"
               size="lg"
               className="border-neutral-warm-700 text-white hover:bg-white/5 hover:text-white"
+              onClick={() => trackEvent("cta_click", { label: "Visit Our Showroom", location: "final_cta" })}
             >
               Visit Our Showroom
             </Button>

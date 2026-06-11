@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
+import { trackEvent } from "@/lib/analytics";
 
 const inputCls =
   "w-full border border-neutral-warm-300 bg-white px-4 py-3 text-sm text-neutral-warm-900 placeholder-neutral-warm-400 focus:border-brand-terracotta focus:outline-none";
@@ -34,6 +35,7 @@ export function SubmitPlansForm() {
       const res = await fetch("/api/submit-plans", { method: "POST", body: data });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");
+      trackEvent("form_submit", { form_name: "submit_plans" });
       setStatus("success");
       form.reset();
     } catch (err) {
@@ -47,7 +49,7 @@ export function SubmitPlansForm() {
       <div className="border border-accent-sage/30 bg-accent-sage/5 p-8 text-center">
         <h3 className="font-serif text-2xl text-neutral-warm-900">Plans received.</h3>
         <p className="mt-3 text-sm text-neutral-warm-600">
-          Thanks — our team will review your plans and get back to you as soon as possible.
+          Thanks. Our team will review your plans and get back to you as soon as possible.
         </p>
       </div>
     );
@@ -116,7 +118,7 @@ export function SubmitPlansForm() {
 
       <div>
         <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">
-          Plans & Lead Sheet (PDF, DWG, JPG — up to 25 MB total)
+          Plans & Lead Sheet (PDF, DWG, JPG, up to 25 MB total)
         </label>
         <input
           name="files"

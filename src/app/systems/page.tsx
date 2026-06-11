@@ -23,9 +23,9 @@ const systemImages: Record<string, string> = {
   "contemporary-aluminum": "/images/systems/contemporary-aluminum.jpg",
   "energy-efficient": "/images/systems/energy-efficient.jpg",
   "oversized-openings": "/images/systems/oversized-openings.jpg",
+  "security-glass": "/images/showroom/162A2571.jpg",
   "automated-systems": "/images/systems/automated-systems.jpg",
   "bifold-doors": "/images/systems/folding-doors.jpg",
-  "sliding-doors": "/images/systems/hinge-doors.jpg",
   "window-wall": "/images/systems/window-wall.jpg",
   "pocket-doors": "/images/systems/pocket-doors.jpg",
 };
@@ -63,9 +63,9 @@ const systemDetails: Record<string, { description: string }> = {
     description:
       "Multi-panel folding door systems that stack compactly to one or both sides, creating a wide-open clear opening.",
   },
-  "sliding-doors": {
+  "security-glass": {
     description:
-      "Traditional and contemporary sliding door systems in various configurations for residential applications.",
+      "Laminated glazing that adds meaningful protection against forced entry, without compromising the architectural look of your windows and doors.",
   },
   "automated-systems": {
     description:
@@ -73,7 +73,7 @@ const systemDetails: Record<string, { description: string }> = {
   },
   "window-wall": {
     description:
-      "Floor-to-ceiling glazing from slab to slab — maximum transparency, minimal framing, and the seamless glass facade of contemporary high-end residential architecture.",
+      "Floor-to-ceiling glazing from slab to slab: maximum transparency, minimal framing, and the seamless glass facade of contemporary high-end residential architecture.",
   },
   "pocket-doors": {
     description:
@@ -87,13 +87,15 @@ export default function SystemsPage() {
       <PageHero
         title="Window & Door Systems"
         subtitle="Innovation"
-        description="We specify systems — not just brands. Every architectural challenge demands the right combination of performance, aesthetics, and engineering."
+        description="We match the system to the architecture, not just the brand. Every challenge demands the right combination of performance, aesthetics, and engineering."
       />
 
       <Section>
         <Container>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {SYSTEMS.map((system, i) => (
+            {[...SYSTEMS]
+              .sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name))
+              .map((system, i) => (
               <AnimatedReveal key={system.slug} delay={i * 0.05}>
                 <Link
                   href={`/systems/${system.slug}`}

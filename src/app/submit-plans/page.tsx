@@ -8,7 +8,7 @@ import { SubmitPlansForm } from "@/components/forms/SubmitPlansForm";
 export const metadata: Metadata = generatePageMetadata({
   title: "Submit Plans for Quote",
   description:
-    "Send HDR Windows your architectural plans, lead sheet, or window schedule for a detailed specification and quote. We respond as soon as possible.",
+    "Send HDR Windows your architectural plans, lead sheet, or window schedule for a detailed product plan and quote. We respond as soon as possible.",
   path: "/submit-plans",
 });
 
@@ -47,7 +47,7 @@ export default function SubmitPlansPage() {
                   Response Time
                 </h3>
                 <p className="text-sm text-neutral-warm-600">
-                  We'll confirm receipt and follow up with a full review and preliminary specification as soon as possible.
+                  We'll confirm receipt and follow up with a full review and preliminary product plan as soon as possible.
                 </p>
               </div>
 
@@ -56,7 +56,7 @@ export default function SubmitPlansPage() {
                   Confidentiality
                 </h3>
                 <p className="text-sm text-neutral-warm-600">
-                  Plans are shared only with the HDR specification team. We&apos;re happy to sign an NDA on request.
+                  Plans are shared only with the HDR product team. We&apos;re happy to sign an NDA on request.
                 </p>
               </div>
             </aside>

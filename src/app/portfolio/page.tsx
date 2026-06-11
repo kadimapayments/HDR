@@ -11,7 +11,7 @@ import Link from "next/link";
 export const metadata: Metadata = generatePageMetadata({
   title: "Portfolio",
   description:
-    "Explore HDR Windows' portfolio of luxury residential projects across Los Angeles — featuring Fleetwood, Loewen, Andersen, and more.",
+    "Explore HDR Windows' portfolio of luxury residential projects across Los Angeles, featuring Fleetwood, Loewen, Andersen, and more.",
   path: "/portfolio",
 });
 
@@ -48,7 +48,7 @@ const projects = [
     title: "Fourth Street Townhomes",
     neighborhood: "Manhattan Beach",
     type: "New Construction",
-    manufacturers: ["IWC", "Plygem"],
+    manufacturers: ["IWC", "Ply Gem"],
     slug: "3104-fourth-st",
   },
   {

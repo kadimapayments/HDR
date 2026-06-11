@@ -7,7 +7,7 @@ import { COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Terms of Service",
-  description: "Terms of Service for HDR Windows — Horizon Design & Renovation.",
+  description: "Terms of Service for HDR Windows, a Horizon Design & Renovation company.",
   path: "/terms",
 });
 
@@ -53,8 +53,8 @@ export default function TermsPage() {
                 Intellectual Property
               </h2>
               <p>
-                All content on this site — including text, images, logos, and
-                design — is the property of {COMPANY.name} or its licensors and
+                All content on this site, including text, images, logos, and
+                design, is the property of {COMPANY.name} or its licensors and
                 may not be reproduced without written permission.
               </p>
             </div>

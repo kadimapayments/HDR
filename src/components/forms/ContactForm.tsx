@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
+import { trackEvent } from "@/lib/analytics";
 
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -17,6 +18,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", { method: "POST", body: data });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");
+      trackEvent("form_submit", { form_name: "contact" });
       setStatus("success");
     } catch (err) {
       setStatus("error");

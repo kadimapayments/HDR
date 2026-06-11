@@ -32,6 +32,18 @@ export default function RootLayout({
     >
       <body className="min-h-screen flex flex-col antialiased">
         <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BRDVNPBTKZ"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-BRDVNPBTKZ');
+          `}
+        </Script>
+        <Script
           src="https://www.google.com/recaptcha/api.js"
           strategy="afterInteractive"
         />

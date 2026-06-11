@@ -3,7 +3,7 @@ export const SITE_FULL_NAME = "Horizon Design & Renovation";
 export const SITE_TAGLINE =
   "Architectural Windows & Doors for Los Angeles's Finest Residences";
 export const SITE_DESCRIPTION =
-  "HDR Windows is Los Angeles's premier specification partner for luxury architectural windows and doors. We serve architects, builders, and homeowners with Fleetwood, NanaWall, Loewen, Andersen, and more.";
+  "HDR Windows is Los Angeles's premier source for luxury architectural windows and doors. We serve architects, builders, and homeowners with Fleetwood, NanaWall, Loewen, Andersen, and more.";
 export const SITE_URL = "https://hdrwindows.com";
 
 export const COMPANY = {
@@ -38,7 +38,7 @@ export const MANUFACTURERS = [
   { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png" },
   { name: "All Weather", slug: "all-weather", logo: "/images/manufacturers/all-weather.svg" },
   { name: "IWC", slug: "iwc", logo: "/images/manufacturers/iwc.jpeg" },
-  { name: "Plygem", slug: "plygem", logo: "/images/manufacturers/plygem.jpg" },
+  { name: "Ply Gem", slug: "plygem", logo: "/images/manufacturers/plygem.jpg" },
 ] as const;
 
 export const MARQUEE_BRANDS = [
@@ -50,6 +50,7 @@ export const MARQUEE_BRANDS = [
   { name: "Euroline", slug: "euroline", logo: "/images/manufacturers/euroline.png", scale: 1.3 },
   { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp", scale: 0.7 },
   { name: "Windsor", slug: "windsor", logo: "/images/manufacturers/windsor.png", scale: 0.55 },
+  { name: "TruStile", slug: "trustile", logo: "/images/interiors/trustile.webp", scale: 1, link: "/interiors" },
 ] as const;
 
 export const FIRE_REBUILD_PROGRAMS = [
@@ -58,7 +59,7 @@ export const FIRE_REBUILD_PROGRAMS = [
     slug: "fleetwood",
     headline: "Palisades Rebuild Program",
     detail:
-      "Fleetwood has announced a dedicated rebuild program for the Pacific Palisades and Eaton fire-affected homeowners — including expedited lead times and verified discounted pricing.",
+      "Fleetwood has announced a dedicated rebuild program for the Pacific Palisades and Eaton fire-affected homeowners, including expedited lead times and verified discounted pricing.",
     externalUrl: "https://www.fleetwoodusa.com/en-us/palisades",
   },
 ] as const;
@@ -71,7 +72,7 @@ export const INTERIOR_PARTNERS = [
     category: "Interior Doors",
     tagline: "Architectural Interior Doors",
     description:
-      "TruStile builds the most refined interior doors in the industry — flush, MDF, glass, and stile-and-rail with custom architectural details. A Marvin company, TruStile is the natural complement to Marvin window and door specifications.",
+      "TruStile builds the most refined interior doors in the industry: flush, MDF, glass, and stile-and-rail, with custom architectural details. A Marvin company, TruStile is the natural complement to Marvin window and door systems.",
   },
   {
     name: "Emtek",
@@ -80,18 +81,18 @@ export const INTERIOR_PARTNERS = [
     category: "Hardware",
     tagline: "Architectural Door Hardware",
     description:
-      "Emtek manufactures the most comprehensive line of architectural door hardware in North America — knobs, levers, pulls, multi-points, and electronic locks across a wide range of finishes and design vocabularies.",
+      "Emtek manufactures the most comprehensive line of architectural door hardware in North America: knobs, levers, pulls, multi-points, and electronic locks across a wide range of finishes and design vocabularies.",
   },
 ] as const;
 
 export const SYSTEMS = [
   { name: "Multi-Slide Doors", slug: "multi-slide-doors", category: "Doors" },
   { name: "Pivot Doors", slug: "pivot-doors", category: "Doors" },
-  { name: "Steel Windows & Doors", slug: "steel-windows", category: "Windows" },
+  { name: "Steel Windows & Doors", slug: "steel-windows", category: "Specialty" },
   {
     name: "Contemporary Aluminum",
     slug: "contemporary-aluminum",
-    category: "Windows",
+    category: "Specialty",
   },
   {
     name: "Energy Efficient Systems",
@@ -103,9 +104,13 @@ export const SYSTEMS = [
     slug: "oversized-openings",
     category: "Specialty",
   },
+  {
+    name: "Security Glass",
+    slug: "security-glass",
+    category: "Specialty",
+  },
   { name: "Folding Doors", slug: "bifold-doors", category: "Doors" },
-  { name: "Hinge Doors", slug: "sliding-doors", category: "Doors" },
-  { name: "Automated Systems", slug: "automated-systems", category: "Smart Home" },
+  { name: "Automated Systems", slug: "automated-systems", category: "Specialty" },
   { name: "Window Wall", slug: "window-wall", category: "Windows" },
   { name: "Pocket Doors", slug: "pocket-doors", category: "Doors" },
 ] as const;
@@ -153,10 +158,12 @@ export const NAV_ITEMS = [
   {
     label: "Innovation",
     href: "/systems",
-    children: SYSTEMS.map((s) => ({
-      label: s.name,
-      href: `/systems/${s.slug}`,
-    })),
+    children: [...SYSTEMS]
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map((s) => ({
+        label: s.name,
+        href: `/systems/${s.slug}`,
+      })),
   },
   { label: "Interiors", href: "/interiors" },
   { label: "Resources", href: "/resources" },

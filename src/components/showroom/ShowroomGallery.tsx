@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 
 /**
@@ -14,147 +14,156 @@ const photos = [
     alt: "Fleetwood window and door systems on display at HDR Windows showroom",
     caption: "Fleetwood",
     filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
+    manufacturerSlug: "fleetwood",
   },
   {
     src: "/images/showroom/162A0765.jpg",
     alt: "Euroline and Fleetwood systems on display at HDR Windows showroom",
     caption: "Euroline / Fleetwood",
     filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
+    manufacturerSlug: "euroline",
   },
   {
     src: "/images/showroom/162A2433.jpg",
     alt: "Euroline steel windows and doors on display at HDR Windows showroom",
     caption: "Euroline",
     filter: "brightness(1.02) contrast(1.04) saturate(0.86)",
+    manufacturerSlug: "euroline",
   },
   {
     src: "/images/showroom/162A2521.jpg",
     alt: "NanaWall opening glass wall systems on display at HDR Windows showroom",
     caption: "NanaWall",
     filter: "brightness(1.02) contrast(1.04) saturate(0.86)",
+    manufacturerSlug: "nanawall",
   },
   {
     src: "/images/showroom/showroom-andersen.jpg",
     alt: "Andersen Windows & Doors full-scale display at HDR Windows showroom",
     caption: "Andersen",
     filter: "brightness(1.02) contrast(1.04) saturate(0.87)",
+    manufacturerSlug: "andersen",
   },
   {
     src: "/images/showroom/162A0730.jpg",
     alt: "Fleetwood window and door systems on display at HDR Windows showroom",
     caption: "Fleetwood",
     filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
+    manufacturerSlug: "fleetwood",
   },
   {
     src: "/images/showroom/showroom-doors.jpg",
     alt: "Marvin folding door systems on display at HDR Windows showroom",
     caption: "Marvin",
     filter: "brightness(0.98) contrast(1.04) saturate(0.87)",
+    manufacturerSlug: "marvin",
   },
   {
     src: "/images/showroom/showroom-pivot.jpg",
     alt: "Loewen door and window systems on display at HDR Windows showroom",
     caption: "Loewen",
     filter: "brightness(0.99) contrast(1.04) saturate(0.86)",
+    manufacturerSlug: "loewen",
   },
   {
     src: "/images/showroom/showroom-loewen-steel.jpg",
     alt: "Loewen steel-frame hinged door display with warm wood shelving and material library",
     caption: "Loewen",
     filter: "brightness(1.04) contrast(1.05) saturate(0.85)",
+    manufacturerSlug: "loewen",
   },
   {
     src: "/images/showroom/showroom-loewen-wood.jpg",
     alt: "Loewen warm wood folding door system open to the showroom floor — interior view",
     caption: "Loewen",
     filter: "brightness(1.02) contrast(1.04) saturate(0.88)",
+    manufacturerSlug: "loewen",
   },
   {
     src: "/images/showroom/162A2571.jpg",
     alt: "Fleetwood window and door systems on display at HDR Windows showroom",
     caption: "Fleetwood",
     filter: "brightness(1.03) contrast(1.03) saturate(0.87)",
+    manufacturerSlug: "fleetwood",
   },
   {
     src: "/images/showroom/162A0856.jpg",
     alt: "Andersen Windows & Doors on display at HDR Windows showroom",
     caption: "Andersen",
     filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
+    manufacturerSlug: "andersen",
   },
   {
     src: "/images/showroom/162A2494.jpg",
     alt: "Loewen windows and doors on display at HDR Windows showroom",
     caption: "Loewen",
     filter: "brightness(1.02) contrast(1.04) saturate(0.86)",
+    manufacturerSlug: "loewen",
   },
   {
     src: "/images/showroom/162A2495.jpg",
     alt: "Loewen windows and doors on display at HDR Windows showroom",
     caption: "Loewen",
     filter: "brightness(1.02) contrast(1.03) saturate(0.87)",
+    manufacturerSlug: "loewen",
   },
   {
     src: "/images/showroom/162A2538.jpg",
     alt: "Marvin window and door systems on display at HDR Windows showroom",
     caption: "Marvin",
     filter: "brightness(1.02) contrast(1.04) saturate(0.86)",
+    manufacturerSlug: "marvin",
   },
   {
     src: "/images/showroom/162A0756.jpg",
     alt: "Fleetwood window and door systems on display at HDR Windows showroom",
     caption: "Fleetwood",
     filter: "brightness(1.03) contrast(1.03) saturate(0.87)",
+    manufacturerSlug: "fleetwood",
   },
 ];
 
 export function ShowroomGallery() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
   return (
     <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-      {photos.map((photo, i) => {
-        const isActive = activeIndex === i;
-        return (
-          <AnimatedReveal key={photo.src} delay={i * 0.1}>
+      {photos.map((photo, i) => (
+        <AnimatedReveal key={photo.src} delay={i * 0.1}>
+          <Link
+            href={`/manufacturers/${photo.manufacturerSlug}#gallery`}
+            className="group relative block aspect-[4/3] overflow-hidden bg-neutral-warm-200 cursor-pointer"
+          >
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              style={{ filter: photo.filter }}
+            />
+
+            {/*
+              Warm unifying overlay — a very subtle amber wash applied identically
+              to all photos via mix-blend-mode. This pulls different color temps
+              toward the same warm-neutral midpoint without darkening the images.
+            */}
             <div
-              className="group relative aspect-[4/3] overflow-hidden bg-neutral-warm-200 cursor-pointer"
-              onClick={() => setActiveIndex(isActive ? null : i)}
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 mix-blend-overlay"
+              style={{ backgroundColor: "rgba(255, 248, 235, 0.07)" }}
+            />
+
+            {/* Caption — slides up on hover */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-warm-950/80 to-transparent px-5 pb-5 pt-14 translate-y-full transition-transform duration-300 ease-out group-hover:translate-y-0"
             >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                style={{ filter: photo.filter }}
-              />
-
-              {/*
-                Warm unifying overlay — a very subtle amber wash applied identically
-                to all photos via mix-blend-mode. This pulls different color temps
-                toward the same warm-neutral midpoint without darkening the images.
-              */}
-              <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 mix-blend-overlay"
-                style={{ backgroundColor: "rgba(255, 248, 235, 0.07)" }}
-              />
-
-              {/* Caption — slides up on hover (desktop) or tap (mobile) */}
-              <div
-                aria-hidden="true"
-                className={`absolute inset-x-0 bottom-0 bg-gradient-to-t from-neutral-warm-950/80 to-transparent px-5 pb-5 pt-14 transition-transform duration-300 ease-out ${
-                  isActive ? "translate-y-0" : "translate-y-full group-hover:translate-y-0"
-                }`}
-              >
-                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/85">
-                  {photo.caption}
-                </p>
-              </div>
+              <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/85">
+                {photo.caption}
+              </p>
             </div>
-          </AnimatedReveal>
-        );
-      })}
+          </Link>
+        </AnimatedReveal>
+      ))}
     </div>
   );
 }

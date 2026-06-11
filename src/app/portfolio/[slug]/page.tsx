@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return {};
 
   return generatePageMetadata({
-    title: `${project.title} — ${project.neighborhood}`,
+    title: `${project.title} | ${project.neighborhood}`,
     description: project.description,
     path: `/portfolio/${slug}`,
   });

@@ -12,34 +12,34 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 export const metadata: Metadata = generatePageMetadata({
   title: "For Developers",
   description:
-    "HDR Windows partners with residential and mixed-use developers on multi-unit window and door programs — volume pricing, spec consistency, and coordinated delivery across every phase.",
+    "HDR Windows partners with residential and mixed-use developers on multi-unit window and door programs: volume pricing, spec consistency, and coordinated delivery across every phase.",
   path: "/for-developers",
 });
 
 const steps = [
   {
     step: "01",
-    title: "Design Review & Specification",
+    title: "Design Review & Product Planning",
     description:
-      "We review your plans and unit types, then develop a consistent window and door specification across the project — balancing design intent, energy performance, and cost targets.",
+      "We review your plans and unit types, then develop a consistent window and door product plan across the project, balancing design intent, energy performance, and cost targets.",
   },
   {
     step: "02",
     title: "Volume Pricing & Value Engineering",
     description:
-      "With confirmed specifications, we engage our manufacturer partners for volume pricing programs. Where needed, we explore alternative systems that deliver the same aesthetic at a better margin.",
+      "With products confirmed, we engage our manufacturer partners for volume pricing programs. Where needed, we explore alternative systems that deliver the same aesthetic at a better margin.",
   },
   {
     step: "03",
     title: "Production Scheduling",
     description:
-      "We coordinate with manufacturers to align production runs with your construction schedule — phased delivery, staged releases, and lead time tracking from day one.",
+      "We coordinate with manufacturers to align production runs with your construction schedule: phased delivery, staged releases, and lead time tracking from day one.",
   },
   {
     step: "04",
-    title: "Delivery, Installation & Warranty",
+    title: "Delivery, Installer Referrals & Warranty",
     description:
-      "Coordinated deliveries across building phases, installation support for your crews, and centralized warranty management across all units and manufacturers.",
+      "Coordinated deliveries across building phases, referrals to trusted, licensed installers, and centralized warranty management across all units and manufacturers.",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function ForDevelopersPage() {
       <PageHero
         title="Scale Without Compromise"
         subtitle="For Developers"
-        description="Multi-unit and mixed-use developments demand consistency, volume coordination, and value engineering — without sacrificing the luxury aesthetic your buyers expect."
+        description="Multi-unit and mixed-use developments demand consistency, volume coordination, and value engineering, without sacrificing the luxury aesthetic your buyers expect."
       />
 
       {/* Value Prop */}
@@ -74,13 +74,13 @@ export default function ForDevelopersPage() {
                 <p>
                   Managing window and door procurement across dozens or hundreds
                   of units means coordinating manufacturers, lead times,
-                  deliveries, and installation crews — all while keeping costs
+                  deliveries, and installer schedules, all while keeping costs
                   in line and finishes consistent. We handle all of it.
                 </p>
                 <p>
                   We carry nine premium manufacturers and can develop a unified
-                  specification across your project — or value-engineer specific
-                  unit types — while maintaining a cohesive design language
+                  product plan across your project, or value-engineer specific
+                  unit types, while maintaining a cohesive design language
                   throughout the development.
                 </p>
               </div>

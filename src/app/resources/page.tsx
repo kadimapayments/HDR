@@ -12,7 +12,7 @@ import { FinalCTA } from "@/components/home/FinalCTA";
 export const metadata: Metadata = generatePageMetadata({
   title: "Resources & Guides",
   description:
-    "Expert guides on luxury windows and doors — comparisons, technical guides, energy compliance, pricing insights, and specification advice.",
+    "Expert guides on luxury windows and doors: comparisons, technical guides, energy compliance, pricing insights, and product guidance.",
   path: "/resources",
 });
 
@@ -40,6 +40,15 @@ const articles = [
     image: "/images/systems/energy-efficient.jpg",
   },
   {
+    title: "Laminated Glass for Residential Security: What LA Homeowners Should Know",
+    slug: "laminated-glass-residential-security",
+    category: "Technical",
+    excerpt:
+      "Why laminated glass has become a top request among Los Angeles homeowners seeking better protection against forced entry, without sacrificing design.",
+    date: "2026-05-10",
+    image: "/images/showroom/162A2571.jpg",
+  },
+  {
     title: "Oversized Window Openings: Structural Considerations",
     slug: "oversized-window-openings",
     category: "Technical",
@@ -56,7 +65,7 @@ export default function ResourcesPage() {
       <PageHero
         title="Insights & Guides"
         subtitle="Resources"
-        description="Expert knowledge on architectural windows and doors — from technical comparisons to specification advice."
+        description="Expert knowledge on architectural windows and doors, from technical comparisons to product guidance."
       />
 
       <Section>
