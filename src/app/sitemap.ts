@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://www.hdrwindows.com";
+const BASE_URL = "https://hdrwindows.com";
 
 const manufacturerSlugs = [
   "andersen",
