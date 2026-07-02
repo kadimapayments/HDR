@@ -35,9 +35,7 @@ export function FireRebuildCard() {
                 </h2>
                 <p className="mt-6 text-neutral-warm-400 leading-relaxed">
                   We&apos;ve coordinated discounted manufacturer specials for
-                  homeowners and rebuilders impacted by the CA wildfires,
-                  along with expedited product selection and dedicated
-                  project support.
+                  homeowners and rebuilders impacted by the CA wildfires.
                 </p>
 
                 <div className="mt-10 flex flex-wrap items-center gap-4">
