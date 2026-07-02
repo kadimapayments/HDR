@@ -16,7 +16,14 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/contact",
 });
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const params = await searchParams;
+  const isFireRebuild = params.source === "fire-rebuild";
+
   return (
     <>
       <PageHero
@@ -36,6 +43,17 @@ export default function ContactPage() {
                   Start a Conversation
                 </Heading>
 
+                {isFireRebuild && (
+                  <div className="mb-8 border-l-2 border-brand-terracotta bg-brand-terracotta/5 px-6 py-4">
+                    <p className="text-sm font-medium text-neutral-warm-900">
+                      CA Wildfire Rebuild Inquiry
+                    </p>
+                    <p className="mt-0.5 text-xs text-neutral-warm-600">
+                      Let us know about your rebuild project below and we&apos;ll follow up about manufacturer specials and next steps.
+                    </p>
+                  </div>
+                )}
+
                 {/* Submit Plans callout */}
                 <div className="mb-8 flex items-center justify-between gap-6 border border-neutral-warm-200 bg-neutral-warm-50 px-6 py-5">
                   <div>
@@ -54,7 +72,7 @@ export default function ContactPage() {
                   </Link>
                 </div>
 
-                <ContactForm />
+                <ContactForm source={isFireRebuild ? "fire-rebuild" : undefined} />
               </AnimatedReveal>
             </div>
 

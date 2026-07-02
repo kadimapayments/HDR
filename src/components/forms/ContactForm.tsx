@@ -5,7 +5,11 @@ import { Button } from "@/components/ui/Button";
 import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
 import { trackEvent } from "@/lib/analytics";
 
-export function ContactForm() {
+interface ContactFormProps {
+  source?: string;
+}
+
+export function ContactForm({ source }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [error, setError] = useState("");
 
@@ -18,7 +22,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", { method: "POST", body: data });
       const json = await res.json();
       if (!res.ok || !json.ok) throw new Error(json.error || "Submission failed");
-      trackEvent("form_submit", { form_name: "contact" });
+      trackEvent("form_submit", { form_name: "contact", source: source ?? "general" });
       setStatus("success");
     } catch (err) {
       setStatus("error");
@@ -43,6 +47,8 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Honeypot */}
       <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden />
+
+      {source && <input type="hidden" name="source" value={source} />}
 
       <div className="grid gap-6 md:grid-cols-2">
         <div>

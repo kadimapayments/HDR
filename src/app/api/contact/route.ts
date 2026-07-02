@@ -27,6 +27,8 @@ export async function POST(req: Request) {
     const role = (form.get("role") as string) || "";
     const stage = (form.get("stage") as string) || "";
     const message = (form.get("message") as string) || "";
+    const source = (form.get("source") as string) || "";
+    const isFireRebuild = source === "fire-rebuild";
 
     if (!name || !email) {
       return NextResponse.json(
@@ -36,7 +38,9 @@ export async function POST(req: Request) {
     }
 
     const summary = [
-      `*New Contact Form Submission*`,
+      isFireRebuild
+        ? `*🔥 New CA Wildfire Rebuild Inquiry*`
+        : `*New Contact Form Submission*`,
       `*Name:* ${name}`,
       `*Email:* ${email}`,
       phone && `*Phone:* ${phone}`,
@@ -51,7 +55,9 @@ export async function POST(req: Request) {
       postToSlack("SLACK_WEBHOOK_CONTACT", { text: summary }),
       sendEmail({
         to: process.env.LEADS_EMAIL_TO ?? COMPANY.email,
-        subject: `New Contact Form — ${name}`,
+        subject: isFireRebuild
+          ? `[Fire Rebuild] New Contact Form — ${name}`
+          : `New Contact Form — ${name}`,
         text: summary.replace(/\*/g, ""),
         attachments: [],
       }),
