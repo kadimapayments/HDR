@@ -14,19 +14,8 @@ export function FireRebuildCard() {
         <AnimatedReveal>
           <div className="relative overflow-hidden bg-neutral-warm-950">
             <div className="grid items-stretch lg:grid-cols-2">
-              {/* Image */}
-              <div className="relative aspect-[16/10] lg:aspect-auto">
-                <Image
-                  src="/images/fire-rebuild/hero.jpg"
-                  alt="CA wildfire rebuild support from HDR Windows"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-neutral-warm-950/30 lg:hidden" />
-              </div>
-
               {/* Content */}
-              <div className="flex flex-col justify-center p-10 md:p-14">
+              <div className="order-2 flex flex-col justify-center p-10 md:p-14 lg:order-1">
                 <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-brand-terracotta">
                   Palisades, Eaton & Malibu Fires
                 </p>
@@ -67,6 +56,17 @@ export function FireRebuildCard() {
                     Contact Us
                   </Button>
                 </div>
+              </div>
+
+              {/* Image */}
+              <div className="relative order-1 aspect-[16/10] lg:order-2 lg:aspect-auto">
+                <Image
+                  src="/images/fire-rebuild/hero.jpg"
+                  alt="CA wildfire rebuild support from HDR Windows"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-neutral-warm-950/30 lg:hidden" />
               </div>
             </div>
           </div>
