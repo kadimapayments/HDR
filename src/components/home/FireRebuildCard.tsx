@@ -13,9 +13,9 @@ export function FireRebuildCard() {
       <Container>
         <AnimatedReveal>
           <div className="relative overflow-hidden bg-neutral-warm-950">
-            <div className="grid items-stretch lg:grid-cols-2">
+            <div className="flex flex-col-reverse lg:flex-row">
               {/* Content */}
-              <div className="order-2 flex flex-col justify-center p-10 md:p-14 lg:order-1">
+              <div className="flex flex-col justify-center p-10 md:p-14 lg:w-1/2">
                 <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-brand-terracotta">
                   Palisades, Eaton & Malibu Fires
                 </p>
@@ -34,12 +34,12 @@ export function FireRebuildCard() {
                     size="lg"
                     onClick={() =>
                       trackEvent("cta_click", {
-                        label: "Learn About the Rebuild Program",
+                        label: "Learn More — Fire Rebuild",
                         location: "home_fire_rebuild_card",
                       })
                     }
                   >
-                    Learn About the Program
+                    Learn More
                   </Button>
                   <Button
                     href="/contact?source=fire-rebuild"
@@ -59,7 +59,7 @@ export function FireRebuildCard() {
               </div>
 
               {/* Image */}
-              <div className="relative order-1 aspect-[16/10] lg:order-2 lg:aspect-auto">
+              <div className="relative aspect-[16/10] lg:aspect-auto lg:w-1/2">
                 <Image
                   src="/images/fire-rebuild/hero.jpg"
                   alt="CA wildfire rebuild support from HDR Windows"
