@@ -12,7 +12,7 @@ type EmailAttachment = {
 };
 
 type EmailPayload = {
-  to: string;
+  to: string | string[];
   subject: string;
   text: string;
   html?: string;

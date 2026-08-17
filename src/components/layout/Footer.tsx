@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { COMPANY, MANUFACTURERS, SYSTEMS } from "@/lib/constants";
 import { trackEvent } from "@/lib/analytics";
@@ -39,6 +40,9 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname?.startsWith("/admin")) return null;
+
   return (
     <footer className="bg-neutral-warm-950 text-neutral-warm-400">
       <Container>

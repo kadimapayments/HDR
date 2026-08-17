@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { postToSlack, sendEmail, uploadFilesToSlack } from "@/lib/notifications";
 import { verifyRecaptcha } from "@/lib/recaptcha";
+import { saveSubmission } from "@/lib/db";
 import { COMPANY } from "@/lib/constants";
 
 export const runtime = "nodejs";
@@ -77,6 +78,20 @@ export async function POST(req: Request) {
     ]
       .filter(Boolean)
       .join("\n");
+
+    await saveSubmission("submit-plans", {
+      name,
+      email,
+      phone,
+      company,
+      role,
+      projectAddress,
+      timeline,
+      budget,
+      notes,
+      plansLink,
+      fileNames: attachments.map((a) => a.filename),
+    }).catch((err) => console.error("[submit-plans] failed to save submission", err));
 
     await Promise.all([
       postToSlack("SLACK_WEBHOOK_PLANS", { text: summary }),

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { postToSlack, sendEmail } from "@/lib/notifications";
 import { verifyRecaptcha } from "@/lib/recaptcha";
+import { saveSubmission } from "@/lib/db";
 import { COMPANY } from "@/lib/constants";
 
 export const runtime = "nodejs";
@@ -56,6 +57,16 @@ export async function POST(req: Request) {
     ]
       .filter(Boolean)
       .join("\n");
+
+    await saveSubmission("showroom-visit", {
+      name,
+      email,
+      phone,
+      date,
+      time,
+      visitors,
+      notes,
+    }).catch((err) => console.error("[showroom-visit] failed to save submission", err));
 
     await Promise.all([
       postToSlack("SLACK_WEBHOOK_SHOWROOM", { text: summary }),

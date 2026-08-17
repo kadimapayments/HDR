@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { postToSlack, sendEmail, uploadFilesToSlack } from "@/lib/notifications";
 import { verifyRecaptcha } from "@/lib/recaptcha";
+import { saveSubmission } from "@/lib/db";
 import { COMPANY } from "@/lib/constants";
 
 export const runtime = "nodejs";
@@ -83,11 +84,27 @@ export async function POST(req: Request) {
       .filter(Boolean)
       .join("\n");
 
+    await saveSubmission("service", {
+      name,
+      email,
+      phone,
+      projectAddress,
+      manufacturer,
+      purchaseDate,
+      orderNumber,
+      lineItem,
+      issue,
+      imageFilenames: attachments.map((a) => a.filename),
+    }).catch((err) => console.error("[service] failed to save submission", err));
+
     await Promise.all([
       postToSlack("SLACK_WEBHOOK_SERVICE", { text: summary }),
       uploadFilesToSlack("SLACK_WEBHOOK_SERVICE", attachments, `📷 Photos from ${name}`),
       sendEmail({
-        to: process.env.SERVICE_EMAIL_TO ?? COMPANY.serviceEmail,
+        to: [
+          process.env.SERVICE_EMAIL_TO ?? COMPANY.serviceEmail,
+          ...(process.env.SERVICE_EMAIL_CC?.split(",").map((e) => e.trim()).filter(Boolean) ?? []),
+        ],
         subject: `Service Ticket — ${manufacturer} — ${name}`,
         text: summary.replace(/\*/g, ""),
         attachments,
