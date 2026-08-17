@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
+import { PhoneInput } from "@/components/forms/PhoneInput";
 import { trackEvent } from "@/lib/analytics";
 
 const inputCls =
@@ -13,9 +14,11 @@ export function SubmitPlansForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [error, setError] = useState<string>("");
   const [fileError, setFileError] = useState<string>("");
+  const [requireError, setRequireError] = useState<string>("");
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const files = Array.from(e.target.files ?? []);
+    if (files.length > 0) setRequireError("");
     const total = files.reduce((sum, f) => sum + f.size, 0);
     if (total > MAX_BYTES) {
       const mb = (total / 1024 / 1024).toFixed(1);
@@ -27,10 +30,19 @@ export function SubmitPlansForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("submitting");
-    setError("");
     const form = e.currentTarget;
     const data = new FormData(form);
+
+    const hasFiles = data.getAll("files").some((f) => f instanceof File && f.size > 0);
+    const hasLink = ((data.get("plansLink") as string) ?? "").trim().length > 0;
+    if (!hasFiles && !hasLink) {
+      setRequireError("Please upload your plans, or paste a shared link below if your files exceed 25 MB.");
+      return;
+    }
+    setRequireError("");
+
+    setStatus("submitting");
+    setError("");
     try {
       const res = await fetch("/api/submit-plans", { method: "POST", body: data });
       const json = await res.json();
@@ -70,7 +82,7 @@ export function SubmitPlansForm() {
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Phone *</label>
-          <input required name="phone" type="tel" className={inputCls} />
+          <PhoneInput required className={inputCls} />
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Company</label>
@@ -118,7 +130,7 @@ export function SubmitPlansForm() {
 
       <div>
         <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">
-          Plans & Lead Sheet (PDF, DWG, JPG, up to 25 MB total)
+          Upload Plans (PDF, DWG, JPG, up to 25 MB total) *
         </label>
         <input
           name="files"
@@ -131,6 +143,9 @@ export function SubmitPlansForm() {
         {fileError && (
           <p className="mt-2 text-sm text-red-600">{fileError}</p>
         )}
+        {requireError && (
+          <p className="mt-2 text-sm text-red-600">{requireError}</p>
+        )}
       </div>
 
       <div>
@@ -142,6 +157,9 @@ export function SubmitPlansForm() {
           type="url"
           className={inputCls}
           placeholder="Dropbox, Google Drive, WeTransfer, or any shared link…"
+          onChange={(e) => {
+            if (e.target.value.trim()) setRequireError("");
+          }}
         />
         <p className="mt-1.5 text-xs text-neutral-warm-400">
           Use this if your files exceed 25 MB. Paste a shared link from Dropbox, Google Drive, WeTransfer, or similar.

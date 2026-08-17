@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
+import { PhoneInput } from "@/components/forms/PhoneInput";
 import { trackEvent } from "@/lib/analytics";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
@@ -99,7 +100,7 @@ export default function ShowroomSchedulePage() {
                         <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">
                           Phone *
                         </label>
-                        <input required type="tel" name="phone" className={inputCls} />
+                        <PhoneInput required className={inputCls} />
                       </div>
                     </div>
                   </div>

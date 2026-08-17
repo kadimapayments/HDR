@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { MANUFACTURERS } from "@/lib/constants";
 import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
+import { PhoneInput } from "@/components/forms/PhoneInput";
 import { trackEvent } from "@/lib/analytics";
 
 const inputCls =
@@ -57,7 +58,7 @@ export function ServiceForm() {
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Phone *</label>
-          <input required name="phone" type="tel" className={inputCls} />
+          <PhoneInput required className={inputCls} />
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-medium uppercase tracking-wide text-neutral-warm-700">Project Address *</label>

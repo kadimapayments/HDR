@@ -18,7 +18,7 @@ export default function SubmitPlansPage() {
       <PageHero
         title="Submit Plans for Quote"
         subtitle="For Architects, Builders & Developers"
-        description="Send us your plans, window schedule, or lead sheet. We'll review the scope and respond with manufacturer recommendations and a detailed quote as soon as possible."
+        description="Send us your plans or window schedule. We'll review the scope and respond with manufacturer recommendations and a detailed quote as soon as possible."
       />
 
       <Section>

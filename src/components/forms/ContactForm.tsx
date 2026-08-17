@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { RecaptchaWidget } from "@/components/forms/RecaptchaWidget";
+import { PhoneInput } from "@/components/forms/PhoneInput";
 import { trackEvent } from "@/lib/analytics";
 
 interface ContactFormProps {
@@ -91,10 +92,8 @@ export function ContactForm({ source }: ContactFormProps) {
           >
             Phone *
           </label>
-          <input
+          <PhoneInput
             id="phone"
-            name="phone"
-            type="tel"
             required
             className="w-full border border-neutral-warm-200 bg-white px-4 py-3 text-sm text-neutral-warm-900 transition-colors focus:border-brand-terracotta focus:outline-none"
           />
