@@ -12,7 +12,7 @@ import { COMPANY, FIRE_REBUILD_PROGRAMS } from "@/lib/constants";
 export const metadata: Metadata = generatePageMetadata({
   title: "CA Wildfire Rebuild Program",
   description:
-    "HDR Windows is supporting Palisades, Eaton, and Malibu fire rebuild with discounted manufacturer pricing, expedited product selection, and dedicated project management for affected homeowners.",
+    "HDR Windows is supporting Palisades, Eaton, and Malibu fire rebuild with discounted manufacturer pricing and dedicated project management for affected homeowners.",
   path: "/fire-rebuild",
 });
 
@@ -22,16 +22,16 @@ const offerings = [
     body: "We've coordinated directly with our manufacturer partners to secure discounted pricing programs specifically for homeowners and rebuilders affected by the Palisades, Eaton, and Malibu fires.",
   },
   {
-    title: "Expedited Product Selection & Lead Times",
-    body: "Rebuild projects are routed through a dedicated fast-track process. We work alongside your architect and builder to compress lead times where manufacturers can accommodate it, without sacrificing quality.",
-  },
-  {
     title: "Code & Compliance Guidance",
-    body: "Title 24 energy compliance and updated WUI (Wildland-Urban Interface) requirements affect every rebuild. We help match the right systems to current code requirements (and document them), without surprises during permit review.",
+    body: "Title 24 energy compliance and updated WUI (Wildland-Urban Interface) requirements affect every rebuild. We help match the right systems to current code requirements, without surprises during permit review.",
   },
   {
     title: "No-Cost Project Consultation",
     body: "If you're rebuilding, we'll review your plans and existing window schedule at no cost. You leave with a written product estimate and a clear next step, whether or not you ultimately work with us.",
+  },
+  {
+    title: "Direct Architect & Builder Coordination",
+    body: "We work directly with your architect, builder, and GC so window and door decisions don't get lost in the shuffle. One point of contact from selection through delivery, no telephone game.",
   },
 ];
 
@@ -65,7 +65,7 @@ export default function FireRebuildPage() {
         title="Helping You Rebuild"
         subtitle="Palisades, Eaton & Malibu Fires"
         backgroundImage="/images/fire-rebuild/hero.jpg"
-        description="To the families and communities rebuilding from the Palisades, Eaton, and Malibu fires, we're here to help. HDR has coordinated discounted manufacturer pricing and a dedicated fast-track process for rebuild projects."
+        description="To the families and communities rebuilding from the Palisades, Eaton, and Malibu fires, we're here to help. HDR has coordinated discounted manufacturer pricing for fire rebuilds and can help ensure your project meets building code requirements in fire zones."
       />
 
       {/* Statement of support */}
