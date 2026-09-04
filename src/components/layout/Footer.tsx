@@ -7,6 +7,10 @@ import { Container } from "@/components/ui/Container";
 import { COMPANY, MANUFACTURERS, SYSTEMS } from "@/lib/constants";
 import { trackEvent } from "@/lib/analytics";
 
+const INNOVATION_SYSTEMS = [...SYSTEMS].sort((a, b) =>
+  a.name.localeCompare(b.name)
+);
+
 const socialLinks = [
   {
     label: "Instagram",
@@ -109,7 +113,9 @@ export function Footer() {
             <ul className="space-y-3">
               {[
                 { label: "About", href: "/about" },
+                { label: "Portfolio", href: "/portfolio" },
                 { label: "Showroom", href: "/showroom" },
+                { label: "Who We Serve", href: "/who-we-serve" },
                 { label: "Interiors", href: "/interiors" },
                 { label: "Resources", href: "/resources" },
                 { label: "For Architects", href: "/for-architects" },
@@ -149,13 +155,13 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Systems */}
+          {/* Innovation */}
           <div>
             <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-neutral-warm-300">
-              Systems
+              Innovation
             </h3>
             <ul className="space-y-3">
-              {SYSTEMS.map((s) => (
+              {INNOVATION_SYSTEMS.map((s) => (
                 <li key={s.slug}>
                   <Link
                     href={`/systems/${s.slug}`}
