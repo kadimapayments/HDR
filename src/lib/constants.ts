@@ -136,6 +136,7 @@ export const NEIGHBORHOODS = [
 
 export const NAV_ITEMS = [
   { label: "About", href: "/about" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "Showroom", href: "/showroom" },
   {
     label: "Manufacturers",
