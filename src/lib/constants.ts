@@ -30,7 +30,7 @@ export const COMPANY = {
 export const MANUFACTURERS = [
   { name: "Andersen", slug: "andersen", logo: "/images/manufacturers/andersen.png" },
   { name: "Euroline", slug: "euroline", logo: "/images/manufacturers/euroline.png", logoScale: 1.4, logoDarkBg: true },
-  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.jpg" },
+  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.png" },
   { name: "LaCantina", slug: "lacantina", logo: "/images/manufacturers/lacantina.webp" },
   { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg" },
   { name: "Marvin", slug: "marvin", logo: "/images/manufacturers/marvin.jpg" },
@@ -42,7 +42,7 @@ export const MANUFACTURERS = [
 ] as const;
 
 export const MARQUEE_BRANDS = [
-  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.jpg", scale: 1.4 },
+  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.png", scale: 1.4 },
   { name: "Andersen", slug: "andersen", logo: "/images/manufacturers/andersen.png", scale: 1 },
   { name: "Marvin", slug: "marvin", logo: "/images/manufacturers/marvin.jpg", scale: 1 },
   { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg", scale: 1.3 },
