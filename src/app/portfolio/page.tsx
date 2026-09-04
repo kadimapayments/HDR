@@ -80,7 +80,7 @@ export default function PortfolioPage() {
       <PageHero
         title="Our Work"
         subtitle="Portfolio"
-        description="A selection of luxury residential projects across Los Angeles, each with unique architectural requirements and custom solutions."
+        description="A selection of residential and commercial projects across Southern CA, each with unique architectural requirements and custom solutions."
       />
 
       <Section>
