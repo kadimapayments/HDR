@@ -58,11 +58,6 @@ export function Footer() {
                 className="h-12 w-auto"
               />
             </div>
-            <p className="mb-6 text-sm leading-relaxed">
-              Los Angeles&apos;s premier partner in choosing luxury
-              architectural windows and doors. Serving architects, builders, and
-              homeowners.
-            </p>
             <address className="not-italic space-y-2 text-sm">
               <p>{COMPANY.address.street}</p>
               <p>
