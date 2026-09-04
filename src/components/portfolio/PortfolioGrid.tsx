@@ -7,7 +7,7 @@ import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 
 const project = {
   title: "Bel Air Residence",
-  neighborhood: "Bel Air",
+  neighborhood: "Los Angeles",
   type: "New Construction",
   manufacturers: ["Fleetwood"],
   image: "/images/portfolio/bel-air-residence.jpg",
