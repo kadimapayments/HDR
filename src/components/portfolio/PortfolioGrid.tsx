@@ -52,7 +52,7 @@ export function PortfolioGrid() {
               className="object-cover transition-transform duration-300 group-hover:scale-105"
             />
             <span className="absolute bottom-2 right-2 bg-black/50 px-2 py-1 text-[10px] uppercase tracking-wide text-white">
-              Photography Credit: {project.credit}
+              {project.credit}
             </span>
           </button>
           <div className="mt-3">
