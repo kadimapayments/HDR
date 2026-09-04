@@ -111,10 +111,10 @@ export function PortfolioGrid() {
           </button>
 
           <div
-            className="flex flex-1 items-center justify-center overflow-auto p-4 pt-16 sm:p-10"
+            className="flex flex-1 flex-col items-center justify-center overflow-auto p-4 pt-16 sm:p-10"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative m-auto h-[85vh] w-full max-w-5xl">
+            <div className="relative m-auto h-[75vh] w-full max-w-5xl">
               <Image
                 src={project.image}
                 alt={`${project.title} — ${project.neighborhood}`}
@@ -124,6 +124,10 @@ export function PortfolioGrid() {
                 priority
               />
             </div>
+            <p className="mt-4 text-center text-sm text-white/80">
+              {project.title} · {project.manufacturers.join(", ")} ·
+              Photography by {project.credit}
+            </p>
           </div>
         </div>
       )}
