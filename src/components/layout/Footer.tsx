@@ -118,11 +118,6 @@ export function Footer() {
                 { label: "Who We Serve", href: "/who-we-serve" },
                 { label: "Interiors", href: "/interiors" },
                 { label: "Resources", href: "/resources" },
-                { label: "For Architects", href: "/for-architects" },
-                { label: "For Builders", href: "/for-builders" },
-                { label: "Submit Plans", href: "/submit-plans" },
-                { label: "Service", href: "/service" },
-                { label: "Contact", href: "/contact" },
               ].map((item) => (
                 <li key={item.href}>
                   <Link
