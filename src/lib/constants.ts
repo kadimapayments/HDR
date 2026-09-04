@@ -42,7 +42,7 @@ export const MANUFACTURERS = [
 ] as const;
 
 export const MARQUEE_BRANDS = [
-  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.png", scale: 1.15 },
+  { name: "Fleetwood", slug: "fleetwood", logo: "/images/manufacturers/fleetwood.png", scale: 0.95 },
   { name: "Andersen", slug: "andersen", logo: "/images/manufacturers/andersen.png", scale: 1 },
   { name: "Marvin", slug: "marvin", logo: "/images/manufacturers/marvin.jpg", scale: 1 },
   { name: "Loewen", slug: "loewen", logo: "/images/manufacturers/loewen.jpg", scale: 1.3 },
