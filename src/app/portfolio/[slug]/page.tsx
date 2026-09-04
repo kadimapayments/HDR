@@ -21,9 +21,9 @@ const projects: Record<
     year: number;
   }
 > = {
-  "1204-las-pulgas": {
-    title: "Las Pulgas Residence",
-    neighborhood: "Pacific Palisades",
+  "1859-bel-air": {
+    title: "Bel Air Residence",
+    neighborhood: "Bel Air",
     type: "New Construction",
     manufacturers: ["Fleetwood"],
     systems: ["Multi-Slide Doors", "Fixed Glass", "Casement Windows"],

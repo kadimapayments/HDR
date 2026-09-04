@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/Badge";
 import { AnimatedReveal } from "@/components/shared/AnimatedReveal";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = generatePageMetadata({
   title: "Portfolio",
@@ -15,13 +16,23 @@ export const metadata: Metadata = generatePageMetadata({
   path: "/portfolio",
 });
 
-const projects = [
+const projects: {
+  title: string;
+  neighborhood: string;
+  type: string;
+  manufacturers: string[];
+  slug: string;
+  image?: string;
+  credit?: string;
+}[] = [
   {
-    title: "Las Pulgas Residence",
-    neighborhood: "Pacific Palisades",
+    title: "Bel Air Residence",
+    neighborhood: "Bel Air",
     type: "New Construction",
     manufacturers: ["Fleetwood"],
-    slug: "1204-las-pulgas",
+    slug: "1859-bel-air",
+    image: "/images/portfolio/bel-air-residence.jpg",
+    credit: "Nils Timm Visuals, Inc.",
   },
   {
     title: "Villa Georgina",
@@ -93,11 +104,27 @@ export default function PortfolioPage() {
                   className="group block overflow-hidden bg-white transition-shadow duration-300 hover:shadow-lg"
                 >
                   <div className="relative aspect-[4/3] bg-neutral-warm-200">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
-                        Project Photo
-                      </span>
-                    </div>
+                    {project.image ? (
+                      <>
+                        <Image
+                          src={project.image}
+                          alt={`${project.title} — ${project.neighborhood}`}
+                          fill
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                        {project.credit && (
+                          <span className="absolute bottom-2 right-2 bg-black/50 px-2 py-1 text-[10px] uppercase tracking-wide text-white">
+                            Photography Credit: {project.credit}
+                          </span>
+                        )}
+                      </>
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-xs uppercase tracking-widest text-neutral-warm-400">
+                          Project Photo
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div className="p-6">
                     <div className="mb-3 flex flex-wrap gap-2">
